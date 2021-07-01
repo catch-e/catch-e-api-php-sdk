@@ -1,0 +1,8 @@
+/.project
+/vendor
+/composer.lock
+/.php_cs.cache
+/.buildpath
+/.settings/
+/test.php
+/swagger.json

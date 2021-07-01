@@ -1,0 +1,33 @@
+{
+    "name": "catch-e/api-sdk",
+    "description": "Catch-e API Client SDK",
+    "keywords": ["catch-e", "api", "client", "openapi", "swagger", "sdk"],
+    "type": "library",
+    "license": "Apache-2.0",
+    "require-dev": {
+        "jane-php/open-api-2": "~6.1.0",
+        "friendsofphp/php-cs-fixer": "^2.18"
+    },
+    "require": {
+        "php": ">= 7.3",
+        "jane-php/open-api-runtime": "~6.1.0",
+        "symfony/http-client": "^4.3",
+        "nyholm/psr7": "^1.2",
+        "symfony/property-access": "^5.3"
+    },
+    "autoload" : {
+        "psr-4" : {
+            "CatchE\\Api\\" : "src/Api",
+            "CatchE\\OpenApi2\\" : "src/OpenApi2"
+        }
+    },
+    "extra": {
+        "symfony": {
+            "allow-contrib": "true"
+        }
+    },
+    "scripts": {
+        "cs-fix": "php-cs-fixer fix",
+        "generate": "rm -r src/OpenApi2/* ; jane-openapi generate"
+    }
+}
