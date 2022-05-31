@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,77 +17,77 @@
 
 namespace CatchE\OpenApi2\Endpoint;
 
-class DeleteDriverAssets extends \Jane\OpenApiRuntime\Client\BaseEndpoint implements \Jane\OpenApiRuntime\Client\Endpoint
+class DeleteDriverAssets extends \CatchE\OpenApi2\Runtime\Client\BaseEndpoint implements \CatchE\OpenApi2\Runtime\Client\Endpoint
 {
-	use \Jane\OpenApiRuntime\Client\EndpointTrait;
+    use \CatchE\OpenApi2\Runtime\Client\EndpointTrait;
 
-	/**
-	 * This method requires the **DriverAssets:Delete** permission to be associated with your role.
-	 *
-	 * @param array $body JSON payload
-	 */
-	public function __construct(array $body)
-	{
-		$this->body = $body;
-	}
+    /**
+     * This method requires the **DriverAssets:Delete** permission to be associated with your role.
+     *
+     * @param array $body JSON payload
+     */
+    public function __construct(array $body)
+    {
+        $this->body = $body;
+    }
 
-	public function getMethod(): string
-	{
-		return 'DELETE';
-	}
+    public function getMethod(): string
+    {
+        return 'DELETE';
+    }
 
-	public function getUri(): string
-	{
-		return '/fm/driver/assets';
-	}
+    public function getUri(): string
+    {
+        return '/fm/driver/assets';
+    }
 
-	public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
-	{
-		return $this->getSerializedBody($serializer);
-	}
+    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    {
+        return $this->getSerializedBody($serializer);
+    }
 
-	public function getExtraHeaders(): array
-	{
-		return ['Accept' => ['application/json']];
-	}
+    public function getExtraHeaders(): array
+    {
+        return ['Accept' => ['application/json']];
+    }
 
-	/**
-	 * {@inheritdoc}
-	 *
-	 * @throws \CatchE\OpenApi2\Exception\DeleteDriverAssetsUnauthorizedException
-	 * @throws \CatchE\OpenApi2\Exception\DeleteDriverAssetsForbiddenException
-	 * @throws \CatchE\OpenApi2\Exception\DeleteDriverAssetsNotFoundException
-	 * @throws \CatchE\OpenApi2\Exception\DeleteDriverAssetsNotAcceptableException
-	 * @throws \CatchE\OpenApi2\Exception\DeleteDriverAssetsInternalServerErrorException
-	 *
-	 * @return \CatchE\OpenApi2\Model\Error|null
-	 */
-	protected function transformResponseBody(string $body, int $status, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType)
-	{
-		if (204 === $status) {
-			return null;
-		}
-		if (401 === $status) {
-			throw new \CatchE\OpenApi2\Exception\DeleteDriverAssetsUnauthorizedException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Unauthorized', 'json'));
-		}
-		if (403 === $status) {
-			throw new \CatchE\OpenApi2\Exception\DeleteDriverAssetsForbiddenException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Forbidden', 'json'));
-		}
-		if (404 === $status) {
-			throw new \CatchE\OpenApi2\Exception\DeleteDriverAssetsNotFoundException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotFound', 'json'));
-		}
-		if (406 === $status) {
-			throw new \CatchE\OpenApi2\Exception\DeleteDriverAssetsNotAcceptableException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotAcceptable', 'json'));
-		}
-		if (500 === $status) {
-			throw new \CatchE\OpenApi2\Exception\DeleteDriverAssetsInternalServerErrorException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\InternalError', 'json'));
-		}
+    public function getAuthenticationScopes(): array
+    {
+        return ['Bearer Token'];
+    }
 
-		return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Error', 'json');
-	}
+    /**
+     * {@inheritdoc}
+     *
+     * @throws \CatchE\OpenApi2\Exception\DeleteDriverAssetsUnauthorizedException
+     * @throws \CatchE\OpenApi2\Exception\DeleteDriverAssetsForbiddenException
+     * @throws \CatchE\OpenApi2\Exception\DeleteDriverAssetsNotFoundException
+     * @throws \CatchE\OpenApi2\Exception\DeleteDriverAssetsNotAcceptableException
+     * @throws \CatchE\OpenApi2\Exception\DeleteDriverAssetsInternalServerErrorException
+     *
+     * @return null|\CatchE\OpenApi2\Model\Error
+     */
+    protected function transformResponseBody(string $body, int $status, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    {
+        if (204 === $status) {
+            return null;
+        }
+        if (401 === $status) {
+            throw new \CatchE\OpenApi2\Exception\DeleteDriverAssetsUnauthorizedException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Unauthorized', 'json'));
+        }
+        if (403 === $status) {
+            throw new \CatchE\OpenApi2\Exception\DeleteDriverAssetsForbiddenException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Forbidden', 'json'));
+        }
+        if (404 === $status) {
+            throw new \CatchE\OpenApi2\Exception\DeleteDriverAssetsNotFoundException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotFound', 'json'));
+        }
+        if (406 === $status) {
+            throw new \CatchE\OpenApi2\Exception\DeleteDriverAssetsNotAcceptableException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotAcceptable', 'json'));
+        }
+        if (500 === $status) {
+            throw new \CatchE\OpenApi2\Exception\DeleteDriverAssetsInternalServerErrorException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\InternalError', 'json'));
+        }
 
-	public function getAuthenticationScopes(): array
-	{
-		return ['Bearer Token'];
-	}
+        return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Error', 'json');
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,18 +17,10 @@
 
 namespace CatchE\OpenApi2\Exception;
 
-class AuthenticateConflictException extends \RuntimeException implements ClientException
+class AuthenticateConflictException extends ConflictException
 {
-	private $conflictAuthenticate;
-
-	public function __construct(\CatchE\OpenApi2\Model\ConflictAuthenticate $conflictAuthenticate)
-	{
-		parent::__construct('Two factor authentication code must be specified', 409);
-		$this->conflictAuthenticate = $conflictAuthenticate;
-	}
-
-	public function getConflictAuthenticate()
-	{
-		return $this->conflictAuthenticate;
-	}
+    public function __construct(\CatchE\OpenApi2\Model\ConflictAuthenticate $conflictAuthenticate)
+    {
+        parent::__construct('Two factor authentication code must be specified', $conflictAuthenticate);
+    }
 }

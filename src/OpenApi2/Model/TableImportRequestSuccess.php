@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,36 +19,36 @@ namespace CatchE\OpenApi2\Model;
 
 class TableImportRequestSuccess
 {
-	/**
-	 * @var string|null
-	 */
-	protected $tableImportId;
-	/**
-	 * @var string|null
-	 */
-	protected $format;
+    /**
+     * @var null|string
+     */
+    protected $tableImportId;
+    /**
+     * @var null|string
+     */
+    protected $format;
 
-	public function getTableImportId(): ?string
-	{
-		return $this->tableImportId;
-	}
+    public function getTableImportId(): ?string
+    {
+        return $this->tableImportId;
+    }
 
-	public function setTableImportId(?string $tableImportId): self
-	{
-		$this->tableImportId = $tableImportId;
+    public function setTableImportId(?string $tableImportId): self
+    {
+        $this->tableImportId = $tableImportId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getFormat(): ?string
-	{
-		return $this->format;
-	}
+    public function getFormat(): ?string
+    {
+        return $this->format;
+    }
 
-	public function setFormat(?string $format): self
-	{
-		$this->format = $format;
+    public function setFormat(?string $format): self
+    {
+        $this->format = $format;
 
-		return $this;
-	}
+        return $this;
+    }
 }

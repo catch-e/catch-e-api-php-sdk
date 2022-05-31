@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,26 +19,26 @@ namespace CatchE\OpenApi2\Model;
 
 class VariantModelsGetEmbedded
 {
-	/**
-	 * @var VariantModel[]|null
-	 */
-	protected $qtModels;
+    /**
+     * @var null|VariantModel[]
+     */
+    protected $qtModels;
 
-	/**
-	 * @return VariantModel[]|null
-	 */
-	public function getQtModels(): ?array
-	{
-		return $this->qtModels;
-	}
+    /**
+     * @return null|VariantModel[]
+     */
+    public function getQtModels(): ?array
+    {
+        return $this->qtModels;
+    }
 
-	/**
-	 * @param VariantModel[]|null $qtModels
-	 */
-	public function setQtModels(?array $qtModels): self
-	{
-		$this->qtModels = $qtModels;
+    /**
+     * @param null|VariantModel[] $qtModels
+     */
+    public function setQtModels(?array $qtModels): self
+    {
+        $this->qtModels = $qtModels;
 
-		return $this;
-	}
+        return $this;
+    }
 }

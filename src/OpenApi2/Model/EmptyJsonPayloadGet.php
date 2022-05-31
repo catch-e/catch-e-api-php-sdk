@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,52 +19,52 @@ namespace CatchE\OpenApi2\Model;
 
 class EmptyJsonPayloadGet
 {
-	/**
-	 * @var string|null
-	 */
-	protected $channelGroupCode;
-	/**
-	 * @var string|null
-	 */
-	protected $name;
-	/**
-	 * @var string|null
-	 */
-	protected $statusFlag;
+    /**
+     * @var null|string
+     */
+    protected $channelGroupCode;
+    /**
+     * @var null|string
+     */
+    protected $name;
+    /**
+     * @var null|string
+     */
+    protected $statusFlag;
 
-	public function getChannelGroupCode(): ?string
-	{
-		return $this->channelGroupCode;
-	}
+    public function getChannelGroupCode(): ?string
+    {
+        return $this->channelGroupCode;
+    }
 
-	public function setChannelGroupCode(?string $channelGroupCode): self
-	{
-		$this->channelGroupCode = $channelGroupCode;
+    public function setChannelGroupCode(?string $channelGroupCode): self
+    {
+        $this->channelGroupCode = $channelGroupCode;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getName(): ?string
-	{
-		return $this->name;
-	}
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
 
-	public function setName(?string $name): self
-	{
-		$this->name = $name;
+    public function setName(?string $name): self
+    {
+        $this->name = $name;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getStatusFlag(): ?string
-	{
-		return $this->statusFlag;
-	}
+    public function getStatusFlag(): ?string
+    {
+        return $this->statusFlag;
+    }
 
-	public function setStatusFlag(?string $statusFlag): self
-	{
-		$this->statusFlag = $statusFlag;
+    public function setStatusFlag(?string $statusFlag): self
+    {
+        $this->statusFlag = $statusFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 }

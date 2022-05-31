@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,95 +17,95 @@
 
 namespace CatchE\OpenApi2\Endpoint;
 
-class GetContractFunds extends \Jane\OpenApiRuntime\Client\BaseEndpoint implements \Jane\OpenApiRuntime\Client\Endpoint
+class GetContractFunds extends \CatchE\OpenApi2\Runtime\Client\BaseEndpoint implements \CatchE\OpenApi2\Runtime\Client\Endpoint
 {
-	use \Jane\OpenApiRuntime\Client\EndpointTrait;
+    use \CatchE\OpenApi2\Runtime\Client\EndpointTrait;
 
-	/**
-	 * This method requires the **Contract:FundsCheck** permission to be associated with your role.
-	 *
-	 * @param array $queryParameters {
-	 *
-	 *     @var string $contract_id Contract Id
-	 * }
-	 */
-	public function __construct(array $queryParameters = [])
-	{
-		$this->queryParameters = $queryParameters;
-	}
+    /**
+     * This method requires the **Contract:FundsCheck** permission to be associated with your role.
+     *
+     * @param array $queryParameters {
+     *
+     *     @var string $contract_id Contract Id
+     * }
+     */
+    public function __construct(array $queryParameters = [])
+    {
+        $this->queryParameters = $queryParameters;
+    }
 
-	public function getMethod(): string
-	{
-		return 'GET';
-	}
+    public function getMethod(): string
+    {
+        return 'GET';
+    }
 
-	public function getUri(): string
-	{
-		return '/fm/contract/funds';
-	}
+    public function getUri(): string
+    {
+        return '/fm/contract/funds';
+    }
 
-	public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
-	{
-		return [[], null];
-	}
+    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    {
+        return [[], null];
+    }
 
-	public function getExtraHeaders(): array
-	{
-		return ['Accept' => ['application/json']];
-	}
+    public function getExtraHeaders(): array
+    {
+        return ['Accept' => ['application/json']];
+    }
 
-	protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
-	{
-		$optionsResolver = parent::getQueryOptionsResolver();
-		$optionsResolver->setDefined(['contract_id']);
-		$optionsResolver->setRequired(['contract_id']);
-		$optionsResolver->setDefaults([]);
-		$optionsResolver->setAllowedTypes('contract_id', ['string']);
+    public function getAuthenticationScopes(): array
+    {
+        return ['Bearer Token'];
+    }
 
-		return $optionsResolver;
-	}
+    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    {
+        $optionsResolver = parent::getQueryOptionsResolver();
+        $optionsResolver->setDefined(['contract_id']);
+        $optionsResolver->setRequired(['contract_id']);
+        $optionsResolver->setDefaults([]);
+        $optionsResolver->setAllowedTypes('contract_id', ['string']);
 
-	/**
-	 * {@inheritdoc}
-	 *
-	 * @throws \CatchE\OpenApi2\Exception\GetContractFundsUnauthorizedException
-	 * @throws \CatchE\OpenApi2\Exception\GetContractFundsForbiddenException
-	 * @throws \CatchE\OpenApi2\Exception\GetContractFundsNotFoundException
-	 * @throws \CatchE\OpenApi2\Exception\GetContractFundsNotAcceptableException
-	 * @throws \CatchE\OpenApi2\Exception\GetContractFundsUnprocessableEntityException
-	 * @throws \CatchE\OpenApi2\Exception\GetContractFundsInternalServerErrorException
-	 *
-	 * @return \CatchE\OpenApi2\Model\ContractFundsGet|\CatchE\OpenApi2\Model\Error|null
-	 */
-	protected function transformResponseBody(string $body, int $status, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType)
-	{
-		if (200 === $status) {
-			return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\ContractFundsGet', 'json');
-		}
-		if (401 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetContractFundsUnauthorizedException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Unauthorized', 'json'));
-		}
-		if (403 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetContractFundsForbiddenException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Forbidden', 'json'));
-		}
-		if (404 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetContractFundsNotFoundException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotFound', 'json'));
-		}
-		if (406 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetContractFundsNotAcceptableException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotAcceptable', 'json'));
-		}
-		if (422 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetContractFundsUnprocessableEntityException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\UnprocessableEntity', 'json'));
-		}
-		if (500 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetContractFundsInternalServerErrorException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\InternalError', 'json'));
-		}
+        return $optionsResolver;
+    }
 
-		return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Error', 'json');
-	}
+    /**
+     * {@inheritdoc}
+     *
+     * @throws \CatchE\OpenApi2\Exception\GetContractFundsUnauthorizedException
+     * @throws \CatchE\OpenApi2\Exception\GetContractFundsForbiddenException
+     * @throws \CatchE\OpenApi2\Exception\GetContractFundsNotFoundException
+     * @throws \CatchE\OpenApi2\Exception\GetContractFundsNotAcceptableException
+     * @throws \CatchE\OpenApi2\Exception\GetContractFundsUnprocessableEntityException
+     * @throws \CatchE\OpenApi2\Exception\GetContractFundsInternalServerErrorException
+     *
+     * @return null|\CatchE\OpenApi2\Model\ContractFundsGet|\CatchE\OpenApi2\Model\Error
+     */
+    protected function transformResponseBody(string $body, int $status, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    {
+        if (200 === $status) {
+            return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\ContractFundsGet', 'json');
+        }
+        if (401 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetContractFundsUnauthorizedException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Unauthorized', 'json'));
+        }
+        if (403 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetContractFundsForbiddenException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Forbidden', 'json'));
+        }
+        if (404 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetContractFundsNotFoundException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotFound', 'json'));
+        }
+        if (406 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetContractFundsNotAcceptableException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotAcceptable', 'json'));
+        }
+        if (422 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetContractFundsUnprocessableEntityException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\UnprocessableEntity', 'json'));
+        }
+        if (500 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetContractFundsInternalServerErrorException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\InternalError', 'json'));
+        }
 
-	public function getAuthenticationScopes(): array
-	{
-		return ['Bearer Token'];
-	}
+        return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Error', 'json');
+    }
 }

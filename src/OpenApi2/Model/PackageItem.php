@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,276 +19,300 @@ namespace CatchE\OpenApi2\Model;
 
 class PackageItem
 {
-	/**
-	 * Package Item Id.
-	 *
-	 * @var string|null
-	 */
-	protected $packageItemId;
-	/**
-	 * Posting Map Id.
-	 *
-	 * @var string|null
-	 */
-	protected $postingMapId;
-	/**
-	 * Package Item Code.
-	 *
-	 * @var string|null
-	 */
-	protected $packageItemCode;
-	/**
-	 * Module.
-	 *
-	 * @var string|null
-	 */
-	protected $module;
-	/**
-	 * Package name.
-	 *
-	 * @var string|null
-	 */
-	protected $packageName;
-	/**
-	 * Benefit type.
-	 *
-	 * @var string|null
-	 */
-	protected $benefitType;
-	/**
-	 * Cap type.
-	 *
-	 * @var string|null
-	 */
-	protected $capType;
-	/**
-	 * GST flag.
-	 *
-	 * @var string|null
-	 */
-	protected $gstFlag;
-	/**
-	 * Tax method.
-	 *
-	 * @var string|null
-	 */
-	protected $taxMethod;
-	/**
-	 * @var string|null
-	 */
-	protected $spProfileTableName;
-	/**
-	 * Employee Contribution Flag.
-	 *
-	 * @var string|null
-	 */
-	protected $employeeContributionFlag = 'no';
-	/**
-	 * @var PackageItemEmbedded|null
-	 */
-	protected $embedded;
+    /**
+     * Package Item Id.
+     *
+     * @var null|string
+     */
+    protected $packageItemId;
+    /**
+     * Posting Map Id.
+     *
+     * @var null|string
+     */
+    protected $postingMapId;
+    /**
+     * Package Item Code.
+     *
+     * @var null|string
+     */
+    protected $packageItemCode;
+    /**
+     * Module.
+     *
+     * @var null|string
+     */
+    protected $module;
+    /**
+     * Package name.
+     *
+     * @var null|string
+     */
+    protected $packageName;
+    /**
+     * Benefit type.
+     *
+     * @var null|string
+     */
+    protected $benefitType;
+    /**
+     * Cap type.
+     *
+     * @var null|string
+     */
+    protected $capType;
+    /**
+     * GST flag.
+     *
+     * @var null|string
+     */
+    protected $gstFlag;
+    /**
+     * Add GST flag.
+     *
+     * @var null|string
+     */
+    protected $addGstFlag;
+    /**
+     * Tax method.
+     *
+     * @var null|string
+     */
+    protected $taxMethod;
+    /**
+     * @var null|string
+     */
+    protected $spProfileTableName;
+    /**
+     * Employee Contribution Flag.
+     *
+     * @var null|string
+     */
+    protected $employeeContributionFlag = 'no';
+    /**
+     * @var null|PackageItemEmbedded
+     */
+    protected $embedded;
 
-	/**
-	 * Package Item Id.
-	 */
-	public function getPackageItemId(): ?string
-	{
-		return $this->packageItemId;
-	}
+    /**
+     * Package Item Id.
+     */
+    public function getPackageItemId(): ?string
+    {
+        return $this->packageItemId;
+    }
 
-	/**
-	 * Package Item Id.
-	 */
-	public function setPackageItemId(?string $packageItemId): self
-	{
-		$this->packageItemId = $packageItemId;
+    /**
+     * Package Item Id.
+     */
+    public function setPackageItemId(?string $packageItemId): self
+    {
+        $this->packageItemId = $packageItemId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Posting Map Id.
-	 */
-	public function getPostingMapId(): ?string
-	{
-		return $this->postingMapId;
-	}
+    /**
+     * Posting Map Id.
+     */
+    public function getPostingMapId(): ?string
+    {
+        return $this->postingMapId;
+    }
 
-	/**
-	 * Posting Map Id.
-	 */
-	public function setPostingMapId(?string $postingMapId): self
-	{
-		$this->postingMapId = $postingMapId;
+    /**
+     * Posting Map Id.
+     */
+    public function setPostingMapId(?string $postingMapId): self
+    {
+        $this->postingMapId = $postingMapId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Package Item Code.
-	 */
-	public function getPackageItemCode(): ?string
-	{
-		return $this->packageItemCode;
-	}
+    /**
+     * Package Item Code.
+     */
+    public function getPackageItemCode(): ?string
+    {
+        return $this->packageItemCode;
+    }
 
-	/**
-	 * Package Item Code.
-	 */
-	public function setPackageItemCode(?string $packageItemCode): self
-	{
-		$this->packageItemCode = $packageItemCode;
+    /**
+     * Package Item Code.
+     */
+    public function setPackageItemCode(?string $packageItemCode): self
+    {
+        $this->packageItemCode = $packageItemCode;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Module.
-	 */
-	public function getModule(): ?string
-	{
-		return $this->module;
-	}
+    /**
+     * Module.
+     */
+    public function getModule(): ?string
+    {
+        return $this->module;
+    }
 
-	/**
-	 * Module.
-	 */
-	public function setModule(?string $module): self
-	{
-		$this->module = $module;
+    /**
+     * Module.
+     */
+    public function setModule(?string $module): self
+    {
+        $this->module = $module;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Package name.
-	 */
-	public function getPackageName(): ?string
-	{
-		return $this->packageName;
-	}
+    /**
+     * Package name.
+     */
+    public function getPackageName(): ?string
+    {
+        return $this->packageName;
+    }
 
-	/**
-	 * Package name.
-	 */
-	public function setPackageName(?string $packageName): self
-	{
-		$this->packageName = $packageName;
+    /**
+     * Package name.
+     */
+    public function setPackageName(?string $packageName): self
+    {
+        $this->packageName = $packageName;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Benefit type.
-	 */
-	public function getBenefitType(): ?string
-	{
-		return $this->benefitType;
-	}
+    /**
+     * Benefit type.
+     */
+    public function getBenefitType(): ?string
+    {
+        return $this->benefitType;
+    }
 
-	/**
-	 * Benefit type.
-	 */
-	public function setBenefitType(?string $benefitType): self
-	{
-		$this->benefitType = $benefitType;
+    /**
+     * Benefit type.
+     */
+    public function setBenefitType(?string $benefitType): self
+    {
+        $this->benefitType = $benefitType;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Cap type.
-	 */
-	public function getCapType(): ?string
-	{
-		return $this->capType;
-	}
+    /**
+     * Cap type.
+     */
+    public function getCapType(): ?string
+    {
+        return $this->capType;
+    }
 
-	/**
-	 * Cap type.
-	 */
-	public function setCapType(?string $capType): self
-	{
-		$this->capType = $capType;
+    /**
+     * Cap type.
+     */
+    public function setCapType(?string $capType): self
+    {
+        $this->capType = $capType;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * GST flag.
-	 */
-	public function getGstFlag(): ?string
-	{
-		return $this->gstFlag;
-	}
+    /**
+     * GST flag.
+     */
+    public function getGstFlag(): ?string
+    {
+        return $this->gstFlag;
+    }
 
-	/**
-	 * GST flag.
-	 */
-	public function setGstFlag(?string $gstFlag): self
-	{
-		$this->gstFlag = $gstFlag;
+    /**
+     * GST flag.
+     */
+    public function setGstFlag(?string $gstFlag): self
+    {
+        $this->gstFlag = $gstFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Tax method.
-	 */
-	public function getTaxMethod(): ?string
-	{
-		return $this->taxMethod;
-	}
+    /**
+     * Add GST flag.
+     */
+    public function getAddGstFlag(): ?string
+    {
+        return $this->addGstFlag;
+    }
 
-	/**
-	 * Tax method.
-	 */
-	public function setTaxMethod(?string $taxMethod): self
-	{
-		$this->taxMethod = $taxMethod;
+    /**
+     * Add GST flag.
+     */
+    public function setAddGstFlag(?string $addGstFlag): self
+    {
+        $this->addGstFlag = $addGstFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getSpProfileTableName(): ?string
-	{
-		return $this->spProfileTableName;
-	}
+    /**
+     * Tax method.
+     */
+    public function getTaxMethod(): ?string
+    {
+        return $this->taxMethod;
+    }
 
-	public function setSpProfileTableName(?string $spProfileTableName): self
-	{
-		$this->spProfileTableName = $spProfileTableName;
+    /**
+     * Tax method.
+     */
+    public function setTaxMethod(?string $taxMethod): self
+    {
+        $this->taxMethod = $taxMethod;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Employee Contribution Flag.
-	 */
-	public function getEmployeeContributionFlag(): ?string
-	{
-		return $this->employeeContributionFlag;
-	}
+    public function getSpProfileTableName(): ?string
+    {
+        return $this->spProfileTableName;
+    }
 
-	/**
-	 * Employee Contribution Flag.
-	 */
-	public function setEmployeeContributionFlag(?string $employeeContributionFlag): self
-	{
-		$this->employeeContributionFlag = $employeeContributionFlag;
+    public function setSpProfileTableName(?string $spProfileTableName): self
+    {
+        $this->spProfileTableName = $spProfileTableName;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getEmbedded(): ?PackageItemEmbedded
-	{
-		return $this->embedded;
-	}
+    /**
+     * Employee Contribution Flag.
+     */
+    public function getEmployeeContributionFlag(): ?string
+    {
+        return $this->employeeContributionFlag;
+    }
 
-	public function setEmbedded(?PackageItemEmbedded $embedded): self
-	{
-		$this->embedded = $embedded;
+    /**
+     * Employee Contribution Flag.
+     */
+    public function setEmployeeContributionFlag(?string $employeeContributionFlag): self
+    {
+        $this->employeeContributionFlag = $employeeContributionFlag;
 
-		return $this;
-	}
+        return $this;
+    }
+
+    public function getEmbedded(): ?PackageItemEmbedded
+    {
+        return $this->embedded;
+    }
+
+    public function setEmbedded(?PackageItemEmbedded $embedded): self
+    {
+        $this->embedded = $embedded;
+
+        return $this;
+    }
 }

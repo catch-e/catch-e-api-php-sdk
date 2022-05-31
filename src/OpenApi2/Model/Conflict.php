@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,68 +19,68 @@ namespace CatchE\OpenApi2\Model;
 
 class Conflict
 {
-	/**
-	 * @var string|null
-	 */
-	protected $type;
-	/**
-	 * @var string|null
-	 */
-	protected $title;
-	/**
-	 * @var int|null
-	 */
-	protected $status;
-	/**
-	 * @var string|null
-	 */
-	protected $detail;
+    /**
+     * @var null|string
+     */
+    protected $type;
+    /**
+     * @var null|string
+     */
+    protected $title;
+    /**
+     * @var null|int
+     */
+    protected $status;
+    /**
+     * @var null|string
+     */
+    protected $detail;
 
-	public function getType(): ?string
-	{
-		return $this->type;
-	}
+    public function getType(): ?string
+    {
+        return $this->type;
+    }
 
-	public function setType(?string $type): self
-	{
-		$this->type = $type;
+    public function setType(?string $type): self
+    {
+        $this->type = $type;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getTitle(): ?string
-	{
-		return $this->title;
-	}
+    public function getTitle(): ?string
+    {
+        return $this->title;
+    }
 
-	public function setTitle(?string $title): self
-	{
-		$this->title = $title;
+    public function setTitle(?string $title): self
+    {
+        $this->title = $title;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getStatus(): ?int
-	{
-		return $this->status;
-	}
+    public function getStatus(): ?int
+    {
+        return $this->status;
+    }
 
-	public function setStatus(?int $status): self
-	{
-		$this->status = $status;
+    public function setStatus(?int $status): self
+    {
+        $this->status = $status;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getDetail(): ?string
-	{
-		return $this->detail;
-	}
+    public function getDetail(): ?string
+    {
+        return $this->detail;
+    }
 
-	public function setDetail(?string $detail): self
-	{
-		$this->detail = $detail;
+    public function setDetail(?string $detail): self
+    {
+        $this->detail = $detail;
 
-		return $this;
-	}
+        return $this;
+    }
 }

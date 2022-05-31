@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,18 +17,10 @@
 
 namespace CatchE\OpenApi2\Exception;
 
-class UpdateContactJobTitleInternalServerErrorException extends \RuntimeException implements ServerException
+class UpdateContactJobTitleInternalServerErrorException extends InternalServerErrorException
 {
-	private $internalError;
-
-	public function __construct(\CatchE\OpenApi2\Model\InternalError $internalError)
-	{
-		parent::__construct('Internal Error', 500);
-		$this->internalError = $internalError;
-	}
-
-	public function getInternalError()
-	{
-		return $this->internalError;
-	}
+    public function __construct(\CatchE\OpenApi2\Model\InternalError $internalError)
+    {
+        parent::__construct('Internal Error', $internalError);
+    }
 }

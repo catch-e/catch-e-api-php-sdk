@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,58 +19,58 @@ namespace CatchE\OpenApi2\Model;
 
 class Contacts
 {
-	/**
-	 * @var mixed|null
-	 */
-	protected $links;
-	/**
-	 * @var ContactsEmbedded|null
-	 */
-	protected $embedded;
-	/**
-	 * @var int|null
-	 */
-	protected $totalItems;
+    /**
+     * @var null|mixed
+     */
+    protected $links;
+    /**
+     * @var null|ContactsEmbedded
+     */
+    protected $embedded;
+    /**
+     * @var null|int
+     */
+    protected $totalItems;
 
-	/**
-	 * @return mixed
-	 */
-	public function getLinks()
-	{
-		return $this->links;
-	}
+    /**
+     * @return mixed
+     */
+    public function getLinks()
+    {
+        return $this->links;
+    }
 
-	/**
-	 * @param mixed $links
-	 */
-	public function setLinks($links): self
-	{
-		$this->links = $links;
+    /**
+     * @param mixed $links
+     */
+    public function setLinks($links): self
+    {
+        $this->links = $links;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getEmbedded(): ?ContactsEmbedded
-	{
-		return $this->embedded;
-	}
+    public function getEmbedded(): ?ContactsEmbedded
+    {
+        return $this->embedded;
+    }
 
-	public function setEmbedded(?ContactsEmbedded $embedded): self
-	{
-		$this->embedded = $embedded;
+    public function setEmbedded(?ContactsEmbedded $embedded): self
+    {
+        $this->embedded = $embedded;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getTotalItems(): ?int
-	{
-		return $this->totalItems;
-	}
+    public function getTotalItems(): ?int
+    {
+        return $this->totalItems;
+    }
 
-	public function setTotalItems(?int $totalItems): self
-	{
-		$this->totalItems = $totalItems;
+    public function setTotalItems(?int $totalItems): self
+    {
+        $this->totalItems = $totalItems;
 
-		return $this;
-	}
+        return $this;
+    }
 }

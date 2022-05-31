@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,76 +19,76 @@ namespace CatchE\OpenApi2\Model;
 
 class PaymentMethod
 {
-	/**
-	 * Payment method Id.
-	 *
-	 * @var string|null
-	 */
-	protected $paymentMethodId;
-	/**
-	 * Payment method.
-	 *
-	 * @var string|null
-	 */
-	protected $paymentMethod;
-	/**
-	 * Status flag.
-	 *
-	 * @var string|null
-	 */
-	protected $statusFlag;
+    /**
+     * Payment method Id.
+     *
+     * @var null|string
+     */
+    protected $paymentMethodId;
+    /**
+     * Payment method.
+     *
+     * @var null|string
+     */
+    protected $paymentMethod;
+    /**
+     * Status flag.
+     *
+     * @var null|string
+     */
+    protected $statusFlag;
 
-	/**
-	 * Payment method Id.
-	 */
-	public function getPaymentMethodId(): ?string
-	{
-		return $this->paymentMethodId;
-	}
+    /**
+     * Payment method Id.
+     */
+    public function getPaymentMethodId(): ?string
+    {
+        return $this->paymentMethodId;
+    }
 
-	/**
-	 * Payment method Id.
-	 */
-	public function setPaymentMethodId(?string $paymentMethodId): self
-	{
-		$this->paymentMethodId = $paymentMethodId;
+    /**
+     * Payment method Id.
+     */
+    public function setPaymentMethodId(?string $paymentMethodId): self
+    {
+        $this->paymentMethodId = $paymentMethodId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Payment method.
-	 */
-	public function getPaymentMethod(): ?string
-	{
-		return $this->paymentMethod;
-	}
+    /**
+     * Payment method.
+     */
+    public function getPaymentMethod(): ?string
+    {
+        return $this->paymentMethod;
+    }
 
-	/**
-	 * Payment method.
-	 */
-	public function setPaymentMethod(?string $paymentMethod): self
-	{
-		$this->paymentMethod = $paymentMethod;
+    /**
+     * Payment method.
+     */
+    public function setPaymentMethod(?string $paymentMethod): self
+    {
+        $this->paymentMethod = $paymentMethod;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Status flag.
-	 */
-	public function getStatusFlag(): ?string
-	{
-		return $this->statusFlag;
-	}
+    /**
+     * Status flag.
+     */
+    public function getStatusFlag(): ?string
+    {
+        return $this->statusFlag;
+    }
 
-	/**
-	 * Status flag.
-	 */
-	public function setStatusFlag(?string $statusFlag): self
-	{
-		$this->statusFlag = $statusFlag;
+    /**
+     * Status flag.
+     */
+    public function setStatusFlag(?string $statusFlag): self
+    {
+        $this->statusFlag = $statusFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 }

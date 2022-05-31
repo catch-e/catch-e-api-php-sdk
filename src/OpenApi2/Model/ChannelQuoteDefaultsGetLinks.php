@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,36 +19,36 @@ namespace CatchE\OpenApi2\Model;
 
 class ChannelQuoteDefaultsGetLinks
 {
-	/**
-	 * @var ChannelQuoteDefaultsGetLinksSelf|null
-	 */
-	protected $self;
-	/**
-	 * @var ChannelQuoteDefaultsGetLinksChannel|null
-	 */
-	protected $channel;
+    /**
+     * @var null|ChannelQuoteDefaultsGetLinksSelf
+     */
+    protected $self;
+    /**
+     * @var null|ChannelQuoteDefaultsGetLinksChannel
+     */
+    protected $channel;
 
-	public function getSelf(): ?ChannelQuoteDefaultsGetLinksSelf
-	{
-		return $this->self;
-	}
+    public function getSelf(): ?ChannelQuoteDefaultsGetLinksSelf
+    {
+        return $this->self;
+    }
 
-	public function setSelf(?ChannelQuoteDefaultsGetLinksSelf $self): self
-	{
-		$this->self = $self;
+    public function setSelf(?ChannelQuoteDefaultsGetLinksSelf $self): self
+    {
+        $this->self = $self;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getChannel(): ?ChannelQuoteDefaultsGetLinksChannel
-	{
-		return $this->channel;
-	}
+    public function getChannel(): ?ChannelQuoteDefaultsGetLinksChannel
+    {
+        return $this->channel;
+    }
 
-	public function setChannel(?ChannelQuoteDefaultsGetLinksChannel $channel): self
-	{
-		$this->channel = $channel;
+    public function setChannel(?ChannelQuoteDefaultsGetLinksChannel $channel): self
+    {
+        $this->channel = $channel;
 
-		return $this;
-	}
+        return $this;
+    }
 }

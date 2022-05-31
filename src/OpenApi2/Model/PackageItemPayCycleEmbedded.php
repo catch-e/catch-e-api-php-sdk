@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,36 +19,36 @@ namespace CatchE\OpenApi2\Model;
 
 class PackageItemPayCycleEmbedded
 {
-	/**
-	 * @var PackageItem|null
-	 */
-	protected $packageItem;
-	/**
-	 * @var PayCycle|null
-	 */
-	protected $payCycle;
+    /**
+     * @var null|PackageItem
+     */
+    protected $packageItem;
+    /**
+     * @var null|PayCycle
+     */
+    protected $payCycle;
 
-	public function getPackageItem(): ?PackageItem
-	{
-		return $this->packageItem;
-	}
+    public function getPackageItem(): ?PackageItem
+    {
+        return $this->packageItem;
+    }
 
-	public function setPackageItem(?PackageItem $packageItem): self
-	{
-		$this->packageItem = $packageItem;
+    public function setPackageItem(?PackageItem $packageItem): self
+    {
+        $this->packageItem = $packageItem;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getPayCycle(): ?PayCycle
-	{
-		return $this->payCycle;
-	}
+    public function getPayCycle(): ?PayCycle
+    {
+        return $this->payCycle;
+    }
 
-	public function setPayCycle(?PayCycle $payCycle): self
-	{
-		$this->payCycle = $payCycle;
+    public function setPayCycle(?PayCycle $payCycle): self
+    {
+        $this->payCycle = $payCycle;
 
-		return $this;
-	}
+        return $this;
+    }
 }

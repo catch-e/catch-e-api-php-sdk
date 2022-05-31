@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,400 +19,400 @@ namespace CatchE\OpenApi2\Model;
 
 class ContactCreate
 {
-	/**
-	 * Optional Contact Job Title Id.
-	 *
-	 * @var string|null
-	 */
-	protected $contactJobTitleId;
-	/**
-	 * Salutation.
-	 *
-	 * @var string|null
-	 */
-	protected $salutation;
-	/**
-	 * Given name.
-	 *
-	 * @var string|null
-	 */
-	protected $givenName = '';
-	/**
-	 * Surname.
-	 *
-	 * @var string|null
-	 */
-	protected $surname = '';
-	/**
-	 * Phone number must follow e164 format.
-	 *
-	 * @var string|null
-	 */
-	protected $phone = '';
-	/**
-	 * Mobile number must follow e164 format.
-	 *
-	 * @var string|null
-	 */
-	protected $mobile = '';
-	/**
-	 * Email address.
-	 *
-	 * @var string|null
-	 */
-	protected $email = '';
-	/**
-	 * Address Line 1.
-	 *
-	 * @var string|null
-	 */
-	protected $address1 = '';
-	/**
-	 * Address Line 2.
-	 *
-	 * @var string|null
-	 */
-	protected $address2 = '';
-	/**
-	 * @var string|null
-	 */
-	protected $area = '';
-	/**
-	 * State id.
-	 *
-	 * @var string|null
-	 */
-	protected $stateId;
-	/**
-	 * Post code.
-	 *
-	 * @var string|null
-	 */
-	protected $postcode = '';
-	/**
-	 * Country ID.
-	 *
-	 * @var string|null
-	 */
-	protected $countryId;
-	/**
-	 * Note.
-	 *
-	 * @var string|null
-	 */
-	protected $note;
-	/**
-	 * Status.
-	 *
-	 * @var string|null
-	 */
-	protected $statusFlag = 'active';
-	/**
-	 * @var ContactAllocation[]|null
-	 */
-	protected $allocations;
-	/**
-	 * @var string[]|null
-	 */
-	protected $contactTypeAllocations;
+    /**
+     * Optional Contact Job Title Id.
+     *
+     * @var null|string
+     */
+    protected $contactJobTitleId;
+    /**
+     * Salutation.
+     *
+     * @var null|string
+     */
+    protected $salutation;
+    /**
+     * Given name.
+     *
+     * @var null|string
+     */
+    protected $givenName = '';
+    /**
+     * Surname.
+     *
+     * @var null|string
+     */
+    protected $surname = '';
+    /**
+     * Phone number must follow e164 format.
+     *
+     * @var null|string
+     */
+    protected $phone = '';
+    /**
+     * Mobile number must follow e164 format.
+     *
+     * @var null|string
+     */
+    protected $mobile = '';
+    /**
+     * Email address.
+     *
+     * @var null|string
+     */
+    protected $email = '';
+    /**
+     * Address Line 1.
+     *
+     * @var null|string
+     */
+    protected $address1 = '';
+    /**
+     * Address Line 2.
+     *
+     * @var null|string
+     */
+    protected $address2 = '';
+    /**
+     * @var null|string
+     */
+    protected $area = '';
+    /**
+     * State id.
+     *
+     * @var null|string
+     */
+    protected $stateId;
+    /**
+     * Post code.
+     *
+     * @var null|string
+     */
+    protected $postcode = '';
+    /**
+     * Country ID.
+     *
+     * @var null|string
+     */
+    protected $countryId;
+    /**
+     * Note.
+     *
+     * @var null|string
+     */
+    protected $note;
+    /**
+     * Status.
+     *
+     * @var null|string
+     */
+    protected $statusFlag = 'active';
+    /**
+     * @var null|ContactAllocation[]
+     */
+    protected $allocations;
+    /**
+     * @var null|string[]
+     */
+    protected $contactTypeAllocations;
 
-	/**
-	 * Optional Contact Job Title Id.
-	 */
-	public function getContactJobTitleId(): ?string
-	{
-		return $this->contactJobTitleId;
-	}
+    /**
+     * Optional Contact Job Title Id.
+     */
+    public function getContactJobTitleId(): ?string
+    {
+        return $this->contactJobTitleId;
+    }
 
-	/**
-	 * Optional Contact Job Title Id.
-	 */
-	public function setContactJobTitleId(?string $contactJobTitleId): self
-	{
-		$this->contactJobTitleId = $contactJobTitleId;
+    /**
+     * Optional Contact Job Title Id.
+     */
+    public function setContactJobTitleId(?string $contactJobTitleId): self
+    {
+        $this->contactJobTitleId = $contactJobTitleId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Salutation.
-	 */
-	public function getSalutation(): ?string
-	{
-		return $this->salutation;
-	}
+    /**
+     * Salutation.
+     */
+    public function getSalutation(): ?string
+    {
+        return $this->salutation;
+    }
 
-	/**
-	 * Salutation.
-	 */
-	public function setSalutation(?string $salutation): self
-	{
-		$this->salutation = $salutation;
+    /**
+     * Salutation.
+     */
+    public function setSalutation(?string $salutation): self
+    {
+        $this->salutation = $salutation;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Given name.
-	 */
-	public function getGivenName(): ?string
-	{
-		return $this->givenName;
-	}
+    /**
+     * Given name.
+     */
+    public function getGivenName(): ?string
+    {
+        return $this->givenName;
+    }
 
-	/**
-	 * Given name.
-	 */
-	public function setGivenName(?string $givenName): self
-	{
-		$this->givenName = $givenName;
+    /**
+     * Given name.
+     */
+    public function setGivenName(?string $givenName): self
+    {
+        $this->givenName = $givenName;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Surname.
-	 */
-	public function getSurname(): ?string
-	{
-		return $this->surname;
-	}
+    /**
+     * Surname.
+     */
+    public function getSurname(): ?string
+    {
+        return $this->surname;
+    }
 
-	/**
-	 * Surname.
-	 */
-	public function setSurname(?string $surname): self
-	{
-		$this->surname = $surname;
+    /**
+     * Surname.
+     */
+    public function setSurname(?string $surname): self
+    {
+        $this->surname = $surname;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Phone number must follow e164 format.
-	 */
-	public function getPhone(): ?string
-	{
-		return $this->phone;
-	}
+    /**
+     * Phone number must follow e164 format.
+     */
+    public function getPhone(): ?string
+    {
+        return $this->phone;
+    }
 
-	/**
-	 * Phone number must follow e164 format.
-	 */
-	public function setPhone(?string $phone): self
-	{
-		$this->phone = $phone;
+    /**
+     * Phone number must follow e164 format.
+     */
+    public function setPhone(?string $phone): self
+    {
+        $this->phone = $phone;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Mobile number must follow e164 format.
-	 */
-	public function getMobile(): ?string
-	{
-		return $this->mobile;
-	}
+    /**
+     * Mobile number must follow e164 format.
+     */
+    public function getMobile(): ?string
+    {
+        return $this->mobile;
+    }
 
-	/**
-	 * Mobile number must follow e164 format.
-	 */
-	public function setMobile(?string $mobile): self
-	{
-		$this->mobile = $mobile;
+    /**
+     * Mobile number must follow e164 format.
+     */
+    public function setMobile(?string $mobile): self
+    {
+        $this->mobile = $mobile;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Email address.
-	 */
-	public function getEmail(): ?string
-	{
-		return $this->email;
-	}
+    /**
+     * Email address.
+     */
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
 
-	/**
-	 * Email address.
-	 */
-	public function setEmail(?string $email): self
-	{
-		$this->email = $email;
+    /**
+     * Email address.
+     */
+    public function setEmail(?string $email): self
+    {
+        $this->email = $email;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Address Line 1.
-	 */
-	public function getAddress1(): ?string
-	{
-		return $this->address1;
-	}
+    /**
+     * Address Line 1.
+     */
+    public function getAddress1(): ?string
+    {
+        return $this->address1;
+    }
 
-	/**
-	 * Address Line 1.
-	 */
-	public function setAddress1(?string $address1): self
-	{
-		$this->address1 = $address1;
+    /**
+     * Address Line 1.
+     */
+    public function setAddress1(?string $address1): self
+    {
+        $this->address1 = $address1;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Address Line 2.
-	 */
-	public function getAddress2(): ?string
-	{
-		return $this->address2;
-	}
+    /**
+     * Address Line 2.
+     */
+    public function getAddress2(): ?string
+    {
+        return $this->address2;
+    }
 
-	/**
-	 * Address Line 2.
-	 */
-	public function setAddress2(?string $address2): self
-	{
-		$this->address2 = $address2;
+    /**
+     * Address Line 2.
+     */
+    public function setAddress2(?string $address2): self
+    {
+        $this->address2 = $address2;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getArea(): ?string
-	{
-		return $this->area;
-	}
+    public function getArea(): ?string
+    {
+        return $this->area;
+    }
 
-	public function setArea(?string $area): self
-	{
-		$this->area = $area;
+    public function setArea(?string $area): self
+    {
+        $this->area = $area;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * State id.
-	 */
-	public function getStateId(): ?string
-	{
-		return $this->stateId;
-	}
+    /**
+     * State id.
+     */
+    public function getStateId(): ?string
+    {
+        return $this->stateId;
+    }
 
-	/**
-	 * State id.
-	 */
-	public function setStateId(?string $stateId): self
-	{
-		$this->stateId = $stateId;
+    /**
+     * State id.
+     */
+    public function setStateId(?string $stateId): self
+    {
+        $this->stateId = $stateId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Post code.
-	 */
-	public function getPostcode(): ?string
-	{
-		return $this->postcode;
-	}
+    /**
+     * Post code.
+     */
+    public function getPostcode(): ?string
+    {
+        return $this->postcode;
+    }
 
-	/**
-	 * Post code.
-	 */
-	public function setPostcode(?string $postcode): self
-	{
-		$this->postcode = $postcode;
+    /**
+     * Post code.
+     */
+    public function setPostcode(?string $postcode): self
+    {
+        $this->postcode = $postcode;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Country ID.
-	 */
-	public function getCountryId(): ?string
-	{
-		return $this->countryId;
-	}
+    /**
+     * Country ID.
+     */
+    public function getCountryId(): ?string
+    {
+        return $this->countryId;
+    }
 
-	/**
-	 * Country ID.
-	 */
-	public function setCountryId(?string $countryId): self
-	{
-		$this->countryId = $countryId;
+    /**
+     * Country ID.
+     */
+    public function setCountryId(?string $countryId): self
+    {
+        $this->countryId = $countryId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Note.
-	 */
-	public function getNote(): ?string
-	{
-		return $this->note;
-	}
+    /**
+     * Note.
+     */
+    public function getNote(): ?string
+    {
+        return $this->note;
+    }
 
-	/**
-	 * Note.
-	 */
-	public function setNote(?string $note): self
-	{
-		$this->note = $note;
+    /**
+     * Note.
+     */
+    public function setNote(?string $note): self
+    {
+        $this->note = $note;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Status.
-	 */
-	public function getStatusFlag(): ?string
-	{
-		return $this->statusFlag;
-	}
+    /**
+     * Status.
+     */
+    public function getStatusFlag(): ?string
+    {
+        return $this->statusFlag;
+    }
 
-	/**
-	 * Status.
-	 */
-	public function setStatusFlag(?string $statusFlag): self
-	{
-		$this->statusFlag = $statusFlag;
+    /**
+     * Status.
+     */
+    public function setStatusFlag(?string $statusFlag): self
+    {
+        $this->statusFlag = $statusFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * @return ContactAllocation[]|null
-	 */
-	public function getAllocations(): ?array
-	{
-		return $this->allocations;
-	}
+    /**
+     * @return null|ContactAllocation[]
+     */
+    public function getAllocations(): ?array
+    {
+        return $this->allocations;
+    }
 
-	/**
-	 * @param ContactAllocation[]|null $allocations
-	 */
-	public function setAllocations(?array $allocations): self
-	{
-		$this->allocations = $allocations;
+    /**
+     * @param null|ContactAllocation[] $allocations
+     */
+    public function setAllocations(?array $allocations): self
+    {
+        $this->allocations = $allocations;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * @return string[]|null
-	 */
-	public function getContactTypeAllocations(): ?array
-	{
-		return $this->contactTypeAllocations;
-	}
+    /**
+     * @return null|string[]
+     */
+    public function getContactTypeAllocations(): ?array
+    {
+        return $this->contactTypeAllocations;
+    }
 
-	/**
-	 * @param string[]|null $contactTypeAllocations
-	 */
-	public function setContactTypeAllocations(?array $contactTypeAllocations): self
-	{
-		$this->contactTypeAllocations = $contactTypeAllocations;
+    /**
+     * @param null|string[] $contactTypeAllocations
+     */
+    public function setContactTypeAllocations(?array $contactTypeAllocations): self
+    {
+        $this->contactTypeAllocations = $contactTypeAllocations;
 
-		return $this;
-	}
+        return $this;
+    }
 }

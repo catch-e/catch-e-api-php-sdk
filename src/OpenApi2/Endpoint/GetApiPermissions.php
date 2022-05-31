@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,97 +17,96 @@
 
 namespace CatchE\OpenApi2\Endpoint;
 
-class GetApiPermissions extends \Jane\OpenApiRuntime\Client\BaseEndpoint implements \Jane\OpenApiRuntime\Client\Endpoint
+class GetApiPermissions extends \CatchE\OpenApi2\Runtime\Client\BaseEndpoint implements \CatchE\OpenApi2\Runtime\Client\Endpoint
 {
-	use \Jane\OpenApiRuntime\Client\EndpointTrait;
+    use \CatchE\OpenApi2\Runtime\Client\EndpointTrait;
 
-	/**
-	 * List all defined API permissions.
+    /**
+     * List all defined API permissions.
+     *
+     * This method requires the **ApiPermissions:Get** permission to be associated with your role.
+     *
+     * @param array $queryParameters {
+     *
+     *     @var string $permission Optional Permission
+     *
+     * This field supports the wildcard % operator.
+     *
+     * }
+     */
+    public function __construct(array $queryParameters = [])
+    {
+        $this->queryParameters = $queryParameters;
+    }
 
-	This method requires the **ApiPermissions:Get** permission to be associated with your role.
+    public function getMethod(): string
+    {
+        return 'GET';
+    }
 
-	 *
-	 * @param array $queryParameters {
-	 *
-	 *     @var string $permission Optional Permission
+    public function getUri(): string
+    {
+        return '/gb/api/permissions';
+    }
 
-	This field supports the wildcard % operator.
+    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    {
+        return [[], null];
+    }
 
-	 * }
-	 */
-	public function __construct(array $queryParameters = [])
-	{
-		$this->queryParameters = $queryParameters;
-	}
+    public function getExtraHeaders(): array
+    {
+        return ['Accept' => ['application/json']];
+    }
 
-	public function getMethod(): string
-	{
-		return 'GET';
-	}
+    public function getAuthenticationScopes(): array
+    {
+        return ['Bearer Token'];
+    }
 
-	public function getUri(): string
-	{
-		return '/gb/api/permissions';
-	}
+    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    {
+        $optionsResolver = parent::getQueryOptionsResolver();
+        $optionsResolver->setDefined(['permission']);
+        $optionsResolver->setRequired([]);
+        $optionsResolver->setDefaults([]);
+        $optionsResolver->setAllowedTypes('permission', ['string']);
 
-	public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
-	{
-		return [[], null];
-	}
+        return $optionsResolver;
+    }
 
-	public function getExtraHeaders(): array
-	{
-		return ['Accept' => ['application/json']];
-	}
+    /**
+     * {@inheritdoc}
+     *
+     * @throws \CatchE\OpenApi2\Exception\GetApiPermissionsUnauthorizedException
+     * @throws \CatchE\OpenApi2\Exception\GetApiPermissionsForbiddenException
+     * @throws \CatchE\OpenApi2\Exception\GetApiPermissionsNotFoundException
+     * @throws \CatchE\OpenApi2\Exception\GetApiPermissionsNotAcceptableException
+     * @throws \CatchE\OpenApi2\Exception\GetApiPermissionsInternalServerErrorException
+     *
+     * @return null|\CatchE\OpenApi2\Model\Error
+     */
+    protected function transformResponseBody(string $body, int $status, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    {
+        if (200 === $status) {
+            return json_decode($body);
+        }
+        if (401 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetApiPermissionsUnauthorizedException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Unauthorized', 'json'));
+        }
+        if (403 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetApiPermissionsForbiddenException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Forbidden', 'json'));
+        }
+        if (404 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetApiPermissionsNotFoundException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotFound', 'json'));
+        }
+        if (406 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetApiPermissionsNotAcceptableException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotAcceptable', 'json'));
+        }
+        if (500 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetApiPermissionsInternalServerErrorException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\InternalError', 'json'));
+        }
 
-	protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
-	{
-		$optionsResolver = parent::getQueryOptionsResolver();
-		$optionsResolver->setDefined(['permission']);
-		$optionsResolver->setRequired([]);
-		$optionsResolver->setDefaults([]);
-		$optionsResolver->setAllowedTypes('permission', ['string']);
-
-		return $optionsResolver;
-	}
-
-	/**
-	 * {@inheritdoc}
-	 *
-	 * @throws \CatchE\OpenApi2\Exception\GetApiPermissionsUnauthorizedException
-	 * @throws \CatchE\OpenApi2\Exception\GetApiPermissionsForbiddenException
-	 * @throws \CatchE\OpenApi2\Exception\GetApiPermissionsNotFoundException
-	 * @throws \CatchE\OpenApi2\Exception\GetApiPermissionsNotAcceptableException
-	 * @throws \CatchE\OpenApi2\Exception\GetApiPermissionsInternalServerErrorException
-	 *
-	 * @return \CatchE\OpenApi2\Model\Error|null
-	 */
-	protected function transformResponseBody(string $body, int $status, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType)
-	{
-		if (200 === $status) {
-			return json_decode($body);
-		}
-		if (401 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetApiPermissionsUnauthorizedException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Unauthorized', 'json'));
-		}
-		if (403 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetApiPermissionsForbiddenException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Forbidden', 'json'));
-		}
-		if (404 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetApiPermissionsNotFoundException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotFound', 'json'));
-		}
-		if (406 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetApiPermissionsNotAcceptableException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotAcceptable', 'json'));
-		}
-		if (500 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetApiPermissionsInternalServerErrorException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\InternalError', 'json'));
-		}
-
-		return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Error', 'json');
-	}
-
-	public function getAuthenticationScopes(): array
-	{
-		return ['Bearer Token'];
-	}
+        return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Error', 'json');
+    }
 }

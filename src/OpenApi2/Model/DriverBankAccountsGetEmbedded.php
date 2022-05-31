@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,26 +19,26 @@ namespace CatchE\OpenApi2\Model;
 
 class DriverBankAccountsGetEmbedded
 {
-	/**
-	 * @var DriverBankAccount[]|null
-	 */
-	protected $fmDriverBankAccounts;
+    /**
+     * @var null|DriverBankAccount[]
+     */
+    protected $fmDriverBankAccounts;
 
-	/**
-	 * @return DriverBankAccount[]|null
-	 */
-	public function getFmDriverBankAccounts(): ?array
-	{
-		return $this->fmDriverBankAccounts;
-	}
+    /**
+     * @return null|DriverBankAccount[]
+     */
+    public function getFmDriverBankAccounts(): ?array
+    {
+        return $this->fmDriverBankAccounts;
+    }
 
-	/**
-	 * @param DriverBankAccount[]|null $fmDriverBankAccounts
-	 */
-	public function setFmDriverBankAccounts(?array $fmDriverBankAccounts): self
-	{
-		$this->fmDriverBankAccounts = $fmDriverBankAccounts;
+    /**
+     * @param null|DriverBankAccount[] $fmDriverBankAccounts
+     */
+    public function setFmDriverBankAccounts(?array $fmDriverBankAccounts): self
+    {
+        $this->fmDriverBankAccounts = $fmDriverBankAccounts;
 
-		return $this;
-	}
+        return $this;
+    }
 }

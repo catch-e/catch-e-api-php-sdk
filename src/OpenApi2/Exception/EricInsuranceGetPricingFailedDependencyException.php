@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,18 +17,10 @@
 
 namespace CatchE\OpenApi2\Exception;
 
-class EricInsuranceGetPricingFailedDependencyException extends \RuntimeException implements ClientException
+class EricInsuranceGetPricingFailedDependencyException extends FailedDependencyException
 {
-	private $failedDependency;
-
-	public function __construct(\CatchE\OpenApi2\Model\FailedDependency $failedDependency)
-	{
-		parent::__construct('Failed Dependency - Lock Expected', 424);
-		$this->failedDependency = $failedDependency;
-	}
-
-	public function getFailedDependency()
-	{
-		return $this->failedDependency;
-	}
+    public function __construct(\CatchE\OpenApi2\Model\FailedDependency $failedDependency)
+    {
+        parent::__construct('Failed Dependency - Lock Expected', $failedDependency);
+    }
 }

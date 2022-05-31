@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,20 +19,20 @@ namespace CatchE\OpenApi2\Model;
 
 class ContractBillingSuccess
 {
-	/**
-	 * @var string|null
-	 */
-	protected $result;
+    /**
+     * @var null|string
+     */
+    protected $result;
 
-	public function getResult(): ?string
-	{
-		return $this->result;
-	}
+    public function getResult(): ?string
+    {
+        return $this->result;
+    }
 
-	public function setResult(?string $result): self
-	{
-		$this->result = $result;
+    public function setResult(?string $result): self
+    {
+        $this->result = $result;
 
-		return $this;
-	}
+        return $this;
+    }
 }

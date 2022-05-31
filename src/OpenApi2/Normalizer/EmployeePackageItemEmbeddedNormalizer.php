@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,8 +17,8 @@
 
 namespace CatchE\OpenApi2\Normalizer;
 
-use Jane\JsonSchemaRuntime\Normalizer\CheckArray;
-use Jane\JsonSchemaRuntime\Reference;
+use CatchE\OpenApi2\Runtime\Normalizer\CheckArray;
+use Jane\Component\JsonSchemaRuntime\Reference;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -28,77 +28,102 @@ use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
 class EmployeePackageItemEmbeddedNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
-	use DenormalizerAwareTrait;
-	use NormalizerAwareTrait;
-	use CheckArray;
+    use DenormalizerAwareTrait;
 
-	public function supportsDenormalization($data, $type, $format = null)
-	{
-		return 'CatchE\\OpenApi2\\Model\\EmployeePackageItemEmbedded' === $type;
-	}
+    use NormalizerAwareTrait;
 
-	public function supportsNormalization($data, $format = null)
-	{
-		return is_object($data) && 'CatchE\\OpenApi2\\Model\\EmployeePackageItemEmbedded' === get_class($data);
-	}
+    use CheckArray;
 
-	public function denormalize($data, $class, $format = null, array $context = [])
-	{
-		if (isset($data['$ref'])) {
-			return new Reference($data['$ref'], $context['document-origin']);
-		}
-		if (isset($data['$recursiveRef'])) {
-			return new Reference($data['$recursiveRef'], $context['document-origin']);
-		}
-		$object = new \CatchE\OpenApi2\Model\EmployeePackageItemEmbedded();
-		if (\array_key_exists('disbursement_cycle', $data) && null !== $data['disbursement_cycle']) {
-			$object->setDisbursementCycle($this->denormalizer->denormalize($data['disbursement_cycle'], 'CatchE\\OpenApi2\\Model\\SalaryPackagingDisbursementCycle', 'json', $context));
-		} elseif (\array_key_exists('disbursement_cycle', $data) && null === $data['disbursement_cycle']) {
-			$object->setDisbursementCycle(null);
-		}
-		if (\array_key_exists('driver', $data) && null !== $data['driver']) {
-			$object->setDriver($this->denormalizer->denormalize($data['driver'], 'CatchE\\OpenApi2\\Model\\Driver', 'json', $context));
-		} elseif (\array_key_exists('driver', $data) && null === $data['driver']) {
-			$object->setDriver(null);
-		}
-		if (\array_key_exists('driver_bank_account', $data) && null !== $data['driver_bank_account']) {
-			$object->setDriverBankAccount($this->denormalizer->denormalize($data['driver_bank_account'], 'CatchE\\OpenApi2\\Model\\DriverBankAccount', 'json', $context));
-		} elseif (\array_key_exists('driver_bank_account', $data) && null === $data['driver_bank_account']) {
-			$object->setDriverBankAccount(null);
-		}
-		if (\array_key_exists('package_item', $data) && null !== $data['package_item']) {
-			$object->setPackageItem($this->denormalizer->denormalize($data['package_item'], 'CatchE\\OpenApi2\\Model\\PackageItem', 'json', $context));
-		} elseif (\array_key_exists('package_item', $data) && null === $data['package_item']) {
-			$object->setPackageItem(null);
-		}
-		if (\array_key_exists('supplier', $data) && null !== $data['supplier']) {
-			$object->setSupplier($this->denormalizer->denormalize($data['supplier'], 'CatchE\\OpenApi2\\Model\\Supplier', 'json', $context));
-		} elseif (\array_key_exists('supplier', $data) && null === $data['supplier']) {
-			$object->setSupplier(null);
-		}
+    /**
+     * @param mixed      $data
+     * @param mixed      $type
+     * @param null|mixed $format
+     *
+     * @return bool
+     */
+    public function supportsDenormalization($data, $type, $format = null)
+    {
+        return 'CatchE\\OpenApi2\\Model\\EmployeePackageItemEmbedded' === $type;
+    }
 
-		return $object;
-	}
+    public function supportsNormalization($data, $format = null)
+    {
+        return is_object($data) && 'CatchE\\OpenApi2\\Model\\EmployeePackageItemEmbedded' === get_class($data);
+    }
 
-	public function normalize($object, $format = null, array $context = [])
-	{
-		$data = [];
-		if (null !== $object->getDisbursementCycle()) {
-			$data['disbursement_cycle'] = $this->normalizer->normalize($object->getDisbursementCycle(), 'json', $context);
-		}
-		if (null !== $object->getDriver()) {
-			$data['driver'] = $this->normalizer->normalize($object->getDriver(), 'json', $context);
-		}
-		if (null !== $object->getDriverBankAccount()) {
-			$data['driver_bank_account'] = $this->normalizer->normalize($object->getDriverBankAccount(), 'json', $context);
-		}
-		if (null !== $object->getPackageItem()) {
-			$data['package_item'] = $this->normalizer->normalize($object->getPackageItem(), 'json', $context);
-		}
-		if (null !== $object->getSupplier()) {
-			$data['supplier'] = $this->normalizer->normalize($object->getSupplier(), 'json', $context);
-		}
+    /**
+     * @param mixed      $data
+     * @param mixed      $class
+     * @param null|mixed $format
+     *
+     * @return mixed
+     */
+    public function denormalize($data, $class, $format = null, array $context = [])
+    {
+        if (isset($data['$ref'])) {
+            return new Reference($data['$ref'], $context['document-origin']);
+        }
+        if (isset($data['$recursiveRef'])) {
+            return new Reference($data['$recursiveRef'], $context['document-origin']);
+        }
+        $object = new \CatchE\OpenApi2\Model\EmployeePackageItemEmbedded();
+        if (null === $data || false === \is_array($data)) {
+            return $object;
+        }
+        if (\array_key_exists('disbursement_cycle', $data) && null !== $data['disbursement_cycle']) {
+            $object->setDisbursementCycle($this->denormalizer->denormalize($data['disbursement_cycle'], 'CatchE\\OpenApi2\\Model\\SalaryPackagingDisbursementCycle', 'json', $context));
+        } elseif (\array_key_exists('disbursement_cycle', $data) && null === $data['disbursement_cycle']) {
+            $object->setDisbursementCycle(null);
+        }
+        if (\array_key_exists('driver', $data) && null !== $data['driver']) {
+            $object->setDriver($this->denormalizer->denormalize($data['driver'], 'CatchE\\OpenApi2\\Model\\Driver', 'json', $context));
+        } elseif (\array_key_exists('driver', $data) && null === $data['driver']) {
+            $object->setDriver(null);
+        }
+        if (\array_key_exists('driver_bank_account', $data) && null !== $data['driver_bank_account']) {
+            $object->setDriverBankAccount($this->denormalizer->denormalize($data['driver_bank_account'], 'CatchE\\OpenApi2\\Model\\DriverBankAccount', 'json', $context));
+        } elseif (\array_key_exists('driver_bank_account', $data) && null === $data['driver_bank_account']) {
+            $object->setDriverBankAccount(null);
+        }
+        if (\array_key_exists('package_item', $data) && null !== $data['package_item']) {
+            $object->setPackageItem($this->denormalizer->denormalize($data['package_item'], 'CatchE\\OpenApi2\\Model\\PackageItem', 'json', $context));
+        } elseif (\array_key_exists('package_item', $data) && null === $data['package_item']) {
+            $object->setPackageItem(null);
+        }
+        if (\array_key_exists('supplier', $data) && null !== $data['supplier']) {
+            $object->setSupplier($this->denormalizer->denormalize($data['supplier'], 'CatchE\\OpenApi2\\Model\\Supplier', 'json', $context));
+        } elseif (\array_key_exists('supplier', $data) && null === $data['supplier']) {
+            $object->setSupplier(null);
+        }
 
-		return $data;
-	}
+        return $object;
+    }
+
+    /**
+     * @param mixed      $object
+     * @param null|mixed $format
+     *
+     * @return null|array|\ArrayObject|bool|float|int|string
+     */
+    public function normalize($object, $format = null, array $context = [])
+    {
+        $data = [];
+        if (null !== $object->getDisbursementCycle()) {
+            $data['disbursement_cycle'] = $this->normalizer->normalize($object->getDisbursementCycle(), 'json', $context);
+        }
+        if (null !== $object->getDriver()) {
+            $data['driver'] = $this->normalizer->normalize($object->getDriver(), 'json', $context);
+        }
+        if (null !== $object->getDriverBankAccount()) {
+            $data['driver_bank_account'] = $this->normalizer->normalize($object->getDriverBankAccount(), 'json', $context);
+        }
+        if (null !== $object->getPackageItem()) {
+            $data['package_item'] = $this->normalizer->normalize($object->getPackageItem(), 'json', $context);
+        }
+        if (null !== $object->getSupplier()) {
+            $data['supplier'] = $this->normalizer->normalize($object->getSupplier(), 'json', $context);
+        }
+
+        return $data;
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,148 +19,148 @@ namespace CatchE\OpenApi2\Model;
 
 class SignonTokenCreate
 {
-	/**
-	 * User login.
-	 *
-	 * @var string|null
-	 */
-	protected $userLogin;
-	/**
-	 * (Optional) Token timeout in seconds. If specified, the issued signon token will expire after the specified number of seconds.
-	 *
-	 * @var int|null
-	 */
-	protected $tokenTimeout;
-	/**
-	 * (Optional) If set to 'yes', the specified user login must be associated with a role that has its single_signon_flag set to 'yes'.
-	 *
-	 * @var string|null
-	 */
-	protected $singleSignonRoleFlag = 'no';
-	/**
-	 * (Optional) Screen width in pixels.
-	 *
-	 * @var int|null
-	 */
-	protected $screenWidth;
-	/**
-	 * (Optional) Screen height in pixels.
-	 *
-	 * @var int|null
-	 */
-	protected $screenHeight;
-	/**
-	 * (Optional) If specified, a gb_users record for defined role will be generated. The entity association is inferred from the user_login value.
-	 *
-	 * @var string|null
-	 */
-	protected $createGbUserWithThisRole;
+    /**
+     * User login.
+     *
+     * @var null|string
+     */
+    protected $userLogin;
+    /**
+     * (Optional) Token timeout in seconds. If specified, the issued signon token will expire after the specified number of seconds.
+     *
+     * @var null|int
+     */
+    protected $tokenTimeout;
+    /**
+     * (Optional) If set to 'yes', the specified user login must be associated with a role that has its single_signon_flag set to 'yes'.
+     *
+     * @var null|string
+     */
+    protected $singleSignonRoleFlag = 'no';
+    /**
+     * (Optional) Screen width in pixels.
+     *
+     * @var null|int
+     */
+    protected $screenWidth;
+    /**
+     * (Optional) Screen height in pixels.
+     *
+     * @var null|int
+     */
+    protected $screenHeight;
+    /**
+     * (Optional) If specified, a gb_users record for defined role will be generated. The entity association is inferred from the user_login value.
+     *
+     * @var null|string
+     */
+    protected $createGbUserWithThisRole;
 
-	/**
-	 * User login.
-	 */
-	public function getUserLogin(): ?string
-	{
-		return $this->userLogin;
-	}
+    /**
+     * User login.
+     */
+    public function getUserLogin(): ?string
+    {
+        return $this->userLogin;
+    }
 
-	/**
-	 * User login.
-	 */
-	public function setUserLogin(?string $userLogin): self
-	{
-		$this->userLogin = $userLogin;
+    /**
+     * User login.
+     */
+    public function setUserLogin(?string $userLogin): self
+    {
+        $this->userLogin = $userLogin;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * (Optional) Token timeout in seconds. If specified, the issued signon token will expire after the specified number of seconds.
-	 */
-	public function getTokenTimeout(): ?int
-	{
-		return $this->tokenTimeout;
-	}
+    /**
+     * (Optional) Token timeout in seconds. If specified, the issued signon token will expire after the specified number of seconds.
+     */
+    public function getTokenTimeout(): ?int
+    {
+        return $this->tokenTimeout;
+    }
 
-	/**
-	 * (Optional) Token timeout in seconds. If specified, the issued signon token will expire after the specified number of seconds.
-	 */
-	public function setTokenTimeout(?int $tokenTimeout): self
-	{
-		$this->tokenTimeout = $tokenTimeout;
+    /**
+     * (Optional) Token timeout in seconds. If specified, the issued signon token will expire after the specified number of seconds.
+     */
+    public function setTokenTimeout(?int $tokenTimeout): self
+    {
+        $this->tokenTimeout = $tokenTimeout;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * (Optional) If set to 'yes', the specified user login must be associated with a role that has its single_signon_flag set to 'yes'.
-	 */
-	public function getSingleSignonRoleFlag(): ?string
-	{
-		return $this->singleSignonRoleFlag;
-	}
+    /**
+     * (Optional) If set to 'yes', the specified user login must be associated with a role that has its single_signon_flag set to 'yes'.
+     */
+    public function getSingleSignonRoleFlag(): ?string
+    {
+        return $this->singleSignonRoleFlag;
+    }
 
-	/**
-	 * (Optional) If set to 'yes', the specified user login must be associated with a role that has its single_signon_flag set to 'yes'.
-	 */
-	public function setSingleSignonRoleFlag(?string $singleSignonRoleFlag): self
-	{
-		$this->singleSignonRoleFlag = $singleSignonRoleFlag;
+    /**
+     * (Optional) If set to 'yes', the specified user login must be associated with a role that has its single_signon_flag set to 'yes'.
+     */
+    public function setSingleSignonRoleFlag(?string $singleSignonRoleFlag): self
+    {
+        $this->singleSignonRoleFlag = $singleSignonRoleFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * (Optional) Screen width in pixels.
-	 */
-	public function getScreenWidth(): ?int
-	{
-		return $this->screenWidth;
-	}
+    /**
+     * (Optional) Screen width in pixels.
+     */
+    public function getScreenWidth(): ?int
+    {
+        return $this->screenWidth;
+    }
 
-	/**
-	 * (Optional) Screen width in pixels.
-	 */
-	public function setScreenWidth(?int $screenWidth): self
-	{
-		$this->screenWidth = $screenWidth;
+    /**
+     * (Optional) Screen width in pixels.
+     */
+    public function setScreenWidth(?int $screenWidth): self
+    {
+        $this->screenWidth = $screenWidth;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * (Optional) Screen height in pixels.
-	 */
-	public function getScreenHeight(): ?int
-	{
-		return $this->screenHeight;
-	}
+    /**
+     * (Optional) Screen height in pixels.
+     */
+    public function getScreenHeight(): ?int
+    {
+        return $this->screenHeight;
+    }
 
-	/**
-	 * (Optional) Screen height in pixels.
-	 */
-	public function setScreenHeight(?int $screenHeight): self
-	{
-		$this->screenHeight = $screenHeight;
+    /**
+     * (Optional) Screen height in pixels.
+     */
+    public function setScreenHeight(?int $screenHeight): self
+    {
+        $this->screenHeight = $screenHeight;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * (Optional) If specified, a gb_users record for defined role will be generated. The entity association is inferred from the user_login value.
-	 */
-	public function getCreateGbUserWithThisRole(): ?string
-	{
-		return $this->createGbUserWithThisRole;
-	}
+    /**
+     * (Optional) If specified, a gb_users record for defined role will be generated. The entity association is inferred from the user_login value.
+     */
+    public function getCreateGbUserWithThisRole(): ?string
+    {
+        return $this->createGbUserWithThisRole;
+    }
 
-	/**
-	 * (Optional) If specified, a gb_users record for defined role will be generated. The entity association is inferred from the user_login value.
-	 */
-	public function setCreateGbUserWithThisRole(?string $createGbUserWithThisRole): self
-	{
-		$this->createGbUserWithThisRole = $createGbUserWithThisRole;
+    /**
+     * (Optional) If specified, a gb_users record for defined role will be generated. The entity association is inferred from the user_login value.
+     */
+    public function setCreateGbUserWithThisRole(?string $createGbUserWithThisRole): self
+    {
+        $this->createGbUserWithThisRole = $createGbUserWithThisRole;
 
-		return $this;
-	}
+        return $this;
+    }
 }

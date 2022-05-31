@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,52 +19,52 @@ namespace CatchE\OpenApi2\Model;
 
 class _255FinanceExportGetSuccess
 {
-	/**
-	 * @var string|null
-	 */
-	protected $interfaceExportId;
-	/**
-	 * @var string|null
-	 */
-	protected $uri;
-	/**
-	 * @var \DateTime|null
-	 */
-	protected $uriExpiry;
+    /**
+     * @var null|string
+     */
+    protected $interfaceExportId;
+    /**
+     * @var null|string
+     */
+    protected $uri;
+    /**
+     * @var null|\DateTime
+     */
+    protected $uriExpiry;
 
-	public function getInterfaceExportId(): ?string
-	{
-		return $this->interfaceExportId;
-	}
+    public function getInterfaceExportId(): ?string
+    {
+        return $this->interfaceExportId;
+    }
 
-	public function setInterfaceExportId(?string $interfaceExportId): self
-	{
-		$this->interfaceExportId = $interfaceExportId;
+    public function setInterfaceExportId(?string $interfaceExportId): self
+    {
+        $this->interfaceExportId = $interfaceExportId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getUri(): ?string
-	{
-		return $this->uri;
-	}
+    public function getUri(): ?string
+    {
+        return $this->uri;
+    }
 
-	public function setUri(?string $uri): self
-	{
-		$this->uri = $uri;
+    public function setUri(?string $uri): self
+    {
+        $this->uri = $uri;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getUriExpiry(): ?\DateTime
-	{
-		return $this->uriExpiry;
-	}
+    public function getUriExpiry(): ?\DateTime
+    {
+        return $this->uriExpiry;
+    }
 
-	public function setUriExpiry(?\DateTime $uriExpiry): self
-	{
-		$this->uriExpiry = $uriExpiry;
+    public function setUriExpiry(?\DateTime $uriExpiry): self
+    {
+        $this->uriExpiry = $uriExpiry;
 
-		return $this;
-	}
+        return $this;
+    }
 }

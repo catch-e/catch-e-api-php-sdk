@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,112 +17,115 @@
 
 namespace CatchE\OpenApi2\Endpoint;
 
-class GetDrivers extends \Jane\OpenApiRuntime\Client\BaseEndpoint implements \Jane\OpenApiRuntime\Client\Endpoint
+class GetDrivers extends \CatchE\OpenApi2\Runtime\Client\BaseEndpoint implements \CatchE\OpenApi2\Runtime\Client\Endpoint
 {
-	use \Jane\OpenApiRuntime\Client\EndpointTrait;
+    use \CatchE\OpenApi2\Runtime\Client\EndpointTrait;
 
-	/**
-	 * This method requires the **Drivers:Get** permission to be associated with your role.
-	 *
-	 * @param array $queryParameters {
-	 *
-	 *     @var string $client_id Optional Client Id
-	 *     @var string $client_cost_centre_id Optional Cost Centre Id
-	 *     @var string $external_code Optional External Code
+    /**
+     * This method requires the **Drivers:Get** permission to be associated with your role.
+     *
+     * @param array $queryParameters {
+     *
+     *     @var string $client_id Optional Client Id
+     *     @var string $client_cost_centre_id Optional Cost Centre Id
+     *     @var string $external_code optional External Code
+     *
+     * This field supports the wildcard % operator
+     *     @var string $given_name optional Given Name
+     *
+     * This field supports the wildcard % operator
+     *     @var string $surname optional Surname
+     *
+     * This field supports the wildcard % operator
+     *     @var string $user_id_package_advisor Optional Package Advisor User Id
+     *     @var int $page Optional page number
+     *     @var int $page_size Optional page size
+     * }
+     */
+    public function __construct(array $queryParameters = [])
+    {
+        $this->queryParameters = $queryParameters;
+    }
 
-	 *     @var string $given_name Optional Given Name
+    public function getMethod(): string
+    {
+        return 'GET';
+    }
 
-	 *     @var string $surname Optional Surname
+    public function getUri(): string
+    {
+        return '/fm/drivers';
+    }
 
-	 *     @var string $user_id_package_advisor Optional Package Advisor User Id
-	 *     @var int $page Optional page number
-	 *     @var int $page_size Optional page size
-	 * }
-	 */
-	public function __construct(array $queryParameters = [])
-	{
-		$this->queryParameters = $queryParameters;
-	}
+    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    {
+        return [[], null];
+    }
 
-	public function getMethod(): string
-	{
-		return 'GET';
-	}
+    public function getExtraHeaders(): array
+    {
+        return ['Accept' => ['application/json']];
+    }
 
-	public function getUri(): string
-	{
-		return '/fm/drivers';
-	}
+    public function getAuthenticationScopes(): array
+    {
+        return ['Bearer Token'];
+    }
 
-	public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
-	{
-		return [[], null];
-	}
+    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    {
+        $optionsResolver = parent::getQueryOptionsResolver();
+        $optionsResolver->setDefined(['client_id', 'client_cost_centre_id', 'external_code', 'given_name', 'surname', 'user_id_package_advisor', 'page', 'page_size']);
+        $optionsResolver->setRequired([]);
+        $optionsResolver->setDefaults(['page' => 1, 'page_size' => 25]);
+        $optionsResolver->setAllowedTypes('client_id', ['string']);
+        $optionsResolver->setAllowedTypes('client_cost_centre_id', ['string']);
+        $optionsResolver->setAllowedTypes('external_code', ['string']);
+        $optionsResolver->setAllowedTypes('given_name', ['string']);
+        $optionsResolver->setAllowedTypes('surname', ['string']);
+        $optionsResolver->setAllowedTypes('user_id_package_advisor', ['string']);
+        $optionsResolver->setAllowedTypes('page', ['int']);
+        $optionsResolver->setAllowedTypes('page_size', ['int']);
 
-	public function getExtraHeaders(): array
-	{
-		return ['Accept' => ['application/json']];
-	}
+        return $optionsResolver;
+    }
 
-	protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
-	{
-		$optionsResolver = parent::getQueryOptionsResolver();
-		$optionsResolver->setDefined(['client_id', 'client_cost_centre_id', 'external_code', 'given_name', 'surname', 'user_id_package_advisor', 'page', 'page_size']);
-		$optionsResolver->setRequired([]);
-		$optionsResolver->setDefaults(['page' => 1, 'page_size' => 25]);
-		$optionsResolver->setAllowedTypes('client_id', ['string']);
-		$optionsResolver->setAllowedTypes('client_cost_centre_id', ['string']);
-		$optionsResolver->setAllowedTypes('external_code', ['string']);
-		$optionsResolver->setAllowedTypes('given_name', ['string']);
-		$optionsResolver->setAllowedTypes('surname', ['string']);
-		$optionsResolver->setAllowedTypes('user_id_package_advisor', ['string']);
-		$optionsResolver->setAllowedTypes('page', ['int']);
-		$optionsResolver->setAllowedTypes('page_size', ['int']);
+    /**
+     * {@inheritdoc}
+     *
+     * @throws \CatchE\OpenApi2\Exception\GetDriversUnauthorizedException
+     * @throws \CatchE\OpenApi2\Exception\GetDriversForbiddenException
+     * @throws \CatchE\OpenApi2\Exception\GetDriversNotFoundException
+     * @throws \CatchE\OpenApi2\Exception\GetDriversNotAcceptableException
+     * @throws \CatchE\OpenApi2\Exception\GetDriversConflictException
+     * @throws \CatchE\OpenApi2\Exception\GetDriversInternalServerErrorException
+     *
+     * @return null|\CatchE\OpenApi2\Model\Error|\CatchE\OpenApi2\Model\GetDrivers
+     */
+    protected function transformResponseBody(string $body, int $status, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    {
+        if (200 === $status) {
+            return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\GetDrivers', 'json');
+        }
+        if (401 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetDriversUnauthorizedException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Unauthorized', 'json'));
+        }
+        if (403 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetDriversForbiddenException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Forbidden', 'json'));
+        }
+        if (404 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetDriversNotFoundException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotFound', 'json'));
+        }
+        if (406 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetDriversNotAcceptableException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotAcceptable', 'json'));
+        }
+        if (409 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetDriversConflictException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Conflict', 'json'));
+        }
+        if (500 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetDriversInternalServerErrorException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\InternalError', 'json'));
+        }
 
-		return $optionsResolver;
-	}
-
-	/**
-	 * {@inheritdoc}
-	 *
-	 * @throws \CatchE\OpenApi2\Exception\GetDriversUnauthorizedException
-	 * @throws \CatchE\OpenApi2\Exception\GetDriversForbiddenException
-	 * @throws \CatchE\OpenApi2\Exception\GetDriversNotFoundException
-	 * @throws \CatchE\OpenApi2\Exception\GetDriversNotAcceptableException
-	 * @throws \CatchE\OpenApi2\Exception\GetDriversConflictException
-	 * @throws \CatchE\OpenApi2\Exception\GetDriversInternalServerErrorException
-	 *
-	 * @return \CatchE\OpenApi2\Model\GetDrivers|\CatchE\OpenApi2\Model\Error|null
-	 */
-	protected function transformResponseBody(string $body, int $status, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType)
-	{
-		if (200 === $status) {
-			return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\GetDrivers', 'json');
-		}
-		if (401 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetDriversUnauthorizedException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Unauthorized', 'json'));
-		}
-		if (403 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetDriversForbiddenException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Forbidden', 'json'));
-		}
-		if (404 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetDriversNotFoundException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotFound', 'json'));
-		}
-		if (406 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetDriversNotAcceptableException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotAcceptable', 'json'));
-		}
-		if (409 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetDriversConflictException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Conflict', 'json'));
-		}
-		if (500 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetDriversInternalServerErrorException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\InternalError', 'json'));
-		}
-
-		return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Error', 'json');
-	}
-
-	public function getAuthenticationScopes(): array
-	{
-		return ['Bearer Token'];
-	}
+        return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Error', 'json');
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,52 +19,52 @@ namespace CatchE\OpenApi2\Model;
 
 class AutoBuildClaimsPostingClass
 {
-	/**
-	 * @var string|null
-	 */
-	protected $postingClassId;
-	/**
-	 * @var string|null
-	 */
-	protected $postingClassCode;
-	/**
-	 * @var string|null
-	 */
-	protected $name;
+    /**
+     * @var null|string
+     */
+    protected $postingClassId;
+    /**
+     * @var null|string
+     */
+    protected $postingClassCode;
+    /**
+     * @var null|string
+     */
+    protected $name;
 
-	public function getPostingClassId(): ?string
-	{
-		return $this->postingClassId;
-	}
+    public function getPostingClassId(): ?string
+    {
+        return $this->postingClassId;
+    }
 
-	public function setPostingClassId(?string $postingClassId): self
-	{
-		$this->postingClassId = $postingClassId;
+    public function setPostingClassId(?string $postingClassId): self
+    {
+        $this->postingClassId = $postingClassId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getPostingClassCode(): ?string
-	{
-		return $this->postingClassCode;
-	}
+    public function getPostingClassCode(): ?string
+    {
+        return $this->postingClassCode;
+    }
 
-	public function setPostingClassCode(?string $postingClassCode): self
-	{
-		$this->postingClassCode = $postingClassCode;
+    public function setPostingClassCode(?string $postingClassCode): self
+    {
+        $this->postingClassCode = $postingClassCode;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getName(): ?string
-	{
-		return $this->name;
-	}
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
 
-	public function setName(?string $name): self
-	{
-		$this->name = $name;
+    public function setName(?string $name): self
+    {
+        $this->name = $name;
 
-		return $this;
-	}
+        return $this;
+    }
 }

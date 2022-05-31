@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,140 +19,140 @@ namespace CatchE\OpenApi2\Model;
 
 class PayeePaymentMethod
 {
-	/**
-	 * Payee payment method Id.
-	 *
-	 * @var string|null
-	 */
-	protected $payeePaymentMethodId;
-	/**
-	 * Payee Id.
-	 *
-	 * @var string|null
-	 */
-	protected $payeeId;
-	/**
-	 * Payment method Id.
-	 *
-	 * @var string|null
-	 */
-	protected $paymentMethodId;
-	/**
-	 * Process type.
-	 *
-	 * @var string|null
-	 */
-	protected $processType;
-	/**
-	 * Status flag.
-	 *
-	 * @var string|null
-	 */
-	protected $statusFlag = 'active';
-	/**
-	 * @var PayeePaymentMethodEmbedded|null
-	 */
-	protected $embedded;
+    /**
+     * Payee payment method Id.
+     *
+     * @var null|string
+     */
+    protected $payeePaymentMethodId;
+    /**
+     * Payee Id.
+     *
+     * @var null|string
+     */
+    protected $payeeId;
+    /**
+     * Payment method Id.
+     *
+     * @var null|string
+     */
+    protected $paymentMethodId;
+    /**
+     * Process type.
+     *
+     * @var null|string
+     */
+    protected $processType;
+    /**
+     * Status flag.
+     *
+     * @var null|string
+     */
+    protected $statusFlag = 'active';
+    /**
+     * @var null|PayeePaymentMethodEmbedded
+     */
+    protected $embedded;
 
-	/**
-	 * Payee payment method Id.
-	 */
-	public function getPayeePaymentMethodId(): ?string
-	{
-		return $this->payeePaymentMethodId;
-	}
+    /**
+     * Payee payment method Id.
+     */
+    public function getPayeePaymentMethodId(): ?string
+    {
+        return $this->payeePaymentMethodId;
+    }
 
-	/**
-	 * Payee payment method Id.
-	 */
-	public function setPayeePaymentMethodId(?string $payeePaymentMethodId): self
-	{
-		$this->payeePaymentMethodId = $payeePaymentMethodId;
+    /**
+     * Payee payment method Id.
+     */
+    public function setPayeePaymentMethodId(?string $payeePaymentMethodId): self
+    {
+        $this->payeePaymentMethodId = $payeePaymentMethodId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Payee Id.
-	 */
-	public function getPayeeId(): ?string
-	{
-		return $this->payeeId;
-	}
+    /**
+     * Payee Id.
+     */
+    public function getPayeeId(): ?string
+    {
+        return $this->payeeId;
+    }
 
-	/**
-	 * Payee Id.
-	 */
-	public function setPayeeId(?string $payeeId): self
-	{
-		$this->payeeId = $payeeId;
+    /**
+     * Payee Id.
+     */
+    public function setPayeeId(?string $payeeId): self
+    {
+        $this->payeeId = $payeeId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Payment method Id.
-	 */
-	public function getPaymentMethodId(): ?string
-	{
-		return $this->paymentMethodId;
-	}
+    /**
+     * Payment method Id.
+     */
+    public function getPaymentMethodId(): ?string
+    {
+        return $this->paymentMethodId;
+    }
 
-	/**
-	 * Payment method Id.
-	 */
-	public function setPaymentMethodId(?string $paymentMethodId): self
-	{
-		$this->paymentMethodId = $paymentMethodId;
+    /**
+     * Payment method Id.
+     */
+    public function setPaymentMethodId(?string $paymentMethodId): self
+    {
+        $this->paymentMethodId = $paymentMethodId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Process type.
-	 */
-	public function getProcessType(): ?string
-	{
-		return $this->processType;
-	}
+    /**
+     * Process type.
+     */
+    public function getProcessType(): ?string
+    {
+        return $this->processType;
+    }
 
-	/**
-	 * Process type.
-	 */
-	public function setProcessType(?string $processType): self
-	{
-		$this->processType = $processType;
+    /**
+     * Process type.
+     */
+    public function setProcessType(?string $processType): self
+    {
+        $this->processType = $processType;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Status flag.
-	 */
-	public function getStatusFlag(): ?string
-	{
-		return $this->statusFlag;
-	}
+    /**
+     * Status flag.
+     */
+    public function getStatusFlag(): ?string
+    {
+        return $this->statusFlag;
+    }
 
-	/**
-	 * Status flag.
-	 */
-	public function setStatusFlag(?string $statusFlag): self
-	{
-		$this->statusFlag = $statusFlag;
+    /**
+     * Status flag.
+     */
+    public function setStatusFlag(?string $statusFlag): self
+    {
+        $this->statusFlag = $statusFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getEmbedded(): ?PayeePaymentMethodEmbedded
-	{
-		return $this->embedded;
-	}
+    public function getEmbedded(): ?PayeePaymentMethodEmbedded
+    {
+        return $this->embedded;
+    }
 
-	public function setEmbedded(?PayeePaymentMethodEmbedded $embedded): self
-	{
-		$this->embedded = $embedded;
+    public function setEmbedded(?PayeePaymentMethodEmbedded $embedded): self
+    {
+        $this->embedded = $embedded;
 
-		return $this;
-	}
+        return $this;
+    }
 }

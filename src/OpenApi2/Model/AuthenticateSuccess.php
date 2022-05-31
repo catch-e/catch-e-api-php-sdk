@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,60 +19,60 @@ namespace CatchE\OpenApi2\Model;
 
 class AuthenticateSuccess
 {
-	/**
-	 * @var string|null
-	 */
-	protected $accessToken;
-	/**
-	 * Token expiry time in seconds.
-	 *
-	 * @var int|null
-	 */
-	protected $expiresIn;
-	/**
-	 * @var string|null
-	 */
-	protected $tokenType;
+    /**
+     * @var null|string
+     */
+    protected $accessToken;
+    /**
+     * Token expiry time in seconds.
+     *
+     * @var null|int
+     */
+    protected $expiresIn;
+    /**
+     * @var null|string
+     */
+    protected $tokenType;
 
-	public function getAccessToken(): ?string
-	{
-		return $this->accessToken;
-	}
+    public function getAccessToken(): ?string
+    {
+        return $this->accessToken;
+    }
 
-	public function setAccessToken(?string $accessToken): self
-	{
-		$this->accessToken = $accessToken;
+    public function setAccessToken(?string $accessToken): self
+    {
+        $this->accessToken = $accessToken;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Token expiry time in seconds.
-	 */
-	public function getExpiresIn(): ?int
-	{
-		return $this->expiresIn;
-	}
+    /**
+     * Token expiry time in seconds.
+     */
+    public function getExpiresIn(): ?int
+    {
+        return $this->expiresIn;
+    }
 
-	/**
-	 * Token expiry time in seconds.
-	 */
-	public function setExpiresIn(?int $expiresIn): self
-	{
-		$this->expiresIn = $expiresIn;
+    /**
+     * Token expiry time in seconds.
+     */
+    public function setExpiresIn(?int $expiresIn): self
+    {
+        $this->expiresIn = $expiresIn;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getTokenType(): ?string
-	{
-		return $this->tokenType;
-	}
+    public function getTokenType(): ?string
+    {
+        return $this->tokenType;
+    }
 
-	public function setTokenType(?string $tokenType): self
-	{
-		$this->tokenType = $tokenType;
+    public function setTokenType(?string $tokenType): self
+    {
+        $this->tokenType = $tokenType;
 
-		return $this;
-	}
+        return $this;
+    }
 }

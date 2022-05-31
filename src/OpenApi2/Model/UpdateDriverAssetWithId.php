@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,92 +19,92 @@ namespace CatchE\OpenApi2\Model;
 
 class UpdateDriverAssetWithId
 {
-	/**
-	 * @var string|null
-	 */
-	protected $driverAssetId;
-	/**
-	 * Finance Asset Type Id.
-	 *
-	 * @var string|null
-	 */
-	protected $financeAssetTypeId;
-	/**
-	 * Amount.
-	 *
-	 * @var float|null
-	 */
-	protected $amount;
-	/**
-	 * Asset Description.
-	 *
-	 * @var string|null
-	 */
-	protected $description;
+    /**
+     * @var null|string
+     */
+    protected $driverAssetId;
+    /**
+     * Finance Asset Type Id.
+     *
+     * @var null|string
+     */
+    protected $financeAssetTypeId;
+    /**
+     * Amount.
+     *
+     * @var null|float
+     */
+    protected $amount;
+    /**
+     * Asset Description.
+     *
+     * @var null|string
+     */
+    protected $description;
 
-	public function getDriverAssetId(): ?string
-	{
-		return $this->driverAssetId;
-	}
+    public function getDriverAssetId(): ?string
+    {
+        return $this->driverAssetId;
+    }
 
-	public function setDriverAssetId(?string $driverAssetId): self
-	{
-		$this->driverAssetId = $driverAssetId;
+    public function setDriverAssetId(?string $driverAssetId): self
+    {
+        $this->driverAssetId = $driverAssetId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Finance Asset Type Id.
-	 */
-	public function getFinanceAssetTypeId(): ?string
-	{
-		return $this->financeAssetTypeId;
-	}
+    /**
+     * Finance Asset Type Id.
+     */
+    public function getFinanceAssetTypeId(): ?string
+    {
+        return $this->financeAssetTypeId;
+    }
 
-	/**
-	 * Finance Asset Type Id.
-	 */
-	public function setFinanceAssetTypeId(?string $financeAssetTypeId): self
-	{
-		$this->financeAssetTypeId = $financeAssetTypeId;
+    /**
+     * Finance Asset Type Id.
+     */
+    public function setFinanceAssetTypeId(?string $financeAssetTypeId): self
+    {
+        $this->financeAssetTypeId = $financeAssetTypeId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Amount.
-	 */
-	public function getAmount(): ?float
-	{
-		return $this->amount;
-	}
+    /**
+     * Amount.
+     */
+    public function getAmount(): ?float
+    {
+        return $this->amount;
+    }
 
-	/**
-	 * Amount.
-	 */
-	public function setAmount(?float $amount): self
-	{
-		$this->amount = $amount;
+    /**
+     * Amount.
+     */
+    public function setAmount(?float $amount): self
+    {
+        $this->amount = $amount;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Asset Description.
-	 */
-	public function getDescription(): ?string
-	{
-		return $this->description;
-	}
+    /**
+     * Asset Description.
+     */
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
 
-	/**
-	 * Asset Description.
-	 */
-	public function setDescription(?string $description): self
-	{
-		$this->description = $description;
+    /**
+     * Asset Description.
+     */
+    public function setDescription(?string $description): self
+    {
+        $this->description = $description;
 
-		return $this;
-	}
+        return $this;
+    }
 }

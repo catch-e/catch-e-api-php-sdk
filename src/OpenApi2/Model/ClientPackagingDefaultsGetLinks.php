@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,20 +19,20 @@ namespace CatchE\OpenApi2\Model;
 
 class ClientPackagingDefaultsGetLinks
 {
-	/**
-	 * @var ClientPackagingDefaultsGetLinksSelf|null
-	 */
-	protected $self;
+    /**
+     * @var null|ClientPackagingDefaultsGetLinksSelf
+     */
+    protected $self;
 
-	public function getSelf(): ?ClientPackagingDefaultsGetLinksSelf
-	{
-		return $this->self;
-	}
+    public function getSelf(): ?ClientPackagingDefaultsGetLinksSelf
+    {
+        return $this->self;
+    }
 
-	public function setSelf(?ClientPackagingDefaultsGetLinksSelf $self): self
-	{
-		$this->self = $self;
+    public function setSelf(?ClientPackagingDefaultsGetLinksSelf $self): self
+    {
+        $this->self = $self;
 
-		return $this;
-	}
+        return $this;
+    }
 }

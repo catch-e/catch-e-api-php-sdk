@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,18 +17,10 @@
 
 namespace CatchE\OpenApi2\Exception;
 
-class UpdateDriverBankAccountUnprocessableEntityException extends \RuntimeException implements ClientException
+class UpdateDriverBankAccountUnprocessableEntityException extends UnprocessableEntityException
 {
-	private $unprocessableEntity;
-
-	public function __construct(\CatchE\OpenApi2\Model\UnprocessableEntity $unprocessableEntity)
-	{
-		parent::__construct('Unprocessable Entity', 422);
-		$this->unprocessableEntity = $unprocessableEntity;
-	}
-
-	public function getUnprocessableEntity()
-	{
-		return $this->unprocessableEntity;
-	}
+    public function __construct(\CatchE\OpenApi2\Model\UnprocessableEntity $unprocessableEntity)
+    {
+        parent::__construct('Unprocessable Entity', $unprocessableEntity);
+    }
 }

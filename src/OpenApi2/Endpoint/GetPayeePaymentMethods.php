@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,105 +17,105 @@
 
 namespace CatchE\OpenApi2\Endpoint;
 
-class GetPayeePaymentMethods extends \Jane\OpenApiRuntime\Client\BaseEndpoint implements \Jane\OpenApiRuntime\Client\Endpoint
+class GetPayeePaymentMethods extends \CatchE\OpenApi2\Runtime\Client\BaseEndpoint implements \CatchE\OpenApi2\Runtime\Client\Endpoint
 {
-	use \Jane\OpenApiRuntime\Client\EndpointTrait;
+    use \CatchE\OpenApi2\Runtime\Client\EndpointTrait;
 
-	/**
-	 * This method requires the **PayeePaymentMethods:Get** permission to be associated with your role.
-	 *
-	 * @param array $queryParameters {
-	 *
-	 *     @var string $process_type Process type
-	 *     @var string $payee_id Payee Id
-	 *     @var string $payment_method_id Payment method Id
-	 *     @var string $status_flag Status flag
-	 *     @var int $page Optional page number
-	 *     @var int $page_size Optional page size
-	 * }
-	 */
-	public function __construct(array $queryParameters = [])
-	{
-		$this->queryParameters = $queryParameters;
-	}
+    /**
+     * This method requires the **PayeePaymentMethods:Get** permission to be associated with your role.
+     *
+     * @param array $queryParameters {
+     *
+     *     @var string $process_type Process type
+     *     @var string $payee_id Payee Id
+     *     @var string $payment_method_id Payment method Id
+     *     @var string $status_flag Status flag
+     *     @var int $page Optional page number
+     *     @var int $page_size Optional page size
+     * }
+     */
+    public function __construct(array $queryParameters = [])
+    {
+        $this->queryParameters = $queryParameters;
+    }
 
-	public function getMethod(): string
-	{
-		return 'GET';
-	}
+    public function getMethod(): string
+    {
+        return 'GET';
+    }
 
-	public function getUri(): string
-	{
-		return '/gl/payee/payment-methods';
-	}
+    public function getUri(): string
+    {
+        return '/gl/payee/payment-methods';
+    }
 
-	public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
-	{
-		return [[], null];
-	}
+    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    {
+        return [[], null];
+    }
 
-	public function getExtraHeaders(): array
-	{
-		return ['Accept' => ['application/json']];
-	}
+    public function getExtraHeaders(): array
+    {
+        return ['Accept' => ['application/json']];
+    }
 
-	protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
-	{
-		$optionsResolver = parent::getQueryOptionsResolver();
-		$optionsResolver->setDefined(['process_type', 'payee_id', 'payment_method_id', 'status_flag', 'page', 'page_size']);
-		$optionsResolver->setRequired(['process_type']);
-		$optionsResolver->setDefaults(['status_flag' => 'active', 'page' => 1, 'page_size' => 25]);
-		$optionsResolver->setAllowedTypes('process_type', ['string']);
-		$optionsResolver->setAllowedTypes('payee_id', ['string']);
-		$optionsResolver->setAllowedTypes('payment_method_id', ['string']);
-		$optionsResolver->setAllowedTypes('status_flag', ['string']);
-		$optionsResolver->setAllowedTypes('page', ['int']);
-		$optionsResolver->setAllowedTypes('page_size', ['int']);
+    public function getAuthenticationScopes(): array
+    {
+        return ['Bearer Token'];
+    }
 
-		return $optionsResolver;
-	}
+    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    {
+        $optionsResolver = parent::getQueryOptionsResolver();
+        $optionsResolver->setDefined(['process_type', 'payee_id', 'payment_method_id', 'status_flag', 'page', 'page_size']);
+        $optionsResolver->setRequired(['process_type']);
+        $optionsResolver->setDefaults(['status_flag' => 'active', 'page' => 1, 'page_size' => 25]);
+        $optionsResolver->setAllowedTypes('process_type', ['string']);
+        $optionsResolver->setAllowedTypes('payee_id', ['string']);
+        $optionsResolver->setAllowedTypes('payment_method_id', ['string']);
+        $optionsResolver->setAllowedTypes('status_flag', ['string']);
+        $optionsResolver->setAllowedTypes('page', ['int']);
+        $optionsResolver->setAllowedTypes('page_size', ['int']);
 
-	/**
-	 * {@inheritdoc}
-	 *
-	 * @throws \CatchE\OpenApi2\Exception\GetPayeePaymentMethodsUnauthorizedException
-	 * @throws \CatchE\OpenApi2\Exception\GetPayeePaymentMethodsForbiddenException
-	 * @throws \CatchE\OpenApi2\Exception\GetPayeePaymentMethodsNotFoundException
-	 * @throws \CatchE\OpenApi2\Exception\GetPayeePaymentMethodsNotAcceptableException
-	 * @throws \CatchE\OpenApi2\Exception\GetPayeePaymentMethodsConflictException
-	 * @throws \CatchE\OpenApi2\Exception\GetPayeePaymentMethodsInternalServerErrorException
-	 *
-	 * @return \CatchE\OpenApi2\Model\PayeePaymentMethodsGet|\CatchE\OpenApi2\Model\Error|null
-	 */
-	protected function transformResponseBody(string $body, int $status, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType)
-	{
-		if (200 === $status) {
-			return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\PayeePaymentMethodsGet', 'json');
-		}
-		if (401 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetPayeePaymentMethodsUnauthorizedException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Unauthorized', 'json'));
-		}
-		if (403 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetPayeePaymentMethodsForbiddenException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Forbidden', 'json'));
-		}
-		if (404 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetPayeePaymentMethodsNotFoundException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotFound', 'json'));
-		}
-		if (406 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetPayeePaymentMethodsNotAcceptableException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotAcceptable', 'json'));
-		}
-		if (409 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetPayeePaymentMethodsConflictException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Conflict', 'json'));
-		}
-		if (500 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetPayeePaymentMethodsInternalServerErrorException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\InternalError', 'json'));
-		}
+        return $optionsResolver;
+    }
 
-		return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Error', 'json');
-	}
+    /**
+     * {@inheritdoc}
+     *
+     * @throws \CatchE\OpenApi2\Exception\GetPayeePaymentMethodsUnauthorizedException
+     * @throws \CatchE\OpenApi2\Exception\GetPayeePaymentMethodsForbiddenException
+     * @throws \CatchE\OpenApi2\Exception\GetPayeePaymentMethodsNotFoundException
+     * @throws \CatchE\OpenApi2\Exception\GetPayeePaymentMethodsNotAcceptableException
+     * @throws \CatchE\OpenApi2\Exception\GetPayeePaymentMethodsConflictException
+     * @throws \CatchE\OpenApi2\Exception\GetPayeePaymentMethodsInternalServerErrorException
+     *
+     * @return null|\CatchE\OpenApi2\Model\Error|\CatchE\OpenApi2\Model\PayeePaymentMethodsGet
+     */
+    protected function transformResponseBody(string $body, int $status, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    {
+        if (200 === $status) {
+            return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\PayeePaymentMethodsGet', 'json');
+        }
+        if (401 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetPayeePaymentMethodsUnauthorizedException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Unauthorized', 'json'));
+        }
+        if (403 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetPayeePaymentMethodsForbiddenException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Forbidden', 'json'));
+        }
+        if (404 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetPayeePaymentMethodsNotFoundException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotFound', 'json'));
+        }
+        if (406 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetPayeePaymentMethodsNotAcceptableException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotAcceptable', 'json'));
+        }
+        if (409 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetPayeePaymentMethodsConflictException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Conflict', 'json'));
+        }
+        if (500 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetPayeePaymentMethodsInternalServerErrorException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\InternalError', 'json'));
+        }
 
-	public function getAuthenticationScopes(): array
-	{
-		return ['Bearer Token'];
-	}
+        return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Error', 'json');
+    }
 }

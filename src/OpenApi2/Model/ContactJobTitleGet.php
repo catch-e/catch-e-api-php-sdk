@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,68 +19,68 @@ namespace CatchE\OpenApi2\Model;
 
 class ContactJobTitleGet
 {
-	/**
-	 * @var string|null
-	 */
-	protected $contactJobTitleId;
-	/**
-	 * @var string|null
-	 */
-	protected $description;
-	/**
-	 * @var string|null
-	 */
-	protected $statusFlag;
-	/**
-	 * @var ContactJobTitleGetLinks|null
-	 */
-	protected $links;
+    /**
+     * @var null|string
+     */
+    protected $contactJobTitleId;
+    /**
+     * @var null|string
+     */
+    protected $description;
+    /**
+     * @var null|string
+     */
+    protected $statusFlag;
+    /**
+     * @var null|ContactJobTitleGetLinks
+     */
+    protected $links;
 
-	public function getContactJobTitleId(): ?string
-	{
-		return $this->contactJobTitleId;
-	}
+    public function getContactJobTitleId(): ?string
+    {
+        return $this->contactJobTitleId;
+    }
 
-	public function setContactJobTitleId(?string $contactJobTitleId): self
-	{
-		$this->contactJobTitleId = $contactJobTitleId;
+    public function setContactJobTitleId(?string $contactJobTitleId): self
+    {
+        $this->contactJobTitleId = $contactJobTitleId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getDescription(): ?string
-	{
-		return $this->description;
-	}
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
 
-	public function setDescription(?string $description): self
-	{
-		$this->description = $description;
+    public function setDescription(?string $description): self
+    {
+        $this->description = $description;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getStatusFlag(): ?string
-	{
-		return $this->statusFlag;
-	}
+    public function getStatusFlag(): ?string
+    {
+        return $this->statusFlag;
+    }
 
-	public function setStatusFlag(?string $statusFlag): self
-	{
-		$this->statusFlag = $statusFlag;
+    public function setStatusFlag(?string $statusFlag): self
+    {
+        $this->statusFlag = $statusFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getLinks(): ?ContactJobTitleGetLinks
-	{
-		return $this->links;
-	}
+    public function getLinks(): ?ContactJobTitleGetLinks
+    {
+        return $this->links;
+    }
 
-	public function setLinks(?ContactJobTitleGetLinks $links): self
-	{
-		$this->links = $links;
+    public function setLinks(?ContactJobTitleGetLinks $links): self
+    {
+        $this->links = $links;
 
-		return $this;
-	}
+        return $this;
+    }
 }

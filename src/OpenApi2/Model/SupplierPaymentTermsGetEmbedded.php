@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,26 +19,26 @@ namespace CatchE\OpenApi2\Model;
 
 class SupplierPaymentTermsGetEmbedded
 {
-	/**
-	 * @var SupplierPaymentTerm[]|null
-	 */
-	protected $fmSupplierPaymentTerms;
+    /**
+     * @var null|SupplierPaymentTerm[]
+     */
+    protected $fmSupplierPaymentTerms;
 
-	/**
-	 * @return SupplierPaymentTerm[]|null
-	 */
-	public function getFmSupplierPaymentTerms(): ?array
-	{
-		return $this->fmSupplierPaymentTerms;
-	}
+    /**
+     * @return null|SupplierPaymentTerm[]
+     */
+    public function getFmSupplierPaymentTerms(): ?array
+    {
+        return $this->fmSupplierPaymentTerms;
+    }
 
-	/**
-	 * @param SupplierPaymentTerm[]|null $fmSupplierPaymentTerms
-	 */
-	public function setFmSupplierPaymentTerms(?array $fmSupplierPaymentTerms): self
-	{
-		$this->fmSupplierPaymentTerms = $fmSupplierPaymentTerms;
+    /**
+     * @param null|SupplierPaymentTerm[] $fmSupplierPaymentTerms
+     */
+    public function setFmSupplierPaymentTerms(?array $fmSupplierPaymentTerms): self
+    {
+        $this->fmSupplierPaymentTerms = $fmSupplierPaymentTerms;
 
-		return $this;
-	}
+        return $this;
+    }
 }

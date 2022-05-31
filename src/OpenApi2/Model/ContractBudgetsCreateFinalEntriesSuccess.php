@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,52 +19,52 @@ namespace CatchE\OpenApi2\Model;
 
 class ContractBudgetsCreateFinalEntriesSuccess
 {
-	/**
-	 * @var string|null
-	 */
-	protected $contractId;
-	/**
-	 * @var int|null
-	 */
-	protected $billingPeriod;
-	/**
-	 * @var int|null
-	 */
-	protected $billingPeriodItemNo;
+    /**
+     * @var null|string
+     */
+    protected $contractId;
+    /**
+     * @var null|int
+     */
+    protected $billingPeriod;
+    /**
+     * @var null|int
+     */
+    protected $billingPeriodItemNo;
 
-	public function getContractId(): ?string
-	{
-		return $this->contractId;
-	}
+    public function getContractId(): ?string
+    {
+        return $this->contractId;
+    }
 
-	public function setContractId(?string $contractId): self
-	{
-		$this->contractId = $contractId;
+    public function setContractId(?string $contractId): self
+    {
+        $this->contractId = $contractId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getBillingPeriod(): ?int
-	{
-		return $this->billingPeriod;
-	}
+    public function getBillingPeriod(): ?int
+    {
+        return $this->billingPeriod;
+    }
 
-	public function setBillingPeriod(?int $billingPeriod): self
-	{
-		$this->billingPeriod = $billingPeriod;
+    public function setBillingPeriod(?int $billingPeriod): self
+    {
+        $this->billingPeriod = $billingPeriod;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getBillingPeriodItemNo(): ?int
-	{
-		return $this->billingPeriodItemNo;
-	}
+    public function getBillingPeriodItemNo(): ?int
+    {
+        return $this->billingPeriodItemNo;
+    }
 
-	public function setBillingPeriodItemNo(?int $billingPeriodItemNo): self
-	{
-		$this->billingPeriodItemNo = $billingPeriodItemNo;
+    public function setBillingPeriodItemNo(?int $billingPeriodItemNo): self
+    {
+        $this->billingPeriodItemNo = $billingPeriodItemNo;
 
-		return $this;
-	}
+        return $this;
+    }
 }

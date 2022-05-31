@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,36 +19,36 @@ namespace CatchE\OpenApi2\Model;
 
 class GbUniqueIdsResetPostResponse200
 {
-	/**
-	 * @var string|null
-	 */
-	protected $code;
-	/**
-	 * @var string|null
-	 */
-	protected $result;
+    /**
+     * @var null|string
+     */
+    protected $code;
+    /**
+     * @var null|string
+     */
+    protected $result;
 
-	public function getCode(): ?string
-	{
-		return $this->code;
-	}
+    public function getCode(): ?string
+    {
+        return $this->code;
+    }
 
-	public function setCode(?string $code): self
-	{
-		$this->code = $code;
+    public function setCode(?string $code): self
+    {
+        $this->code = $code;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getResult(): ?string
-	{
-		return $this->result;
-	}
+    public function getResult(): ?string
+    {
+        return $this->result;
+    }
 
-	public function setResult(?string $result): self
-	{
-		$this->result = $result;
+    public function setResult(?string $result): self
+    {
+        $this->result = $result;
 
-		return $this;
-	}
+        return $this;
+    }
 }

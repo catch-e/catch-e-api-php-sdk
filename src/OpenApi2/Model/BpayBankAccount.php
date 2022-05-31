@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,68 +19,68 @@ namespace CatchE\OpenApi2\Model;
 
 class BpayBankAccount
 {
-	/**
-	 * @var string|null
-	 */
-	protected $bankAccountBpayMappingId;
-	/**
-	 * @var string|null
-	 */
-	protected $bankAccountId;
-	/**
-	 * @var string|null
-	 */
-	protected $accountName;
-	/**
-	 * @var string|null
-	 */
-	protected $accountNameShort;
+    /**
+     * @var null|string
+     */
+    protected $bankAccountBpayMappingId;
+    /**
+     * @var null|string
+     */
+    protected $bankAccountId;
+    /**
+     * @var null|string
+     */
+    protected $accountName;
+    /**
+     * @var null|string
+     */
+    protected $accountNameShort;
 
-	public function getBankAccountBpayMappingId(): ?string
-	{
-		return $this->bankAccountBpayMappingId;
-	}
+    public function getBankAccountBpayMappingId(): ?string
+    {
+        return $this->bankAccountBpayMappingId;
+    }
 
-	public function setBankAccountBpayMappingId(?string $bankAccountBpayMappingId): self
-	{
-		$this->bankAccountBpayMappingId = $bankAccountBpayMappingId;
+    public function setBankAccountBpayMappingId(?string $bankAccountBpayMappingId): self
+    {
+        $this->bankAccountBpayMappingId = $bankAccountBpayMappingId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getBankAccountId(): ?string
-	{
-		return $this->bankAccountId;
-	}
+    public function getBankAccountId(): ?string
+    {
+        return $this->bankAccountId;
+    }
 
-	public function setBankAccountId(?string $bankAccountId): self
-	{
-		$this->bankAccountId = $bankAccountId;
+    public function setBankAccountId(?string $bankAccountId): self
+    {
+        $this->bankAccountId = $bankAccountId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getAccountName(): ?string
-	{
-		return $this->accountName;
-	}
+    public function getAccountName(): ?string
+    {
+        return $this->accountName;
+    }
 
-	public function setAccountName(?string $accountName): self
-	{
-		$this->accountName = $accountName;
+    public function setAccountName(?string $accountName): self
+    {
+        $this->accountName = $accountName;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getAccountNameShort(): ?string
-	{
-		return $this->accountNameShort;
-	}
+    public function getAccountNameShort(): ?string
+    {
+        return $this->accountNameShort;
+    }
 
-	public function setAccountNameShort(?string $accountNameShort): self
-	{
-		$this->accountNameShort = $accountNameShort;
+    public function setAccountNameShort(?string $accountNameShort): self
+    {
+        $this->accountNameShort = $accountNameShort;
 
-		return $this;
-	}
+        return $this;
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,36 +19,36 @@ namespace CatchE\OpenApi2\Model;
 
 class ContactJobTitle
 {
-	/**
-	 * @var string|null
-	 */
-	protected $description;
-	/**
-	 * @var string|null
-	 */
-	protected $statusFlag = 'active';
+    /**
+     * @var null|string
+     */
+    protected $description;
+    /**
+     * @var null|string
+     */
+    protected $statusFlag = 'active';
 
-	public function getDescription(): ?string
-	{
-		return $this->description;
-	}
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
 
-	public function setDescription(?string $description): self
-	{
-		$this->description = $description;
+    public function setDescription(?string $description): self
+    {
+        $this->description = $description;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getStatusFlag(): ?string
-	{
-		return $this->statusFlag;
-	}
+    public function getStatusFlag(): ?string
+    {
+        return $this->statusFlag;
+    }
 
-	public function setStatusFlag(?string $statusFlag): self
-	{
-		$this->statusFlag = $statusFlag;
+    public function setStatusFlag(?string $statusFlag): self
+    {
+        $this->statusFlag = $statusFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 }

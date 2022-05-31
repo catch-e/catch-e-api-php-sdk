@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,116 +19,116 @@ namespace CatchE\OpenApi2\Model;
 
 class DriverAsset
 {
-	/**
-	 * @var string|null
-	 */
-	protected $driverAssetId;
-	/**
-	 * @var string|null
-	 */
-	protected $driverId;
-	/**
-	 * @var string|null
-	 */
-	protected $financeAssetTypeId;
-	/**
-	 * @var float|null
-	 */
-	protected $amount;
-	/**
-	 * @var string|null
-	 */
-	protected $ownership;
-	/**
-	 * @var string|null
-	 */
-	protected $description;
-	/**
-	 * @var string|null
-	 */
-	protected $financeAssetTypeName;
+    /**
+     * @var null|string
+     */
+    protected $driverAssetId;
+    /**
+     * @var null|string
+     */
+    protected $driverId;
+    /**
+     * @var null|string
+     */
+    protected $financeAssetTypeId;
+    /**
+     * @var null|float
+     */
+    protected $amount;
+    /**
+     * @var null|string
+     */
+    protected $ownership;
+    /**
+     * @var null|string
+     */
+    protected $description;
+    /**
+     * @var null|string
+     */
+    protected $financeAssetTypeName;
 
-	public function getDriverAssetId(): ?string
-	{
-		return $this->driverAssetId;
-	}
+    public function getDriverAssetId(): ?string
+    {
+        return $this->driverAssetId;
+    }
 
-	public function setDriverAssetId(?string $driverAssetId): self
-	{
-		$this->driverAssetId = $driverAssetId;
+    public function setDriverAssetId(?string $driverAssetId): self
+    {
+        $this->driverAssetId = $driverAssetId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getDriverId(): ?string
-	{
-		return $this->driverId;
-	}
+    public function getDriverId(): ?string
+    {
+        return $this->driverId;
+    }
 
-	public function setDriverId(?string $driverId): self
-	{
-		$this->driverId = $driverId;
+    public function setDriverId(?string $driverId): self
+    {
+        $this->driverId = $driverId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getFinanceAssetTypeId(): ?string
-	{
-		return $this->financeAssetTypeId;
-	}
+    public function getFinanceAssetTypeId(): ?string
+    {
+        return $this->financeAssetTypeId;
+    }
 
-	public function setFinanceAssetTypeId(?string $financeAssetTypeId): self
-	{
-		$this->financeAssetTypeId = $financeAssetTypeId;
+    public function setFinanceAssetTypeId(?string $financeAssetTypeId): self
+    {
+        $this->financeAssetTypeId = $financeAssetTypeId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getAmount(): ?float
-	{
-		return $this->amount;
-	}
+    public function getAmount(): ?float
+    {
+        return $this->amount;
+    }
 
-	public function setAmount(?float $amount): self
-	{
-		$this->amount = $amount;
+    public function setAmount(?float $amount): self
+    {
+        $this->amount = $amount;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getOwnership(): ?string
-	{
-		return $this->ownership;
-	}
+    public function getOwnership(): ?string
+    {
+        return $this->ownership;
+    }
 
-	public function setOwnership(?string $ownership): self
-	{
-		$this->ownership = $ownership;
+    public function setOwnership(?string $ownership): self
+    {
+        $this->ownership = $ownership;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getDescription(): ?string
-	{
-		return $this->description;
-	}
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
 
-	public function setDescription(?string $description): self
-	{
-		$this->description = $description;
+    public function setDescription(?string $description): self
+    {
+        $this->description = $description;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getFinanceAssetTypeName(): ?string
-	{
-		return $this->financeAssetTypeName;
-	}
+    public function getFinanceAssetTypeName(): ?string
+    {
+        return $this->financeAssetTypeName;
+    }
 
-	public function setFinanceAssetTypeName(?string $financeAssetTypeName): self
-	{
-		$this->financeAssetTypeName = $financeAssetTypeName;
+    public function setFinanceAssetTypeName(?string $financeAssetTypeName): self
+    {
+        $this->financeAssetTypeName = $financeAssetTypeName;
 
-		return $this;
-	}
+        return $this;
+    }
 }

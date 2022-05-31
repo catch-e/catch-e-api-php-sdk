@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,26 +19,26 @@ namespace CatchE\OpenApi2\Model;
 
 class VariantStandardEquipmentGetEmbedded
 {
-	/**
-	 * @var VariantStandardEquipment[]|null
-	 */
-	protected $qtVariantStandardEquipment;
+    /**
+     * @var null|VariantStandardEquipment[]
+     */
+    protected $qtVariantStandardEquipment;
 
-	/**
-	 * @return VariantStandardEquipment[]|null
-	 */
-	public function getQtVariantStandardEquipment(): ?array
-	{
-		return $this->qtVariantStandardEquipment;
-	}
+    /**
+     * @return null|VariantStandardEquipment[]
+     */
+    public function getQtVariantStandardEquipment(): ?array
+    {
+        return $this->qtVariantStandardEquipment;
+    }
 
-	/**
-	 * @param VariantStandardEquipment[]|null $qtVariantStandardEquipment
-	 */
-	public function setQtVariantStandardEquipment(?array $qtVariantStandardEquipment): self
-	{
-		$this->qtVariantStandardEquipment = $qtVariantStandardEquipment;
+    /**
+     * @param null|VariantStandardEquipment[] $qtVariantStandardEquipment
+     */
+    public function setQtVariantStandardEquipment(?array $qtVariantStandardEquipment): self
+    {
+        $this->qtVariantStandardEquipment = $qtVariantStandardEquipment;
 
-		return $this;
-	}
+        return $this;
+    }
 }

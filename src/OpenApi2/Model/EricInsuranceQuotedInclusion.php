@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,68 +19,68 @@ namespace CatchE\OpenApi2\Model;
 
 class EricInsuranceQuotedInclusion
 {
-	/**
-	 * @var string|null
-	 */
-	protected $inclusionCode;
-	/**
-	 * @var float|null
-	 */
-	protected $retailPriceGross;
-	/**
-	 * @var float|null
-	 */
-	protected $retailPriceNet;
-	/**
-	 * @var float|null
-	 */
-	protected $costPriceNet;
+    /**
+     * @var null|string
+     */
+    protected $inclusionCode;
+    /**
+     * @var null|float
+     */
+    protected $retailPriceGross;
+    /**
+     * @var null|float
+     */
+    protected $retailPriceNet;
+    /**
+     * @var null|float
+     */
+    protected $costPriceNet;
 
-	public function getInclusionCode(): ?string
-	{
-		return $this->inclusionCode;
-	}
+    public function getInclusionCode(): ?string
+    {
+        return $this->inclusionCode;
+    }
 
-	public function setInclusionCode(?string $inclusionCode): self
-	{
-		$this->inclusionCode = $inclusionCode;
+    public function setInclusionCode(?string $inclusionCode): self
+    {
+        $this->inclusionCode = $inclusionCode;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getRetailPriceGross(): ?float
-	{
-		return $this->retailPriceGross;
-	}
+    public function getRetailPriceGross(): ?float
+    {
+        return $this->retailPriceGross;
+    }
 
-	public function setRetailPriceGross(?float $retailPriceGross): self
-	{
-		$this->retailPriceGross = $retailPriceGross;
+    public function setRetailPriceGross(?float $retailPriceGross): self
+    {
+        $this->retailPriceGross = $retailPriceGross;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getRetailPriceNet(): ?float
-	{
-		return $this->retailPriceNet;
-	}
+    public function getRetailPriceNet(): ?float
+    {
+        return $this->retailPriceNet;
+    }
 
-	public function setRetailPriceNet(?float $retailPriceNet): self
-	{
-		$this->retailPriceNet = $retailPriceNet;
+    public function setRetailPriceNet(?float $retailPriceNet): self
+    {
+        $this->retailPriceNet = $retailPriceNet;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getCostPriceNet(): ?float
-	{
-		return $this->costPriceNet;
-	}
+    public function getCostPriceNet(): ?float
+    {
+        return $this->costPriceNet;
+    }
 
-	public function setCostPriceNet(?float $costPriceNet): self
-	{
-		$this->costPriceNet = $costPriceNet;
+    public function setCostPriceNet(?float $costPriceNet): self
+    {
+        $this->costPriceNet = $costPriceNet;
 
-		return $this;
-	}
+        return $this;
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,104 +17,102 @@
 
 namespace CatchE\OpenApi2\Endpoint;
 
-class GetVariantModelYears extends \Jane\OpenApiRuntime\Client\BaseEndpoint implements \Jane\OpenApiRuntime\Client\Endpoint
+class GetVariantModelYears extends \CatchE\OpenApi2\Runtime\Client\BaseEndpoint implements \CatchE\OpenApi2\Runtime\Client\Endpoint
 {
-	use \Jane\OpenApiRuntime\Client\EndpointTrait;
+    use \CatchE\OpenApi2\Runtime\Client\EndpointTrait;
 
-	/**
-	 * Get an array of model years for a given vehicle model.
+    /**
+     * Get an array of model years for a given vehicle model.
+     *
+     * Model Years are linked to Variants, and Variants are excluded if they have a status of 'pending'. So if all the Variants for a particular Model Year are at status 'pending', that Model Year will not be returned in the list.
+     *
+     * This method requires the **QuoteVariants:Get** permission to be associated with your role.
+     *
+     * @param array $queryParameters {
+     *
+     *     @var string $model_id Model Id
+     *     @var string $profile_required_flag If yes, only show model years for variants that have an active qt_variant_profile record
+     *
+     * }
+     */
+    public function __construct(array $queryParameters = [])
+    {
+        $this->queryParameters = $queryParameters;
+    }
 
-	Model Years are linked to Variants, and Variants are excluded if they have a status of 'pending'. So if all the Variants for a particular Model Year are at status 'pending', that Model Year will not be returned in the list.
+    public function getMethod(): string
+    {
+        return 'GET';
+    }
 
-	This method requires the **QuoteVariants:Get** permission to be associated with your role.
+    public function getUri(): string
+    {
+        return '/qt/model-years';
+    }
 
-	 *
-	 * @param array $queryParameters {
-	 *
-	 *     @var string $model_id Model Id
+    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    {
+        return [[], null];
+    }
 
-	 *     @var string $profile_required_flag If yes, only show model years for variants that have an active qt_variant_profile record
+    public function getExtraHeaders(): array
+    {
+        return ['Accept' => ['application/json']];
+    }
 
-	 * }
-	 */
-	public function __construct(array $queryParameters = [])
-	{
-		$this->queryParameters = $queryParameters;
-	}
+    public function getAuthenticationScopes(): array
+    {
+        return ['Bearer Token'];
+    }
 
-	public function getMethod(): string
-	{
-		return 'GET';
-	}
+    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    {
+        $optionsResolver = parent::getQueryOptionsResolver();
+        $optionsResolver->setDefined(['model_id', 'profile_required_flag']);
+        $optionsResolver->setRequired(['model_id']);
+        $optionsResolver->setDefaults(['profile_required_flag' => 'no']);
+        $optionsResolver->setAllowedTypes('model_id', ['string']);
+        $optionsResolver->setAllowedTypes('profile_required_flag', ['string']);
 
-	public function getUri(): string
-	{
-		return '/qt/model-years';
-	}
+        return $optionsResolver;
+    }
 
-	public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
-	{
-		return [[], null];
-	}
+    /**
+     * {@inheritdoc}
+     *
+     * @throws \CatchE\OpenApi2\Exception\GetVariantModelYearsUnauthorizedException
+     * @throws \CatchE\OpenApi2\Exception\GetVariantModelYearsForbiddenException
+     * @throws \CatchE\OpenApi2\Exception\GetVariantModelYearsNotFoundException
+     * @throws \CatchE\OpenApi2\Exception\GetVariantModelYearsNotAcceptableException
+     * @throws \CatchE\OpenApi2\Exception\GetVariantModelYearsUnprocessableEntityException
+     * @throws \CatchE\OpenApi2\Exception\GetVariantModelYearsInternalServerErrorException
+     *
+     * @return null|\CatchE\OpenApi2\Model\Error
+     */
+    protected function transformResponseBody(string $body, int $status, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    {
+        if (200 === $status) {
+            return json_decode($body);
+        }
+        if (401 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetVariantModelYearsUnauthorizedException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Unauthorized', 'json'));
+        }
+        if (403 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetVariantModelYearsForbiddenException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Forbidden', 'json'));
+        }
+        if (404 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetVariantModelYearsNotFoundException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotFound', 'json'));
+        }
+        if (406 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetVariantModelYearsNotAcceptableException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotAcceptable', 'json'));
+        }
+        if (422 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetVariantModelYearsUnprocessableEntityException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\UnprocessableEntity', 'json'));
+        }
+        if (500 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetVariantModelYearsInternalServerErrorException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\InternalError', 'json'));
+        }
 
-	public function getExtraHeaders(): array
-	{
-		return ['Accept' => ['application/json']];
-	}
-
-	protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
-	{
-		$optionsResolver = parent::getQueryOptionsResolver();
-		$optionsResolver->setDefined(['model_id', 'profile_required_flag']);
-		$optionsResolver->setRequired(['model_id']);
-		$optionsResolver->setDefaults(['profile_required_flag' => 'no']);
-		$optionsResolver->setAllowedTypes('model_id', ['string']);
-		$optionsResolver->setAllowedTypes('profile_required_flag', ['string']);
-
-		return $optionsResolver;
-	}
-
-	/**
-	 * {@inheritdoc}
-	 *
-	 * @throws \CatchE\OpenApi2\Exception\GetVariantModelYearsUnauthorizedException
-	 * @throws \CatchE\OpenApi2\Exception\GetVariantModelYearsForbiddenException
-	 * @throws \CatchE\OpenApi2\Exception\GetVariantModelYearsNotFoundException
-	 * @throws \CatchE\OpenApi2\Exception\GetVariantModelYearsNotAcceptableException
-	 * @throws \CatchE\OpenApi2\Exception\GetVariantModelYearsUnprocessableEntityException
-	 * @throws \CatchE\OpenApi2\Exception\GetVariantModelYearsInternalServerErrorException
-	 *
-	 * @return \CatchE\OpenApi2\Model\Error|null
-	 */
-	protected function transformResponseBody(string $body, int $status, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType)
-	{
-		if (200 === $status) {
-			return json_decode($body);
-		}
-		if (401 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetVariantModelYearsUnauthorizedException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Unauthorized', 'json'));
-		}
-		if (403 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetVariantModelYearsForbiddenException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Forbidden', 'json'));
-		}
-		if (404 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetVariantModelYearsNotFoundException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotFound', 'json'));
-		}
-		if (406 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetVariantModelYearsNotAcceptableException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotAcceptable', 'json'));
-		}
-		if (422 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetVariantModelYearsUnprocessableEntityException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\UnprocessableEntity', 'json'));
-		}
-		if (500 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetVariantModelYearsInternalServerErrorException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\InternalError', 'json'));
-		}
-
-		return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Error', 'json');
-	}
-
-	public function getAuthenticationScopes(): array
-	{
-		return ['Bearer Token'];
-	}
+        return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Error', 'json');
+    }
 }

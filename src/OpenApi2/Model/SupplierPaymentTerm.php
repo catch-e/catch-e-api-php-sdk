@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,52 +19,52 @@ namespace CatchE\OpenApi2\Model;
 
 class SupplierPaymentTerm
 {
-	/**
-	 * @var string|null
-	 */
-	protected $supplierPaymentTermId;
-	/**
-	 * @var string|null
-	 */
-	protected $paymentTerm;
-	/**
-	 * @var string|null
-	 */
-	protected $statusFlag;
+    /**
+     * @var null|string
+     */
+    protected $supplierPaymentTermId;
+    /**
+     * @var null|string
+     */
+    protected $paymentTerm;
+    /**
+     * @var null|string
+     */
+    protected $statusFlag;
 
-	public function getSupplierPaymentTermId(): ?string
-	{
-		return $this->supplierPaymentTermId;
-	}
+    public function getSupplierPaymentTermId(): ?string
+    {
+        return $this->supplierPaymentTermId;
+    }
 
-	public function setSupplierPaymentTermId(?string $supplierPaymentTermId): self
-	{
-		$this->supplierPaymentTermId = $supplierPaymentTermId;
+    public function setSupplierPaymentTermId(?string $supplierPaymentTermId): self
+    {
+        $this->supplierPaymentTermId = $supplierPaymentTermId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getPaymentTerm(): ?string
-	{
-		return $this->paymentTerm;
-	}
+    public function getPaymentTerm(): ?string
+    {
+        return $this->paymentTerm;
+    }
 
-	public function setPaymentTerm(?string $paymentTerm): self
-	{
-		$this->paymentTerm = $paymentTerm;
+    public function setPaymentTerm(?string $paymentTerm): self
+    {
+        $this->paymentTerm = $paymentTerm;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getStatusFlag(): ?string
-	{
-		return $this->statusFlag;
-	}
+    public function getStatusFlag(): ?string
+    {
+        return $this->statusFlag;
+    }
 
-	public function setStatusFlag(?string $statusFlag): self
-	{
-		$this->statusFlag = $statusFlag;
+    public function setStatusFlag(?string $statusFlag): self
+    {
+        $this->statusFlag = $statusFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 }

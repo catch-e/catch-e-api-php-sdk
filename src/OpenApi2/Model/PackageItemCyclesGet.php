@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,124 +19,124 @@ namespace CatchE\OpenApi2\Model;
 
 class PackageItemCyclesGet
 {
-	/**
-	 * @var string|null
-	 */
-	protected $packageItemId;
-	/**
-	 * @var string|null
-	 */
-	protected $payCycleId;
-	/**
-	 * @var \DateTime|null
-	 */
-	protected $startDate;
-	/**
-	 * @var string|null
-	 */
-	protected $payCycleType;
-	/**
-	 * @var string|null
-	 */
-	protected $compressFlag;
-	/**
-	 * @var string|null
-	 */
-	protected $inertiaFlag;
-	/**
-	 * Cycles.
-	 *
-	 * @var int|null
-	 */
-	protected $cycles;
+    /**
+     * @var null|string
+     */
+    protected $packageItemId;
+    /**
+     * @var null|string
+     */
+    protected $payCycleId;
+    /**
+     * @var null|\DateTime
+     */
+    protected $startDate;
+    /**
+     * @var null|string
+     */
+    protected $payCycleType;
+    /**
+     * @var null|string
+     */
+    protected $compressFlag;
+    /**
+     * @var null|string
+     */
+    protected $inertiaFlag;
+    /**
+     * Cycles.
+     *
+     * @var null|int
+     */
+    protected $cycles;
 
-	public function getPackageItemId(): ?string
-	{
-		return $this->packageItemId;
-	}
+    public function getPackageItemId(): ?string
+    {
+        return $this->packageItemId;
+    }
 
-	public function setPackageItemId(?string $packageItemId): self
-	{
-		$this->packageItemId = $packageItemId;
+    public function setPackageItemId(?string $packageItemId): self
+    {
+        $this->packageItemId = $packageItemId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getPayCycleId(): ?string
-	{
-		return $this->payCycleId;
-	}
+    public function getPayCycleId(): ?string
+    {
+        return $this->payCycleId;
+    }
 
-	public function setPayCycleId(?string $payCycleId): self
-	{
-		$this->payCycleId = $payCycleId;
+    public function setPayCycleId(?string $payCycleId): self
+    {
+        $this->payCycleId = $payCycleId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getStartDate(): ?\DateTime
-	{
-		return $this->startDate;
-	}
+    public function getStartDate(): ?\DateTime
+    {
+        return $this->startDate;
+    }
 
-	public function setStartDate(?\DateTime $startDate): self
-	{
-		$this->startDate = $startDate;
+    public function setStartDate(?\DateTime $startDate): self
+    {
+        $this->startDate = $startDate;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getPayCycleType(): ?string
-	{
-		return $this->payCycleType;
-	}
+    public function getPayCycleType(): ?string
+    {
+        return $this->payCycleType;
+    }
 
-	public function setPayCycleType(?string $payCycleType): self
-	{
-		$this->payCycleType = $payCycleType;
+    public function setPayCycleType(?string $payCycleType): self
+    {
+        $this->payCycleType = $payCycleType;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getCompressFlag(): ?string
-	{
-		return $this->compressFlag;
-	}
+    public function getCompressFlag(): ?string
+    {
+        return $this->compressFlag;
+    }
 
-	public function setCompressFlag(?string $compressFlag): self
-	{
-		$this->compressFlag = $compressFlag;
+    public function setCompressFlag(?string $compressFlag): self
+    {
+        $this->compressFlag = $compressFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getInertiaFlag(): ?string
-	{
-		return $this->inertiaFlag;
-	}
+    public function getInertiaFlag(): ?string
+    {
+        return $this->inertiaFlag;
+    }
 
-	public function setInertiaFlag(?string $inertiaFlag): self
-	{
-		$this->inertiaFlag = $inertiaFlag;
+    public function setInertiaFlag(?string $inertiaFlag): self
+    {
+        $this->inertiaFlag = $inertiaFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Cycles.
-	 */
-	public function getCycles(): ?int
-	{
-		return $this->cycles;
-	}
+    /**
+     * Cycles.
+     */
+    public function getCycles(): ?int
+    {
+        return $this->cycles;
+    }
 
-	/**
-	 * Cycles.
-	 */
-	public function setCycles(?int $cycles): self
-	{
-		$this->cycles = $cycles;
+    /**
+     * Cycles.
+     */
+    public function setCycles(?int $cycles): self
+    {
+        $this->cycles = $cycles;
 
-		return $this;
-	}
+        return $this;
+    }
 }

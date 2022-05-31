@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,8 +17,8 @@
 
 namespace CatchE\OpenApi2\Normalizer;
 
-use Jane\JsonSchemaRuntime\Normalizer\CheckArray;
-use Jane\JsonSchemaRuntime\Reference;
+use CatchE\OpenApi2\Runtime\Normalizer\CheckArray;
+use Jane\Component\JsonSchemaRuntime\Reference;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -28,45 +28,70 @@ use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
 class PingNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
-	use DenormalizerAwareTrait;
-	use NormalizerAwareTrait;
-	use CheckArray;
+    use DenormalizerAwareTrait;
 
-	public function supportsDenormalization($data, $type, $format = null)
-	{
-		return 'CatchE\\OpenApi2\\Model\\Ping' === $type;
-	}
+    use NormalizerAwareTrait;
 
-	public function supportsNormalization($data, $format = null)
-	{
-		return is_object($data) && 'CatchE\\OpenApi2\\Model\\Ping' === get_class($data);
-	}
+    use CheckArray;
 
-	public function denormalize($data, $class, $format = null, array $context = [])
-	{
-		if (isset($data['$ref'])) {
-			return new Reference($data['$ref'], $context['document-origin']);
-		}
-		if (isset($data['$recursiveRef'])) {
-			return new Reference($data['$recursiveRef'], $context['document-origin']);
-		}
-		$object = new \CatchE\OpenApi2\Model\Ping();
-		if (\array_key_exists('pong', $data) && null !== $data['pong']) {
-			$object->setPong($this->denormalizer->denormalize($data['pong'], 'CatchE\\OpenApi2\\Model\\PingPong', 'json', $context));
-		} elseif (\array_key_exists('pong', $data) && null === $data['pong']) {
-			$object->setPong(null);
-		}
+    /**
+     * @param mixed      $data
+     * @param mixed      $type
+     * @param null|mixed $format
+     *
+     * @return bool
+     */
+    public function supportsDenormalization($data, $type, $format = null)
+    {
+        return 'CatchE\\OpenApi2\\Model\\Ping' === $type;
+    }
 
-		return $object;
-	}
+    public function supportsNormalization($data, $format = null)
+    {
+        return is_object($data) && 'CatchE\\OpenApi2\\Model\\Ping' === get_class($data);
+    }
 
-	public function normalize($object, $format = null, array $context = [])
-	{
-		$data = [];
-		if (null !== $object->getPong()) {
-			$data['pong'] = $this->normalizer->normalize($object->getPong(), 'json', $context);
-		}
+    /**
+     * @param mixed      $data
+     * @param mixed      $class
+     * @param null|mixed $format
+     *
+     * @return mixed
+     */
+    public function denormalize($data, $class, $format = null, array $context = [])
+    {
+        if (isset($data['$ref'])) {
+            return new Reference($data['$ref'], $context['document-origin']);
+        }
+        if (isset($data['$recursiveRef'])) {
+            return new Reference($data['$recursiveRef'], $context['document-origin']);
+        }
+        $object = new \CatchE\OpenApi2\Model\Ping();
+        if (null === $data || false === \is_array($data)) {
+            return $object;
+        }
+        if (\array_key_exists('pong', $data) && null !== $data['pong']) {
+            $object->setPong($this->denormalizer->denormalize($data['pong'], 'CatchE\\OpenApi2\\Model\\PingPong', 'json', $context));
+        } elseif (\array_key_exists('pong', $data) && null === $data['pong']) {
+            $object->setPong(null);
+        }
 
-		return $data;
-	}
+        return $object;
+    }
+
+    /**
+     * @param mixed      $object
+     * @param null|mixed $format
+     *
+     * @return null|array|\ArrayObject|bool|float|int|string
+     */
+    public function normalize($object, $format = null, array $context = [])
+    {
+        $data = [];
+        if (null !== $object->getPong()) {
+            $data['pong'] = $this->normalizer->normalize($object->getPong(), 'json', $context);
+        }
+
+        return $data;
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,99 +17,99 @@
 
 namespace CatchE\OpenApi2\Endpoint;
 
-class GetContractPayouts extends \Jane\OpenApiRuntime\Client\BaseEndpoint implements \Jane\OpenApiRuntime\Client\Endpoint
+class GetContractPayouts extends \CatchE\OpenApi2\Runtime\Client\BaseEndpoint implements \CatchE\OpenApi2\Runtime\Client\Endpoint
 {
-	use \Jane\OpenApiRuntime\Client\EndpointTrait;
+    use \CatchE\OpenApi2\Runtime\Client\EndpointTrait;
 
-	/**
-	 * This method requires the **ContractPayouts:Get** permission to be associated with your role.
-	 *
-	 * @param array $queryParameters {
-	 *
-	 *     @var string $contract_id Optional contract id - only show contract payouts for the specified contract
-	 *     @var int $page Optional page number
-	 *     @var int $page_size Optional page size
-	 * }
-	 */
-	public function __construct(array $queryParameters = [])
-	{
-		$this->queryParameters = $queryParameters;
-	}
+    /**
+     * This method requires the **ContractPayouts:Get** permission to be associated with your role.
+     *
+     * @param array $queryParameters {
+     *
+     *     @var string $contract_id Optional contract id - only show contract payouts for the specified contract
+     *     @var int $page Optional page number
+     *     @var int $page_size Optional page size
+     * }
+     */
+    public function __construct(array $queryParameters = [])
+    {
+        $this->queryParameters = $queryParameters;
+    }
 
-	public function getMethod(): string
-	{
-		return 'GET';
-	}
+    public function getMethod(): string
+    {
+        return 'GET';
+    }
 
-	public function getUri(): string
-	{
-		return '/fm/contract/payouts';
-	}
+    public function getUri(): string
+    {
+        return '/fm/contract/payouts';
+    }
 
-	public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
-	{
-		return [[], null];
-	}
+    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    {
+        return [[], null];
+    }
 
-	public function getExtraHeaders(): array
-	{
-		return ['Accept' => ['application/json']];
-	}
+    public function getExtraHeaders(): array
+    {
+        return ['Accept' => ['application/json']];
+    }
 
-	protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
-	{
-		$optionsResolver = parent::getQueryOptionsResolver();
-		$optionsResolver->setDefined(['contract_id', 'page', 'page_size']);
-		$optionsResolver->setRequired([]);
-		$optionsResolver->setDefaults(['page' => 1, 'page_size' => 25]);
-		$optionsResolver->setAllowedTypes('contract_id', ['string']);
-		$optionsResolver->setAllowedTypes('page', ['int']);
-		$optionsResolver->setAllowedTypes('page_size', ['int']);
+    public function getAuthenticationScopes(): array
+    {
+        return ['Bearer Token'];
+    }
 
-		return $optionsResolver;
-	}
+    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    {
+        $optionsResolver = parent::getQueryOptionsResolver();
+        $optionsResolver->setDefined(['contract_id', 'page', 'page_size']);
+        $optionsResolver->setRequired([]);
+        $optionsResolver->setDefaults(['page' => 1, 'page_size' => 25]);
+        $optionsResolver->setAllowedTypes('contract_id', ['string']);
+        $optionsResolver->setAllowedTypes('page', ['int']);
+        $optionsResolver->setAllowedTypes('page_size', ['int']);
 
-	/**
-	 * {@inheritdoc}
-	 *
-	 * @throws \CatchE\OpenApi2\Exception\GetContractPayoutsUnauthorizedException
-	 * @throws \CatchE\OpenApi2\Exception\GetContractPayoutsForbiddenException
-	 * @throws \CatchE\OpenApi2\Exception\GetContractPayoutsNotFoundException
-	 * @throws \CatchE\OpenApi2\Exception\GetContractPayoutsNotAcceptableException
-	 * @throws \CatchE\OpenApi2\Exception\GetContractPayoutsConflictException
-	 * @throws \CatchE\OpenApi2\Exception\GetContractPayoutsInternalServerErrorException
-	 *
-	 * @return \CatchE\OpenApi2\Model\ContractPayoutsGet|\CatchE\OpenApi2\Model\Error|null
-	 */
-	protected function transformResponseBody(string $body, int $status, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType)
-	{
-		if (200 === $status) {
-			return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\ContractPayoutsGet', 'json');
-		}
-		if (401 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetContractPayoutsUnauthorizedException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Unauthorized', 'json'));
-		}
-		if (403 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetContractPayoutsForbiddenException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Forbidden', 'json'));
-		}
-		if (404 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetContractPayoutsNotFoundException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotFound', 'json'));
-		}
-		if (406 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetContractPayoutsNotAcceptableException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotAcceptable', 'json'));
-		}
-		if (409 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetContractPayoutsConflictException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Conflict', 'json'));
-		}
-		if (500 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetContractPayoutsInternalServerErrorException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\InternalError', 'json'));
-		}
+        return $optionsResolver;
+    }
 
-		return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Error', 'json');
-	}
+    /**
+     * {@inheritdoc}
+     *
+     * @throws \CatchE\OpenApi2\Exception\GetContractPayoutsUnauthorizedException
+     * @throws \CatchE\OpenApi2\Exception\GetContractPayoutsForbiddenException
+     * @throws \CatchE\OpenApi2\Exception\GetContractPayoutsNotFoundException
+     * @throws \CatchE\OpenApi2\Exception\GetContractPayoutsNotAcceptableException
+     * @throws \CatchE\OpenApi2\Exception\GetContractPayoutsConflictException
+     * @throws \CatchE\OpenApi2\Exception\GetContractPayoutsInternalServerErrorException
+     *
+     * @return null|\CatchE\OpenApi2\Model\ContractPayoutsGet|\CatchE\OpenApi2\Model\Error
+     */
+    protected function transformResponseBody(string $body, int $status, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    {
+        if (200 === $status) {
+            return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\ContractPayoutsGet', 'json');
+        }
+        if (401 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetContractPayoutsUnauthorizedException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Unauthorized', 'json'));
+        }
+        if (403 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetContractPayoutsForbiddenException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Forbidden', 'json'));
+        }
+        if (404 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetContractPayoutsNotFoundException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotFound', 'json'));
+        }
+        if (406 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetContractPayoutsNotAcceptableException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotAcceptable', 'json'));
+        }
+        if (409 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetContractPayoutsConflictException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Conflict', 'json'));
+        }
+        if (500 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetContractPayoutsInternalServerErrorException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\InternalError', 'json'));
+        }
 
-	public function getAuthenticationScopes(): array
-	{
-		return ['Bearer Token'];
-	}
+        return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Error', 'json');
+    }
 }

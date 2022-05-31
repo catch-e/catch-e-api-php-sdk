@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,116 +19,116 @@ namespace CatchE\OpenApi2\Model;
 
 class VariantPhoto
 {
-	/**
-	 * @var string|null
-	 */
-	protected $photoId;
-	/**
-	 * @var string|null
-	 */
-	protected $variantId;
-	/**
-	 * @var string|null
-	 */
-	protected $photoType = 'front';
-	/**
-	 * @var string|null
-	 */
-	protected $photoCode;
-	/**
-	 * @var string|null
-	 */
-	protected $photoUri;
-	/**
-	 * @var string|null
-	 */
-	protected $description;
-	/**
-	 * @var string|null
-	 */
-	protected $dataSourceId;
+    /**
+     * @var null|string
+     */
+    protected $photoId;
+    /**
+     * @var null|string
+     */
+    protected $variantId;
+    /**
+     * @var null|string
+     */
+    protected $photoType = 'front';
+    /**
+     * @var null|string
+     */
+    protected $photoCode;
+    /**
+     * @var null|string
+     */
+    protected $photoUri;
+    /**
+     * @var null|string
+     */
+    protected $description;
+    /**
+     * @var null|string
+     */
+    protected $dataSourceId;
 
-	public function getPhotoId(): ?string
-	{
-		return $this->photoId;
-	}
+    public function getPhotoId(): ?string
+    {
+        return $this->photoId;
+    }
 
-	public function setPhotoId(?string $photoId): self
-	{
-		$this->photoId = $photoId;
+    public function setPhotoId(?string $photoId): self
+    {
+        $this->photoId = $photoId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getVariantId(): ?string
-	{
-		return $this->variantId;
-	}
+    public function getVariantId(): ?string
+    {
+        return $this->variantId;
+    }
 
-	public function setVariantId(?string $variantId): self
-	{
-		$this->variantId = $variantId;
+    public function setVariantId(?string $variantId): self
+    {
+        $this->variantId = $variantId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getPhotoType(): ?string
-	{
-		return $this->photoType;
-	}
+    public function getPhotoType(): ?string
+    {
+        return $this->photoType;
+    }
 
-	public function setPhotoType(?string $photoType): self
-	{
-		$this->photoType = $photoType;
+    public function setPhotoType(?string $photoType): self
+    {
+        $this->photoType = $photoType;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getPhotoCode(): ?string
-	{
-		return $this->photoCode;
-	}
+    public function getPhotoCode(): ?string
+    {
+        return $this->photoCode;
+    }
 
-	public function setPhotoCode(?string $photoCode): self
-	{
-		$this->photoCode = $photoCode;
+    public function setPhotoCode(?string $photoCode): self
+    {
+        $this->photoCode = $photoCode;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getPhotoUri(): ?string
-	{
-		return $this->photoUri;
-	}
+    public function getPhotoUri(): ?string
+    {
+        return $this->photoUri;
+    }
 
-	public function setPhotoUri(?string $photoUri): self
-	{
-		$this->photoUri = $photoUri;
+    public function setPhotoUri(?string $photoUri): self
+    {
+        $this->photoUri = $photoUri;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getDescription(): ?string
-	{
-		return $this->description;
-	}
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
 
-	public function setDescription(?string $description): self
-	{
-		$this->description = $description;
+    public function setDescription(?string $description): self
+    {
+        $this->description = $description;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getDataSourceId(): ?string
-	{
-		return $this->dataSourceId;
-	}
+    public function getDataSourceId(): ?string
+    {
+        return $this->dataSourceId;
+    }
 
-	public function setDataSourceId(?string $dataSourceId): self
-	{
-		$this->dataSourceId = $dataSourceId;
+    public function setDataSourceId(?string $dataSourceId): self
+    {
+        $this->dataSourceId = $dataSourceId;
 
-		return $this;
-	}
+        return $this;
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,52 +19,52 @@ namespace CatchE\OpenApi2\Model;
 
 class FmDriverLiabilitiesGetResponse200Links
 {
-	/**
-	 * @var FmDriverLiabilitiesGetResponse200LinksSelf|null
-	 */
-	protected $self;
-	/**
-	 * @var FmDriverLiabilitiesGetResponse200LinksFirst|null
-	 */
-	protected $first;
-	/**
-	 * @var FmDriverLiabilitiesGetResponse200LinksLast|null
-	 */
-	protected $last;
+    /**
+     * @var null|FmDriverLiabilitiesGetResponse200LinksSelf
+     */
+    protected $self;
+    /**
+     * @var null|FmDriverLiabilitiesGetResponse200LinksFirst
+     */
+    protected $first;
+    /**
+     * @var null|FmDriverLiabilitiesGetResponse200LinksLast
+     */
+    protected $last;
 
-	public function getSelf(): ?FmDriverLiabilitiesGetResponse200LinksSelf
-	{
-		return $this->self;
-	}
+    public function getSelf(): ?FmDriverLiabilitiesGetResponse200LinksSelf
+    {
+        return $this->self;
+    }
 
-	public function setSelf(?FmDriverLiabilitiesGetResponse200LinksSelf $self): self
-	{
-		$this->self = $self;
+    public function setSelf(?FmDriverLiabilitiesGetResponse200LinksSelf $self): self
+    {
+        $this->self = $self;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getFirst(): ?FmDriverLiabilitiesGetResponse200LinksFirst
-	{
-		return $this->first;
-	}
+    public function getFirst(): ?FmDriverLiabilitiesGetResponse200LinksFirst
+    {
+        return $this->first;
+    }
 
-	public function setFirst(?FmDriverLiabilitiesGetResponse200LinksFirst $first): self
-	{
-		$this->first = $first;
+    public function setFirst(?FmDriverLiabilitiesGetResponse200LinksFirst $first): self
+    {
+        $this->first = $first;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getLast(): ?FmDriverLiabilitiesGetResponse200LinksLast
-	{
-		return $this->last;
-	}
+    public function getLast(): ?FmDriverLiabilitiesGetResponse200LinksLast
+    {
+        return $this->last;
+    }
 
-	public function setLast(?FmDriverLiabilitiesGetResponse200LinksLast $last): self
-	{
-		$this->last = $last;
+    public function setLast(?FmDriverLiabilitiesGetResponse200LinksLast $last): self
+    {
+        $this->last = $last;
 
-		return $this;
-	}
+        return $this;
+    }
 }

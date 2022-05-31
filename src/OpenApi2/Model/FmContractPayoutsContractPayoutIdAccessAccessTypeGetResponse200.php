@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,52 +19,52 @@ namespace CatchE\OpenApi2\Model;
 
 class FmContractPayoutsContractPayoutIdAccessAccessTypeGetResponse200
 {
-	/**
-	 * @var string|null
-	 */
-	protected $edit;
-	/**
-	 * @var string|null
-	 */
-	protected $print;
-	/**
-	 * @var string|null
-	 */
-	protected $delete;
+    /**
+     * @var null|string
+     */
+    protected $edit;
+    /**
+     * @var null|string
+     */
+    protected $print;
+    /**
+     * @var null|string
+     */
+    protected $delete;
 
-	public function getEdit(): ?string
-	{
-		return $this->edit;
-	}
+    public function getEdit(): ?string
+    {
+        return $this->edit;
+    }
 
-	public function setEdit(?string $edit): self
-	{
-		$this->edit = $edit;
+    public function setEdit(?string $edit): self
+    {
+        $this->edit = $edit;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getPrint(): ?string
-	{
-		return $this->print;
-	}
+    public function getPrint(): ?string
+    {
+        return $this->print;
+    }
 
-	public function setPrint(?string $print): self
-	{
-		$this->print = $print;
+    public function setPrint(?string $print): self
+    {
+        $this->print = $print;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getDelete(): ?string
-	{
-		return $this->delete;
-	}
+    public function getDelete(): ?string
+    {
+        return $this->delete;
+    }
 
-	public function setDelete(?string $delete): self
-	{
-		$this->delete = $delete;
+    public function setDelete(?string $delete): self
+    {
+        $this->delete = $delete;
 
-		return $this;
-	}
+        return $this;
+    }
 }

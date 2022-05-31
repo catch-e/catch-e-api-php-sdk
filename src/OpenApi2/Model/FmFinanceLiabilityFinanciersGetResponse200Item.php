@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,52 +19,52 @@ namespace CatchE\OpenApi2\Model;
 
 class FmFinanceLiabilityFinanciersGetResponse200Item
 {
-	/**
-	 * @var string|null
-	 */
-	protected $financeLiabilityFinancierId;
-	/**
-	 * @var string|null
-	 */
-	protected $liabilityFinancierCode;
-	/**
-	 * @var string|null
-	 */
-	protected $name;
+    /**
+     * @var null|string
+     */
+    protected $financeLiabilityFinancierId;
+    /**
+     * @var null|string
+     */
+    protected $liabilityFinancierCode;
+    /**
+     * @var null|string
+     */
+    protected $name;
 
-	public function getFinanceLiabilityFinancierId(): ?string
-	{
-		return $this->financeLiabilityFinancierId;
-	}
+    public function getFinanceLiabilityFinancierId(): ?string
+    {
+        return $this->financeLiabilityFinancierId;
+    }
 
-	public function setFinanceLiabilityFinancierId(?string $financeLiabilityFinancierId): self
-	{
-		$this->financeLiabilityFinancierId = $financeLiabilityFinancierId;
+    public function setFinanceLiabilityFinancierId(?string $financeLiabilityFinancierId): self
+    {
+        $this->financeLiabilityFinancierId = $financeLiabilityFinancierId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getLiabilityFinancierCode(): ?string
-	{
-		return $this->liabilityFinancierCode;
-	}
+    public function getLiabilityFinancierCode(): ?string
+    {
+        return $this->liabilityFinancierCode;
+    }
 
-	public function setLiabilityFinancierCode(?string $liabilityFinancierCode): self
-	{
-		$this->liabilityFinancierCode = $liabilityFinancierCode;
+    public function setLiabilityFinancierCode(?string $liabilityFinancierCode): self
+    {
+        $this->liabilityFinancierCode = $liabilityFinancierCode;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getName(): ?string
-	{
-		return $this->name;
-	}
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
 
-	public function setName(?string $name): self
-	{
-		$this->name = $name;
+    public function setName(?string $name): self
+    {
+        $this->name = $name;
 
-		return $this;
-	}
+        return $this;
+    }
 }

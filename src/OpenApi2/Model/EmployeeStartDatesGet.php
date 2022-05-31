@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,42 +19,42 @@ namespace CatchE\OpenApi2\Model;
 
 class EmployeeStartDatesGet
 {
-	/**
-	 * @var string[]|null
-	 */
-	protected $startDates;
-	/**
-	 * @var int|null
-	 */
-	protected $defaultIndex;
+    /**
+     * @var null|string[]
+     */
+    protected $startDates;
+    /**
+     * @var null|int
+     */
+    protected $defaultIndex;
 
-	/**
-	 * @return string[]|null
-	 */
-	public function getStartDates(): ?array
-	{
-		return $this->startDates;
-	}
+    /**
+     * @return null|string[]
+     */
+    public function getStartDates(): ?array
+    {
+        return $this->startDates;
+    }
 
-	/**
-	 * @param string[]|null $startDates
-	 */
-	public function setStartDates(?array $startDates): self
-	{
-		$this->startDates = $startDates;
+    /**
+     * @param null|string[] $startDates
+     */
+    public function setStartDates(?array $startDates): self
+    {
+        $this->startDates = $startDates;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getDefaultIndex(): ?int
-	{
-		return $this->defaultIndex;
-	}
+    public function getDefaultIndex(): ?int
+    {
+        return $this->defaultIndex;
+    }
 
-	public function setDefaultIndex(?int $defaultIndex): self
-	{
-		$this->defaultIndex = $defaultIndex;
+    public function setDefaultIndex(?int $defaultIndex): self
+    {
+        $this->defaultIndex = $defaultIndex;
 
-		return $this;
-	}
+        return $this;
+    }
 }

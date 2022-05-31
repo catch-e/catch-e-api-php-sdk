@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,26 +19,26 @@ namespace CatchE\OpenApi2\Model;
 
 class DriverBankAccountEmbedded
 {
-	/**
-	 * @var DriverBankAccountEmbeddedSpFinancialInstitutionsItem[]|null
-	 */
-	protected $spFinancialInstitutions;
+    /**
+     * @var null|DriverBankAccountEmbeddedSpFinancialInstitutionsItem[]
+     */
+    protected $spFinancialInstitutions;
 
-	/**
-	 * @return DriverBankAccountEmbeddedSpFinancialInstitutionsItem[]|null
-	 */
-	public function getSpFinancialInstitutions(): ?array
-	{
-		return $this->spFinancialInstitutions;
-	}
+    /**
+     * @return null|DriverBankAccountEmbeddedSpFinancialInstitutionsItem[]
+     */
+    public function getSpFinancialInstitutions(): ?array
+    {
+        return $this->spFinancialInstitutions;
+    }
 
-	/**
-	 * @param DriverBankAccountEmbeddedSpFinancialInstitutionsItem[]|null $spFinancialInstitutions
-	 */
-	public function setSpFinancialInstitutions(?array $spFinancialInstitutions): self
-	{
-		$this->spFinancialInstitutions = $spFinancialInstitutions;
+    /**
+     * @param null|DriverBankAccountEmbeddedSpFinancialInstitutionsItem[] $spFinancialInstitutions
+     */
+    public function setSpFinancialInstitutions(?array $spFinancialInstitutions): self
+    {
+        $this->spFinancialInstitutions = $spFinancialInstitutions;
 
-		return $this;
-	}
+        return $this;
+    }
 }

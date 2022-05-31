@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,70 +19,70 @@ namespace CatchE\OpenApi2\Model;
 
 class AutoBuildClaimsSuccess
 {
-	/**
-	 * @var string[]|null
-	 */
-	protected $processedContracts;
-	/**
-	 * @var mixed|null
-	 */
-	protected $exceptions;
-	/**
-	 * @var mixed|null
-	 */
-	protected $links;
+    /**
+     * @var null|string[]
+     */
+    protected $processedContracts;
+    /**
+     * @var null|mixed
+     */
+    protected $exceptions;
+    /**
+     * @var null|mixed
+     */
+    protected $links;
 
-	/**
-	 * @return string[]|null
-	 */
-	public function getProcessedContracts(): ?array
-	{
-		return $this->processedContracts;
-	}
+    /**
+     * @return null|string[]
+     */
+    public function getProcessedContracts(): ?array
+    {
+        return $this->processedContracts;
+    }
 
-	/**
-	 * @param string[]|null $processedContracts
-	 */
-	public function setProcessedContracts(?array $processedContracts): self
-	{
-		$this->processedContracts = $processedContracts;
+    /**
+     * @param null|string[] $processedContracts
+     */
+    public function setProcessedContracts(?array $processedContracts): self
+    {
+        $this->processedContracts = $processedContracts;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * @return mixed
-	 */
-	public function getExceptions()
-	{
-		return $this->exceptions;
-	}
+    /**
+     * @return mixed
+     */
+    public function getExceptions()
+    {
+        return $this->exceptions;
+    }
 
-	/**
-	 * @param mixed $exceptions
-	 */
-	public function setExceptions($exceptions): self
-	{
-		$this->exceptions = $exceptions;
+    /**
+     * @param mixed $exceptions
+     */
+    public function setExceptions($exceptions): self
+    {
+        $this->exceptions = $exceptions;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * @return mixed
-	 */
-	public function getLinks()
-	{
-		return $this->links;
-	}
+    /**
+     * @return mixed
+     */
+    public function getLinks()
+    {
+        return $this->links;
+    }
 
-	/**
-	 * @param mixed $links
-	 */
-	public function setLinks($links): self
-	{
-		$this->links = $links;
+    /**
+     * @param mixed $links
+     */
+    public function setLinks($links): self
+    {
+        $this->links = $links;
 
-		return $this;
-	}
+        return $this;
+    }
 }

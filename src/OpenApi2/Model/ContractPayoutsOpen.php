@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,76 +19,76 @@ namespace CatchE\OpenApi2\Model;
 
 class ContractPayoutsOpen
 {
-	/**
-	 * @var float|null
-	 */
-	protected $priceToPurchaseNet;
-	/**
-	 * @var float|null
-	 */
-	protected $earlyTerminationFeeNet;
-	/**
-	 * @var float|null
-	 */
-	protected $totalLossNet;
-	/**
-	 * Override warning validation. If not specified, defaults to 'no'.
-	 *
-	 * @var string|null
-	 */
-	protected $overrideWarningsFlag;
+    /**
+     * @var null|float
+     */
+    protected $priceToPurchaseNet;
+    /**
+     * @var null|float
+     */
+    protected $earlyTerminationFeeNet;
+    /**
+     * @var null|float
+     */
+    protected $totalLossNet;
+    /**
+     * Override warning validation. If not specified, defaults to 'no'.
+     *
+     * @var null|string
+     */
+    protected $overrideWarningsFlag;
 
-	public function getPriceToPurchaseNet(): ?float
-	{
-		return $this->priceToPurchaseNet;
-	}
+    public function getPriceToPurchaseNet(): ?float
+    {
+        return $this->priceToPurchaseNet;
+    }
 
-	public function setPriceToPurchaseNet(?float $priceToPurchaseNet): self
-	{
-		$this->priceToPurchaseNet = $priceToPurchaseNet;
+    public function setPriceToPurchaseNet(?float $priceToPurchaseNet): self
+    {
+        $this->priceToPurchaseNet = $priceToPurchaseNet;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getEarlyTerminationFeeNet(): ?float
-	{
-		return $this->earlyTerminationFeeNet;
-	}
+    public function getEarlyTerminationFeeNet(): ?float
+    {
+        return $this->earlyTerminationFeeNet;
+    }
 
-	public function setEarlyTerminationFeeNet(?float $earlyTerminationFeeNet): self
-	{
-		$this->earlyTerminationFeeNet = $earlyTerminationFeeNet;
+    public function setEarlyTerminationFeeNet(?float $earlyTerminationFeeNet): self
+    {
+        $this->earlyTerminationFeeNet = $earlyTerminationFeeNet;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getTotalLossNet(): ?float
-	{
-		return $this->totalLossNet;
-	}
+    public function getTotalLossNet(): ?float
+    {
+        return $this->totalLossNet;
+    }
 
-	public function setTotalLossNet(?float $totalLossNet): self
-	{
-		$this->totalLossNet = $totalLossNet;
+    public function setTotalLossNet(?float $totalLossNet): self
+    {
+        $this->totalLossNet = $totalLossNet;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Override warning validation. If not specified, defaults to 'no'.
-	 */
-	public function getOverrideWarningsFlag(): ?string
-	{
-		return $this->overrideWarningsFlag;
-	}
+    /**
+     * Override warning validation. If not specified, defaults to 'no'.
+     */
+    public function getOverrideWarningsFlag(): ?string
+    {
+        return $this->overrideWarningsFlag;
+    }
 
-	/**
-	 * Override warning validation. If not specified, defaults to 'no'.
-	 */
-	public function setOverrideWarningsFlag(?string $overrideWarningsFlag): self
-	{
-		$this->overrideWarningsFlag = $overrideWarningsFlag;
+    /**
+     * Override warning validation. If not specified, defaults to 'no'.
+     */
+    public function setOverrideWarningsFlag(?string $overrideWarningsFlag): self
+    {
+        $this->overrideWarningsFlag = $overrideWarningsFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 }

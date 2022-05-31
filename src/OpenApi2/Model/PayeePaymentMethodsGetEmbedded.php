@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,26 +19,26 @@ namespace CatchE\OpenApi2\Model;
 
 class PayeePaymentMethodsGetEmbedded
 {
-	/**
-	 * @var PayeePaymentMethod[]|null
-	 */
-	protected $glPayeePaymentMethods;
+    /**
+     * @var null|PayeePaymentMethod[]
+     */
+    protected $glPayeePaymentMethods;
 
-	/**
-	 * @return PayeePaymentMethod[]|null
-	 */
-	public function getGlPayeePaymentMethods(): ?array
-	{
-		return $this->glPayeePaymentMethods;
-	}
+    /**
+     * @return null|PayeePaymentMethod[]
+     */
+    public function getGlPayeePaymentMethods(): ?array
+    {
+        return $this->glPayeePaymentMethods;
+    }
 
-	/**
-	 * @param PayeePaymentMethod[]|null $glPayeePaymentMethods
-	 */
-	public function setGlPayeePaymentMethods(?array $glPayeePaymentMethods): self
-	{
-		$this->glPayeePaymentMethods = $glPayeePaymentMethods;
+    /**
+     * @param null|PayeePaymentMethod[] $glPayeePaymentMethods
+     */
+    public function setGlPayeePaymentMethods(?array $glPayeePaymentMethods): self
+    {
+        $this->glPayeePaymentMethods = $glPayeePaymentMethods;
 
-		return $this;
-	}
+        return $this;
+    }
 }

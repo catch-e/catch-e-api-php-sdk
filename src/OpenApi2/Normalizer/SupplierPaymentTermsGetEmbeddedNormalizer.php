@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,8 +17,8 @@
 
 namespace CatchE\OpenApi2\Normalizer;
 
-use Jane\JsonSchemaRuntime\Normalizer\CheckArray;
-use Jane\JsonSchemaRuntime\Reference;
+use CatchE\OpenApi2\Runtime\Normalizer\CheckArray;
+use Jane\Component\JsonSchemaRuntime\Reference;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -28,53 +28,78 @@ use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
 class SupplierPaymentTermsGetEmbeddedNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
-	use DenormalizerAwareTrait;
-	use NormalizerAwareTrait;
-	use CheckArray;
+    use DenormalizerAwareTrait;
 
-	public function supportsDenormalization($data, $type, $format = null)
-	{
-		return 'CatchE\\OpenApi2\\Model\\SupplierPaymentTermsGetEmbedded' === $type;
-	}
+    use NormalizerAwareTrait;
 
-	public function supportsNormalization($data, $format = null)
-	{
-		return is_object($data) && 'CatchE\\OpenApi2\\Model\\SupplierPaymentTermsGetEmbedded' === get_class($data);
-	}
+    use CheckArray;
 
-	public function denormalize($data, $class, $format = null, array $context = [])
-	{
-		if (isset($data['$ref'])) {
-			return new Reference($data['$ref'], $context['document-origin']);
-		}
-		if (isset($data['$recursiveRef'])) {
-			return new Reference($data['$recursiveRef'], $context['document-origin']);
-		}
-		$object = new \CatchE\OpenApi2\Model\SupplierPaymentTermsGetEmbedded();
-		if (\array_key_exists('fm_supplier_payment_terms', $data) && null !== $data['fm_supplier_payment_terms']) {
-			$values = [];
-			foreach ($data['fm_supplier_payment_terms'] as $value) {
-				$values[] = $this->denormalizer->denormalize($value, 'CatchE\\OpenApi2\\Model\\SupplierPaymentTerm', 'json', $context);
-			}
-			$object->setFmSupplierPaymentTerms($values);
-		} elseif (\array_key_exists('fm_supplier_payment_terms', $data) && null === $data['fm_supplier_payment_terms']) {
-			$object->setFmSupplierPaymentTerms(null);
-		}
+    /**
+     * @param mixed      $data
+     * @param mixed      $type
+     * @param null|mixed $format
+     *
+     * @return bool
+     */
+    public function supportsDenormalization($data, $type, $format = null)
+    {
+        return 'CatchE\\OpenApi2\\Model\\SupplierPaymentTermsGetEmbedded' === $type;
+    }
 
-		return $object;
-	}
+    public function supportsNormalization($data, $format = null)
+    {
+        return is_object($data) && 'CatchE\\OpenApi2\\Model\\SupplierPaymentTermsGetEmbedded' === get_class($data);
+    }
 
-	public function normalize($object, $format = null, array $context = [])
-	{
-		$data = [];
-		if (null !== $object->getFmSupplierPaymentTerms()) {
-			$values = [];
-			foreach ($object->getFmSupplierPaymentTerms() as $value) {
-				$values[] = $this->normalizer->normalize($value, 'json', $context);
-			}
-			$data['fm_supplier_payment_terms'] = $values;
-		}
+    /**
+     * @param mixed      $data
+     * @param mixed      $class
+     * @param null|mixed $format
+     *
+     * @return mixed
+     */
+    public function denormalize($data, $class, $format = null, array $context = [])
+    {
+        if (isset($data['$ref'])) {
+            return new Reference($data['$ref'], $context['document-origin']);
+        }
+        if (isset($data['$recursiveRef'])) {
+            return new Reference($data['$recursiveRef'], $context['document-origin']);
+        }
+        $object = new \CatchE\OpenApi2\Model\SupplierPaymentTermsGetEmbedded();
+        if (null === $data || false === \is_array($data)) {
+            return $object;
+        }
+        if (\array_key_exists('fm_supplier_payment_terms', $data) && null !== $data['fm_supplier_payment_terms']) {
+            $values = [];
+            foreach ($data['fm_supplier_payment_terms'] as $value) {
+                $values[] = $this->denormalizer->denormalize($value, 'CatchE\\OpenApi2\\Model\\SupplierPaymentTerm', 'json', $context);
+            }
+            $object->setFmSupplierPaymentTerms($values);
+        } elseif (\array_key_exists('fm_supplier_payment_terms', $data) && null === $data['fm_supplier_payment_terms']) {
+            $object->setFmSupplierPaymentTerms(null);
+        }
 
-		return $data;
-	}
+        return $object;
+    }
+
+    /**
+     * @param mixed      $object
+     * @param null|mixed $format
+     *
+     * @return null|array|\ArrayObject|bool|float|int|string
+     */
+    public function normalize($object, $format = null, array $context = [])
+    {
+        $data = [];
+        if (null !== $object->getFmSupplierPaymentTerms()) {
+            $values = [];
+            foreach ($object->getFmSupplierPaymentTerms() as $value) {
+                $values[] = $this->normalizer->normalize($value, 'json', $context);
+            }
+            $data['fm_supplier_payment_terms'] = $values;
+        }
+
+        return $data;
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,36 +19,36 @@ namespace CatchE\OpenApi2\Model;
 
 class ContactLinks
 {
-	/**
-	 * @var ContactLinksSelf|null
-	 */
-	protected $self;
-	/**
-	 * @var ContactLinksJobTitle|null
-	 */
-	protected $jobTitle;
+    /**
+     * @var null|ContactLinksSelf
+     */
+    protected $self;
+    /**
+     * @var null|ContactLinksJobTitle
+     */
+    protected $jobTitle;
 
-	public function getSelf(): ?ContactLinksSelf
-	{
-		return $this->self;
-	}
+    public function getSelf(): ?ContactLinksSelf
+    {
+        return $this->self;
+    }
 
-	public function setSelf(?ContactLinksSelf $self): self
-	{
-		$this->self = $self;
+    public function setSelf(?ContactLinksSelf $self): self
+    {
+        $this->self = $self;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getJobTitle(): ?ContactLinksJobTitle
-	{
-		return $this->jobTitle;
-	}
+    public function getJobTitle(): ?ContactLinksJobTitle
+    {
+        return $this->jobTitle;
+    }
 
-	public function setJobTitle(?ContactLinksJobTitle $jobTitle): self
-	{
-		$this->jobTitle = $jobTitle;
+    public function setJobTitle(?ContactLinksJobTitle $jobTitle): self
+    {
+        $this->jobTitle = $jobTitle;
 
-		return $this;
-	}
+        return $this;
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,26 +19,26 @@ namespace CatchE\OpenApi2\Model;
 
 class ContactsEmbedded
 {
-	/**
-	 * @var Contact[]|null
-	 */
-	protected $contacts;
+    /**
+     * @var null|Contact[]
+     */
+    protected $contacts;
 
-	/**
-	 * @return Contact[]|null
-	 */
-	public function getContacts(): ?array
-	{
-		return $this->contacts;
-	}
+    /**
+     * @return null|Contact[]
+     */
+    public function getContacts(): ?array
+    {
+        return $this->contacts;
+    }
 
-	/**
-	 * @param Contact[]|null $contacts
-	 */
-	public function setContacts(?array $contacts): self
-	{
-		$this->contacts = $contacts;
+    /**
+     * @param null|Contact[] $contacts
+     */
+    public function setContacts(?array $contacts): self
+    {
+        $this->contacts = $contacts;
 
-		return $this;
-	}
+        return $this;
+    }
 }

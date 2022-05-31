@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,26 +19,26 @@ namespace CatchE\OpenApi2\Model;
 
 class ChannelGroupsGetEmbedded
 {
-	/**
-	 * @var ChannelGroup[]|null
-	 */
-	protected $channelGroups;
+    /**
+     * @var null|ChannelGroup[]
+     */
+    protected $channelGroups;
 
-	/**
-	 * @return ChannelGroup[]|null
-	 */
-	public function getChannelGroups(): ?array
-	{
-		return $this->channelGroups;
-	}
+    /**
+     * @return null|ChannelGroup[]
+     */
+    public function getChannelGroups(): ?array
+    {
+        return $this->channelGroups;
+    }
 
-	/**
-	 * @param ChannelGroup[]|null $channelGroups
-	 */
-	public function setChannelGroups(?array $channelGroups): self
-	{
-		$this->channelGroups = $channelGroups;
+    /**
+     * @param null|ChannelGroup[] $channelGroups
+     */
+    public function setChannelGroups(?array $channelGroups): self
+    {
+        $this->channelGroups = $channelGroups;
 
-		return $this;
-	}
+        return $this;
+    }
 }

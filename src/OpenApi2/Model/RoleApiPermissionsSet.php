@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,26 +19,26 @@ namespace CatchE\OpenApi2\Model;
 
 class RoleApiPermissionsSet
 {
-	/**
-	 * @var string[]|null
-	 */
-	protected $permissions;
+    /**
+     * @var null|string[]
+     */
+    protected $permissions;
 
-	/**
-	 * @return string[]|null
-	 */
-	public function getPermissions(): ?array
-	{
-		return $this->permissions;
-	}
+    /**
+     * @return null|string[]
+     */
+    public function getPermissions(): ?array
+    {
+        return $this->permissions;
+    }
 
-	/**
-	 * @param string[]|null $permissions
-	 */
-	public function setPermissions(?array $permissions): self
-	{
-		$this->permissions = $permissions;
+    /**
+     * @param null|string[] $permissions
+     */
+    public function setPermissions(?array $permissions): self
+    {
+        $this->permissions = $permissions;
 
-		return $this;
-	}
+        return $this;
+    }
 }

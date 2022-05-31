@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,18 +17,10 @@
 
 namespace CatchE\OpenApi2\Exception;
 
-class CancelTableImportRequestedRangeNotSatisfiableException extends \RuntimeException implements ClientException
+class CancelTableImportRequestedRangeNotSatisfiableException extends RequestedRangeNotSatisfiableException
 {
-	private $exportNotSatisfiable;
-
-	public function __construct(\CatchE\OpenApi2\Model\ExportNotSatisfiable $exportNotSatisfiable)
-	{
-		parent::__construct('Export not satisfiable', 416);
-		$this->exportNotSatisfiable = $exportNotSatisfiable;
-	}
-
-	public function getExportNotSatisfiable()
-	{
-		return $this->exportNotSatisfiable;
-	}
+    public function __construct(\CatchE\OpenApi2\Model\ExportNotSatisfiable $exportNotSatisfiable)
+    {
+        parent::__construct('Export not satisfiable', $exportNotSatisfiable);
+    }
 }

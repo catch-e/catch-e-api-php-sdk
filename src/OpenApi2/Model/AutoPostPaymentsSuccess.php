@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,102 +19,102 @@ namespace CatchE\OpenApi2\Model;
 
 class AutoPostPaymentsSuccess
 {
-	/**
-	 * @var string[]|null
-	 */
-	protected $processedContracts;
-	/**
-	 * @var \DateTime|null
-	 */
-	protected $datedToDate;
-	/**
-	 * @var float|null
-	 */
-	protected $controlTotal;
-	/**
-	 * @var mixed|null
-	 */
-	protected $exceptions;
-	/**
-	 * @var mixed|null
-	 */
-	protected $links;
+    /**
+     * @var null|string[]
+     */
+    protected $processedContracts;
+    /**
+     * @var null|\DateTime
+     */
+    protected $datedToDate;
+    /**
+     * @var null|float
+     */
+    protected $controlTotal;
+    /**
+     * @var null|mixed
+     */
+    protected $exceptions;
+    /**
+     * @var null|mixed
+     */
+    protected $links;
 
-	/**
-	 * @return string[]|null
-	 */
-	public function getProcessedContracts(): ?array
-	{
-		return $this->processedContracts;
-	}
+    /**
+     * @return null|string[]
+     */
+    public function getProcessedContracts(): ?array
+    {
+        return $this->processedContracts;
+    }
 
-	/**
-	 * @param string[]|null $processedContracts
-	 */
-	public function setProcessedContracts(?array $processedContracts): self
-	{
-		$this->processedContracts = $processedContracts;
+    /**
+     * @param null|string[] $processedContracts
+     */
+    public function setProcessedContracts(?array $processedContracts): self
+    {
+        $this->processedContracts = $processedContracts;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getDatedToDate(): ?\DateTime
-	{
-		return $this->datedToDate;
-	}
+    public function getDatedToDate(): ?\DateTime
+    {
+        return $this->datedToDate;
+    }
 
-	public function setDatedToDate(?\DateTime $datedToDate): self
-	{
-		$this->datedToDate = $datedToDate;
+    public function setDatedToDate(?\DateTime $datedToDate): self
+    {
+        $this->datedToDate = $datedToDate;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getControlTotal(): ?float
-	{
-		return $this->controlTotal;
-	}
+    public function getControlTotal(): ?float
+    {
+        return $this->controlTotal;
+    }
 
-	public function setControlTotal(?float $controlTotal): self
-	{
-		$this->controlTotal = $controlTotal;
+    public function setControlTotal(?float $controlTotal): self
+    {
+        $this->controlTotal = $controlTotal;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * @return mixed
-	 */
-	public function getExceptions()
-	{
-		return $this->exceptions;
-	}
+    /**
+     * @return mixed
+     */
+    public function getExceptions()
+    {
+        return $this->exceptions;
+    }
 
-	/**
-	 * @param mixed $exceptions
-	 */
-	public function setExceptions($exceptions): self
-	{
-		$this->exceptions = $exceptions;
+    /**
+     * @param mixed $exceptions
+     */
+    public function setExceptions($exceptions): self
+    {
+        $this->exceptions = $exceptions;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * @return mixed
-	 */
-	public function getLinks()
-	{
-		return $this->links;
-	}
+    /**
+     * @return mixed
+     */
+    public function getLinks()
+    {
+        return $this->links;
+    }
 
-	/**
-	 * @param mixed $links
-	 */
-	public function setLinks($links): self
-	{
-		$this->links = $links;
+    /**
+     * @param mixed $links
+     */
+    public function setLinks($links): self
+    {
+        $this->links = $links;
 
-		return $this;
-	}
+        return $this;
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,24 +17,22 @@
 
 namespace CatchE\OpenApi2\Authentication;
 
-class BearerTokenAuthentication implements \Jane\OpenApiRuntime\Client\AuthenticationPlugin
+class BearerTokenAuthentication implements \Jane\Component\OpenApiRuntime\Client\AuthenticationPlugin
 {
-	private $apiKey;
+    private $apiKey;
 
-	public function __construct(string $apiKey)
-	{
-		$this->{'apiKey'} = $apiKey;
-	}
+    public function __construct(string $apiKey)
+    {
+        $this->{'apiKey'} = $apiKey;
+    }
 
-	public function authentication(\Psr\Http\Message\RequestInterface $request): \Psr\Http\Message\RequestInterface
-	{
-		$request = $request->withHeader('Authorization', $this->{'apiKey'});
+    public function authentication(\Psr\Http\Message\RequestInterface $request): \Psr\Http\Message\RequestInterface
+    {
+        return $request->withHeader('Authorization', $this->{'apiKey'});
+    }
 
-		return $request;
-	}
-
-	public function getScope(): string
-	{
-		return 'Bearer Token';
-	}
+    public function getScope(): string
+    {
+        return 'Bearer Token';
+    }
 }

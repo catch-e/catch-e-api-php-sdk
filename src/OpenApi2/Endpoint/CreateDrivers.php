@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,97 +17,97 @@
 
 namespace CatchE\OpenApi2\Endpoint;
 
-class CreateDrivers extends \Jane\OpenApiRuntime\Client\BaseEndpoint implements \Jane\OpenApiRuntime\Client\Endpoint
+class CreateDrivers extends \CatchE\OpenApi2\Runtime\Client\BaseEndpoint implements \CatchE\OpenApi2\Runtime\Client\Endpoint
 {
-	use \Jane\OpenApiRuntime\Client\EndpointTrait;
+    use \CatchE\OpenApi2\Runtime\Client\EndpointTrait;
 
-	/**
-	 * This method requires the **Drivers:Create** permission to be associated with your role.
-	 *
-	 * @param array $drivers          JSON payload
-	 * @param array $headerParameters {
-	 *
-	 *     @var string $Audit-User-Id (Optional) User Id to use for audit purposes. This header requires the **Audit:UserIdOverride** permission to be associated with your role.
-	 * }
-	 */
-	public function __construct(array $drivers, array $headerParameters = [])
-	{
-		$this->body = $drivers;
-		$this->headerParameters = $headerParameters;
-	}
+    /**
+     * This method requires the **Drivers:Create** permission to be associated with your role.
+     *
+     * @param array $drivers          JSON payload
+     * @param array $headerParameters {
+     *
+     *     @var string $Audit-User-Id (Optional) User Id to use for audit purposes. This header requires the **Audit:UserIdOverride** permission to be associated with your role.
+     * }
+     */
+    public function __construct(array $drivers, array $headerParameters = [])
+    {
+        $this->body = $drivers;
+        $this->headerParameters = $headerParameters;
+    }
 
-	public function getMethod(): string
-	{
-		return 'POST';
-	}
+    public function getMethod(): string
+    {
+        return 'POST';
+    }
 
-	public function getUri(): string
-	{
-		return '/fm/drivers';
-	}
+    public function getUri(): string
+    {
+        return '/fm/drivers';
+    }
 
-	public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
-	{
-		return $this->getSerializedBody($serializer);
-	}
+    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    {
+        return $this->getSerializedBody($serializer);
+    }
 
-	public function getExtraHeaders(): array
-	{
-		return ['Accept' => ['application/json']];
-	}
+    public function getExtraHeaders(): array
+    {
+        return ['Accept' => ['application/json']];
+    }
 
-	protected function getHeadersOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
-	{
-		$optionsResolver = parent::getHeadersOptionsResolver();
-		$optionsResolver->setDefined(['Audit-User-Id']);
-		$optionsResolver->setRequired([]);
-		$optionsResolver->setDefaults([]);
-		$optionsResolver->setAllowedTypes('Audit-User-Id', ['string']);
+    public function getAuthenticationScopes(): array
+    {
+        return ['Bearer Token'];
+    }
 
-		return $optionsResolver;
-	}
+    protected function getHeadersOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    {
+        $optionsResolver = parent::getHeadersOptionsResolver();
+        $optionsResolver->setDefined(['Audit-User-Id']);
+        $optionsResolver->setRequired([]);
+        $optionsResolver->setDefaults([]);
+        $optionsResolver->setAllowedTypes('Audit-User-Id', ['string']);
 
-	/**
-	 * {@inheritdoc}
-	 *
-	 * @throws \CatchE\OpenApi2\Exception\CreateDriversUnauthorizedException
-	 * @throws \CatchE\OpenApi2\Exception\CreateDriversForbiddenException
-	 * @throws \CatchE\OpenApi2\Exception\CreateDriversNotAcceptableException
-	 * @throws \CatchE\OpenApi2\Exception\CreateDriversUnsupportedMediaTypeException
-	 * @throws \CatchE\OpenApi2\Exception\CreateDriversUnprocessableEntityException
-	 * @throws \CatchE\OpenApi2\Exception\CreateDriversInternalServerErrorException
-	 *
-	 * @return \CatchE\OpenApi2\Model\Error|null
-	 */
-	protected function transformResponseBody(string $body, int $status, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType)
-	{
-		if (201 === $status) {
-			return json_decode($body);
-		}
-		if (401 === $status) {
-			throw new \CatchE\OpenApi2\Exception\CreateDriversUnauthorizedException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Unauthorized', 'json'));
-		}
-		if (403 === $status) {
-			throw new \CatchE\OpenApi2\Exception\CreateDriversForbiddenException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Forbidden', 'json'));
-		}
-		if (406 === $status) {
-			throw new \CatchE\OpenApi2\Exception\CreateDriversNotAcceptableException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotAcceptable', 'json'));
-		}
-		if (415 === $status) {
-			throw new \CatchE\OpenApi2\Exception\CreateDriversUnsupportedMediaTypeException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\UnsupportedMediaType', 'json'));
-		}
-		if (422 === $status) {
-			throw new \CatchE\OpenApi2\Exception\CreateDriversUnprocessableEntityException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\UnprocessableEntity', 'json'));
-		}
-		if (500 === $status) {
-			throw new \CatchE\OpenApi2\Exception\CreateDriversInternalServerErrorException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\InternalError', 'json'));
-		}
+        return $optionsResolver;
+    }
 
-		return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Error', 'json');
-	}
+    /**
+     * {@inheritdoc}
+     *
+     * @throws \CatchE\OpenApi2\Exception\CreateDriversUnauthorizedException
+     * @throws \CatchE\OpenApi2\Exception\CreateDriversForbiddenException
+     * @throws \CatchE\OpenApi2\Exception\CreateDriversNotAcceptableException
+     * @throws \CatchE\OpenApi2\Exception\CreateDriversUnsupportedMediaTypeException
+     * @throws \CatchE\OpenApi2\Exception\CreateDriversUnprocessableEntityException
+     * @throws \CatchE\OpenApi2\Exception\CreateDriversInternalServerErrorException
+     *
+     * @return null|\CatchE\OpenApi2\Model\Error
+     */
+    protected function transformResponseBody(string $body, int $status, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    {
+        if (201 === $status) {
+            return json_decode($body);
+        }
+        if (401 === $status) {
+            throw new \CatchE\OpenApi2\Exception\CreateDriversUnauthorizedException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Unauthorized', 'json'));
+        }
+        if (403 === $status) {
+            throw new \CatchE\OpenApi2\Exception\CreateDriversForbiddenException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Forbidden', 'json'));
+        }
+        if (406 === $status) {
+            throw new \CatchE\OpenApi2\Exception\CreateDriversNotAcceptableException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotAcceptable', 'json'));
+        }
+        if (415 === $status) {
+            throw new \CatchE\OpenApi2\Exception\CreateDriversUnsupportedMediaTypeException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\UnsupportedMediaType', 'json'));
+        }
+        if (422 === $status) {
+            throw new \CatchE\OpenApi2\Exception\CreateDriversUnprocessableEntityException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\UnprocessableEntity', 'json'));
+        }
+        if (500 === $status) {
+            throw new \CatchE\OpenApi2\Exception\CreateDriversInternalServerErrorException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\InternalError', 'json'));
+        }
 
-	public function getAuthenticationScopes(): array
-	{
-		return ['Bearer Token'];
-	}
+        return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Error', 'json');
+    }
 }

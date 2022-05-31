@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,36 +19,36 @@ namespace CatchE\OpenApi2\Model;
 
 class SpEmployeeContractLifeBudgetAndDisbursementGetResponse200
 {
-	/**
-	 * @var float|null
-	 */
-	protected $lifeBudgetNet;
-	/**
-	 * @var float|null
-	 */
-	protected $lifeDisbursementsNet;
+    /**
+     * @var null|float
+     */
+    protected $lifeBudgetNet;
+    /**
+     * @var null|float
+     */
+    protected $lifeDisbursementsNet;
 
-	public function getLifeBudgetNet(): ?float
-	{
-		return $this->lifeBudgetNet;
-	}
+    public function getLifeBudgetNet(): ?float
+    {
+        return $this->lifeBudgetNet;
+    }
 
-	public function setLifeBudgetNet(?float $lifeBudgetNet): self
-	{
-		$this->lifeBudgetNet = $lifeBudgetNet;
+    public function setLifeBudgetNet(?float $lifeBudgetNet): self
+    {
+        $this->lifeBudgetNet = $lifeBudgetNet;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getLifeDisbursementsNet(): ?float
-	{
-		return $this->lifeDisbursementsNet;
-	}
+    public function getLifeDisbursementsNet(): ?float
+    {
+        return $this->lifeDisbursementsNet;
+    }
 
-	public function setLifeDisbursementsNet(?float $lifeDisbursementsNet): self
-	{
-		$this->lifeDisbursementsNet = $lifeDisbursementsNet;
+    public function setLifeDisbursementsNet(?float $lifeDisbursementsNet): self
+    {
+        $this->lifeDisbursementsNet = $lifeDisbursementsNet;
 
-		return $this;
-	}
+        return $this;
+    }
 }

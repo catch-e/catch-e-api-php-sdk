@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,100 +19,100 @@ namespace CatchE\OpenApi2\Model;
 
 class FmDriverAssetsGetResponse200
 {
-	/**
-	 * @var FmDriverAssetsGetResponse200Links|null
-	 */
-	protected $links;
-	/**
-	 * @var FmDriverAssetsGetResponse200Embedded|null
-	 */
-	protected $embedded;
-	/**
-	 * @var int|null
-	 */
-	protected $pageCount;
-	/**
-	 * @var int|null
-	 */
-	protected $pageSize;
-	/**
-	 * @var int|null
-	 */
-	protected $totalItems;
-	/**
-	 * @var int|null
-	 */
-	protected $page;
+    /**
+     * @var null|FmDriverAssetsGetResponse200Links
+     */
+    protected $links;
+    /**
+     * @var null|FmDriverAssetsGetResponse200Embedded
+     */
+    protected $embedded;
+    /**
+     * @var null|int
+     */
+    protected $pageCount;
+    /**
+     * @var null|int
+     */
+    protected $pageSize;
+    /**
+     * @var null|int
+     */
+    protected $totalItems;
+    /**
+     * @var null|int
+     */
+    protected $page;
 
-	public function getLinks(): ?FmDriverAssetsGetResponse200Links
-	{
-		return $this->links;
-	}
+    public function getLinks(): ?FmDriverAssetsGetResponse200Links
+    {
+        return $this->links;
+    }
 
-	public function setLinks(?FmDriverAssetsGetResponse200Links $links): self
-	{
-		$this->links = $links;
+    public function setLinks(?FmDriverAssetsGetResponse200Links $links): self
+    {
+        $this->links = $links;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getEmbedded(): ?FmDriverAssetsGetResponse200Embedded
-	{
-		return $this->embedded;
-	}
+    public function getEmbedded(): ?FmDriverAssetsGetResponse200Embedded
+    {
+        return $this->embedded;
+    }
 
-	public function setEmbedded(?FmDriverAssetsGetResponse200Embedded $embedded): self
-	{
-		$this->embedded = $embedded;
+    public function setEmbedded(?FmDriverAssetsGetResponse200Embedded $embedded): self
+    {
+        $this->embedded = $embedded;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getPageCount(): ?int
-	{
-		return $this->pageCount;
-	}
+    public function getPageCount(): ?int
+    {
+        return $this->pageCount;
+    }
 
-	public function setPageCount(?int $pageCount): self
-	{
-		$this->pageCount = $pageCount;
+    public function setPageCount(?int $pageCount): self
+    {
+        $this->pageCount = $pageCount;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getPageSize(): ?int
-	{
-		return $this->pageSize;
-	}
+    public function getPageSize(): ?int
+    {
+        return $this->pageSize;
+    }
 
-	public function setPageSize(?int $pageSize): self
-	{
-		$this->pageSize = $pageSize;
+    public function setPageSize(?int $pageSize): self
+    {
+        $this->pageSize = $pageSize;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getTotalItems(): ?int
-	{
-		return $this->totalItems;
-	}
+    public function getTotalItems(): ?int
+    {
+        return $this->totalItems;
+    }
 
-	public function setTotalItems(?int $totalItems): self
-	{
-		$this->totalItems = $totalItems;
+    public function setTotalItems(?int $totalItems): self
+    {
+        $this->totalItems = $totalItems;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getPage(): ?int
-	{
-		return $this->page;
-	}
+    public function getPage(): ?int
+    {
+        return $this->page;
+    }
 
-	public function setPage(?int $page): self
-	{
-		$this->page = $page;
+    public function setPage(?int $page): self
+    {
+        $this->page = $page;
 
-		return $this;
-	}
+        return $this;
+    }
 }

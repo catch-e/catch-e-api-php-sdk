@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,68 +19,68 @@ namespace CatchE\OpenApi2\Model;
 
 class FmSuppliersSupplierIdPaymentDetailsGetResponse200
 {
-	/**
-	 * @var string|null
-	 */
-	protected $bpayBillerCode;
-	/**
-	 * @var string|null
-	 */
-	protected $financialInstitutionName;
-	/**
-	 * @var string|null
-	 */
-	protected $bsb;
-	/**
-	 * @var string|null
-	 */
-	protected $accountNumber;
+    /**
+     * @var null|string
+     */
+    protected $bpayBillerCode;
+    /**
+     * @var null|string
+     */
+    protected $financialInstitutionName;
+    /**
+     * @var null|string
+     */
+    protected $bsb;
+    /**
+     * @var null|string
+     */
+    protected $accountNumber;
 
-	public function getBpayBillerCode(): ?string
-	{
-		return $this->bpayBillerCode;
-	}
+    public function getBpayBillerCode(): ?string
+    {
+        return $this->bpayBillerCode;
+    }
 
-	public function setBpayBillerCode(?string $bpayBillerCode): self
-	{
-		$this->bpayBillerCode = $bpayBillerCode;
+    public function setBpayBillerCode(?string $bpayBillerCode): self
+    {
+        $this->bpayBillerCode = $bpayBillerCode;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getFinancialInstitutionName(): ?string
-	{
-		return $this->financialInstitutionName;
-	}
+    public function getFinancialInstitutionName(): ?string
+    {
+        return $this->financialInstitutionName;
+    }
 
-	public function setFinancialInstitutionName(?string $financialInstitutionName): self
-	{
-		$this->financialInstitutionName = $financialInstitutionName;
+    public function setFinancialInstitutionName(?string $financialInstitutionName): self
+    {
+        $this->financialInstitutionName = $financialInstitutionName;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getBsb(): ?string
-	{
-		return $this->bsb;
-	}
+    public function getBsb(): ?string
+    {
+        return $this->bsb;
+    }
 
-	public function setBsb(?string $bsb): self
-	{
-		$this->bsb = $bsb;
+    public function setBsb(?string $bsb): self
+    {
+        $this->bsb = $bsb;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getAccountNumber(): ?string
-	{
-		return $this->accountNumber;
-	}
+    public function getAccountNumber(): ?string
+    {
+        return $this->accountNumber;
+    }
 
-	public function setAccountNumber(?string $accountNumber): self
-	{
-		$this->accountNumber = $accountNumber;
+    public function setAccountNumber(?string $accountNumber): self
+    {
+        $this->accountNumber = $accountNumber;
 
-		return $this;
-	}
+        return $this;
+    }
 }

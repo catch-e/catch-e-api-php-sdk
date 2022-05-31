@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,96 +17,95 @@
 
 namespace CatchE\OpenApi2\Endpoint;
 
-class GetVariantPhotos extends \Jane\OpenApiRuntime\Client\BaseEndpoint implements \Jane\OpenApiRuntime\Client\Endpoint
+class GetVariantPhotos extends \CatchE\OpenApi2\Runtime\Client\BaseEndpoint implements \CatchE\OpenApi2\Runtime\Client\Endpoint
 {
-	use \Jane\OpenApiRuntime\Client\EndpointTrait;
+    use \CatchE\OpenApi2\Runtime\Client\EndpointTrait;
 
-	/**
-	 * Get list of photo codes and corresponding types for a given vehicle variant. Photo codes are provided by the vehicle data supplier, and are typically used as the file name for each image. Types describe the orientation of the photo e.g. 'front'.
+    /**
+     * Get list of photo codes and corresponding types for a given vehicle variant. Photo codes are provided by the vehicle data supplier, and are typically used as the file name for each image. Types describe the orientation of the photo e.g. 'front'.
+     *
+     * This method requires the **QuoteVariants:Get** permission to be associated with your role.
+     *
+     * @param array $queryParameters {
+     *
+     *     @var string $variant_id Variant Id
+     *     @var array $photo_type Optional Photo Types
+     * }
+     */
+    public function __construct(array $queryParameters = [])
+    {
+        $this->queryParameters = $queryParameters;
+    }
 
-	This method requires the **QuoteVariants:Get** permission to be associated with your role.
+    public function getMethod(): string
+    {
+        return 'GET';
+    }
 
-	 *
-	 * @param array $queryParameters {
-	 *
-	 *     @var string $variant_id Variant Id
-	 *     @var array $photo_type Optional Photo Types
-	 * }
-	 */
-	public function __construct(array $queryParameters = [])
-	{
-		$this->queryParameters = $queryParameters;
-	}
+    public function getUri(): string
+    {
+        return '/qt/variants/photos';
+    }
 
-	public function getMethod(): string
-	{
-		return 'GET';
-	}
+    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    {
+        return [[], null];
+    }
 
-	public function getUri(): string
-	{
-		return '/qt/variants/photos';
-	}
+    public function getExtraHeaders(): array
+    {
+        return ['Accept' => ['application/json']];
+    }
 
-	public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
-	{
-		return [[], null];
-	}
+    public function getAuthenticationScopes(): array
+    {
+        return ['Bearer Token'];
+    }
 
-	public function getExtraHeaders(): array
-	{
-		return ['Accept' => ['application/json']];
-	}
+    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    {
+        $optionsResolver = parent::getQueryOptionsResolver();
+        $optionsResolver->setDefined(['variant_id', 'photo_type']);
+        $optionsResolver->setRequired(['variant_id']);
+        $optionsResolver->setDefaults([]);
+        $optionsResolver->setAllowedTypes('variant_id', ['string']);
+        $optionsResolver->setAllowedTypes('photo_type', ['array']);
 
-	protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
-	{
-		$optionsResolver = parent::getQueryOptionsResolver();
-		$optionsResolver->setDefined(['variant_id', 'photo_type']);
-		$optionsResolver->setRequired(['variant_id']);
-		$optionsResolver->setDefaults([]);
-		$optionsResolver->setAllowedTypes('variant_id', ['string']);
-		$optionsResolver->setAllowedTypes('photo_type', ['array']);
+        return $optionsResolver;
+    }
 
-		return $optionsResolver;
-	}
+    /**
+     * {@inheritdoc}
+     *
+     * @throws \CatchE\OpenApi2\Exception\GetVariantPhotosUnauthorizedException
+     * @throws \CatchE\OpenApi2\Exception\GetVariantPhotosForbiddenException
+     * @throws \CatchE\OpenApi2\Exception\GetVariantPhotosNotFoundException
+     * @throws \CatchE\OpenApi2\Exception\GetVariantPhotosNotAcceptableException
+     * @throws \CatchE\OpenApi2\Exception\GetVariantPhotosInternalServerErrorException
+     *
+     * @return null|\CatchE\OpenApi2\Model\Error|\CatchE\OpenApi2\Model\VariantPhotosGet
+     */
+    protected function transformResponseBody(string $body, int $status, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    {
+        if (200 === $status) {
+            return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\VariantPhotosGet', 'json');
+        }
+        if (401 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetVariantPhotosUnauthorizedException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Unauthorized', 'json'));
+        }
+        if (403 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetVariantPhotosForbiddenException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Forbidden', 'json'));
+        }
+        if (404 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetVariantPhotosNotFoundException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotFound', 'json'));
+        }
+        if (406 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetVariantPhotosNotAcceptableException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotAcceptable', 'json'));
+        }
+        if (500 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetVariantPhotosInternalServerErrorException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\InternalError', 'json'));
+        }
 
-	/**
-	 * {@inheritdoc}
-	 *
-	 * @throws \CatchE\OpenApi2\Exception\GetVariantPhotosUnauthorizedException
-	 * @throws \CatchE\OpenApi2\Exception\GetVariantPhotosForbiddenException
-	 * @throws \CatchE\OpenApi2\Exception\GetVariantPhotosNotFoundException
-	 * @throws \CatchE\OpenApi2\Exception\GetVariantPhotosNotAcceptableException
-	 * @throws \CatchE\OpenApi2\Exception\GetVariantPhotosInternalServerErrorException
-	 *
-	 * @return \CatchE\OpenApi2\Model\VariantPhotosGet|\CatchE\OpenApi2\Model\Error|null
-	 */
-	protected function transformResponseBody(string $body, int $status, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType)
-	{
-		if (200 === $status) {
-			return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\VariantPhotosGet', 'json');
-		}
-		if (401 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetVariantPhotosUnauthorizedException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Unauthorized', 'json'));
-		}
-		if (403 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetVariantPhotosForbiddenException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Forbidden', 'json'));
-		}
-		if (404 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetVariantPhotosNotFoundException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotFound', 'json'));
-		}
-		if (406 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetVariantPhotosNotAcceptableException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotAcceptable', 'json'));
-		}
-		if (500 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetVariantPhotosInternalServerErrorException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\InternalError', 'json'));
-		}
-
-		return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Error', 'json');
-	}
-
-	public function getAuthenticationScopes(): array
-	{
-		return ['Bearer Token'];
-	}
+        return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Error', 'json');
+    }
 }

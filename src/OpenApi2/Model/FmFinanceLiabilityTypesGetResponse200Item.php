@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,116 +19,116 @@ namespace CatchE\OpenApi2\Model;
 
 class FmFinanceLiabilityTypesGetResponse200Item
 {
-	/**
-	 * @var string|null
-	 */
-	protected $financeLiabilityTypeId;
-	/**
-	 * @var string|null
-	 */
-	protected $name;
-	/**
-	 * @var string|null
-	 */
-	protected $sequenceLinkFinanceAssetTypeId;
-	/**
-	 * @var string|null
-	 */
-	protected $financierRequiredFlag;
-	/**
-	 * @var string|null
-	 */
-	protected $payoutRequiredFlag;
-	/**
-	 * @var string|null
-	 */
-	protected $endDateRequiredFlag;
-	/**
-	 * @var string|null
-	 */
-	protected $limitAmountRequiredFlag;
+    /**
+     * @var null|string
+     */
+    protected $financeLiabilityTypeId;
+    /**
+     * @var null|string
+     */
+    protected $name;
+    /**
+     * @var null|string
+     */
+    protected $sequenceLinkFinanceAssetTypeId;
+    /**
+     * @var null|string
+     */
+    protected $financierRequiredFlag;
+    /**
+     * @var null|string
+     */
+    protected $payoutRequiredFlag;
+    /**
+     * @var null|string
+     */
+    protected $endDateRequiredFlag;
+    /**
+     * @var null|string
+     */
+    protected $limitAmountRequiredFlag;
 
-	public function getFinanceLiabilityTypeId(): ?string
-	{
-		return $this->financeLiabilityTypeId;
-	}
+    public function getFinanceLiabilityTypeId(): ?string
+    {
+        return $this->financeLiabilityTypeId;
+    }
 
-	public function setFinanceLiabilityTypeId(?string $financeLiabilityTypeId): self
-	{
-		$this->financeLiabilityTypeId = $financeLiabilityTypeId;
+    public function setFinanceLiabilityTypeId(?string $financeLiabilityTypeId): self
+    {
+        $this->financeLiabilityTypeId = $financeLiabilityTypeId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getName(): ?string
-	{
-		return $this->name;
-	}
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
 
-	public function setName(?string $name): self
-	{
-		$this->name = $name;
+    public function setName(?string $name): self
+    {
+        $this->name = $name;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getSequenceLinkFinanceAssetTypeId(): ?string
-	{
-		return $this->sequenceLinkFinanceAssetTypeId;
-	}
+    public function getSequenceLinkFinanceAssetTypeId(): ?string
+    {
+        return $this->sequenceLinkFinanceAssetTypeId;
+    }
 
-	public function setSequenceLinkFinanceAssetTypeId(?string $sequenceLinkFinanceAssetTypeId): self
-	{
-		$this->sequenceLinkFinanceAssetTypeId = $sequenceLinkFinanceAssetTypeId;
+    public function setSequenceLinkFinanceAssetTypeId(?string $sequenceLinkFinanceAssetTypeId): self
+    {
+        $this->sequenceLinkFinanceAssetTypeId = $sequenceLinkFinanceAssetTypeId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getFinancierRequiredFlag(): ?string
-	{
-		return $this->financierRequiredFlag;
-	}
+    public function getFinancierRequiredFlag(): ?string
+    {
+        return $this->financierRequiredFlag;
+    }
 
-	public function setFinancierRequiredFlag(?string $financierRequiredFlag): self
-	{
-		$this->financierRequiredFlag = $financierRequiredFlag;
+    public function setFinancierRequiredFlag(?string $financierRequiredFlag): self
+    {
+        $this->financierRequiredFlag = $financierRequiredFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getPayoutRequiredFlag(): ?string
-	{
-		return $this->payoutRequiredFlag;
-	}
+    public function getPayoutRequiredFlag(): ?string
+    {
+        return $this->payoutRequiredFlag;
+    }
 
-	public function setPayoutRequiredFlag(?string $payoutRequiredFlag): self
-	{
-		$this->payoutRequiredFlag = $payoutRequiredFlag;
+    public function setPayoutRequiredFlag(?string $payoutRequiredFlag): self
+    {
+        $this->payoutRequiredFlag = $payoutRequiredFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getEndDateRequiredFlag(): ?string
-	{
-		return $this->endDateRequiredFlag;
-	}
+    public function getEndDateRequiredFlag(): ?string
+    {
+        return $this->endDateRequiredFlag;
+    }
 
-	public function setEndDateRequiredFlag(?string $endDateRequiredFlag): self
-	{
-		$this->endDateRequiredFlag = $endDateRequiredFlag;
+    public function setEndDateRequiredFlag(?string $endDateRequiredFlag): self
+    {
+        $this->endDateRequiredFlag = $endDateRequiredFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getLimitAmountRequiredFlag(): ?string
-	{
-		return $this->limitAmountRequiredFlag;
-	}
+    public function getLimitAmountRequiredFlag(): ?string
+    {
+        return $this->limitAmountRequiredFlag;
+    }
 
-	public function setLimitAmountRequiredFlag(?string $limitAmountRequiredFlag): self
-	{
-		$this->limitAmountRequiredFlag = $limitAmountRequiredFlag;
+    public function setLimitAmountRequiredFlag(?string $limitAmountRequiredFlag): self
+    {
+        $this->limitAmountRequiredFlag = $limitAmountRequiredFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 }

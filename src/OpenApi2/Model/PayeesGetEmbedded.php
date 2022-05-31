@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,26 +19,26 @@ namespace CatchE\OpenApi2\Model;
 
 class PayeesGetEmbedded
 {
-	/**
-	 * @var Payee[]|null
-	 */
-	protected $glPayee;
+    /**
+     * @var null|Payee[]
+     */
+    protected $glPayee;
 
-	/**
-	 * @return Payee[]|null
-	 */
-	public function getGlPayee(): ?array
-	{
-		return $this->glPayee;
-	}
+    /**
+     * @return null|Payee[]
+     */
+    public function getGlPayee(): ?array
+    {
+        return $this->glPayee;
+    }
 
-	/**
-	 * @param Payee[]|null $glPayee
-	 */
-	public function setGlPayee(?array $glPayee): self
-	{
-		$this->glPayee = $glPayee;
+    /**
+     * @param null|Payee[] $glPayee
+     */
+    public function setGlPayee(?array $glPayee): self
+    {
+        $this->glPayee = $glPayee;
 
-		return $this;
-	}
+        return $this;
+    }
 }

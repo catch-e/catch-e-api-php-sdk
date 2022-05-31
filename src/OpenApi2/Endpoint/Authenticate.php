@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,118 +17,118 @@
 
 namespace CatchE\OpenApi2\Endpoint;
 
-class Authenticate extends \Jane\OpenApiRuntime\Client\BaseEndpoint implements \Jane\OpenApiRuntime\Client\Endpoint
+class Authenticate extends \CatchE\OpenApi2\Runtime\Client\BaseEndpoint implements \CatchE\OpenApi2\Runtime\Client\Endpoint
 {
-	use \Jane\OpenApiRuntime\Client\EndpointTrait;
+    use \CatchE\OpenApi2\Runtime\Client\EndpointTrait;
 
-	/**
-	 * Request an API token for use with secured methods.
-	 *
-	 * @param array $formParameters {
-	 *
-	 *     @var string $username Catch-e username
-	 *     @var string $password Catch-e password
-	 *     @var string $2fa_code (Optional) Catch-e two-factor authentication code
-	 *     @var int $token_timeout (Optional) Token timeout in seconds. If specified, the issued access token will expire after the specified number of seconds
-	 * }
-	 *
-	 * @param array $headerParameters {
-	 *
-	 *     @var string $Client-Id Client Id for your Catch-e system
-	 * }
-	 */
-	public function __construct(array $formParameters = [], array $headerParameters = [])
-	{
-		$this->formParameters = $formParameters;
-		$this->headerParameters = $headerParameters;
-	}
+    /**
+     * Request an API token for use with secured methods.
+     *
+     * @param array $formParameters {
+     *
+     *     @var string $username Catch-e username
+     *     @var string $password Catch-e password
+     *     @var string $2fa_code (Optional) Catch-e two-factor authentication code
+     *     @var int $token_timeout (Optional) Token timeout in seconds. If specified, the issued access token will expire after the specified number of seconds
+     * }
+     *
+     * @param array $headerParameters {
+     *
+     *     @var string $Client-Id Client Id for your Catch-e system
+     * }
+     */
+    public function __construct(array $formParameters = [], array $headerParameters = [])
+    {
+        $this->formParameters = $formParameters;
+        $this->headerParameters = $headerParameters;
+    }
 
-	public function getMethod(): string
-	{
-		return 'POST';
-	}
+    public function getMethod(): string
+    {
+        return 'POST';
+    }
 
-	public function getUri(): string
-	{
-		return '/authenticate';
-	}
+    public function getUri(): string
+    {
+        return '/authenticate';
+    }
 
-	public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
-	{
-		return $this->getFormBody();
-	}
+    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    {
+        return $this->getFormBody();
+    }
 
-	public function getExtraHeaders(): array
-	{
-		return ['Accept' => ['application/json']];
-	}
+    public function getExtraHeaders(): array
+    {
+        return ['Accept' => ['application/json']];
+    }
 
-	protected function getFormOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
-	{
-		$optionsResolver = parent::getFormOptionsResolver();
-		$optionsResolver->setDefined(['username', 'password', '2fa_code', 'token_timeout']);
-		$optionsResolver->setRequired(['username', 'password']);
-		$optionsResolver->setDefaults([]);
-		$optionsResolver->setAllowedTypes('username', ['string']);
-		$optionsResolver->setAllowedTypes('password', ['string']);
-		$optionsResolver->setAllowedTypes('2fa_code', ['string']);
-		$optionsResolver->setAllowedTypes('token_timeout', ['int']);
+    public function getAuthenticationScopes(): array
+    {
+        return [];
+    }
 
-		return $optionsResolver;
-	}
+    protected function getFormOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    {
+        $optionsResolver = parent::getFormOptionsResolver();
+        $optionsResolver->setDefined(['username', 'password', '2fa_code', 'token_timeout']);
+        $optionsResolver->setRequired(['username', 'password']);
+        $optionsResolver->setDefaults([]);
+        $optionsResolver->setAllowedTypes('username', ['string']);
+        $optionsResolver->setAllowedTypes('password', ['string']);
+        $optionsResolver->setAllowedTypes('2fa_code', ['string']);
+        $optionsResolver->setAllowedTypes('token_timeout', ['int']);
 
-	protected function getHeadersOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
-	{
-		$optionsResolver = parent::getHeadersOptionsResolver();
-		$optionsResolver->setDefined(['Client-Id']);
-		$optionsResolver->setRequired(['Client-Id']);
-		$optionsResolver->setDefaults([]);
-		$optionsResolver->setAllowedTypes('Client-Id', ['string']);
+        return $optionsResolver;
+    }
 
-		return $optionsResolver;
-	}
+    protected function getHeadersOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    {
+        $optionsResolver = parent::getHeadersOptionsResolver();
+        $optionsResolver->setDefined(['Client-Id']);
+        $optionsResolver->setRequired(['Client-Id']);
+        $optionsResolver->setDefaults([]);
+        $optionsResolver->setAllowedTypes('Client-Id', ['string']);
 
-	/**
-	 * {@inheritdoc}
-	 *
-	 * @throws \CatchE\OpenApi2\Exception\AuthenticateUnauthorizedException
-	 * @throws \CatchE\OpenApi2\Exception\AuthenticateNotAcceptableException
-	 * @throws \CatchE\OpenApi2\Exception\AuthenticateConflictException
-	 * @throws \CatchE\OpenApi2\Exception\AuthenticateUnsupportedMediaTypeException
-	 * @throws \CatchE\OpenApi2\Exception\AuthenticateUnprocessableEntityException
-	 * @throws \CatchE\OpenApi2\Exception\AuthenticateInternalServerErrorException
-	 *
-	 * @return \CatchE\OpenApi2\Model\AuthenticateSuccess|\CatchE\OpenApi2\Model\Error|null
-	 */
-	protected function transformResponseBody(string $body, int $status, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType)
-	{
-		if (201 === $status) {
-			return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\AuthenticateSuccess', 'json');
-		}
-		if (401 === $status) {
-			throw new \CatchE\OpenApi2\Exception\AuthenticateUnauthorizedException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\UnauthorizedAuthenticate', 'json'));
-		}
-		if (406 === $status) {
-			throw new \CatchE\OpenApi2\Exception\AuthenticateNotAcceptableException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotAcceptable', 'json'));
-		}
-		if (409 === $status) {
-			throw new \CatchE\OpenApi2\Exception\AuthenticateConflictException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\ConflictAuthenticate', 'json'));
-		}
-		if (415 === $status) {
-			throw new \CatchE\OpenApi2\Exception\AuthenticateUnsupportedMediaTypeException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\UnsupportedMediaType', 'json'));
-		}
-		if (422 === $status) {
-			throw new \CatchE\OpenApi2\Exception\AuthenticateUnprocessableEntityException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\UnprocessableEntity', 'json'));
-		}
-		if (500 === $status) {
-			throw new \CatchE\OpenApi2\Exception\AuthenticateInternalServerErrorException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\InternalError', 'json'));
-		}
+        return $optionsResolver;
+    }
 
-		return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Error', 'json');
-	}
+    /**
+     * {@inheritdoc}
+     *
+     * @throws \CatchE\OpenApi2\Exception\AuthenticateUnauthorizedException
+     * @throws \CatchE\OpenApi2\Exception\AuthenticateNotAcceptableException
+     * @throws \CatchE\OpenApi2\Exception\AuthenticateConflictException
+     * @throws \CatchE\OpenApi2\Exception\AuthenticateUnsupportedMediaTypeException
+     * @throws \CatchE\OpenApi2\Exception\AuthenticateUnprocessableEntityException
+     * @throws \CatchE\OpenApi2\Exception\AuthenticateInternalServerErrorException
+     *
+     * @return null|\CatchE\OpenApi2\Model\AuthenticateSuccess|\CatchE\OpenApi2\Model\Error
+     */
+    protected function transformResponseBody(string $body, int $status, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    {
+        if (201 === $status) {
+            return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\AuthenticateSuccess', 'json');
+        }
+        if (401 === $status) {
+            throw new \CatchE\OpenApi2\Exception\AuthenticateUnauthorizedException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\UnauthorizedAuthenticate', 'json'));
+        }
+        if (406 === $status) {
+            throw new \CatchE\OpenApi2\Exception\AuthenticateNotAcceptableException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotAcceptable', 'json'));
+        }
+        if (409 === $status) {
+            throw new \CatchE\OpenApi2\Exception\AuthenticateConflictException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\ConflictAuthenticate', 'json'));
+        }
+        if (415 === $status) {
+            throw new \CatchE\OpenApi2\Exception\AuthenticateUnsupportedMediaTypeException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\UnsupportedMediaType', 'json'));
+        }
+        if (422 === $status) {
+            throw new \CatchE\OpenApi2\Exception\AuthenticateUnprocessableEntityException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\UnprocessableEntity', 'json'));
+        }
+        if (500 === $status) {
+            throw new \CatchE\OpenApi2\Exception\AuthenticateInternalServerErrorException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\InternalError', 'json'));
+        }
 
-	public function getAuthenticationScopes(): array
-	{
-		return [];
-	}
+        return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Error', 'json');
+    }
 }

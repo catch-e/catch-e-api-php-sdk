@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,26 +19,26 @@ namespace CatchE\OpenApi2\Model;
 
 class ContractBudgetsGetEmbedded
 {
-	/**
-	 * @var ContractBudget[]|null
-	 */
-	protected $contractBudgets;
+    /**
+     * @var null|ContractBudget[]
+     */
+    protected $contractBudgets;
 
-	/**
-	 * @return ContractBudget[]|null
-	 */
-	public function getContractBudgets(): ?array
-	{
-		return $this->contractBudgets;
-	}
+    /**
+     * @return null|ContractBudget[]
+     */
+    public function getContractBudgets(): ?array
+    {
+        return $this->contractBudgets;
+    }
 
-	/**
-	 * @param ContractBudget[]|null $contractBudgets
-	 */
-	public function setContractBudgets(?array $contractBudgets): self
-	{
-		$this->contractBudgets = $contractBudgets;
+    /**
+     * @param null|ContractBudget[] $contractBudgets
+     */
+    public function setContractBudgets(?array $contractBudgets): self
+    {
+        $this->contractBudgets = $contractBudgets;
 
-		return $this;
-	}
+        return $this;
+    }
 }

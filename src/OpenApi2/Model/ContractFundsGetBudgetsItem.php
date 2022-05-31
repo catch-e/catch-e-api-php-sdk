@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,122 +19,122 @@ namespace CatchE\OpenApi2\Model;
 
 class ContractFundsGetBudgetsItem
 {
-	/**
-	 * @var float|null
-	 */
-	protected $budget;
-	/**
-	 * @var float|null
-	 */
-	protected $actual;
-	/**
-	 * @var float|null
-	 */
-	protected $variance;
-	/**
-	 * @var float|null
-	 */
-	protected $available;
-	/**
-	 * @var string[]|null
-	 */
-	protected $postingClassCodes;
-	/**
-	 * @var string|null
-	 */
-	protected $availableToClaim;
-	/**
-	 * @var string|null
-	 */
-	protected $reportBudgetAsActual;
+    /**
+     * @var null|float
+     */
+    protected $budget;
+    /**
+     * @var null|float
+     */
+    protected $actual;
+    /**
+     * @var null|float
+     */
+    protected $variance;
+    /**
+     * @var null|float
+     */
+    protected $available;
+    /**
+     * @var null|string[]
+     */
+    protected $postingClassCodes;
+    /**
+     * @var null|string
+     */
+    protected $availableToClaim;
+    /**
+     * @var null|string
+     */
+    protected $reportBudgetAsActual;
 
-	public function getBudget(): ?float
-	{
-		return $this->budget;
-	}
+    public function getBudget(): ?float
+    {
+        return $this->budget;
+    }
 
-	public function setBudget(?float $budget): self
-	{
-		$this->budget = $budget;
+    public function setBudget(?float $budget): self
+    {
+        $this->budget = $budget;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getActual(): ?float
-	{
-		return $this->actual;
-	}
+    public function getActual(): ?float
+    {
+        return $this->actual;
+    }
 
-	public function setActual(?float $actual): self
-	{
-		$this->actual = $actual;
+    public function setActual(?float $actual): self
+    {
+        $this->actual = $actual;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getVariance(): ?float
-	{
-		return $this->variance;
-	}
+    public function getVariance(): ?float
+    {
+        return $this->variance;
+    }
 
-	public function setVariance(?float $variance): self
-	{
-		$this->variance = $variance;
+    public function setVariance(?float $variance): self
+    {
+        $this->variance = $variance;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getAvailable(): ?float
-	{
-		return $this->available;
-	}
+    public function getAvailable(): ?float
+    {
+        return $this->available;
+    }
 
-	public function setAvailable(?float $available): self
-	{
-		$this->available = $available;
+    public function setAvailable(?float $available): self
+    {
+        $this->available = $available;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * @return string[]|null
-	 */
-	public function getPostingClassCodes(): ?array
-	{
-		return $this->postingClassCodes;
-	}
+    /**
+     * @return null|string[]
+     */
+    public function getPostingClassCodes(): ?array
+    {
+        return $this->postingClassCodes;
+    }
 
-	/**
-	 * @param string[]|null $postingClassCodes
-	 */
-	public function setPostingClassCodes(?array $postingClassCodes): self
-	{
-		$this->postingClassCodes = $postingClassCodes;
+    /**
+     * @param null|string[] $postingClassCodes
+     */
+    public function setPostingClassCodes(?array $postingClassCodes): self
+    {
+        $this->postingClassCodes = $postingClassCodes;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getAvailableToClaim(): ?string
-	{
-		return $this->availableToClaim;
-	}
+    public function getAvailableToClaim(): ?string
+    {
+        return $this->availableToClaim;
+    }
 
-	public function setAvailableToClaim(?string $availableToClaim): self
-	{
-		$this->availableToClaim = $availableToClaim;
+    public function setAvailableToClaim(?string $availableToClaim): self
+    {
+        $this->availableToClaim = $availableToClaim;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getReportBudgetAsActual(): ?string
-	{
-		return $this->reportBudgetAsActual;
-	}
+    public function getReportBudgetAsActual(): ?string
+    {
+        return $this->reportBudgetAsActual;
+    }
 
-	public function setReportBudgetAsActual(?string $reportBudgetAsActual): self
-	{
-		$this->reportBudgetAsActual = $reportBudgetAsActual;
+    public function setReportBudgetAsActual(?string $reportBudgetAsActual): self
+    {
+        $this->reportBudgetAsActual = $reportBudgetAsActual;
 
-		return $this;
-	}
+        return $this;
+    }
 }

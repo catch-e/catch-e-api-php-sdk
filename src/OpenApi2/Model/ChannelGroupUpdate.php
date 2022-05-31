@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,68 +19,68 @@ namespace CatchE\OpenApi2\Model;
 
 class ChannelGroupUpdate
 {
-	/**
-	 * A unique code for the channel group.
-	 *
-	 * @var string|null
-	 */
-	protected $channelGroupCode = '';
-	/**
-	 * @var string|null
-	 */
-	protected $name = '';
-	/**
-	 * Status of the new channel group.
-	 *
-	 * @var string|null
-	 */
-	protected $statusFlag = 'active';
+    /**
+     * A unique code for the channel group.
+     *
+     * @var null|string
+     */
+    protected $channelGroupCode = '';
+    /**
+     * @var null|string
+     */
+    protected $name = '';
+    /**
+     * Status of the new channel group.
+     *
+     * @var null|string
+     */
+    protected $statusFlag = 'active';
 
-	/**
-	 * A unique code for the channel group.
-	 */
-	public function getChannelGroupCode(): ?string
-	{
-		return $this->channelGroupCode;
-	}
+    /**
+     * A unique code for the channel group.
+     */
+    public function getChannelGroupCode(): ?string
+    {
+        return $this->channelGroupCode;
+    }
 
-	/**
-	 * A unique code for the channel group.
-	 */
-	public function setChannelGroupCode(?string $channelGroupCode): self
-	{
-		$this->channelGroupCode = $channelGroupCode;
+    /**
+     * A unique code for the channel group.
+     */
+    public function setChannelGroupCode(?string $channelGroupCode): self
+    {
+        $this->channelGroupCode = $channelGroupCode;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getName(): ?string
-	{
-		return $this->name;
-	}
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
 
-	public function setName(?string $name): self
-	{
-		$this->name = $name;
+    public function setName(?string $name): self
+    {
+        $this->name = $name;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Status of the new channel group.
-	 */
-	public function getStatusFlag(): ?string
-	{
-		return $this->statusFlag;
-	}
+    /**
+     * Status of the new channel group.
+     */
+    public function getStatusFlag(): ?string
+    {
+        return $this->statusFlag;
+    }
 
-	/**
-	 * Status of the new channel group.
-	 */
-	public function setStatusFlag(?string $statusFlag): self
-	{
-		$this->statusFlag = $statusFlag;
+    /**
+     * Status of the new channel group.
+     */
+    public function setStatusFlag(?string $statusFlag): self
+    {
+        $this->statusFlag = $statusFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,52 +19,52 @@ namespace CatchE\OpenApi2\Model;
 
 class InsertContractBudgetBudgetsItem
 {
-	/**
-	 * Net amount to insert.
-	 *
-	 * @var float|null
-	 */
-	protected $amountNet = 0;
-	/**
-	 * GST amount to insert.If not passed and amount_net = 0.00 or not passed, this is set to 0.00. If amount_net is passed, GST is calculated from amount_gst using Global Controls.
-	 *
-	 * @var float|null
-	 */
-	protected $amountGst = 0;
+    /**
+     * Net amount to insert.
+     *
+     * @var null|float
+     */
+    protected $amountNet = 0;
+    /**
+     * GST amount to insert.If not passed and amount_net = 0.00 or not passed, this is set to 0.00. If amount_net is passed, GST is calculated from amount_gst using Global Controls.
+     *
+     * @var null|float
+     */
+    protected $amountGst = 0;
 
-	/**
-	 * Net amount to insert.
-	 */
-	public function getAmountNet(): ?float
-	{
-		return $this->amountNet;
-	}
+    /**
+     * Net amount to insert.
+     */
+    public function getAmountNet(): ?float
+    {
+        return $this->amountNet;
+    }
 
-	/**
-	 * Net amount to insert.
-	 */
-	public function setAmountNet(?float $amountNet): self
-	{
-		$this->amountNet = $amountNet;
+    /**
+     * Net amount to insert.
+     */
+    public function setAmountNet(?float $amountNet): self
+    {
+        $this->amountNet = $amountNet;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * GST amount to insert.If not passed and amount_net = 0.00 or not passed, this is set to 0.00. If amount_net is passed, GST is calculated from amount_gst using Global Controls.
-	 */
-	public function getAmountGst(): ?float
-	{
-		return $this->amountGst;
-	}
+    /**
+     * GST amount to insert.If not passed and amount_net = 0.00 or not passed, this is set to 0.00. If amount_net is passed, GST is calculated from amount_gst using Global Controls.
+     */
+    public function getAmountGst(): ?float
+    {
+        return $this->amountGst;
+    }
 
-	/**
-	 * GST amount to insert.If not passed and amount_net = 0.00 or not passed, this is set to 0.00. If amount_net is passed, GST is calculated from amount_gst using Global Controls.
-	 */
-	public function setAmountGst(?float $amountGst): self
-	{
-		$this->amountGst = $amountGst;
+    /**
+     * GST amount to insert.If not passed and amount_net = 0.00 or not passed, this is set to 0.00. If amount_net is passed, GST is calculated from amount_gst using Global Controls.
+     */
+    public function setAmountGst(?float $amountGst): self
+    {
+        $this->amountGst = $amountGst;
 
-		return $this;
-	}
+        return $this;
+    }
 }

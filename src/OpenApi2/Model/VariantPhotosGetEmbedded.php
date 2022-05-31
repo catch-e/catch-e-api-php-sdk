@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,26 +19,26 @@ namespace CatchE\OpenApi2\Model;
 
 class VariantPhotosGetEmbedded
 {
-	/**
-	 * @var VariantPhoto[]|null
-	 */
-	protected $qtVariantPhotos;
+    /**
+     * @var null|VariantPhoto[]
+     */
+    protected $qtVariantPhotos;
 
-	/**
-	 * @return VariantPhoto[]|null
-	 */
-	public function getQtVariantPhotos(): ?array
-	{
-		return $this->qtVariantPhotos;
-	}
+    /**
+     * @return null|VariantPhoto[]
+     */
+    public function getQtVariantPhotos(): ?array
+    {
+        return $this->qtVariantPhotos;
+    }
 
-	/**
-	 * @param VariantPhoto[]|null $qtVariantPhotos
-	 */
-	public function setQtVariantPhotos(?array $qtVariantPhotos): self
-	{
-		$this->qtVariantPhotos = $qtVariantPhotos;
+    /**
+     * @param null|VariantPhoto[] $qtVariantPhotos
+     */
+    public function setQtVariantPhotos(?array $qtVariantPhotos): self
+    {
+        $this->qtVariantPhotos = $qtVariantPhotos;
 
-		return $this;
-	}
+        return $this;
+    }
 }

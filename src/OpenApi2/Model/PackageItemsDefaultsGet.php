@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,42 +19,42 @@ namespace CatchE\OpenApi2\Model;
 
 class PackageItemsDefaultsGet
 {
-	/**
-	 * @var mixed|null
-	 */
-	protected $links;
-	/**
-	 * @var PackageItemsDefaultsGetEmbedded|null
-	 */
-	protected $embedded;
+    /**
+     * @var null|mixed
+     */
+    protected $links;
+    /**
+     * @var null|PackageItemsDefaultsGetEmbedded
+     */
+    protected $embedded;
 
-	/**
-	 * @return mixed
-	 */
-	public function getLinks()
-	{
-		return $this->links;
-	}
+    /**
+     * @return mixed
+     */
+    public function getLinks()
+    {
+        return $this->links;
+    }
 
-	/**
-	 * @param mixed $links
-	 */
-	public function setLinks($links): self
-	{
-		$this->links = $links;
+    /**
+     * @param mixed $links
+     */
+    public function setLinks($links): self
+    {
+        $this->links = $links;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getEmbedded(): ?PackageItemsDefaultsGetEmbedded
-	{
-		return $this->embedded;
-	}
+    public function getEmbedded(): ?PackageItemsDefaultsGetEmbedded
+    {
+        return $this->embedded;
+    }
 
-	public function setEmbedded(?PackageItemsDefaultsGetEmbedded $embedded): self
-	{
-		$this->embedded = $embedded;
+    public function setEmbedded(?PackageItemsDefaultsGetEmbedded $embedded): self
+    {
+        $this->embedded = $embedded;
 
-		return $this;
-	}
+        return $this;
+    }
 }

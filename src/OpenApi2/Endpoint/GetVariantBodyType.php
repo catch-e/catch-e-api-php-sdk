@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,78 +17,78 @@
 
 namespace CatchE\OpenApi2\Endpoint;
 
-class GetVariantBodyType extends \Jane\OpenApiRuntime\Client\BaseEndpoint implements \Jane\OpenApiRuntime\Client\Endpoint
+class GetVariantBodyType extends \CatchE\OpenApi2\Runtime\Client\BaseEndpoint implements \CatchE\OpenApi2\Runtime\Client\Endpoint
 {
-	use \Jane\OpenApiRuntime\Client\EndpointTrait;
-	protected $body_type_id;
+    use \CatchE\OpenApi2\Runtime\Client\EndpointTrait;
+    protected $body_type_id;
 
-	/**
-	 * This method requires the **QuoteVariants:Get** permission to be associated with your role.
-	 *
-	 * @param string $bodyTypeId Body Type Id
-	 */
-	public function __construct(string $bodyTypeId)
-	{
-		$this->body_type_id = $bodyTypeId;
-	}
+    /**
+     * This method requires the **QuoteVariants:Get** permission to be associated with your role.
+     *
+     * @param string $bodyTypeId Body Type Id
+     */
+    public function __construct(string $bodyTypeId)
+    {
+        $this->body_type_id = $bodyTypeId;
+    }
 
-	public function getMethod(): string
-	{
-		return 'GET';
-	}
+    public function getMethod(): string
+    {
+        return 'GET';
+    }
 
-	public function getUri(): string
-	{
-		return str_replace(['{body_type_id}'], [$this->body_type_id], '/qt/body-types/{body_type_id}');
-	}
+    public function getUri(): string
+    {
+        return str_replace(['{body_type_id}'], [$this->body_type_id], '/qt/body-types/{body_type_id}');
+    }
 
-	public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
-	{
-		return [[], null];
-	}
+    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    {
+        return [[], null];
+    }
 
-	public function getExtraHeaders(): array
-	{
-		return ['Accept' => ['application/json']];
-	}
+    public function getExtraHeaders(): array
+    {
+        return ['Accept' => ['application/json']];
+    }
 
-	/**
-	 * {@inheritdoc}
-	 *
-	 * @throws \CatchE\OpenApi2\Exception\GetVariantBodyTypeUnauthorizedException
-	 * @throws \CatchE\OpenApi2\Exception\GetVariantBodyTypeForbiddenException
-	 * @throws \CatchE\OpenApi2\Exception\GetVariantBodyTypeNotFoundException
-	 * @throws \CatchE\OpenApi2\Exception\GetVariantBodyTypeNotAcceptableException
-	 * @throws \CatchE\OpenApi2\Exception\GetVariantBodyTypeInternalServerErrorException
-	 *
-	 * @return \CatchE\OpenApi2\Model\VariantBodyType|\CatchE\OpenApi2\Model\Error|null
-	 */
-	protected function transformResponseBody(string $body, int $status, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType)
-	{
-		if (200 === $status) {
-			return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\VariantBodyType', 'json');
-		}
-		if (401 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetVariantBodyTypeUnauthorizedException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Unauthorized', 'json'));
-		}
-		if (403 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetVariantBodyTypeForbiddenException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Forbidden', 'json'));
-		}
-		if (404 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetVariantBodyTypeNotFoundException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotFound', 'json'));
-		}
-		if (406 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetVariantBodyTypeNotAcceptableException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotAcceptable', 'json'));
-		}
-		if (500 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetVariantBodyTypeInternalServerErrorException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\InternalError', 'json'));
-		}
+    public function getAuthenticationScopes(): array
+    {
+        return ['Bearer Token'];
+    }
 
-		return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Error', 'json');
-	}
+    /**
+     * {@inheritdoc}
+     *
+     * @throws \CatchE\OpenApi2\Exception\GetVariantBodyTypeUnauthorizedException
+     * @throws \CatchE\OpenApi2\Exception\GetVariantBodyTypeForbiddenException
+     * @throws \CatchE\OpenApi2\Exception\GetVariantBodyTypeNotFoundException
+     * @throws \CatchE\OpenApi2\Exception\GetVariantBodyTypeNotAcceptableException
+     * @throws \CatchE\OpenApi2\Exception\GetVariantBodyTypeInternalServerErrorException
+     *
+     * @return null|\CatchE\OpenApi2\Model\Error|\CatchE\OpenApi2\Model\VariantBodyType
+     */
+    protected function transformResponseBody(string $body, int $status, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    {
+        if (200 === $status) {
+            return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\VariantBodyType', 'json');
+        }
+        if (401 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetVariantBodyTypeUnauthorizedException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Unauthorized', 'json'));
+        }
+        if (403 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetVariantBodyTypeForbiddenException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Forbidden', 'json'));
+        }
+        if (404 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetVariantBodyTypeNotFoundException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotFound', 'json'));
+        }
+        if (406 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetVariantBodyTypeNotAcceptableException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotAcceptable', 'json'));
+        }
+        if (500 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetVariantBodyTypeInternalServerErrorException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\InternalError', 'json'));
+        }
 
-	public function getAuthenticationScopes(): array
-	{
-		return ['Bearer Token'];
-	}
+        return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Error', 'json');
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,260 +19,260 @@ namespace CatchE\OpenApi2\Model;
 
 class ContractPayoutsCreate
 {
-	/**
-	 * Contract Id.
-	 *
-	 * @var string|null
-	 */
-	protected $contractId;
-	/**
-	 * Payout date in YYYY-MM-DD format.
-	 *
-	 * @var string|null
-	 */
-	protected $payoutDate;
-	/**
-	 * Price to Purchase flag.
-	 *
-	 * @var string|null
-	 */
-	protected $priceToPurchaseFlag;
-	/**
-	 * Early Termination Fee flag.
-	 *
-	 * @var string|null
-	 */
-	protected $earlyTerminationFeeFlag;
-	/**
-	 * Total Loss flag.
-	 *
-	 * @var string|null
-	 */
-	protected $totalLossFlag;
-	/**
-	 * @var float|null
-	 */
-	protected $financierValue;
-	/**
-	 * Valid Until date in YYYY-MM-DD format.
-	 *
-	 * @var string|null
-	 */
-	protected $validUntil;
-	/**
-	 * @var float|null
-	 */
-	protected $priceToPurchaseNet;
-	/**
-	 * @var float|null
-	 */
-	protected $earlyTerminationFeeNet;
-	/**
-	 * @var float|null
-	 */
-	protected $totalLossNet;
-	/**
-	 * (Optional) Contract Payout status to transition to on create.
-	 *
-	 * @var string|null
-	 */
-	protected $contractPayoutStatusId;
-	/**
-	 * Override warning validation. If not specified, defaults to 'no'.
-	 *
-	 * @var string|null
-	 */
-	protected $overrideWarningsFlag;
+    /**
+     * Contract Id.
+     *
+     * @var null|string
+     */
+    protected $contractId;
+    /**
+     * Payout date in YYYY-MM-DD format.
+     *
+     * @var null|string
+     */
+    protected $payoutDate;
+    /**
+     * Price to Purchase flag.
+     *
+     * @var null|string
+     */
+    protected $priceToPurchaseFlag;
+    /**
+     * Early Termination Fee flag.
+     *
+     * @var null|string
+     */
+    protected $earlyTerminationFeeFlag;
+    /**
+     * Total Loss flag.
+     *
+     * @var null|string
+     */
+    protected $totalLossFlag;
+    /**
+     * @var null|float
+     */
+    protected $financierValue;
+    /**
+     * Valid Until date in YYYY-MM-DD format.
+     *
+     * @var null|string
+     */
+    protected $validUntil;
+    /**
+     * @var null|float
+     */
+    protected $priceToPurchaseNet;
+    /**
+     * @var null|float
+     */
+    protected $earlyTerminationFeeNet;
+    /**
+     * @var null|float
+     */
+    protected $totalLossNet;
+    /**
+     * (Optional) Contract Payout status to transition to on create.
+     *
+     * @var null|string
+     */
+    protected $contractPayoutStatusId;
+    /**
+     * Override warning validation. If not specified, defaults to 'no'.
+     *
+     * @var null|string
+     */
+    protected $overrideWarningsFlag;
 
-	/**
-	 * Contract Id.
-	 */
-	public function getContractId(): ?string
-	{
-		return $this->contractId;
-	}
+    /**
+     * Contract Id.
+     */
+    public function getContractId(): ?string
+    {
+        return $this->contractId;
+    }
 
-	/**
-	 * Contract Id.
-	 */
-	public function setContractId(?string $contractId): self
-	{
-		$this->contractId = $contractId;
+    /**
+     * Contract Id.
+     */
+    public function setContractId(?string $contractId): self
+    {
+        $this->contractId = $contractId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Payout date in YYYY-MM-DD format.
-	 */
-	public function getPayoutDate(): ?string
-	{
-		return $this->payoutDate;
-	}
+    /**
+     * Payout date in YYYY-MM-DD format.
+     */
+    public function getPayoutDate(): ?string
+    {
+        return $this->payoutDate;
+    }
 
-	/**
-	 * Payout date in YYYY-MM-DD format.
-	 */
-	public function setPayoutDate(?string $payoutDate): self
-	{
-		$this->payoutDate = $payoutDate;
+    /**
+     * Payout date in YYYY-MM-DD format.
+     */
+    public function setPayoutDate(?string $payoutDate): self
+    {
+        $this->payoutDate = $payoutDate;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Price to Purchase flag.
-	 */
-	public function getPriceToPurchaseFlag(): ?string
-	{
-		return $this->priceToPurchaseFlag;
-	}
+    /**
+     * Price to Purchase flag.
+     */
+    public function getPriceToPurchaseFlag(): ?string
+    {
+        return $this->priceToPurchaseFlag;
+    }
 
-	/**
-	 * Price to Purchase flag.
-	 */
-	public function setPriceToPurchaseFlag(?string $priceToPurchaseFlag): self
-	{
-		$this->priceToPurchaseFlag = $priceToPurchaseFlag;
+    /**
+     * Price to Purchase flag.
+     */
+    public function setPriceToPurchaseFlag(?string $priceToPurchaseFlag): self
+    {
+        $this->priceToPurchaseFlag = $priceToPurchaseFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Early Termination Fee flag.
-	 */
-	public function getEarlyTerminationFeeFlag(): ?string
-	{
-		return $this->earlyTerminationFeeFlag;
-	}
+    /**
+     * Early Termination Fee flag.
+     */
+    public function getEarlyTerminationFeeFlag(): ?string
+    {
+        return $this->earlyTerminationFeeFlag;
+    }
 
-	/**
-	 * Early Termination Fee flag.
-	 */
-	public function setEarlyTerminationFeeFlag(?string $earlyTerminationFeeFlag): self
-	{
-		$this->earlyTerminationFeeFlag = $earlyTerminationFeeFlag;
+    /**
+     * Early Termination Fee flag.
+     */
+    public function setEarlyTerminationFeeFlag(?string $earlyTerminationFeeFlag): self
+    {
+        $this->earlyTerminationFeeFlag = $earlyTerminationFeeFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Total Loss flag.
-	 */
-	public function getTotalLossFlag(): ?string
-	{
-		return $this->totalLossFlag;
-	}
+    /**
+     * Total Loss flag.
+     */
+    public function getTotalLossFlag(): ?string
+    {
+        return $this->totalLossFlag;
+    }
 
-	/**
-	 * Total Loss flag.
-	 */
-	public function setTotalLossFlag(?string $totalLossFlag): self
-	{
-		$this->totalLossFlag = $totalLossFlag;
+    /**
+     * Total Loss flag.
+     */
+    public function setTotalLossFlag(?string $totalLossFlag): self
+    {
+        $this->totalLossFlag = $totalLossFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getFinancierValue(): ?float
-	{
-		return $this->financierValue;
-	}
+    public function getFinancierValue(): ?float
+    {
+        return $this->financierValue;
+    }
 
-	public function setFinancierValue(?float $financierValue): self
-	{
-		$this->financierValue = $financierValue;
+    public function setFinancierValue(?float $financierValue): self
+    {
+        $this->financierValue = $financierValue;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Valid Until date in YYYY-MM-DD format.
-	 */
-	public function getValidUntil(): ?string
-	{
-		return $this->validUntil;
-	}
+    /**
+     * Valid Until date in YYYY-MM-DD format.
+     */
+    public function getValidUntil(): ?string
+    {
+        return $this->validUntil;
+    }
 
-	/**
-	 * Valid Until date in YYYY-MM-DD format.
-	 */
-	public function setValidUntil(?string $validUntil): self
-	{
-		$this->validUntil = $validUntil;
+    /**
+     * Valid Until date in YYYY-MM-DD format.
+     */
+    public function setValidUntil(?string $validUntil): self
+    {
+        $this->validUntil = $validUntil;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getPriceToPurchaseNet(): ?float
-	{
-		return $this->priceToPurchaseNet;
-	}
+    public function getPriceToPurchaseNet(): ?float
+    {
+        return $this->priceToPurchaseNet;
+    }
 
-	public function setPriceToPurchaseNet(?float $priceToPurchaseNet): self
-	{
-		$this->priceToPurchaseNet = $priceToPurchaseNet;
+    public function setPriceToPurchaseNet(?float $priceToPurchaseNet): self
+    {
+        $this->priceToPurchaseNet = $priceToPurchaseNet;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getEarlyTerminationFeeNet(): ?float
-	{
-		return $this->earlyTerminationFeeNet;
-	}
+    public function getEarlyTerminationFeeNet(): ?float
+    {
+        return $this->earlyTerminationFeeNet;
+    }
 
-	public function setEarlyTerminationFeeNet(?float $earlyTerminationFeeNet): self
-	{
-		$this->earlyTerminationFeeNet = $earlyTerminationFeeNet;
+    public function setEarlyTerminationFeeNet(?float $earlyTerminationFeeNet): self
+    {
+        $this->earlyTerminationFeeNet = $earlyTerminationFeeNet;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getTotalLossNet(): ?float
-	{
-		return $this->totalLossNet;
-	}
+    public function getTotalLossNet(): ?float
+    {
+        return $this->totalLossNet;
+    }
 
-	public function setTotalLossNet(?float $totalLossNet): self
-	{
-		$this->totalLossNet = $totalLossNet;
+    public function setTotalLossNet(?float $totalLossNet): self
+    {
+        $this->totalLossNet = $totalLossNet;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * (Optional) Contract Payout status to transition to on create.
-	 */
-	public function getContractPayoutStatusId(): ?string
-	{
-		return $this->contractPayoutStatusId;
-	}
+    /**
+     * (Optional) Contract Payout status to transition to on create.
+     */
+    public function getContractPayoutStatusId(): ?string
+    {
+        return $this->contractPayoutStatusId;
+    }
 
-	/**
-	 * (Optional) Contract Payout status to transition to on create.
-	 */
-	public function setContractPayoutStatusId(?string $contractPayoutStatusId): self
-	{
-		$this->contractPayoutStatusId = $contractPayoutStatusId;
+    /**
+     * (Optional) Contract Payout status to transition to on create.
+     */
+    public function setContractPayoutStatusId(?string $contractPayoutStatusId): self
+    {
+        $this->contractPayoutStatusId = $contractPayoutStatusId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Override warning validation. If not specified, defaults to 'no'.
-	 */
-	public function getOverrideWarningsFlag(): ?string
-	{
-		return $this->overrideWarningsFlag;
-	}
+    /**
+     * Override warning validation. If not specified, defaults to 'no'.
+     */
+    public function getOverrideWarningsFlag(): ?string
+    {
+        return $this->overrideWarningsFlag;
+    }
 
-	/**
-	 * Override warning validation. If not specified, defaults to 'no'.
-	 */
-	public function setOverrideWarningsFlag(?string $overrideWarningsFlag): self
-	{
-		$this->overrideWarningsFlag = $overrideWarningsFlag;
+    /**
+     * Override warning validation. If not specified, defaults to 'no'.
+     */
+    public function setOverrideWarningsFlag(?string $overrideWarningsFlag): self
+    {
+        $this->overrideWarningsFlag = $overrideWarningsFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 }

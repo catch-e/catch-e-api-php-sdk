@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,188 +19,188 @@ namespace CatchE\OpenApi2\Model;
 
 class PackageItemPayCycle
 {
-	/**
-	 * Package Item Pay Cycle Id.
-	 *
-	 * @var string|null
-	 */
-	protected $packageItemPayCycleId;
-	/**
-	 * Package Item Id.
-	 *
-	 * @var string|null
-	 */
-	protected $packageItemId;
-	/**
-	 * Package Cycle Type.
-	 *
-	 * @var string|null
-	 */
-	protected $payCycleType;
-	/**
-	 * Pay Cycle Id.
-	 *
-	 * @var string|null
-	 */
-	protected $payCycleId;
-	/**
-	 * Pay Cycle Code.
-	 *
-	 * @var string|null
-	 */
-	protected $payCycleCode;
-	/**
-	 * Pay Cycles Per Year.
-	 *
-	 * @var float|null
-	 */
-	protected $payCyclesPerYear;
-	/**
-	 * Status Flag.
-	 *
-	 * @var string|null
-	 */
-	protected $statusFlag;
-	/**
-	 * @var PackageItemPayCycleEmbedded|null
-	 */
-	protected $embedded;
+    /**
+     * Package Item Pay Cycle Id.
+     *
+     * @var null|string
+     */
+    protected $packageItemPayCycleId;
+    /**
+     * Package Item Id.
+     *
+     * @var null|string
+     */
+    protected $packageItemId;
+    /**
+     * Package Cycle Type.
+     *
+     * @var null|string
+     */
+    protected $payCycleType;
+    /**
+     * Pay Cycle Id.
+     *
+     * @var null|string
+     */
+    protected $payCycleId;
+    /**
+     * Pay Cycle Code.
+     *
+     * @var null|string
+     */
+    protected $payCycleCode;
+    /**
+     * Pay Cycles Per Year.
+     *
+     * @var null|float
+     */
+    protected $payCyclesPerYear;
+    /**
+     * Status Flag.
+     *
+     * @var null|string
+     */
+    protected $statusFlag;
+    /**
+     * @var null|PackageItemPayCycleEmbedded
+     */
+    protected $embedded;
 
-	/**
-	 * Package Item Pay Cycle Id.
-	 */
-	public function getPackageItemPayCycleId(): ?string
-	{
-		return $this->packageItemPayCycleId;
-	}
+    /**
+     * Package Item Pay Cycle Id.
+     */
+    public function getPackageItemPayCycleId(): ?string
+    {
+        return $this->packageItemPayCycleId;
+    }
 
-	/**
-	 * Package Item Pay Cycle Id.
-	 */
-	public function setPackageItemPayCycleId(?string $packageItemPayCycleId): self
-	{
-		$this->packageItemPayCycleId = $packageItemPayCycleId;
+    /**
+     * Package Item Pay Cycle Id.
+     */
+    public function setPackageItemPayCycleId(?string $packageItemPayCycleId): self
+    {
+        $this->packageItemPayCycleId = $packageItemPayCycleId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Package Item Id.
-	 */
-	public function getPackageItemId(): ?string
-	{
-		return $this->packageItemId;
-	}
+    /**
+     * Package Item Id.
+     */
+    public function getPackageItemId(): ?string
+    {
+        return $this->packageItemId;
+    }
 
-	/**
-	 * Package Item Id.
-	 */
-	public function setPackageItemId(?string $packageItemId): self
-	{
-		$this->packageItemId = $packageItemId;
+    /**
+     * Package Item Id.
+     */
+    public function setPackageItemId(?string $packageItemId): self
+    {
+        $this->packageItemId = $packageItemId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Package Cycle Type.
-	 */
-	public function getPayCycleType(): ?string
-	{
-		return $this->payCycleType;
-	}
+    /**
+     * Package Cycle Type.
+     */
+    public function getPayCycleType(): ?string
+    {
+        return $this->payCycleType;
+    }
 
-	/**
-	 * Package Cycle Type.
-	 */
-	public function setPayCycleType(?string $payCycleType): self
-	{
-		$this->payCycleType = $payCycleType;
+    /**
+     * Package Cycle Type.
+     */
+    public function setPayCycleType(?string $payCycleType): self
+    {
+        $this->payCycleType = $payCycleType;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Pay Cycle Id.
-	 */
-	public function getPayCycleId(): ?string
-	{
-		return $this->payCycleId;
-	}
+    /**
+     * Pay Cycle Id.
+     */
+    public function getPayCycleId(): ?string
+    {
+        return $this->payCycleId;
+    }
 
-	/**
-	 * Pay Cycle Id.
-	 */
-	public function setPayCycleId(?string $payCycleId): self
-	{
-		$this->payCycleId = $payCycleId;
+    /**
+     * Pay Cycle Id.
+     */
+    public function setPayCycleId(?string $payCycleId): self
+    {
+        $this->payCycleId = $payCycleId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Pay Cycle Code.
-	 */
-	public function getPayCycleCode(): ?string
-	{
-		return $this->payCycleCode;
-	}
+    /**
+     * Pay Cycle Code.
+     */
+    public function getPayCycleCode(): ?string
+    {
+        return $this->payCycleCode;
+    }
 
-	/**
-	 * Pay Cycle Code.
-	 */
-	public function setPayCycleCode(?string $payCycleCode): self
-	{
-		$this->payCycleCode = $payCycleCode;
+    /**
+     * Pay Cycle Code.
+     */
+    public function setPayCycleCode(?string $payCycleCode): self
+    {
+        $this->payCycleCode = $payCycleCode;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Pay Cycles Per Year.
-	 */
-	public function getPayCyclesPerYear(): ?float
-	{
-		return $this->payCyclesPerYear;
-	}
+    /**
+     * Pay Cycles Per Year.
+     */
+    public function getPayCyclesPerYear(): ?float
+    {
+        return $this->payCyclesPerYear;
+    }
 
-	/**
-	 * Pay Cycles Per Year.
-	 */
-	public function setPayCyclesPerYear(?float $payCyclesPerYear): self
-	{
-		$this->payCyclesPerYear = $payCyclesPerYear;
+    /**
+     * Pay Cycles Per Year.
+     */
+    public function setPayCyclesPerYear(?float $payCyclesPerYear): self
+    {
+        $this->payCyclesPerYear = $payCyclesPerYear;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Status Flag.
-	 */
-	public function getStatusFlag(): ?string
-	{
-		return $this->statusFlag;
-	}
+    /**
+     * Status Flag.
+     */
+    public function getStatusFlag(): ?string
+    {
+        return $this->statusFlag;
+    }
 
-	/**
-	 * Status Flag.
-	 */
-	public function setStatusFlag(?string $statusFlag): self
-	{
-		$this->statusFlag = $statusFlag;
+    /**
+     * Status Flag.
+     */
+    public function setStatusFlag(?string $statusFlag): self
+    {
+        $this->statusFlag = $statusFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getEmbedded(): ?PackageItemPayCycleEmbedded
-	{
-		return $this->embedded;
-	}
+    public function getEmbedded(): ?PackageItemPayCycleEmbedded
+    {
+        return $this->embedded;
+    }
 
-	public function setEmbedded(?PackageItemPayCycleEmbedded $embedded): self
-	{
-		$this->embedded = $embedded;
+    public function setEmbedded(?PackageItemPayCycleEmbedded $embedded): self
+    {
+        $this->embedded = $embedded;
 
-		return $this;
-	}
+        return $this;
+    }
 }

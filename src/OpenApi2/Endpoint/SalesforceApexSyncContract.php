@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,105 +17,105 @@
 
 namespace CatchE\OpenApi2\Endpoint;
 
-class SalesforceApexSyncContract extends \Jane\OpenApiRuntime\Client\BaseEndpoint implements \Jane\OpenApiRuntime\Client\Endpoint
+class SalesforceApexSyncContract extends \CatchE\OpenApi2\Runtime\Client\BaseEndpoint implements \CatchE\OpenApi2\Runtime\Client\Endpoint
 {
-	use \Jane\OpenApiRuntime\Client\EndpointTrait;
+    use \CatchE\OpenApi2\Runtime\Client\EndpointTrait;
 
-	/**
-	 * This method requires the **InterfaceSalesforceApex:SyncContract** permission to be associated with your role.
-	 *
-	 * @param array $formParameters {
-	 *
-	 *     @var string $contract_id Contract Id
-	 *     @var string $client_id Client Id
-	 * }
-	 */
-	public function __construct(array $formParameters = [])
-	{
-		$this->formParameters = $formParameters;
-	}
+    /**
+     * This method requires the **InterfaceSalesforceApex:SyncContract** permission to be associated with your role.
+     *
+     * @param array $formParameters {
+     *
+     *     @var string $contract_id Contract Id
+     *     @var string $client_id Client Id
+     * }
+     */
+    public function __construct(array $formParameters = [])
+    {
+        $this->formParameters = $formParameters;
+    }
 
-	public function getMethod(): string
-	{
-		return 'POST';
-	}
+    public function getMethod(): string
+    {
+        return 'POST';
+    }
 
-	public function getUri(): string
-	{
-		return '/gb/interface/salesforce-apex/sync-contract';
-	}
+    public function getUri(): string
+    {
+        return '/gb/interface/salesforce-apex/sync-contract';
+    }
 
-	public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
-	{
-		return $this->getFormBody();
-	}
+    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    {
+        return $this->getFormBody();
+    }
 
-	public function getExtraHeaders(): array
-	{
-		return ['Accept' => ['application/json']];
-	}
+    public function getExtraHeaders(): array
+    {
+        return ['Accept' => ['application/json']];
+    }
 
-	protected function getFormOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
-	{
-		$optionsResolver = parent::getFormOptionsResolver();
-		$optionsResolver->setDefined(['contract_id', 'client_id']);
-		$optionsResolver->setRequired(['contract_id', 'client_id']);
-		$optionsResolver->setDefaults([]);
-		$optionsResolver->setAllowedTypes('contract_id', ['string']);
-		$optionsResolver->setAllowedTypes('client_id', ['string']);
+    public function getAuthenticationScopes(): array
+    {
+        return ['Bearer Token'];
+    }
 
-		return $optionsResolver;
-	}
+    protected function getFormOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    {
+        $optionsResolver = parent::getFormOptionsResolver();
+        $optionsResolver->setDefined(['contract_id', 'client_id']);
+        $optionsResolver->setRequired(['contract_id', 'client_id']);
+        $optionsResolver->setDefaults([]);
+        $optionsResolver->setAllowedTypes('contract_id', ['string']);
+        $optionsResolver->setAllowedTypes('client_id', ['string']);
 
-	/**
-	 * {@inheritdoc}
-	 *
-	 * @throws \CatchE\OpenApi2\Exception\SalesforceApexSyncContractBadRequestException
-	 * @throws \CatchE\OpenApi2\Exception\SalesforceApexSyncContractUnauthorizedException
-	 * @throws \CatchE\OpenApi2\Exception\SalesforceApexSyncContractForbiddenException
-	 * @throws \CatchE\OpenApi2\Exception\SalesforceApexSyncContractNotFoundException
-	 * @throws \CatchE\OpenApi2\Exception\SalesforceApexSyncContractNotAcceptableException
-	 * @throws \CatchE\OpenApi2\Exception\SalesforceApexSyncContractUnsupportedMediaTypeException
-	 * @throws \CatchE\OpenApi2\Exception\SalesforceApexSyncContractUnprocessableEntityException
-	 * @throws \CatchE\OpenApi2\Exception\SalesforceApexSyncContractInternalServerErrorException
-	 *
-	 * @return \CatchE\OpenApi2\Model\Error|null
-	 */
-	protected function transformResponseBody(string $body, int $status, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType)
-	{
-		if (204 === $status) {
-			return null;
-		}
-		if (400 === $status) {
-			throw new \CatchE\OpenApi2\Exception\SalesforceApexSyncContractBadRequestException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\BadRequest', 'json'));
-		}
-		if (401 === $status) {
-			throw new \CatchE\OpenApi2\Exception\SalesforceApexSyncContractUnauthorizedException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Unauthorized', 'json'));
-		}
-		if (403 === $status) {
-			throw new \CatchE\OpenApi2\Exception\SalesforceApexSyncContractForbiddenException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Forbidden', 'json'));
-		}
-		if (404 === $status) {
-			throw new \CatchE\OpenApi2\Exception\SalesforceApexSyncContractNotFoundException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotFound', 'json'));
-		}
-		if (406 === $status) {
-			throw new \CatchE\OpenApi2\Exception\SalesforceApexSyncContractNotAcceptableException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotAcceptable', 'json'));
-		}
-		if (415 === $status) {
-			throw new \CatchE\OpenApi2\Exception\SalesforceApexSyncContractUnsupportedMediaTypeException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\UnsupportedMediaType', 'json'));
-		}
-		if (422 === $status) {
-			throw new \CatchE\OpenApi2\Exception\SalesforceApexSyncContractUnprocessableEntityException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\UnprocessableEntity', 'json'));
-		}
-		if (500 === $status) {
-			throw new \CatchE\OpenApi2\Exception\SalesforceApexSyncContractInternalServerErrorException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\InternalError', 'json'));
-		}
+        return $optionsResolver;
+    }
 
-		return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Error', 'json');
-	}
+    /**
+     * {@inheritdoc}
+     *
+     * @throws \CatchE\OpenApi2\Exception\SalesforceApexSyncContractBadRequestException
+     * @throws \CatchE\OpenApi2\Exception\SalesforceApexSyncContractUnauthorizedException
+     * @throws \CatchE\OpenApi2\Exception\SalesforceApexSyncContractForbiddenException
+     * @throws \CatchE\OpenApi2\Exception\SalesforceApexSyncContractNotFoundException
+     * @throws \CatchE\OpenApi2\Exception\SalesforceApexSyncContractNotAcceptableException
+     * @throws \CatchE\OpenApi2\Exception\SalesforceApexSyncContractUnsupportedMediaTypeException
+     * @throws \CatchE\OpenApi2\Exception\SalesforceApexSyncContractUnprocessableEntityException
+     * @throws \CatchE\OpenApi2\Exception\SalesforceApexSyncContractInternalServerErrorException
+     *
+     * @return null|\CatchE\OpenApi2\Model\Error
+     */
+    protected function transformResponseBody(string $body, int $status, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    {
+        if (204 === $status) {
+            return null;
+        }
+        if (400 === $status) {
+            throw new \CatchE\OpenApi2\Exception\SalesforceApexSyncContractBadRequestException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\BadRequest', 'json'));
+        }
+        if (401 === $status) {
+            throw new \CatchE\OpenApi2\Exception\SalesforceApexSyncContractUnauthorizedException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Unauthorized', 'json'));
+        }
+        if (403 === $status) {
+            throw new \CatchE\OpenApi2\Exception\SalesforceApexSyncContractForbiddenException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Forbidden', 'json'));
+        }
+        if (404 === $status) {
+            throw new \CatchE\OpenApi2\Exception\SalesforceApexSyncContractNotFoundException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotFound', 'json'));
+        }
+        if (406 === $status) {
+            throw new \CatchE\OpenApi2\Exception\SalesforceApexSyncContractNotAcceptableException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotAcceptable', 'json'));
+        }
+        if (415 === $status) {
+            throw new \CatchE\OpenApi2\Exception\SalesforceApexSyncContractUnsupportedMediaTypeException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\UnsupportedMediaType', 'json'));
+        }
+        if (422 === $status) {
+            throw new \CatchE\OpenApi2\Exception\SalesforceApexSyncContractUnprocessableEntityException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\UnprocessableEntity', 'json'));
+        }
+        if (500 === $status) {
+            throw new \CatchE\OpenApi2\Exception\SalesforceApexSyncContractInternalServerErrorException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\InternalError', 'json'));
+        }
 
-	public function getAuthenticationScopes(): array
-	{
-		return ['Bearer Token'];
-	}
+        return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Error', 'json');
+    }
 }

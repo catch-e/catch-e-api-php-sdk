@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,100 +19,100 @@ namespace CatchE\OpenApi2\Model;
 
 class GbLocksGetResponse200Item
 {
-	/**
-	 * @var string|null
-	 */
-	protected $lockKey;
-	/**
-	 * @var string|null
-	 */
-	protected $sessionId;
-	/**
-	 * @var string|null
-	 */
-	protected $tableName;
-	/**
-	 * @var string|null
-	 */
-	protected $userId;
-	/**
-	 * @var string|null
-	 */
-	protected $created;
-	/**
-	 * @var string|null
-	 */
-	protected $timeout;
+    /**
+     * @var null|string
+     */
+    protected $lockKey;
+    /**
+     * @var null|string
+     */
+    protected $sessionId;
+    /**
+     * @var null|string
+     */
+    protected $tableName;
+    /**
+     * @var null|string
+     */
+    protected $userId;
+    /**
+     * @var null|string
+     */
+    protected $created;
+    /**
+     * @var null|string
+     */
+    protected $timeout;
 
-	public function getLockKey(): ?string
-	{
-		return $this->lockKey;
-	}
+    public function getLockKey(): ?string
+    {
+        return $this->lockKey;
+    }
 
-	public function setLockKey(?string $lockKey): self
-	{
-		$this->lockKey = $lockKey;
+    public function setLockKey(?string $lockKey): self
+    {
+        $this->lockKey = $lockKey;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getSessionId(): ?string
-	{
-		return $this->sessionId;
-	}
+    public function getSessionId(): ?string
+    {
+        return $this->sessionId;
+    }
 
-	public function setSessionId(?string $sessionId): self
-	{
-		$this->sessionId = $sessionId;
+    public function setSessionId(?string $sessionId): self
+    {
+        $this->sessionId = $sessionId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getTableName(): ?string
-	{
-		return $this->tableName;
-	}
+    public function getTableName(): ?string
+    {
+        return $this->tableName;
+    }
 
-	public function setTableName(?string $tableName): self
-	{
-		$this->tableName = $tableName;
+    public function setTableName(?string $tableName): self
+    {
+        $this->tableName = $tableName;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getUserId(): ?string
-	{
-		return $this->userId;
-	}
+    public function getUserId(): ?string
+    {
+        return $this->userId;
+    }
 
-	public function setUserId(?string $userId): self
-	{
-		$this->userId = $userId;
+    public function setUserId(?string $userId): self
+    {
+        $this->userId = $userId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getCreated(): ?string
-	{
-		return $this->created;
-	}
+    public function getCreated(): ?string
+    {
+        return $this->created;
+    }
 
-	public function setCreated(?string $created): self
-	{
-		$this->created = $created;
+    public function setCreated(?string $created): self
+    {
+        $this->created = $created;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getTimeout(): ?string
-	{
-		return $this->timeout;
-	}
+    public function getTimeout(): ?string
+    {
+        return $this->timeout;
+    }
 
-	public function setTimeout(?string $timeout): self
-	{
-		$this->timeout = $timeout;
+    public function setTimeout(?string $timeout): self
+    {
+        $this->timeout = $timeout;
 
-		return $this;
-	}
+        return $this;
+    }
 }

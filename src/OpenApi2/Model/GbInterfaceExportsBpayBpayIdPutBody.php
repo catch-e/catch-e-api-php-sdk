@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,36 +19,36 @@ namespace CatchE\OpenApi2\Model;
 
 class GbInterfaceExportsBpayBpayIdPutBody
 {
-	/**
-	 * @var string|null
-	 */
-	protected $notes;
-	/**
-	 * @var string|null
-	 */
-	protected $statusFlag;
+    /**
+     * @var null|string
+     */
+    protected $notes;
+    /**
+     * @var null|string
+     */
+    protected $statusFlag;
 
-	public function getNotes(): ?string
-	{
-		return $this->notes;
-	}
+    public function getNotes(): ?string
+    {
+        return $this->notes;
+    }
 
-	public function setNotes(?string $notes): self
-	{
-		$this->notes = $notes;
+    public function setNotes(?string $notes): self
+    {
+        $this->notes = $notes;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getStatusFlag(): ?string
-	{
-		return $this->statusFlag;
-	}
+    public function getStatusFlag(): ?string
+    {
+        return $this->statusFlag;
+    }
 
-	public function setStatusFlag(?string $statusFlag): self
-	{
-		$this->statusFlag = $statusFlag;
+    public function setStatusFlag(?string $statusFlag): self
+    {
+        $this->statusFlag = $statusFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 }

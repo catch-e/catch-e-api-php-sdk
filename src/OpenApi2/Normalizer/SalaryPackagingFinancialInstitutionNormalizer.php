@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,8 +17,8 @@
 
 namespace CatchE\OpenApi2\Normalizer;
 
-use Jane\JsonSchemaRuntime\Normalizer\CheckArray;
-use Jane\JsonSchemaRuntime\Reference;
+use CatchE\OpenApi2\Runtime\Normalizer\CheckArray;
+use Jane\Component\JsonSchemaRuntime\Reference;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -28,77 +28,102 @@ use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
 class SalaryPackagingFinancialInstitutionNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
-	use DenormalizerAwareTrait;
-	use NormalizerAwareTrait;
-	use CheckArray;
+    use DenormalizerAwareTrait;
 
-	public function supportsDenormalization($data, $type, $format = null)
-	{
-		return 'CatchE\\OpenApi2\\Model\\SalaryPackagingFinancialInstitution' === $type;
-	}
+    use NormalizerAwareTrait;
 
-	public function supportsNormalization($data, $format = null)
-	{
-		return is_object($data) && 'CatchE\\OpenApi2\\Model\\SalaryPackagingFinancialInstitution' === get_class($data);
-	}
+    use CheckArray;
 
-	public function denormalize($data, $class, $format = null, array $context = [])
-	{
-		if (isset($data['$ref'])) {
-			return new Reference($data['$ref'], $context['document-origin']);
-		}
-		if (isset($data['$recursiveRef'])) {
-			return new Reference($data['$recursiveRef'], $context['document-origin']);
-		}
-		$object = new \CatchE\OpenApi2\Model\SalaryPackagingFinancialInstitution();
-		if (\array_key_exists('financial_institution_id', $data) && null !== $data['financial_institution_id']) {
-			$object->setFinancialInstitutionId($data['financial_institution_id']);
-		} elseif (\array_key_exists('financial_institution_id', $data) && null === $data['financial_institution_id']) {
-			$object->setFinancialInstitutionId(null);
-		}
-		if (\array_key_exists('financial_institution_number', $data) && null !== $data['financial_institution_number']) {
-			$object->setFinancialInstitutionNumber($data['financial_institution_number']);
-		} elseif (\array_key_exists('financial_institution_number', $data) && null === $data['financial_institution_number']) {
-			$object->setFinancialInstitutionNumber(null);
-		}
-		if (\array_key_exists('financial_institution_code', $data) && null !== $data['financial_institution_code']) {
-			$object->setFinancialInstitutionCode($data['financial_institution_code']);
-		} elseif (\array_key_exists('financial_institution_code', $data) && null === $data['financial_institution_code']) {
-			$object->setFinancialInstitutionCode(null);
-		}
-		if (\array_key_exists('name', $data) && null !== $data['name']) {
-			$object->setName($data['name']);
-		} elseif (\array_key_exists('name', $data) && null === $data['name']) {
-			$object->setName(null);
-		}
-		if (\array_key_exists('_links', $data) && null !== $data['_links']) {
-			$object->setLinks($this->denormalizer->denormalize($data['_links'], 'CatchE\\OpenApi2\\Model\\SalaryPackagingFinancialInstitutionLinks', 'json', $context));
-		} elseif (\array_key_exists('_links', $data) && null === $data['_links']) {
-			$object->setLinks(null);
-		}
+    /**
+     * @param mixed      $data
+     * @param mixed      $type
+     * @param null|mixed $format
+     *
+     * @return bool
+     */
+    public function supportsDenormalization($data, $type, $format = null)
+    {
+        return 'CatchE\\OpenApi2\\Model\\SalaryPackagingFinancialInstitution' === $type;
+    }
 
-		return $object;
-	}
+    public function supportsNormalization($data, $format = null)
+    {
+        return is_object($data) && 'CatchE\\OpenApi2\\Model\\SalaryPackagingFinancialInstitution' === get_class($data);
+    }
 
-	public function normalize($object, $format = null, array $context = [])
-	{
-		$data = [];
-		if (null !== $object->getFinancialInstitutionId()) {
-			$data['financial_institution_id'] = $object->getFinancialInstitutionId();
-		}
-		if (null !== $object->getFinancialInstitutionNumber()) {
-			$data['financial_institution_number'] = $object->getFinancialInstitutionNumber();
-		}
-		if (null !== $object->getFinancialInstitutionCode()) {
-			$data['financial_institution_code'] = $object->getFinancialInstitutionCode();
-		}
-		if (null !== $object->getName()) {
-			$data['name'] = $object->getName();
-		}
-		if (null !== $object->getLinks()) {
-			$data['_links'] = $this->normalizer->normalize($object->getLinks(), 'json', $context);
-		}
+    /**
+     * @param mixed      $data
+     * @param mixed      $class
+     * @param null|mixed $format
+     *
+     * @return mixed
+     */
+    public function denormalize($data, $class, $format = null, array $context = [])
+    {
+        if (isset($data['$ref'])) {
+            return new Reference($data['$ref'], $context['document-origin']);
+        }
+        if (isset($data['$recursiveRef'])) {
+            return new Reference($data['$recursiveRef'], $context['document-origin']);
+        }
+        $object = new \CatchE\OpenApi2\Model\SalaryPackagingFinancialInstitution();
+        if (null === $data || false === \is_array($data)) {
+            return $object;
+        }
+        if (\array_key_exists('financial_institution_id', $data) && null !== $data['financial_institution_id']) {
+            $object->setFinancialInstitutionId($data['financial_institution_id']);
+        } elseif (\array_key_exists('financial_institution_id', $data) && null === $data['financial_institution_id']) {
+            $object->setFinancialInstitutionId(null);
+        }
+        if (\array_key_exists('financial_institution_number', $data) && null !== $data['financial_institution_number']) {
+            $object->setFinancialInstitutionNumber($data['financial_institution_number']);
+        } elseif (\array_key_exists('financial_institution_number', $data) && null === $data['financial_institution_number']) {
+            $object->setFinancialInstitutionNumber(null);
+        }
+        if (\array_key_exists('financial_institution_code', $data) && null !== $data['financial_institution_code']) {
+            $object->setFinancialInstitutionCode($data['financial_institution_code']);
+        } elseif (\array_key_exists('financial_institution_code', $data) && null === $data['financial_institution_code']) {
+            $object->setFinancialInstitutionCode(null);
+        }
+        if (\array_key_exists('name', $data) && null !== $data['name']) {
+            $object->setName($data['name']);
+        } elseif (\array_key_exists('name', $data) && null === $data['name']) {
+            $object->setName(null);
+        }
+        if (\array_key_exists('_links', $data) && null !== $data['_links']) {
+            $object->setLinks($this->denormalizer->denormalize($data['_links'], 'CatchE\\OpenApi2\\Model\\SalaryPackagingFinancialInstitutionLinks', 'json', $context));
+        } elseif (\array_key_exists('_links', $data) && null === $data['_links']) {
+            $object->setLinks(null);
+        }
 
-		return $data;
-	}
+        return $object;
+    }
+
+    /**
+     * @param mixed      $object
+     * @param null|mixed $format
+     *
+     * @return null|array|\ArrayObject|bool|float|int|string
+     */
+    public function normalize($object, $format = null, array $context = [])
+    {
+        $data = [];
+        if (null !== $object->getFinancialInstitutionId()) {
+            $data['financial_institution_id'] = $object->getFinancialInstitutionId();
+        }
+        if (null !== $object->getFinancialInstitutionNumber()) {
+            $data['financial_institution_number'] = $object->getFinancialInstitutionNumber();
+        }
+        if (null !== $object->getFinancialInstitutionCode()) {
+            $data['financial_institution_code'] = $object->getFinancialInstitutionCode();
+        }
+        if (null !== $object->getName()) {
+            $data['name'] = $object->getName();
+        }
+        if (null !== $object->getLinks()) {
+            $data['_links'] = $this->normalizer->normalize($object->getLinks(), 'json', $context);
+        }
+
+        return $data;
+    }
 }

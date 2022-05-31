@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,26 +19,26 @@ namespace CatchE\OpenApi2\Model;
 
 class AutoBuildClaimsPostingClassesGetEmbedded
 {
-	/**
-	 * @var AutoBuildClaimsPostingClass[]|null
-	 */
-	protected $spApprovalsAutoBuildClaimsPostingClasses;
+    /**
+     * @var null|AutoBuildClaimsPostingClass[]
+     */
+    protected $spApprovalsAutoBuildClaimsPostingClasses;
 
-	/**
-	 * @return AutoBuildClaimsPostingClass[]|null
-	 */
-	public function getSpApprovalsAutoBuildClaimsPostingClasses(): ?array
-	{
-		return $this->spApprovalsAutoBuildClaimsPostingClasses;
-	}
+    /**
+     * @return null|AutoBuildClaimsPostingClass[]
+     */
+    public function getSpApprovalsAutoBuildClaimsPostingClasses(): ?array
+    {
+        return $this->spApprovalsAutoBuildClaimsPostingClasses;
+    }
 
-	/**
-	 * @param AutoBuildClaimsPostingClass[]|null $spApprovalsAutoBuildClaimsPostingClasses
-	 */
-	public function setSpApprovalsAutoBuildClaimsPostingClasses(?array $spApprovalsAutoBuildClaimsPostingClasses): self
-	{
-		$this->spApprovalsAutoBuildClaimsPostingClasses = $spApprovalsAutoBuildClaimsPostingClasses;
+    /**
+     * @param null|AutoBuildClaimsPostingClass[] $spApprovalsAutoBuildClaimsPostingClasses
+     */
+    public function setSpApprovalsAutoBuildClaimsPostingClasses(?array $spApprovalsAutoBuildClaimsPostingClasses): self
+    {
+        $this->spApprovalsAutoBuildClaimsPostingClasses = $spApprovalsAutoBuildClaimsPostingClasses;
 
-		return $this;
-	}
+        return $this;
+    }
 }

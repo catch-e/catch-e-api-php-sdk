@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,68 +19,68 @@ namespace CatchE\OpenApi2\Model;
 
 class ContactTypeGet
 {
-	/**
-	 * @var string|null
-	 */
-	protected $contactTypeId;
-	/**
-	 * @var string|null
-	 */
-	protected $description;
-	/**
-	 * @var string|null
-	 */
-	protected $statusFlag;
-	/**
-	 * @var ContactTypeGetLinks|null
-	 */
-	protected $links;
+    /**
+     * @var null|string
+     */
+    protected $contactTypeId;
+    /**
+     * @var null|string
+     */
+    protected $description;
+    /**
+     * @var null|string
+     */
+    protected $statusFlag;
+    /**
+     * @var null|ContactTypeGetLinks
+     */
+    protected $links;
 
-	public function getContactTypeId(): ?string
-	{
-		return $this->contactTypeId;
-	}
+    public function getContactTypeId(): ?string
+    {
+        return $this->contactTypeId;
+    }
 
-	public function setContactTypeId(?string $contactTypeId): self
-	{
-		$this->contactTypeId = $contactTypeId;
+    public function setContactTypeId(?string $contactTypeId): self
+    {
+        $this->contactTypeId = $contactTypeId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getDescription(): ?string
-	{
-		return $this->description;
-	}
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
 
-	public function setDescription(?string $description): self
-	{
-		$this->description = $description;
+    public function setDescription(?string $description): self
+    {
+        $this->description = $description;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getStatusFlag(): ?string
-	{
-		return $this->statusFlag;
-	}
+    public function getStatusFlag(): ?string
+    {
+        return $this->statusFlag;
+    }
 
-	public function setStatusFlag(?string $statusFlag): self
-	{
-		$this->statusFlag = $statusFlag;
+    public function setStatusFlag(?string $statusFlag): self
+    {
+        $this->statusFlag = $statusFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getLinks(): ?ContactTypeGetLinks
-	{
-		return $this->links;
-	}
+    public function getLinks(): ?ContactTypeGetLinks
+    {
+        return $this->links;
+    }
 
-	public function setLinks(?ContactTypeGetLinks $links): self
-	{
-		$this->links = $links;
+    public function setLinks(?ContactTypeGetLinks $links): self
+    {
+        $this->links = $links;
 
-		return $this;
-	}
+        return $this;
+    }
 }

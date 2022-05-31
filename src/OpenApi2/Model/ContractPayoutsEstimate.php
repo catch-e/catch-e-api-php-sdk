@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,52 +19,52 @@ namespace CatchE\OpenApi2\Model;
 
 class ContractPayoutsEstimate
 {
-	/**
-	 * @var float|null
-	 */
-	protected $calculatedValueNet;
-	/**
-	 * @var float|null
-	 */
-	protected $calculatedValueGst;
-	/**
-	 * @var int|null
-	 */
-	protected $remainingBillings;
+    /**
+     * @var null|float
+     */
+    protected $calculatedValueNet;
+    /**
+     * @var null|float
+     */
+    protected $calculatedValueGst;
+    /**
+     * @var null|int
+     */
+    protected $remainingBillings;
 
-	public function getCalculatedValueNet(): ?float
-	{
-		return $this->calculatedValueNet;
-	}
+    public function getCalculatedValueNet(): ?float
+    {
+        return $this->calculatedValueNet;
+    }
 
-	public function setCalculatedValueNet(?float $calculatedValueNet): self
-	{
-		$this->calculatedValueNet = $calculatedValueNet;
+    public function setCalculatedValueNet(?float $calculatedValueNet): self
+    {
+        $this->calculatedValueNet = $calculatedValueNet;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getCalculatedValueGst(): ?float
-	{
-		return $this->calculatedValueGst;
-	}
+    public function getCalculatedValueGst(): ?float
+    {
+        return $this->calculatedValueGst;
+    }
 
-	public function setCalculatedValueGst(?float $calculatedValueGst): self
-	{
-		$this->calculatedValueGst = $calculatedValueGst;
+    public function setCalculatedValueGst(?float $calculatedValueGst): self
+    {
+        $this->calculatedValueGst = $calculatedValueGst;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getRemainingBillings(): ?int
-	{
-		return $this->remainingBillings;
-	}
+    public function getRemainingBillings(): ?int
+    {
+        return $this->remainingBillings;
+    }
 
-	public function setRemainingBillings(?int $remainingBillings): self
-	{
-		$this->remainingBillings = $remainingBillings;
+    public function setRemainingBillings(?int $remainingBillings): self
+    {
+        $this->remainingBillings = $remainingBillings;
 
-		return $this;
-	}
+        return $this;
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,52 +19,52 @@ namespace CatchE\OpenApi2\Model;
 
 class SpEmployeeDriverIdPayCycleDetailsGetResponse200
 {
-	/**
-	 * @var string|null
-	 */
-	protected $payCycleCode;
-	/**
-	 * @var string|null
-	 */
-	protected $payCycle;
-	/**
-	 * @var \DateTime|null
-	 */
-	protected $payrollDate;
+    /**
+     * @var null|string
+     */
+    protected $payCycleCode;
+    /**
+     * @var null|string
+     */
+    protected $payCycle;
+    /**
+     * @var null|\DateTime
+     */
+    protected $payrollDate;
 
-	public function getPayCycleCode(): ?string
-	{
-		return $this->payCycleCode;
-	}
+    public function getPayCycleCode(): ?string
+    {
+        return $this->payCycleCode;
+    }
 
-	public function setPayCycleCode(?string $payCycleCode): self
-	{
-		$this->payCycleCode = $payCycleCode;
+    public function setPayCycleCode(?string $payCycleCode): self
+    {
+        $this->payCycleCode = $payCycleCode;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getPayCycle(): ?string
-	{
-		return $this->payCycle;
-	}
+    public function getPayCycle(): ?string
+    {
+        return $this->payCycle;
+    }
 
-	public function setPayCycle(?string $payCycle): self
-	{
-		$this->payCycle = $payCycle;
+    public function setPayCycle(?string $payCycle): self
+    {
+        $this->payCycle = $payCycle;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getPayrollDate(): ?\DateTime
-	{
-		return $this->payrollDate;
-	}
+    public function getPayrollDate(): ?\DateTime
+    {
+        return $this->payrollDate;
+    }
 
-	public function setPayrollDate(?\DateTime $payrollDate): self
-	{
-		$this->payrollDate = $payrollDate;
+    public function setPayrollDate(?\DateTime $payrollDate): self
+    {
+        $this->payrollDate = $payrollDate;
 
-		return $this;
-	}
+        return $this;
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,52 +19,52 @@ namespace CatchE\OpenApi2\Model;
 
 class CurrentEndpointDetails
 {
-	/**
-	 * @var string|null
-	 */
-	protected $message;
-	/**
-	 * @var string|null
-	 */
-	protected $version;
-	/**
-	 * @var string|null
-	 */
-	protected $environment;
+    /**
+     * @var null|string
+     */
+    protected $message;
+    /**
+     * @var null|string
+     */
+    protected $version;
+    /**
+     * @var null|string
+     */
+    protected $environment;
 
-	public function getMessage(): ?string
-	{
-		return $this->message;
-	}
+    public function getMessage(): ?string
+    {
+        return $this->message;
+    }
 
-	public function setMessage(?string $message): self
-	{
-		$this->message = $message;
+    public function setMessage(?string $message): self
+    {
+        $this->message = $message;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getVersion(): ?string
-	{
-		return $this->version;
-	}
+    public function getVersion(): ?string
+    {
+        return $this->version;
+    }
 
-	public function setVersion(?string $version): self
-	{
-		$this->version = $version;
+    public function setVersion(?string $version): self
+    {
+        $this->version = $version;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getEnvironment(): ?string
-	{
-		return $this->environment;
-	}
+    public function getEnvironment(): ?string
+    {
+        return $this->environment;
+    }
 
-	public function setEnvironment(?string $environment): self
-	{
-		$this->environment = $environment;
+    public function setEnvironment(?string $environment): self
+    {
+        $this->environment = $environment;
 
-		return $this;
-	}
+        return $this;
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,128 +19,128 @@ namespace CatchE\OpenApi2\Model;
 
 class ContractBudgetsUpdate
 {
-	/**
-	 * Contract Id.
-	 *
-	 * @var string|null
-	 */
-	protected $contractId;
-	/**
-	 * Optional targeted payment method.
-	 *
-	 * @var string|null
-	 */
-	protected $paymentMethod;
-	/**
-	 * Optional with default 'no'.  If set to 'no' all future Billing Periods including the billing_period nominated will be updated. If set to 'yes' update only the billing_period nominated.
-	 *
-	 * @var string|null
-	 */
-	protected $updateSinglePeriod;
-	/**
-	 * Optional. Must be specified if update_single_period is set to 'yes'.
-	 *
-	 * @var int|null
-	 */
-	protected $billingPeriod;
-	/**
-	 * A set of budgets to be updated with the posting class code as the property.
-	 *
-	 * @var ContractBudgetsUpdateBudgetsItem[]|null
-	 */
-	protected $budgets;
+    /**
+     * Contract Id.
+     *
+     * @var null|string
+     */
+    protected $contractId;
+    /**
+     * Optional targeted payment method.
+     *
+     * @var null|string
+     */
+    protected $paymentMethod;
+    /**
+     * Optional with default 'no'.  If set to 'no' all future Billing Periods including the billing_period nominated will be updated. If set to 'yes' update only the billing_period nominated.
+     *
+     * @var null|string
+     */
+    protected $updateSinglePeriod;
+    /**
+     * Optional. Must be specified if update_single_period is set to 'yes'.
+     *
+     * @var null|int
+     */
+    protected $billingPeriod;
+    /**
+     * A set of budgets to be updated with the posting class code as the property.
+     *
+     * @var null|ContractBudgetsUpdateBudgetsItem[]
+     */
+    protected $budgets;
 
-	/**
-	 * Contract Id.
-	 */
-	public function getContractId(): ?string
-	{
-		return $this->contractId;
-	}
+    /**
+     * Contract Id.
+     */
+    public function getContractId(): ?string
+    {
+        return $this->contractId;
+    }
 
-	/**
-	 * Contract Id.
-	 */
-	public function setContractId(?string $contractId): self
-	{
-		$this->contractId = $contractId;
+    /**
+     * Contract Id.
+     */
+    public function setContractId(?string $contractId): self
+    {
+        $this->contractId = $contractId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Optional targeted payment method.
-	 */
-	public function getPaymentMethod(): ?string
-	{
-		return $this->paymentMethod;
-	}
+    /**
+     * Optional targeted payment method.
+     */
+    public function getPaymentMethod(): ?string
+    {
+        return $this->paymentMethod;
+    }
 
-	/**
-	 * Optional targeted payment method.
-	 */
-	public function setPaymentMethod(?string $paymentMethod): self
-	{
-		$this->paymentMethod = $paymentMethod;
+    /**
+     * Optional targeted payment method.
+     */
+    public function setPaymentMethod(?string $paymentMethod): self
+    {
+        $this->paymentMethod = $paymentMethod;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Optional with default 'no'.  If set to 'no' all future Billing Periods including the billing_period nominated will be updated. If set to 'yes' update only the billing_period nominated.
-	 */
-	public function getUpdateSinglePeriod(): ?string
-	{
-		return $this->updateSinglePeriod;
-	}
+    /**
+     * Optional with default 'no'.  If set to 'no' all future Billing Periods including the billing_period nominated will be updated. If set to 'yes' update only the billing_period nominated.
+     */
+    public function getUpdateSinglePeriod(): ?string
+    {
+        return $this->updateSinglePeriod;
+    }
 
-	/**
-	 * Optional with default 'no'.  If set to 'no' all future Billing Periods including the billing_period nominated will be updated. If set to 'yes' update only the billing_period nominated.
-	 */
-	public function setUpdateSinglePeriod(?string $updateSinglePeriod): self
-	{
-		$this->updateSinglePeriod = $updateSinglePeriod;
+    /**
+     * Optional with default 'no'.  If set to 'no' all future Billing Periods including the billing_period nominated will be updated. If set to 'yes' update only the billing_period nominated.
+     */
+    public function setUpdateSinglePeriod(?string $updateSinglePeriod): self
+    {
+        $this->updateSinglePeriod = $updateSinglePeriod;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Optional. Must be specified if update_single_period is set to 'yes'.
-	 */
-	public function getBillingPeriod(): ?int
-	{
-		return $this->billingPeriod;
-	}
+    /**
+     * Optional. Must be specified if update_single_period is set to 'yes'.
+     */
+    public function getBillingPeriod(): ?int
+    {
+        return $this->billingPeriod;
+    }
 
-	/**
-	 * Optional. Must be specified if update_single_period is set to 'yes'.
-	 */
-	public function setBillingPeriod(?int $billingPeriod): self
-	{
-		$this->billingPeriod = $billingPeriod;
+    /**
+     * Optional. Must be specified if update_single_period is set to 'yes'.
+     */
+    public function setBillingPeriod(?int $billingPeriod): self
+    {
+        $this->billingPeriod = $billingPeriod;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * A set of budgets to be updated with the posting class code as the property.
-	 *
-	 * @return ContractBudgetsUpdateBudgetsItem[]|null
-	 */
-	public function getBudgets(): ?iterable
-	{
-		return $this->budgets;
-	}
+    /**
+     * A set of budgets to be updated with the posting class code as the property.
+     *
+     * @return null|ContractBudgetsUpdateBudgetsItem[]
+     */
+    public function getBudgets(): ?iterable
+    {
+        return $this->budgets;
+    }
 
-	/**
-	 * A set of budgets to be updated with the posting class code as the property.
-	 *
-	 * @param ContractBudgetsUpdateBudgetsItem[]|null $budgets
-	 */
-	public function setBudgets(?iterable $budgets): self
-	{
-		$this->budgets = $budgets;
+    /**
+     * A set of budgets to be updated with the posting class code as the property.
+     *
+     * @param null|ContractBudgetsUpdateBudgetsItem[] $budgets
+     */
+    public function setBudgets(?iterable $budgets): self
+    {
+        $this->budgets = $budgets;
 
-		return $this;
-	}
+        return $this;
+    }
 }

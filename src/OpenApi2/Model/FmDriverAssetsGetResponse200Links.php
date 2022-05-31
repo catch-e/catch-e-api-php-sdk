@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,52 +19,52 @@ namespace CatchE\OpenApi2\Model;
 
 class FmDriverAssetsGetResponse200Links
 {
-	/**
-	 * @var FmDriverAssetsGetResponse200LinksSelf|null
-	 */
-	protected $self;
-	/**
-	 * @var FmDriverAssetsGetResponse200LinksFirst|null
-	 */
-	protected $first;
-	/**
-	 * @var FmDriverAssetsGetResponse200LinksLast|null
-	 */
-	protected $last;
+    /**
+     * @var null|FmDriverAssetsGetResponse200LinksSelf
+     */
+    protected $self;
+    /**
+     * @var null|FmDriverAssetsGetResponse200LinksFirst
+     */
+    protected $first;
+    /**
+     * @var null|FmDriverAssetsGetResponse200LinksLast
+     */
+    protected $last;
 
-	public function getSelf(): ?FmDriverAssetsGetResponse200LinksSelf
-	{
-		return $this->self;
-	}
+    public function getSelf(): ?FmDriverAssetsGetResponse200LinksSelf
+    {
+        return $this->self;
+    }
 
-	public function setSelf(?FmDriverAssetsGetResponse200LinksSelf $self): self
-	{
-		$this->self = $self;
+    public function setSelf(?FmDriverAssetsGetResponse200LinksSelf $self): self
+    {
+        $this->self = $self;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getFirst(): ?FmDriverAssetsGetResponse200LinksFirst
-	{
-		return $this->first;
-	}
+    public function getFirst(): ?FmDriverAssetsGetResponse200LinksFirst
+    {
+        return $this->first;
+    }
 
-	public function setFirst(?FmDriverAssetsGetResponse200LinksFirst $first): self
-	{
-		$this->first = $first;
+    public function setFirst(?FmDriverAssetsGetResponse200LinksFirst $first): self
+    {
+        $this->first = $first;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getLast(): ?FmDriverAssetsGetResponse200LinksLast
-	{
-		return $this->last;
-	}
+    public function getLast(): ?FmDriverAssetsGetResponse200LinksLast
+    {
+        return $this->last;
+    }
 
-	public function setLast(?FmDriverAssetsGetResponse200LinksLast $last): self
-	{
-		$this->last = $last;
+    public function setLast(?FmDriverAssetsGetResponse200LinksLast $last): self
+    {
+        $this->last = $last;
 
-		return $this;
-	}
+        return $this;
+    }
 }

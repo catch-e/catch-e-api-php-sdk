@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,10 @@
 
 namespace CatchE\Api\Normalizer;
 
-use Jane\JsonSchemaRuntime\Normalizer\CheckArray;
+use Symfony\Component\Serializer\Exception\CircularReferenceException;
+use Symfony\Component\Serializer\Exception\ExceptionInterface;
+use Symfony\Component\Serializer\Exception\InvalidArgumentException;
+use Symfony\Component\Serializer\Exception\LogicException;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -27,29 +30,48 @@ use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
 class StdClassNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
-	use DenormalizerAwareTrait;
-	use NormalizerAwareTrait;
-	use CheckArray;
+    use DenormalizerAwareTrait;
 
-	public function supportsDenormalization($data, $type, $format = null)
-	{
-		return 'stdClass' === $type;
-	}
+    use NormalizerAwareTrait;
 
-	public function supportsNormalization($data, $format = null)
-	{
-		return is_object($data) && 'stdClass' === get_class($data);
-	}
+    public function supportsDenormalization($data, $type, $format = null)
+    {
+        return 'stdClass' === $type;
+    }
 
-	public function denormalize($data, $class, $format = null, array $context = [])
-	{
-		return (object) $data;
-	}
+    public function supportsNormalization($data, $format = null)
+    {
+        return is_object($data) && 'stdClass' === get_class($data);
+    }
 
-	public function normalize($object, $format = null, array $context = [])
-	{
-		$data = get_object_vars($object);
+    /**
+     * @param array<mixed> $context
+     * @param mixed        $data
+     * @param mixed        $class
+     * @param null|mixed   $format
+     */
+    public function denormalize($data, $class, $format = null, array $context = [])
+    {
+        return (object) $data;
+    }
 
-		return $data;
-	}
+    /**
+     * Normalizes an object into a set of arrays/scalars.
+     *
+     * @param mixed        $object  Object to normalize
+     * @param string       $format  Format the normalization result will be encoded as
+     * @param array<mixed> $context Context options for the normalizer
+     *
+     * @throws InvalidArgumentException   Occurs when the object given is not a supported type for the normalizer
+     * @throws CircularReferenceException Occurs when the normalizer detects a circular reference when no circular
+     *                                    reference handler can fix it
+     * @throws LogicException             Occurs when the normalizer is not called in an expected context
+     * @throws ExceptionInterface         Occurs for all the other cases of errors
+     *
+     * @return null|array<mixed>
+     */
+    public function normalize($object, $format = null, array $context = [])
+    {
+        return get_object_vars($object);
+    }
 }

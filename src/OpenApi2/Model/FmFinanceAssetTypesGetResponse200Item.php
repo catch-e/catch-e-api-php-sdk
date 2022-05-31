@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,52 +19,52 @@ namespace CatchE\OpenApi2\Model;
 
 class FmFinanceAssetTypesGetResponse200Item
 {
-	/**
-	 * @var string|null
-	 */
-	protected $financeAssetTypeId;
-	/**
-	 * @var string|null
-	 */
-	protected $name;
-	/**
-	 * @var string|null
-	 */
-	protected $ownershipRequiredFlag;
+    /**
+     * @var null|string
+     */
+    protected $financeAssetTypeId;
+    /**
+     * @var null|string
+     */
+    protected $name;
+    /**
+     * @var null|string
+     */
+    protected $ownershipRequiredFlag;
 
-	public function getFinanceAssetTypeId(): ?string
-	{
-		return $this->financeAssetTypeId;
-	}
+    public function getFinanceAssetTypeId(): ?string
+    {
+        return $this->financeAssetTypeId;
+    }
 
-	public function setFinanceAssetTypeId(?string $financeAssetTypeId): self
-	{
-		$this->financeAssetTypeId = $financeAssetTypeId;
+    public function setFinanceAssetTypeId(?string $financeAssetTypeId): self
+    {
+        $this->financeAssetTypeId = $financeAssetTypeId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getName(): ?string
-	{
-		return $this->name;
-	}
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
 
-	public function setName(?string $name): self
-	{
-		$this->name = $name;
+    public function setName(?string $name): self
+    {
+        $this->name = $name;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getOwnershipRequiredFlag(): ?string
-	{
-		return $this->ownershipRequiredFlag;
-	}
+    public function getOwnershipRequiredFlag(): ?string
+    {
+        return $this->ownershipRequiredFlag;
+    }
 
-	public function setOwnershipRequiredFlag(?string $ownershipRequiredFlag): self
-	{
-		$this->ownershipRequiredFlag = $ownershipRequiredFlag;
+    public function setOwnershipRequiredFlag(?string $ownershipRequiredFlag): self
+    {
+        $this->ownershipRequiredFlag = $ownershipRequiredFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 }

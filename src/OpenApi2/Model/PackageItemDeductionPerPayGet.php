@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,172 +19,172 @@ namespace CatchE\OpenApi2\Model;
 
 class PackageItemDeductionPerPayGet
 {
-	/**
-	 * @var string|null
-	 */
-	protected $packageItemId;
-	/**
-	 * @var string|null
-	 */
-	protected $packageItemPayCycleId;
-	/**
-	 * @var string|null
-	 */
-	protected $driverId;
-	/**
-	 * @var string|null
-	 */
-	protected $payCycleId;
-	/**
-	 * @var string|null
-	 */
-	protected $compressFlag;
-	/**
-	 * @var string|null
-	 */
-	protected $inertiaFlag;
-	/**
-	 * Total Deduction.
-	 *
-	 * @var float|null
-	 */
-	protected $totalDeduction;
-	/**
-	 * Cycles.
-	 *
-	 * @var int|null
-	 */
-	protected $cycles;
-	/**
-	 * Deduction Per Pay.
-	 *
-	 * @var float|null
-	 */
-	protected $deductionPerPay;
+    /**
+     * @var null|string
+     */
+    protected $packageItemId;
+    /**
+     * @var null|string
+     */
+    protected $packageItemPayCycleId;
+    /**
+     * @var null|string
+     */
+    protected $driverId;
+    /**
+     * @var null|string
+     */
+    protected $payCycleId;
+    /**
+     * @var null|string
+     */
+    protected $compressFlag;
+    /**
+     * @var null|string
+     */
+    protected $inertiaFlag;
+    /**
+     * Total Deduction.
+     *
+     * @var null|float
+     */
+    protected $totalDeduction;
+    /**
+     * Cycles.
+     *
+     * @var null|int
+     */
+    protected $cycles;
+    /**
+     * Deduction Per Pay.
+     *
+     * @var null|float
+     */
+    protected $deductionPerPay;
 
-	public function getPackageItemId(): ?string
-	{
-		return $this->packageItemId;
-	}
+    public function getPackageItemId(): ?string
+    {
+        return $this->packageItemId;
+    }
 
-	public function setPackageItemId(?string $packageItemId): self
-	{
-		$this->packageItemId = $packageItemId;
+    public function setPackageItemId(?string $packageItemId): self
+    {
+        $this->packageItemId = $packageItemId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getPackageItemPayCycleId(): ?string
-	{
-		return $this->packageItemPayCycleId;
-	}
+    public function getPackageItemPayCycleId(): ?string
+    {
+        return $this->packageItemPayCycleId;
+    }
 
-	public function setPackageItemPayCycleId(?string $packageItemPayCycleId): self
-	{
-		$this->packageItemPayCycleId = $packageItemPayCycleId;
+    public function setPackageItemPayCycleId(?string $packageItemPayCycleId): self
+    {
+        $this->packageItemPayCycleId = $packageItemPayCycleId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getDriverId(): ?string
-	{
-		return $this->driverId;
-	}
+    public function getDriverId(): ?string
+    {
+        return $this->driverId;
+    }
 
-	public function setDriverId(?string $driverId): self
-	{
-		$this->driverId = $driverId;
+    public function setDriverId(?string $driverId): self
+    {
+        $this->driverId = $driverId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getPayCycleId(): ?string
-	{
-		return $this->payCycleId;
-	}
+    public function getPayCycleId(): ?string
+    {
+        return $this->payCycleId;
+    }
 
-	public function setPayCycleId(?string $payCycleId): self
-	{
-		$this->payCycleId = $payCycleId;
+    public function setPayCycleId(?string $payCycleId): self
+    {
+        $this->payCycleId = $payCycleId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getCompressFlag(): ?string
-	{
-		return $this->compressFlag;
-	}
+    public function getCompressFlag(): ?string
+    {
+        return $this->compressFlag;
+    }
 
-	public function setCompressFlag(?string $compressFlag): self
-	{
-		$this->compressFlag = $compressFlag;
+    public function setCompressFlag(?string $compressFlag): self
+    {
+        $this->compressFlag = $compressFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getInertiaFlag(): ?string
-	{
-		return $this->inertiaFlag;
-	}
+    public function getInertiaFlag(): ?string
+    {
+        return $this->inertiaFlag;
+    }
 
-	public function setInertiaFlag(?string $inertiaFlag): self
-	{
-		$this->inertiaFlag = $inertiaFlag;
+    public function setInertiaFlag(?string $inertiaFlag): self
+    {
+        $this->inertiaFlag = $inertiaFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Total Deduction.
-	 */
-	public function getTotalDeduction(): ?float
-	{
-		return $this->totalDeduction;
-	}
+    /**
+     * Total Deduction.
+     */
+    public function getTotalDeduction(): ?float
+    {
+        return $this->totalDeduction;
+    }
 
-	/**
-	 * Total Deduction.
-	 */
-	public function setTotalDeduction(?float $totalDeduction): self
-	{
-		$this->totalDeduction = $totalDeduction;
+    /**
+     * Total Deduction.
+     */
+    public function setTotalDeduction(?float $totalDeduction): self
+    {
+        $this->totalDeduction = $totalDeduction;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Cycles.
-	 */
-	public function getCycles(): ?int
-	{
-		return $this->cycles;
-	}
+    /**
+     * Cycles.
+     */
+    public function getCycles(): ?int
+    {
+        return $this->cycles;
+    }
 
-	/**
-	 * Cycles.
-	 */
-	public function setCycles(?int $cycles): self
-	{
-		$this->cycles = $cycles;
+    /**
+     * Cycles.
+     */
+    public function setCycles(?int $cycles): self
+    {
+        $this->cycles = $cycles;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Deduction Per Pay.
-	 */
-	public function getDeductionPerPay(): ?float
-	{
-		return $this->deductionPerPay;
-	}
+    /**
+     * Deduction Per Pay.
+     */
+    public function getDeductionPerPay(): ?float
+    {
+        return $this->deductionPerPay;
+    }
 
-	/**
-	 * Deduction Per Pay.
-	 */
-	public function setDeductionPerPay(?float $deductionPerPay): self
-	{
-		$this->deductionPerPay = $deductionPerPay;
+    /**
+     * Deduction Per Pay.
+     */
+    public function setDeductionPerPay(?float $deductionPerPay): self
+    {
+        $this->deductionPerPay = $deductionPerPay;
 
-		return $this;
-	}
+        return $this;
+    }
 }

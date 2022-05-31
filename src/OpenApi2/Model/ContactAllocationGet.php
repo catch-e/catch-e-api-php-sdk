@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,100 +19,100 @@ namespace CatchE\OpenApi2\Model;
 
 class ContactAllocationGet
 {
-	/**
-	 * Contact Id.
-	 *
-	 * @var string|null
-	 */
-	protected $contactId;
-	/**
-	 * Table name.
-	 *
-	 * @var string|null
-	 */
-	protected $tableName;
-	/**
-	 * Record id from the table. E.g. client id from fm_clients table.
-	 *
-	 * @var string|null
-	 */
-	protected $recordId;
-	/**
-	 * Status.
-	 *
-	 * @var string|null
-	 */
-	protected $statusFlag;
+    /**
+     * Contact Id.
+     *
+     * @var null|string
+     */
+    protected $contactId;
+    /**
+     * Table name.
+     *
+     * @var null|string
+     */
+    protected $tableName;
+    /**
+     * Record id from the table. E.g. client id from fm_clients table.
+     *
+     * @var null|string
+     */
+    protected $recordId;
+    /**
+     * Status.
+     *
+     * @var null|string
+     */
+    protected $statusFlag;
 
-	/**
-	 * Contact Id.
-	 */
-	public function getContactId(): ?string
-	{
-		return $this->contactId;
-	}
+    /**
+     * Contact Id.
+     */
+    public function getContactId(): ?string
+    {
+        return $this->contactId;
+    }
 
-	/**
-	 * Contact Id.
-	 */
-	public function setContactId(?string $contactId): self
-	{
-		$this->contactId = $contactId;
+    /**
+     * Contact Id.
+     */
+    public function setContactId(?string $contactId): self
+    {
+        $this->contactId = $contactId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Table name.
-	 */
-	public function getTableName(): ?string
-	{
-		return $this->tableName;
-	}
+    /**
+     * Table name.
+     */
+    public function getTableName(): ?string
+    {
+        return $this->tableName;
+    }
 
-	/**
-	 * Table name.
-	 */
-	public function setTableName(?string $tableName): self
-	{
-		$this->tableName = $tableName;
+    /**
+     * Table name.
+     */
+    public function setTableName(?string $tableName): self
+    {
+        $this->tableName = $tableName;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Record id from the table. E.g. client id from fm_clients table.
-	 */
-	public function getRecordId(): ?string
-	{
-		return $this->recordId;
-	}
+    /**
+     * Record id from the table. E.g. client id from fm_clients table.
+     */
+    public function getRecordId(): ?string
+    {
+        return $this->recordId;
+    }
 
-	/**
-	 * Record id from the table. E.g. client id from fm_clients table.
-	 */
-	public function setRecordId(?string $recordId): self
-	{
-		$this->recordId = $recordId;
+    /**
+     * Record id from the table. E.g. client id from fm_clients table.
+     */
+    public function setRecordId(?string $recordId): self
+    {
+        $this->recordId = $recordId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Status.
-	 */
-	public function getStatusFlag(): ?string
-	{
-		return $this->statusFlag;
-	}
+    /**
+     * Status.
+     */
+    public function getStatusFlag(): ?string
+    {
+        return $this->statusFlag;
+    }
 
-	/**
-	 * Status.
-	 */
-	public function setStatusFlag(?string $statusFlag): self
-	{
-		$this->statusFlag = $statusFlag;
+    /**
+     * Status.
+     */
+    public function setStatusFlag(?string $statusFlag): self
+    {
+        $this->statusFlag = $statusFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 }

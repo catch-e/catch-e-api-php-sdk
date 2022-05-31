@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,52 +19,52 @@ namespace CatchE\OpenApi2\Model;
 
 class BpayBatchControls
 {
-	/**
-	 * @var float|null
-	 */
-	protected $invoices;
-	/**
-	 * @var float|null
-	 */
-	protected $items;
-	/**
-	 * @var float|null
-	 */
-	protected $total;
+    /**
+     * @var null|float
+     */
+    protected $invoices;
+    /**
+     * @var null|float
+     */
+    protected $items;
+    /**
+     * @var null|float
+     */
+    protected $total;
 
-	public function getInvoices(): ?float
-	{
-		return $this->invoices;
-	}
+    public function getInvoices(): ?float
+    {
+        return $this->invoices;
+    }
 
-	public function setInvoices(?float $invoices): self
-	{
-		$this->invoices = $invoices;
+    public function setInvoices(?float $invoices): self
+    {
+        $this->invoices = $invoices;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getItems(): ?float
-	{
-		return $this->items;
-	}
+    public function getItems(): ?float
+    {
+        return $this->items;
+    }
 
-	public function setItems(?float $items): self
-	{
-		$this->items = $items;
+    public function setItems(?float $items): self
+    {
+        $this->items = $items;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getTotal(): ?float
-	{
-		return $this->total;
-	}
+    public function getTotal(): ?float
+    {
+        return $this->total;
+    }
 
-	public function setTotal(?float $total): self
-	{
-		$this->total = $total;
+    public function setTotal(?float $total): self
+    {
+        $this->total = $total;
 
-		return $this;
-	}
+        return $this;
+    }
 }

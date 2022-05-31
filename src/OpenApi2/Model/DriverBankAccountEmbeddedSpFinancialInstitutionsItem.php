@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,68 +19,68 @@ namespace CatchE\OpenApi2\Model;
 
 class DriverBankAccountEmbeddedSpFinancialInstitutionsItem
 {
-	/**
-	 * @var string|null
-	 */
-	protected $financialInstitutionId;
-	/**
-	 * @var float|null
-	 */
-	protected $financialInstitutionNumber;
-	/**
-	 * @var string|null
-	 */
-	protected $financialInstitutionCode;
-	/**
-	 * @var string|null
-	 */
-	protected $name;
+    /**
+     * @var null|string
+     */
+    protected $financialInstitutionId;
+    /**
+     * @var null|float
+     */
+    protected $financialInstitutionNumber;
+    /**
+     * @var null|string
+     */
+    protected $financialInstitutionCode;
+    /**
+     * @var null|string
+     */
+    protected $name;
 
-	public function getFinancialInstitutionId(): ?string
-	{
-		return $this->financialInstitutionId;
-	}
+    public function getFinancialInstitutionId(): ?string
+    {
+        return $this->financialInstitutionId;
+    }
 
-	public function setFinancialInstitutionId(?string $financialInstitutionId): self
-	{
-		$this->financialInstitutionId = $financialInstitutionId;
+    public function setFinancialInstitutionId(?string $financialInstitutionId): self
+    {
+        $this->financialInstitutionId = $financialInstitutionId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getFinancialInstitutionNumber(): ?float
-	{
-		return $this->financialInstitutionNumber;
-	}
+    public function getFinancialInstitutionNumber(): ?float
+    {
+        return $this->financialInstitutionNumber;
+    }
 
-	public function setFinancialInstitutionNumber(?float $financialInstitutionNumber): self
-	{
-		$this->financialInstitutionNumber = $financialInstitutionNumber;
+    public function setFinancialInstitutionNumber(?float $financialInstitutionNumber): self
+    {
+        $this->financialInstitutionNumber = $financialInstitutionNumber;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getFinancialInstitutionCode(): ?string
-	{
-		return $this->financialInstitutionCode;
-	}
+    public function getFinancialInstitutionCode(): ?string
+    {
+        return $this->financialInstitutionCode;
+    }
 
-	public function setFinancialInstitutionCode(?string $financialInstitutionCode): self
-	{
-		$this->financialInstitutionCode = $financialInstitutionCode;
+    public function setFinancialInstitutionCode(?string $financialInstitutionCode): self
+    {
+        $this->financialInstitutionCode = $financialInstitutionCode;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getName(): ?string
-	{
-		return $this->name;
-	}
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
 
-	public function setName(?string $name): self
-	{
-		$this->name = $name;
+    public function setName(?string $name): self
+    {
+        $this->name = $name;
 
-		return $this;
-	}
+        return $this;
+    }
 }

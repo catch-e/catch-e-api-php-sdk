@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,8 +17,8 @@
 
 namespace CatchE\OpenApi2\Normalizer;
 
-use Jane\JsonSchemaRuntime\Normalizer\CheckArray;
-use Jane\JsonSchemaRuntime\Reference;
+use CatchE\OpenApi2\Runtime\Normalizer\CheckArray;
+use Jane\Component\JsonSchemaRuntime\Reference;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\DenormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
@@ -28,69 +28,88 @@ use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
 
 class CreateDriverAssetNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
 {
-	use DenormalizerAwareTrait;
-	use NormalizerAwareTrait;
-	use CheckArray;
+    use DenormalizerAwareTrait;
 
-	public function supportsDenormalization($data, $type, $format = null)
-	{
-		return 'CatchE\\OpenApi2\\Model\\CreateDriverAsset' === $type;
-	}
+    use NormalizerAwareTrait;
 
-	public function supportsNormalization($data, $format = null)
-	{
-		return is_object($data) && 'CatchE\\OpenApi2\\Model\\CreateDriverAsset' === get_class($data);
-	}
+    use CheckArray;
 
-	public function denormalize($data, $class, $format = null, array $context = [])
-	{
-		if (isset($data['$ref'])) {
-			return new Reference($data['$ref'], $context['document-origin']);
-		}
-		if (isset($data['$recursiveRef'])) {
-			return new Reference($data['$recursiveRef'], $context['document-origin']);
-		}
-		$object = new \CatchE\OpenApi2\Model\CreateDriverAsset();
-		if (\array_key_exists('driver_id', $data) && null !== $data['driver_id']) {
-			$object->setDriverId($data['driver_id']);
-		} elseif (\array_key_exists('driver_id', $data) && null === $data['driver_id']) {
-			$object->setDriverId(null);
-		}
-		if (\array_key_exists('finance_asset_type_id', $data) && null !== $data['finance_asset_type_id']) {
-			$object->setFinanceAssetTypeId($data['finance_asset_type_id']);
-		} elseif (\array_key_exists('finance_asset_type_id', $data) && null === $data['finance_asset_type_id']) {
-			$object->setFinanceAssetTypeId(null);
-		}
-		if (\array_key_exists('amount', $data) && null !== $data['amount']) {
-			$object->setAmount($data['amount']);
-		} elseif (\array_key_exists('amount', $data) && null === $data['amount']) {
-			$object->setAmount(null);
-		}
-		if (\array_key_exists('description', $data) && null !== $data['description']) {
-			$object->setDescription($data['description']);
-		} elseif (\array_key_exists('description', $data) && null === $data['description']) {
-			$object->setDescription(null);
-		}
+    /**
+     * @param mixed      $data
+     * @param mixed      $type
+     * @param null|mixed $format
+     *
+     * @return bool
+     */
+    public function supportsDenormalization($data, $type, $format = null)
+    {
+        return 'CatchE\\OpenApi2\\Model\\CreateDriverAsset' === $type;
+    }
 
-		return $object;
-	}
+    public function supportsNormalization($data, $format = null)
+    {
+        return is_object($data) && 'CatchE\\OpenApi2\\Model\\CreateDriverAsset' === get_class($data);
+    }
 
-	public function normalize($object, $format = null, array $context = [])
-	{
-		$data = [];
-		if (null !== $object->getDriverId()) {
-			$data['driver_id'] = $object->getDriverId();
-		}
-		if (null !== $object->getFinanceAssetTypeId()) {
-			$data['finance_asset_type_id'] = $object->getFinanceAssetTypeId();
-		}
-		if (null !== $object->getAmount()) {
-			$data['amount'] = $object->getAmount();
-		}
-		if (null !== $object->getDescription()) {
-			$data['description'] = $object->getDescription();
-		}
+    /**
+     * @param mixed      $data
+     * @param mixed      $class
+     * @param null|mixed $format
+     *
+     * @return mixed
+     */
+    public function denormalize($data, $class, $format = null, array $context = [])
+    {
+        if (isset($data['$ref'])) {
+            return new Reference($data['$ref'], $context['document-origin']);
+        }
+        if (isset($data['$recursiveRef'])) {
+            return new Reference($data['$recursiveRef'], $context['document-origin']);
+        }
+        $object = new \CatchE\OpenApi2\Model\CreateDriverAsset();
+        if (null === $data || false === \is_array($data)) {
+            return $object;
+        }
+        if (\array_key_exists('driver_id', $data) && null !== $data['driver_id']) {
+            $object->setDriverId($data['driver_id']);
+        } elseif (\array_key_exists('driver_id', $data) && null === $data['driver_id']) {
+            $object->setDriverId(null);
+        }
+        if (\array_key_exists('finance_asset_type_id', $data) && null !== $data['finance_asset_type_id']) {
+            $object->setFinanceAssetTypeId($data['finance_asset_type_id']);
+        } elseif (\array_key_exists('finance_asset_type_id', $data) && null === $data['finance_asset_type_id']) {
+            $object->setFinanceAssetTypeId(null);
+        }
+        if (\array_key_exists('amount', $data) && null !== $data['amount']) {
+            $object->setAmount($data['amount']);
+        } elseif (\array_key_exists('amount', $data) && null === $data['amount']) {
+            $object->setAmount(null);
+        }
+        if (\array_key_exists('description', $data) && null !== $data['description']) {
+            $object->setDescription($data['description']);
+        } elseif (\array_key_exists('description', $data) && null === $data['description']) {
+            $object->setDescription(null);
+        }
 
-		return $data;
-	}
+        return $object;
+    }
+
+    /**
+     * @param mixed      $object
+     * @param null|mixed $format
+     *
+     * @return null|array|\ArrayObject|bool|float|int|string
+     */
+    public function normalize($object, $format = null, array $context = [])
+    {
+        $data = [];
+        $data['driver_id'] = $object->getDriverId();
+        $data['finance_asset_type_id'] = $object->getFinanceAssetTypeId();
+        $data['amount'] = $object->getAmount();
+        if (null !== $object->getDescription()) {
+            $data['description'] = $object->getDescription();
+        }
+
+        return $data;
+    }
 }

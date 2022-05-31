@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,52 +19,52 @@ namespace CatchE\OpenApi2\Model;
 
 class PayoutStatusesGetLinks
 {
-	/**
-	 * @var PayoutStatusesGetLinksSelf|null
-	 */
-	protected $self;
-	/**
-	 * @var PayoutStatusesGetLinksFirst|null
-	 */
-	protected $first;
-	/**
-	 * @var PayoutStatusesGetLinksLast|null
-	 */
-	protected $last;
+    /**
+     * @var null|PayoutStatusesGetLinksSelf
+     */
+    protected $self;
+    /**
+     * @var null|PayoutStatusesGetLinksFirst
+     */
+    protected $first;
+    /**
+     * @var null|PayoutStatusesGetLinksLast
+     */
+    protected $last;
 
-	public function getSelf(): ?PayoutStatusesGetLinksSelf
-	{
-		return $this->self;
-	}
+    public function getSelf(): ?PayoutStatusesGetLinksSelf
+    {
+        return $this->self;
+    }
 
-	public function setSelf(?PayoutStatusesGetLinksSelf $self): self
-	{
-		$this->self = $self;
+    public function setSelf(?PayoutStatusesGetLinksSelf $self): self
+    {
+        $this->self = $self;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getFirst(): ?PayoutStatusesGetLinksFirst
-	{
-		return $this->first;
-	}
+    public function getFirst(): ?PayoutStatusesGetLinksFirst
+    {
+        return $this->first;
+    }
 
-	public function setFirst(?PayoutStatusesGetLinksFirst $first): self
-	{
-		$this->first = $first;
+    public function setFirst(?PayoutStatusesGetLinksFirst $first): self
+    {
+        $this->first = $first;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getLast(): ?PayoutStatusesGetLinksLast
-	{
-		return $this->last;
-	}
+    public function getLast(): ?PayoutStatusesGetLinksLast
+    {
+        return $this->last;
+    }
 
-	public function setLast(?PayoutStatusesGetLinksLast $last): self
-	{
-		$this->last = $last;
+    public function setLast(?PayoutStatusesGetLinksLast $last): self
+    {
+        $this->last = $last;
 
-		return $this;
-	}
+        return $this;
+    }
 }

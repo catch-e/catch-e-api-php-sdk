@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,52 +19,52 @@ namespace CatchE\OpenApi2\Model;
 
 class ContractBudgetsUpdateBudgetsItem
 {
-	/**
-	 * Net amount to update.
-	 *
-	 * @var float|null
-	 */
-	protected $amountNet;
-	/**
-	 * Gst amount to update.
-	 *
-	 * @var float|null
-	 */
-	protected $amountGst;
+    /**
+     * Net amount to update.
+     *
+     * @var null|float
+     */
+    protected $amountNet;
+    /**
+     * Gst amount to update.
+     *
+     * @var null|float
+     */
+    protected $amountGst;
 
-	/**
-	 * Net amount to update.
-	 */
-	public function getAmountNet(): ?float
-	{
-		return $this->amountNet;
-	}
+    /**
+     * Net amount to update.
+     */
+    public function getAmountNet(): ?float
+    {
+        return $this->amountNet;
+    }
 
-	/**
-	 * Net amount to update.
-	 */
-	public function setAmountNet(?float $amountNet): self
-	{
-		$this->amountNet = $amountNet;
+    /**
+     * Net amount to update.
+     */
+    public function setAmountNet(?float $amountNet): self
+    {
+        $this->amountNet = $amountNet;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Gst amount to update.
-	 */
-	public function getAmountGst(): ?float
-	{
-		return $this->amountGst;
-	}
+    /**
+     * Gst amount to update.
+     */
+    public function getAmountGst(): ?float
+    {
+        return $this->amountGst;
+    }
 
-	/**
-	 * Gst amount to update.
-	 */
-	public function setAmountGst(?float $amountGst): self
-	{
-		$this->amountGst = $amountGst;
+    /**
+     * Gst amount to update.
+     */
+    public function setAmountGst(?float $amountGst): self
+    {
+        $this->amountGst = $amountGst;
 
-		return $this;
-	}
+        return $this;
+    }
 }

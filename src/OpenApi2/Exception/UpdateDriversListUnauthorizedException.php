@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,18 +17,10 @@
 
 namespace CatchE\OpenApi2\Exception;
 
-class UpdateDriversListUnauthorizedException extends \RuntimeException implements ClientException
+class UpdateDriversListUnauthorizedException extends UnauthorizedException
 {
-	private $unauthorized;
-
-	public function __construct(\CatchE\OpenApi2\Model\Unauthorized $unauthorized)
-	{
-		parent::__construct('Unauthorized - invalid authentication token', 401);
-		$this->unauthorized = $unauthorized;
-	}
-
-	public function getUnauthorized()
-	{
-		return $this->unauthorized;
-	}
+    public function __construct(\CatchE\OpenApi2\Model\Unauthorized $unauthorized)
+    {
+        parent::__construct('Unauthorized - invalid authentication token', $unauthorized);
+    }
 }

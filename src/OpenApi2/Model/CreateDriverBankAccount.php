@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,116 +19,116 @@ namespace CatchE\OpenApi2\Model;
 
 class CreateDriverBankAccount
 {
-	/**
-	 * @var string|null
-	 */
-	protected $driverId;
-	/**
-	 * @var string|null
-	 */
-	protected $supplierId;
-	/**
-	 * @var string|null
-	 */
-	protected $accountName;
-	/**
-	 * @var string|null
-	 */
-	protected $bsb;
-	/**
-	 * @var string|null
-	 */
-	protected $accountNumber;
-	/**
-	 * @var string|null
-	 */
-	protected $claimsDefaultFlag = 'no';
-	/**
-	 * @var string|null
-	 */
-	protected $statusFlag = 'active';
+    /**
+     * @var null|string
+     */
+    protected $driverId;
+    /**
+     * @var null|string
+     */
+    protected $supplierId;
+    /**
+     * @var null|string
+     */
+    protected $accountName;
+    /**
+     * @var null|string
+     */
+    protected $bsb;
+    /**
+     * @var null|string
+     */
+    protected $accountNumber;
+    /**
+     * @var null|string
+     */
+    protected $claimsDefaultFlag = 'no';
+    /**
+     * @var null|string
+     */
+    protected $statusFlag = 'active';
 
-	public function getDriverId(): ?string
-	{
-		return $this->driverId;
-	}
+    public function getDriverId(): ?string
+    {
+        return $this->driverId;
+    }
 
-	public function setDriverId(?string $driverId): self
-	{
-		$this->driverId = $driverId;
+    public function setDriverId(?string $driverId): self
+    {
+        $this->driverId = $driverId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getSupplierId(): ?string
-	{
-		return $this->supplierId;
-	}
+    public function getSupplierId(): ?string
+    {
+        return $this->supplierId;
+    }
 
-	public function setSupplierId(?string $supplierId): self
-	{
-		$this->supplierId = $supplierId;
+    public function setSupplierId(?string $supplierId): self
+    {
+        $this->supplierId = $supplierId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getAccountName(): ?string
-	{
-		return $this->accountName;
-	}
+    public function getAccountName(): ?string
+    {
+        return $this->accountName;
+    }
 
-	public function setAccountName(?string $accountName): self
-	{
-		$this->accountName = $accountName;
+    public function setAccountName(?string $accountName): self
+    {
+        $this->accountName = $accountName;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getBsb(): ?string
-	{
-		return $this->bsb;
-	}
+    public function getBsb(): ?string
+    {
+        return $this->bsb;
+    }
 
-	public function setBsb(?string $bsb): self
-	{
-		$this->bsb = $bsb;
+    public function setBsb(?string $bsb): self
+    {
+        $this->bsb = $bsb;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getAccountNumber(): ?string
-	{
-		return $this->accountNumber;
-	}
+    public function getAccountNumber(): ?string
+    {
+        return $this->accountNumber;
+    }
 
-	public function setAccountNumber(?string $accountNumber): self
-	{
-		$this->accountNumber = $accountNumber;
+    public function setAccountNumber(?string $accountNumber): self
+    {
+        $this->accountNumber = $accountNumber;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getClaimsDefaultFlag(): ?string
-	{
-		return $this->claimsDefaultFlag;
-	}
+    public function getClaimsDefaultFlag(): ?string
+    {
+        return $this->claimsDefaultFlag;
+    }
 
-	public function setClaimsDefaultFlag(?string $claimsDefaultFlag): self
-	{
-		$this->claimsDefaultFlag = $claimsDefaultFlag;
+    public function setClaimsDefaultFlag(?string $claimsDefaultFlag): self
+    {
+        $this->claimsDefaultFlag = $claimsDefaultFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getStatusFlag(): ?string
-	{
-		return $this->statusFlag;
-	}
+    public function getStatusFlag(): ?string
+    {
+        return $this->statusFlag;
+    }
 
-	public function setStatusFlag(?string $statusFlag): self
-	{
-		$this->statusFlag = $statusFlag;
+    public function setStatusFlag(?string $statusFlag): self
+    {
+        $this->statusFlag = $statusFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 }

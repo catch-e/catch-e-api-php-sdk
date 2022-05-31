@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,112 +17,114 @@
 
 namespace CatchE\OpenApi2\Endpoint;
 
-class GetSuppliers extends \Jane\OpenApiRuntime\Client\BaseEndpoint implements \Jane\OpenApiRuntime\Client\Endpoint
+class GetSuppliers extends \CatchE\OpenApi2\Runtime\Client\BaseEndpoint implements \CatchE\OpenApi2\Runtime\Client\Endpoint
 {
-	use \Jane\OpenApiRuntime\Client\EndpointTrait;
+    use \CatchE\OpenApi2\Runtime\Client\EndpointTrait;
 
-	/**
-	 * This method requires the **Suppliers:Get** permission to be associated with your role.
-	 *
-	 * @param array $queryParameters {
-	 *
-	 *     @var string $name Optional supplier name.
+    /**
+     * This method requires the **Suppliers:Get** permission to be associated with your role.
+     *
+     * @param array $queryParameters {
+     *
+     *     @var string $name Optional supplier name.
+     *
+     * This field supports the wildcard % operator.
+     *     @var string $supplier_code Optional supplier code.
+     *
+     * This field supports the wildcard % operator.
+     *     @var array $supplier_type optional supplier type
+     *     @var string $exclude_empty_name_flag Optional flag.
+     * Set 'yes' to exclude suppliers with an empty name field
+     *     @var array $status Optional status
+     *     @var string $interface_type optional interface type
+     *     @var int $page Optional page number
+     *     @var int $page_size Optional page size
+     * }
+     */
+    public function __construct(array $queryParameters = [])
+    {
+        $this->queryParameters = $queryParameters;
+    }
 
-	 *     @var string $supplier_code Optional supplier code.
+    public function getMethod(): string
+    {
+        return 'GET';
+    }
 
-	 *     @var array $supplier_type Optional supplier type.
+    public function getUri(): string
+    {
+        return '/fm/suppliers';
+    }
 
-	 *     @var string $exclude_empty_name_flag Optional flag.
-	 *     @var array $status Optional status
-	 *     @var string $interface_type optional interface type
-	 *     @var int $page Optional page number
-	 *     @var int $page_size Optional page size
-	 * }
-	 */
-	public function __construct(array $queryParameters = [])
-	{
-		$this->queryParameters = $queryParameters;
-	}
+    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    {
+        return [[], null];
+    }
 
-	public function getMethod(): string
-	{
-		return 'GET';
-	}
+    public function getExtraHeaders(): array
+    {
+        return ['Accept' => ['application/json']];
+    }
 
-	public function getUri(): string
-	{
-		return '/fm/suppliers';
-	}
+    public function getAuthenticationScopes(): array
+    {
+        return ['Bearer Token'];
+    }
 
-	public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
-	{
-		return [[], null];
-	}
+    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    {
+        $optionsResolver = parent::getQueryOptionsResolver();
+        $optionsResolver->setDefined(['name', 'supplier_code', 'supplier_type', 'exclude_empty_name_flag', 'status', 'interface_type', 'page', 'page_size']);
+        $optionsResolver->setRequired([]);
+        $optionsResolver->setDefaults(['exclude_empty_name_flag' => 'no', 'status' => 'active', 'page' => 1, 'page_size' => 25]);
+        $optionsResolver->setAllowedTypes('name', ['string']);
+        $optionsResolver->setAllowedTypes('supplier_code', ['string']);
+        $optionsResolver->setAllowedTypes('supplier_type', ['array']);
+        $optionsResolver->setAllowedTypes('exclude_empty_name_flag', ['string']);
+        $optionsResolver->setAllowedTypes('status', ['array']);
+        $optionsResolver->setAllowedTypes('interface_type', ['string']);
+        $optionsResolver->setAllowedTypes('page', ['int']);
+        $optionsResolver->setAllowedTypes('page_size', ['int']);
 
-	public function getExtraHeaders(): array
-	{
-		return ['Accept' => ['application/json']];
-	}
+        return $optionsResolver;
+    }
 
-	protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
-	{
-		$optionsResolver = parent::getQueryOptionsResolver();
-		$optionsResolver->setDefined(['name', 'supplier_code', 'supplier_type', 'exclude_empty_name_flag', 'status', 'interface_type', 'page', 'page_size']);
-		$optionsResolver->setRequired([]);
-		$optionsResolver->setDefaults(['exclude_empty_name_flag' => 'no', 'status' => 'active', 'page' => 1, 'page_size' => 25]);
-		$optionsResolver->setAllowedTypes('name', ['string']);
-		$optionsResolver->setAllowedTypes('supplier_code', ['string']);
-		$optionsResolver->setAllowedTypes('supplier_type', ['array']);
-		$optionsResolver->setAllowedTypes('exclude_empty_name_flag', ['string']);
-		$optionsResolver->setAllowedTypes('status', ['array']);
-		$optionsResolver->setAllowedTypes('interface_type', ['string']);
-		$optionsResolver->setAllowedTypes('page', ['int']);
-		$optionsResolver->setAllowedTypes('page_size', ['int']);
+    /**
+     * {@inheritdoc}
+     *
+     * @throws \CatchE\OpenApi2\Exception\GetSuppliersUnauthorizedException
+     * @throws \CatchE\OpenApi2\Exception\GetSuppliersForbiddenException
+     * @throws \CatchE\OpenApi2\Exception\GetSuppliersNotFoundException
+     * @throws \CatchE\OpenApi2\Exception\GetSuppliersNotAcceptableException
+     * @throws \CatchE\OpenApi2\Exception\GetSuppliersConflictException
+     * @throws \CatchE\OpenApi2\Exception\GetSuppliersInternalServerErrorException
+     *
+     * @return null|\CatchE\OpenApi2\Model\Error|\CatchE\OpenApi2\Model\SuppliersGet
+     */
+    protected function transformResponseBody(string $body, int $status, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    {
+        if (200 === $status) {
+            return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\SuppliersGet', 'json');
+        }
+        if (401 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetSuppliersUnauthorizedException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Unauthorized', 'json'));
+        }
+        if (403 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetSuppliersForbiddenException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Forbidden', 'json'));
+        }
+        if (404 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetSuppliersNotFoundException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotFound', 'json'));
+        }
+        if (406 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetSuppliersNotAcceptableException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotAcceptable', 'json'));
+        }
+        if (409 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetSuppliersConflictException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Conflict', 'json'));
+        }
+        if (500 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetSuppliersInternalServerErrorException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\InternalError', 'json'));
+        }
 
-		return $optionsResolver;
-	}
-
-	/**
-	 * {@inheritdoc}
-	 *
-	 * @throws \CatchE\OpenApi2\Exception\GetSuppliersUnauthorizedException
-	 * @throws \CatchE\OpenApi2\Exception\GetSuppliersForbiddenException
-	 * @throws \CatchE\OpenApi2\Exception\GetSuppliersNotFoundException
-	 * @throws \CatchE\OpenApi2\Exception\GetSuppliersNotAcceptableException
-	 * @throws \CatchE\OpenApi2\Exception\GetSuppliersConflictException
-	 * @throws \CatchE\OpenApi2\Exception\GetSuppliersInternalServerErrorException
-	 *
-	 * @return \CatchE\OpenApi2\Model\SuppliersGet|\CatchE\OpenApi2\Model\Error|null
-	 */
-	protected function transformResponseBody(string $body, int $status, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType)
-	{
-		if (200 === $status) {
-			return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\SuppliersGet', 'json');
-		}
-		if (401 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetSuppliersUnauthorizedException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Unauthorized', 'json'));
-		}
-		if (403 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetSuppliersForbiddenException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Forbidden', 'json'));
-		}
-		if (404 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetSuppliersNotFoundException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotFound', 'json'));
-		}
-		if (406 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetSuppliersNotAcceptableException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotAcceptable', 'json'));
-		}
-		if (409 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetSuppliersConflictException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Conflict', 'json'));
-		}
-		if (500 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetSuppliersInternalServerErrorException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\InternalError', 'json'));
-		}
-
-		return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Error', 'json');
-	}
-
-	public function getAuthenticationScopes(): array
-	{
-		return ['Bearer Token'];
-	}
+        return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Error', 'json');
+    }
 }

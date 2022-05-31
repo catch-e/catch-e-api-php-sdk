@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,20 +19,20 @@ namespace CatchE\OpenApi2\Model;
 
 class FmContractBudgetsUpdatePostResponse201
 {
-	/**
-	 * @var int|null
-	 */
-	protected $affectedRecords;
+    /**
+     * @var null|int
+     */
+    protected $affectedRecords;
 
-	public function getAffectedRecords(): ?int
-	{
-		return $this->affectedRecords;
-	}
+    public function getAffectedRecords(): ?int
+    {
+        return $this->affectedRecords;
+    }
 
-	public function setAffectedRecords(?int $affectedRecords): self
-	{
-		$this->affectedRecords = $affectedRecords;
+    public function setAffectedRecords(?int $affectedRecords): self
+    {
+        $this->affectedRecords = $affectedRecords;
 
-		return $this;
-	}
+        return $this;
+    }
 }

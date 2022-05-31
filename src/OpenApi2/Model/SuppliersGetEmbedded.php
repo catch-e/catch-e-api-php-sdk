@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,26 +19,26 @@ namespace CatchE\OpenApi2\Model;
 
 class SuppliersGetEmbedded
 {
-	/**
-	 * @var Supplier[]|null
-	 */
-	protected $fmSuppliers;
+    /**
+     * @var null|Supplier[]
+     */
+    protected $fmSuppliers;
 
-	/**
-	 * @return Supplier[]|null
-	 */
-	public function getFmSuppliers(): ?array
-	{
-		return $this->fmSuppliers;
-	}
+    /**
+     * @return null|Supplier[]
+     */
+    public function getFmSuppliers(): ?array
+    {
+        return $this->fmSuppliers;
+    }
 
-	/**
-	 * @param Supplier[]|null $fmSuppliers
-	 */
-	public function setFmSuppliers(?array $fmSuppliers): self
-	{
-		$this->fmSuppliers = $fmSuppliers;
+    /**
+     * @param null|Supplier[] $fmSuppliers
+     */
+    public function setFmSuppliers(?array $fmSuppliers): self
+    {
+        $this->fmSuppliers = $fmSuppliers;
 
-		return $this;
-	}
+        return $this;
+    }
 }

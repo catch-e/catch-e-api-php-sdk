@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,118 +19,118 @@ namespace CatchE\OpenApi2\Model;
 
 class UnprocessableEntity
 {
-	/**
-	 * Optional list of warnings that can be overriden by some web services.
-	 *
-	 * @var mixed|null
-	 */
-	protected $warningMessages;
-	/**
-	 * @var mixed|null
-	 */
-	protected $validationMessages;
-	/**
-	 * @var string|null
-	 */
-	protected $type;
-	/**
-	 * @var string|null
-	 */
-	protected $title;
-	/**
-	 * @var int|null
-	 */
-	protected $status;
-	/**
-	 * @var string|null
-	 */
-	protected $detail;
+    /**
+     * Optional list of warnings that can be overriden by some web services.
+     *
+     * @var null|mixed
+     */
+    protected $warningMessages;
+    /**
+     * @var null|mixed
+     */
+    protected $validationMessages;
+    /**
+     * @var null|string
+     */
+    protected $type;
+    /**
+     * @var null|string
+     */
+    protected $title;
+    /**
+     * @var null|int
+     */
+    protected $status;
+    /**
+     * @var null|string
+     */
+    protected $detail;
 
-	/**
-	 * Optional list of warnings that can be overriden by some web services.
-	 *
-	 * @return mixed
-	 */
-	public function getWarningMessages()
-	{
-		return $this->warningMessages;
-	}
+    /**
+     * Optional list of warnings that can be overriden by some web services.
+     *
+     * @return mixed
+     */
+    public function getWarningMessages()
+    {
+        return $this->warningMessages;
+    }
 
-	/**
-	 * Optional list of warnings that can be overriden by some web services.
-	 *
-	 * @param mixed $warningMessages
-	 */
-	public function setWarningMessages($warningMessages): self
-	{
-		$this->warningMessages = $warningMessages;
+    /**
+     * Optional list of warnings that can be overriden by some web services.
+     *
+     * @param mixed $warningMessages
+     */
+    public function setWarningMessages($warningMessages): self
+    {
+        $this->warningMessages = $warningMessages;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * @return mixed
-	 */
-	public function getValidationMessages()
-	{
-		return $this->validationMessages;
-	}
+    /**
+     * @return mixed
+     */
+    public function getValidationMessages()
+    {
+        return $this->validationMessages;
+    }
 
-	/**
-	 * @param mixed $validationMessages
-	 */
-	public function setValidationMessages($validationMessages): self
-	{
-		$this->validationMessages = $validationMessages;
+    /**
+     * @param mixed $validationMessages
+     */
+    public function setValidationMessages($validationMessages): self
+    {
+        $this->validationMessages = $validationMessages;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getType(): ?string
-	{
-		return $this->type;
-	}
+    public function getType(): ?string
+    {
+        return $this->type;
+    }
 
-	public function setType(?string $type): self
-	{
-		$this->type = $type;
+    public function setType(?string $type): self
+    {
+        $this->type = $type;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getTitle(): ?string
-	{
-		return $this->title;
-	}
+    public function getTitle(): ?string
+    {
+        return $this->title;
+    }
 
-	public function setTitle(?string $title): self
-	{
-		$this->title = $title;
+    public function setTitle(?string $title): self
+    {
+        $this->title = $title;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getStatus(): ?int
-	{
-		return $this->status;
-	}
+    public function getStatus(): ?int
+    {
+        return $this->status;
+    }
 
-	public function setStatus(?int $status): self
-	{
-		$this->status = $status;
+    public function setStatus(?int $status): self
+    {
+        $this->status = $status;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getDetail(): ?string
-	{
-		return $this->detail;
-	}
+    public function getDetail(): ?string
+    {
+        return $this->detail;
+    }
 
-	public function setDetail(?string $detail): self
-	{
-		$this->detail = $detail;
+    public function setDetail(?string $detail): self
+    {
+        $this->detail = $detail;
 
-		return $this;
-	}
+        return $this;
+    }
 }

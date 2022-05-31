@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,188 +19,188 @@ namespace CatchE\OpenApi2\Model;
 
 class ChannelUpdate
 {
-	/**
-	 * Company Id.
-	 *
-	 * @var string|null
-	 */
-	protected $companyId;
-	/**
-	 * @var string|null
-	 */
-	protected $channelGroupId;
-	/**
-	 * A unique code for the channel.
-	 *
-	 * @var string|null
-	 */
-	protected $channelCode = '';
-	/**
-	 * A name for the channel.
-	 *
-	 * @var string|null
-	 */
-	protected $channel = '';
-	/**
-	 * Bank Name.
-	 *
-	 * @var string|null
-	 */
-	protected $bankAccountName = '';
-	/**
-	 * Bank BSB.
-	 *
-	 * @var string|null
-	 */
-	protected $bankBsb;
-	/**
-	 * Bank Account number.
-	 *
-	 * @var string|null
-	 */
-	protected $bankAccountNumber;
-	/**
-	 * Status flag.
-	 *
-	 * @var string|null
-	 */
-	protected $statusFlag = 'active';
+    /**
+     * Company Id.
+     *
+     * @var null|string
+     */
+    protected $companyId;
+    /**
+     * @var null|string
+     */
+    protected $channelGroupId;
+    /**
+     * A unique code for the channel.
+     *
+     * @var null|string
+     */
+    protected $channelCode = '';
+    /**
+     * A name for the channel.
+     *
+     * @var null|string
+     */
+    protected $channel = '';
+    /**
+     * Bank Name.
+     *
+     * @var null|string
+     */
+    protected $bankAccountName = '';
+    /**
+     * Bank BSB.
+     *
+     * @var null|string
+     */
+    protected $bankBsb;
+    /**
+     * Bank Account number.
+     *
+     * @var null|string
+     */
+    protected $bankAccountNumber;
+    /**
+     * Status flag.
+     *
+     * @var null|string
+     */
+    protected $statusFlag = 'active';
 
-	/**
-	 * Company Id.
-	 */
-	public function getCompanyId(): ?string
-	{
-		return $this->companyId;
-	}
+    /**
+     * Company Id.
+     */
+    public function getCompanyId(): ?string
+    {
+        return $this->companyId;
+    }
 
-	/**
-	 * Company Id.
-	 */
-	public function setCompanyId(?string $companyId): self
-	{
-		$this->companyId = $companyId;
+    /**
+     * Company Id.
+     */
+    public function setCompanyId(?string $companyId): self
+    {
+        $this->companyId = $companyId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getChannelGroupId(): ?string
-	{
-		return $this->channelGroupId;
-	}
+    public function getChannelGroupId(): ?string
+    {
+        return $this->channelGroupId;
+    }
 
-	public function setChannelGroupId(?string $channelGroupId): self
-	{
-		$this->channelGroupId = $channelGroupId;
+    public function setChannelGroupId(?string $channelGroupId): self
+    {
+        $this->channelGroupId = $channelGroupId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * A unique code for the channel.
-	 */
-	public function getChannelCode(): ?string
-	{
-		return $this->channelCode;
-	}
+    /**
+     * A unique code for the channel.
+     */
+    public function getChannelCode(): ?string
+    {
+        return $this->channelCode;
+    }
 
-	/**
-	 * A unique code for the channel.
-	 */
-	public function setChannelCode(?string $channelCode): self
-	{
-		$this->channelCode = $channelCode;
+    /**
+     * A unique code for the channel.
+     */
+    public function setChannelCode(?string $channelCode): self
+    {
+        $this->channelCode = $channelCode;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * A name for the channel.
-	 */
-	public function getChannel(): ?string
-	{
-		return $this->channel;
-	}
+    /**
+     * A name for the channel.
+     */
+    public function getChannel(): ?string
+    {
+        return $this->channel;
+    }
 
-	/**
-	 * A name for the channel.
-	 */
-	public function setChannel(?string $channel): self
-	{
-		$this->channel = $channel;
+    /**
+     * A name for the channel.
+     */
+    public function setChannel(?string $channel): self
+    {
+        $this->channel = $channel;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Bank Name.
-	 */
-	public function getBankAccountName(): ?string
-	{
-		return $this->bankAccountName;
-	}
+    /**
+     * Bank Name.
+     */
+    public function getBankAccountName(): ?string
+    {
+        return $this->bankAccountName;
+    }
 
-	/**
-	 * Bank Name.
-	 */
-	public function setBankAccountName(?string $bankAccountName): self
-	{
-		$this->bankAccountName = $bankAccountName;
+    /**
+     * Bank Name.
+     */
+    public function setBankAccountName(?string $bankAccountName): self
+    {
+        $this->bankAccountName = $bankAccountName;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Bank BSB.
-	 */
-	public function getBankBsb(): ?string
-	{
-		return $this->bankBsb;
-	}
+    /**
+     * Bank BSB.
+     */
+    public function getBankBsb(): ?string
+    {
+        return $this->bankBsb;
+    }
 
-	/**
-	 * Bank BSB.
-	 */
-	public function setBankBsb(?string $bankBsb): self
-	{
-		$this->bankBsb = $bankBsb;
+    /**
+     * Bank BSB.
+     */
+    public function setBankBsb(?string $bankBsb): self
+    {
+        $this->bankBsb = $bankBsb;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Bank Account number.
-	 */
-	public function getBankAccountNumber(): ?string
-	{
-		return $this->bankAccountNumber;
-	}
+    /**
+     * Bank Account number.
+     */
+    public function getBankAccountNumber(): ?string
+    {
+        return $this->bankAccountNumber;
+    }
 
-	/**
-	 * Bank Account number.
-	 */
-	public function setBankAccountNumber(?string $bankAccountNumber): self
-	{
-		$this->bankAccountNumber = $bankAccountNumber;
+    /**
+     * Bank Account number.
+     */
+    public function setBankAccountNumber(?string $bankAccountNumber): self
+    {
+        $this->bankAccountNumber = $bankAccountNumber;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Status flag.
-	 */
-	public function getStatusFlag(): ?string
-	{
-		return $this->statusFlag;
-	}
+    /**
+     * Status flag.
+     */
+    public function getStatusFlag(): ?string
+    {
+        return $this->statusFlag;
+    }
 
-	/**
-	 * Status flag.
-	 */
-	public function setStatusFlag(?string $statusFlag): self
-	{
-		$this->statusFlag = $statusFlag;
+    /**
+     * Status flag.
+     */
+    public function setStatusFlag(?string $statusFlag): self
+    {
+        $this->statusFlag = $statusFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 }

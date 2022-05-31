@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,26 +19,26 @@ namespace CatchE\OpenApi2\Model;
 
 class FmDriverLiabilitiesGetResponse200Embedded
 {
-	/**
-	 * @var DriverLiability[]|null
-	 */
-	protected $driverLiabilities;
+    /**
+     * @var null|DriverLiability[]
+     */
+    protected $driverLiabilities;
 
-	/**
-	 * @return DriverLiability[]|null
-	 */
-	public function getDriverLiabilities(): ?array
-	{
-		return $this->driverLiabilities;
-	}
+    /**
+     * @return null|DriverLiability[]
+     */
+    public function getDriverLiabilities(): ?array
+    {
+        return $this->driverLiabilities;
+    }
 
-	/**
-	 * @param DriverLiability[]|null $driverLiabilities
-	 */
-	public function setDriverLiabilities(?array $driverLiabilities): self
-	{
-		$this->driverLiabilities = $driverLiabilities;
+    /**
+     * @param null|DriverLiability[] $driverLiabilities
+     */
+    public function setDriverLiabilities(?array $driverLiabilities): self
+    {
+        $this->driverLiabilities = $driverLiabilities;
 
-		return $this;
-	}
+        return $this;
+    }
 }

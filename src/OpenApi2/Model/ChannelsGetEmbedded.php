@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,26 +19,26 @@ namespace CatchE\OpenApi2\Model;
 
 class ChannelsGetEmbedded
 {
-	/**
-	 * @var Channel[]|null
-	 */
-	protected $channel;
+    /**
+     * @var null|Channel[]
+     */
+    protected $channel;
 
-	/**
-	 * @return Channel[]|null
-	 */
-	public function getChannel(): ?array
-	{
-		return $this->channel;
-	}
+    /**
+     * @return null|Channel[]
+     */
+    public function getChannel(): ?array
+    {
+        return $this->channel;
+    }
 
-	/**
-	 * @param Channel[]|null $channel
-	 */
-	public function setChannel(?array $channel): self
-	{
-		$this->channel = $channel;
+    /**
+     * @param null|Channel[] $channel
+     */
+    public function setChannel(?array $channel): self
+    {
+        $this->channel = $channel;
 
-		return $this;
-	}
+        return $this;
+    }
 }

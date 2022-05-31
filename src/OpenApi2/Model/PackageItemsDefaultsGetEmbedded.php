@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,26 +19,26 @@ namespace CatchE\OpenApi2\Model;
 
 class PackageItemsDefaultsGetEmbedded
 {
-	/**
-	 * @var PackageItemDefaults[]|null
-	 */
-	protected $spPackageItemDefaults;
+    /**
+     * @var null|PackageItemDefaults[]
+     */
+    protected $spPackageItemDefaults;
 
-	/**
-	 * @return PackageItemDefaults[]|null
-	 */
-	public function getSpPackageItemDefaults(): ?array
-	{
-		return $this->spPackageItemDefaults;
-	}
+    /**
+     * @return null|PackageItemDefaults[]
+     */
+    public function getSpPackageItemDefaults(): ?array
+    {
+        return $this->spPackageItemDefaults;
+    }
 
-	/**
-	 * @param PackageItemDefaults[]|null $spPackageItemDefaults
-	 */
-	public function setSpPackageItemDefaults(?array $spPackageItemDefaults): self
-	{
-		$this->spPackageItemDefaults = $spPackageItemDefaults;
+    /**
+     * @param null|PackageItemDefaults[] $spPackageItemDefaults
+     */
+    public function setSpPackageItemDefaults(?array $spPackageItemDefaults): self
+    {
+        $this->spPackageItemDefaults = $spPackageItemDefaults;
 
-		return $this;
-	}
+        return $this;
+    }
 }

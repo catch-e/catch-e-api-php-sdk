@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,84 +19,84 @@ namespace CatchE\OpenApi2\Model;
 
 class EmployeePackageItemEmbedded
 {
-	/**
-	 * @var SalaryPackagingDisbursementCycle|null
-	 */
-	protected $disbursementCycle;
-	/**
-	 * @var Driver|null
-	 */
-	protected $driver;
-	/**
-	 * @var DriverBankAccount|null
-	 */
-	protected $driverBankAccount;
-	/**
-	 * @var PackageItem|null
-	 */
-	protected $packageItem;
-	/**
-	 * @var Supplier|null
-	 */
-	protected $supplier;
+    /**
+     * @var null|SalaryPackagingDisbursementCycle
+     */
+    protected $disbursementCycle;
+    /**
+     * @var null|Driver
+     */
+    protected $driver;
+    /**
+     * @var null|DriverBankAccount
+     */
+    protected $driverBankAccount;
+    /**
+     * @var null|PackageItem
+     */
+    protected $packageItem;
+    /**
+     * @var null|Supplier
+     */
+    protected $supplier;
 
-	public function getDisbursementCycle(): ?SalaryPackagingDisbursementCycle
-	{
-		return $this->disbursementCycle;
-	}
+    public function getDisbursementCycle(): ?SalaryPackagingDisbursementCycle
+    {
+        return $this->disbursementCycle;
+    }
 
-	public function setDisbursementCycle(?SalaryPackagingDisbursementCycle $disbursementCycle): self
-	{
-		$this->disbursementCycle = $disbursementCycle;
+    public function setDisbursementCycle(?SalaryPackagingDisbursementCycle $disbursementCycle): self
+    {
+        $this->disbursementCycle = $disbursementCycle;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getDriver(): ?Driver
-	{
-		return $this->driver;
-	}
+    public function getDriver(): ?Driver
+    {
+        return $this->driver;
+    }
 
-	public function setDriver(?Driver $driver): self
-	{
-		$this->driver = $driver;
+    public function setDriver(?Driver $driver): self
+    {
+        $this->driver = $driver;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getDriverBankAccount(): ?DriverBankAccount
-	{
-		return $this->driverBankAccount;
-	}
+    public function getDriverBankAccount(): ?DriverBankAccount
+    {
+        return $this->driverBankAccount;
+    }
 
-	public function setDriverBankAccount(?DriverBankAccount $driverBankAccount): self
-	{
-		$this->driverBankAccount = $driverBankAccount;
+    public function setDriverBankAccount(?DriverBankAccount $driverBankAccount): self
+    {
+        $this->driverBankAccount = $driverBankAccount;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getPackageItem(): ?PackageItem
-	{
-		return $this->packageItem;
-	}
+    public function getPackageItem(): ?PackageItem
+    {
+        return $this->packageItem;
+    }
 
-	public function setPackageItem(?PackageItem $packageItem): self
-	{
-		$this->packageItem = $packageItem;
+    public function setPackageItem(?PackageItem $packageItem): self
+    {
+        $this->packageItem = $packageItem;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getSupplier(): ?Supplier
-	{
-		return $this->supplier;
-	}
+    public function getSupplier(): ?Supplier
+    {
+        return $this->supplier;
+    }
 
-	public function setSupplier(?Supplier $supplier): self
-	{
-		$this->supplier = $supplier;
+    public function setSupplier(?Supplier $supplier): self
+    {
+        $this->supplier = $supplier;
 
-		return $this;
-	}
+        return $this;
+    }
 }

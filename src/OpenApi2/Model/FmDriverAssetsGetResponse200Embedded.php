@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,26 +19,26 @@ namespace CatchE\OpenApi2\Model;
 
 class FmDriverAssetsGetResponse200Embedded
 {
-	/**
-	 * @var DriverAsset[]|null
-	 */
-	protected $driverAssets;
+    /**
+     * @var null|DriverAsset[]
+     */
+    protected $driverAssets;
 
-	/**
-	 * @return DriverAsset[]|null
-	 */
-	public function getDriverAssets(): ?array
-	{
-		return $this->driverAssets;
-	}
+    /**
+     * @return null|DriverAsset[]
+     */
+    public function getDriverAssets(): ?array
+    {
+        return $this->driverAssets;
+    }
 
-	/**
-	 * @param DriverAsset[]|null $driverAssets
-	 */
-	public function setDriverAssets(?array $driverAssets): self
-	{
-		$this->driverAssets = $driverAssets;
+    /**
+     * @param null|DriverAsset[] $driverAssets
+     */
+    public function setDriverAssets(?array $driverAssets): self
+    {
+        $this->driverAssets = $driverAssets;
 
-		return $this;
-	}
+        return $this;
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,26 +19,26 @@ namespace CatchE\OpenApi2\Model;
 
 class GetDriversEmbedded
 {
-	/**
-	 * @var Driver[]|null
-	 */
-	protected $fmDrivers;
+    /**
+     * @var null|Driver[]
+     */
+    protected $fmDrivers;
 
-	/**
-	 * @return Driver[]|null
-	 */
-	public function getFmDrivers(): ?array
-	{
-		return $this->fmDrivers;
-	}
+    /**
+     * @return null|Driver[]
+     */
+    public function getFmDrivers(): ?array
+    {
+        return $this->fmDrivers;
+    }
 
-	/**
-	 * @param Driver[]|null $fmDrivers
-	 */
-	public function setFmDrivers(?array $fmDrivers): self
-	{
-		$this->fmDrivers = $fmDrivers;
+    /**
+     * @param null|Driver[] $fmDrivers
+     */
+    public function setFmDrivers(?array $fmDrivers): self
+    {
+        $this->fmDrivers = $fmDrivers;
 
-		return $this;
-	}
+        return $this;
+    }
 }

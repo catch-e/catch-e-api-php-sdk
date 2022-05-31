@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,24 +15,25 @@
  * limitations under the License.
  */
 
-require __DIR__.'/../vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 try {
-	$client = \CatchE\Api\Client::factory();
-	$result = $client->authenticate([
-		'username' => 'username',
-		'password' => 'password',
-		//'2fa_code' => 123456 # If applicable
-	], [
-		'Client-Id' => 'example-client',
-	]);
+    $client = \CatchE\Api\Client::factory();
+    $result = $client->authenticate([
+        'username' => 'username',
+        'password' => 'password',
+        // '2fa_code' => 123456 # If applicable
+    ], [
+        'Client-Id' => 'example-client',
+    ]);
 
-	$client = \CatchE\Api\Client::factory($result->getAccessToken());
-	$ping = $client->ping();
-	echo 'Authenticated as '.$ping->getPong()->getAuthorizedName()."\n";
+    $client = \CatchE\Api\Client::factory($result->getAccessToken());
+    $ping = $client->ping();
+    echo 'Authenticated as ' . $ping->getPong()->getAuthorizedName() . "\n";
 } catch (\Exception $e) {
-	echo 'Error: '.$e->getMessage()."\n";
-	exit(1);
+    echo 'Error: ' . $e->getMessage() . "\n";
+
+    exit(1);
 }
 
 exit(0);

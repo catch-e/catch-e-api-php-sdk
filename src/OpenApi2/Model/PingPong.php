@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,100 +19,116 @@ namespace CatchE\OpenApi2\Model;
 
 class PingPong
 {
-	/**
-	 * @var int|null
-	 */
-	protected $version;
-	/**
-	 * @var float|null
-	 */
-	protected $ack;
-	/**
-	 * @var string|null
-	 */
-	protected $authorizedName;
-	/**
-	 * @var string|null
-	 */
-	protected $clientId;
-	/**
-	 * @var string|null
-	 */
-	protected $environment;
-	/**
-	 * @var int|null
-	 */
-	protected $tokenExpiry;
+    /**
+     * @var null|int
+     */
+    protected $version;
+    /**
+     * @var null|float
+     */
+    protected $ack;
+    /**
+     * @var null|string
+     */
+    protected $authorizedName;
+    /**
+     * @var null|string
+     */
+    protected $clientId;
+    /**
+     * @var null|string
+     */
+    protected $environment;
+    /**
+     * @var null|int
+     */
+    protected $tokenExpiry;
+    /**
+     * @var null|string
+     */
+    protected $auditOrigin;
 
-	public function getVersion(): ?int
-	{
-		return $this->version;
-	}
+    public function getVersion(): ?int
+    {
+        return $this->version;
+    }
 
-	public function setVersion(?int $version): self
-	{
-		$this->version = $version;
+    public function setVersion(?int $version): self
+    {
+        $this->version = $version;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getAck(): ?float
-	{
-		return $this->ack;
-	}
+    public function getAck(): ?float
+    {
+        return $this->ack;
+    }
 
-	public function setAck(?float $ack): self
-	{
-		$this->ack = $ack;
+    public function setAck(?float $ack): self
+    {
+        $this->ack = $ack;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getAuthorizedName(): ?string
-	{
-		return $this->authorizedName;
-	}
+    public function getAuthorizedName(): ?string
+    {
+        return $this->authorizedName;
+    }
 
-	public function setAuthorizedName(?string $authorizedName): self
-	{
-		$this->authorizedName = $authorizedName;
+    public function setAuthorizedName(?string $authorizedName): self
+    {
+        $this->authorizedName = $authorizedName;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getClientId(): ?string
-	{
-		return $this->clientId;
-	}
+    public function getClientId(): ?string
+    {
+        return $this->clientId;
+    }
 
-	public function setClientId(?string $clientId): self
-	{
-		$this->clientId = $clientId;
+    public function setClientId(?string $clientId): self
+    {
+        $this->clientId = $clientId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getEnvironment(): ?string
-	{
-		return $this->environment;
-	}
+    public function getEnvironment(): ?string
+    {
+        return $this->environment;
+    }
 
-	public function setEnvironment(?string $environment): self
-	{
-		$this->environment = $environment;
+    public function setEnvironment(?string $environment): self
+    {
+        $this->environment = $environment;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getTokenExpiry(): ?int
-	{
-		return $this->tokenExpiry;
-	}
+    public function getTokenExpiry(): ?int
+    {
+        return $this->tokenExpiry;
+    }
 
-	public function setTokenExpiry(?int $tokenExpiry): self
-	{
-		$this->tokenExpiry = $tokenExpiry;
+    public function setTokenExpiry(?int $tokenExpiry): self
+    {
+        $this->tokenExpiry = $tokenExpiry;
 
-		return $this;
-	}
+        return $this;
+    }
+
+    public function getAuditOrigin(): ?string
+    {
+        return $this->auditOrigin;
+    }
+
+    public function setAuditOrigin(?string $auditOrigin): self
+    {
+        $this->auditOrigin = $auditOrigin;
+
+        return $this;
+    }
 }

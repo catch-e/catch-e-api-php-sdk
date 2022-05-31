@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,196 +19,196 @@ namespace CatchE\OpenApi2\Model;
 
 class VariantOptionalEquipment
 {
-	/**
-	 * @var string|null
-	 */
-	protected $optionalEquipmentId;
-	/**
-	 * @var string|null
-	 */
-	protected $supplierId;
-	/**
-	 * @var float|null
-	 */
-	protected $listPriceNet;
-	/**
-	 * @var float|null
-	 */
-	protected $listPriceGst;
-	/**
-	 * @var float|null
-	 */
-	protected $costPriceNet;
-	/**
-	 * @var string|null
-	 */
-	protected $optionType = 'factory';
-	/**
-	 * @var string|null
-	 */
-	protected $dealerFit = 'yes';
-	/**
-	 * @var string|null
-	 */
-	protected $includeByDefaultFlag = 'no';
-	/**
-	 * @var string|null
-	 */
-	protected $equipmentCode;
-	/**
-	 * @var string|null
-	 */
-	protected $description;
-	/**
-	 * @var string|null
-	 */
-	protected $fbtExemptFlag = 'no';
-	/**
-	 * @var string|null
-	 */
-	protected $dataSourceId;
+    /**
+     * @var null|string
+     */
+    protected $optionalEquipmentId;
+    /**
+     * @var null|string
+     */
+    protected $supplierId;
+    /**
+     * @var null|float
+     */
+    protected $listPriceNet;
+    /**
+     * @var null|float
+     */
+    protected $listPriceGst;
+    /**
+     * @var null|float
+     */
+    protected $costPriceNet;
+    /**
+     * @var null|string
+     */
+    protected $optionType = 'factory';
+    /**
+     * @var null|string
+     */
+    protected $dealerFit = 'yes';
+    /**
+     * @var null|string
+     */
+    protected $includeByDefaultFlag = 'no';
+    /**
+     * @var null|string
+     */
+    protected $equipmentCode;
+    /**
+     * @var null|string
+     */
+    protected $description;
+    /**
+     * @var null|string
+     */
+    protected $fbtExemptFlag = 'no';
+    /**
+     * @var null|string
+     */
+    protected $dataSourceId;
 
-	public function getOptionalEquipmentId(): ?string
-	{
-		return $this->optionalEquipmentId;
-	}
+    public function getOptionalEquipmentId(): ?string
+    {
+        return $this->optionalEquipmentId;
+    }
 
-	public function setOptionalEquipmentId(?string $optionalEquipmentId): self
-	{
-		$this->optionalEquipmentId = $optionalEquipmentId;
+    public function setOptionalEquipmentId(?string $optionalEquipmentId): self
+    {
+        $this->optionalEquipmentId = $optionalEquipmentId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getSupplierId(): ?string
-	{
-		return $this->supplierId;
-	}
+    public function getSupplierId(): ?string
+    {
+        return $this->supplierId;
+    }
 
-	public function setSupplierId(?string $supplierId): self
-	{
-		$this->supplierId = $supplierId;
+    public function setSupplierId(?string $supplierId): self
+    {
+        $this->supplierId = $supplierId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getListPriceNet(): ?float
-	{
-		return $this->listPriceNet;
-	}
+    public function getListPriceNet(): ?float
+    {
+        return $this->listPriceNet;
+    }
 
-	public function setListPriceNet(?float $listPriceNet): self
-	{
-		$this->listPriceNet = $listPriceNet;
+    public function setListPriceNet(?float $listPriceNet): self
+    {
+        $this->listPriceNet = $listPriceNet;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getListPriceGst(): ?float
-	{
-		return $this->listPriceGst;
-	}
+    public function getListPriceGst(): ?float
+    {
+        return $this->listPriceGst;
+    }
 
-	public function setListPriceGst(?float $listPriceGst): self
-	{
-		$this->listPriceGst = $listPriceGst;
+    public function setListPriceGst(?float $listPriceGst): self
+    {
+        $this->listPriceGst = $listPriceGst;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getCostPriceNet(): ?float
-	{
-		return $this->costPriceNet;
-	}
+    public function getCostPriceNet(): ?float
+    {
+        return $this->costPriceNet;
+    }
 
-	public function setCostPriceNet(?float $costPriceNet): self
-	{
-		$this->costPriceNet = $costPriceNet;
+    public function setCostPriceNet(?float $costPriceNet): self
+    {
+        $this->costPriceNet = $costPriceNet;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getOptionType(): ?string
-	{
-		return $this->optionType;
-	}
+    public function getOptionType(): ?string
+    {
+        return $this->optionType;
+    }
 
-	public function setOptionType(?string $optionType): self
-	{
-		$this->optionType = $optionType;
+    public function setOptionType(?string $optionType): self
+    {
+        $this->optionType = $optionType;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getDealerFit(): ?string
-	{
-		return $this->dealerFit;
-	}
+    public function getDealerFit(): ?string
+    {
+        return $this->dealerFit;
+    }
 
-	public function setDealerFit(?string $dealerFit): self
-	{
-		$this->dealerFit = $dealerFit;
+    public function setDealerFit(?string $dealerFit): self
+    {
+        $this->dealerFit = $dealerFit;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getIncludeByDefaultFlag(): ?string
-	{
-		return $this->includeByDefaultFlag;
-	}
+    public function getIncludeByDefaultFlag(): ?string
+    {
+        return $this->includeByDefaultFlag;
+    }
 
-	public function setIncludeByDefaultFlag(?string $includeByDefaultFlag): self
-	{
-		$this->includeByDefaultFlag = $includeByDefaultFlag;
+    public function setIncludeByDefaultFlag(?string $includeByDefaultFlag): self
+    {
+        $this->includeByDefaultFlag = $includeByDefaultFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getEquipmentCode(): ?string
-	{
-		return $this->equipmentCode;
-	}
+    public function getEquipmentCode(): ?string
+    {
+        return $this->equipmentCode;
+    }
 
-	public function setEquipmentCode(?string $equipmentCode): self
-	{
-		$this->equipmentCode = $equipmentCode;
+    public function setEquipmentCode(?string $equipmentCode): self
+    {
+        $this->equipmentCode = $equipmentCode;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getDescription(): ?string
-	{
-		return $this->description;
-	}
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
 
-	public function setDescription(?string $description): self
-	{
-		$this->description = $description;
+    public function setDescription(?string $description): self
+    {
+        $this->description = $description;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getFbtExemptFlag(): ?string
-	{
-		return $this->fbtExemptFlag;
-	}
+    public function getFbtExemptFlag(): ?string
+    {
+        return $this->fbtExemptFlag;
+    }
 
-	public function setFbtExemptFlag(?string $fbtExemptFlag): self
-	{
-		$this->fbtExemptFlag = $fbtExemptFlag;
+    public function setFbtExemptFlag(?string $fbtExemptFlag): self
+    {
+        $this->fbtExemptFlag = $fbtExemptFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getDataSourceId(): ?string
-	{
-		return $this->dataSourceId;
-	}
+    public function getDataSourceId(): ?string
+    {
+        return $this->dataSourceId;
+    }
 
-	public function setDataSourceId(?string $dataSourceId): self
-	{
-		$this->dataSourceId = $dataSourceId;
+    public function setDataSourceId(?string $dataSourceId): self
+    {
+        $this->dataSourceId = $dataSourceId;
 
-		return $this;
-	}
+        return $this;
+    }
 }

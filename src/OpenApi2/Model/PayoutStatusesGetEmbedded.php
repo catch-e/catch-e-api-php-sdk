@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,26 +19,26 @@ namespace CatchE\OpenApi2\Model;
 
 class PayoutStatusesGetEmbedded
 {
-	/**
-	 * @var PayoutStatus[]|null
-	 */
-	protected $items;
+    /**
+     * @var null|PayoutStatus[]
+     */
+    protected $items;
 
-	/**
-	 * @return PayoutStatus[]|null
-	 */
-	public function getItems(): ?array
-	{
-		return $this->items;
-	}
+    /**
+     * @return null|PayoutStatus[]
+     */
+    public function getItems(): ?array
+    {
+        return $this->items;
+    }
 
-	/**
-	 * @param PayoutStatus[]|null $items
-	 */
-	public function setItems(?array $items): self
-	{
-		$this->items = $items;
+    /**
+     * @param null|PayoutStatus[] $items
+     */
+    public function setItems(?array $items): self
+    {
+        $this->items = $items;
 
-		return $this;
-	}
+        return $this;
+    }
 }

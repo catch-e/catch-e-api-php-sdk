@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,52 +19,52 @@ namespace CatchE\OpenApi2\Model;
 
 class GbUniqueIdsTableNameGetResponse200
 {
-	/**
-	 * @var string|null
-	 */
-	protected $tableName;
-	/**
-	 * @var string|null
-	 */
-	protected $uniqueId;
-	/**
-	 * @var GbUniqueIdsTableNameGetResponse200Links|null
-	 */
-	protected $links;
+    /**
+     * @var null|string
+     */
+    protected $tableName;
+    /**
+     * @var null|string
+     */
+    protected $uniqueId;
+    /**
+     * @var null|GbUniqueIdsTableNameGetResponse200Links
+     */
+    protected $links;
 
-	public function getTableName(): ?string
-	{
-		return $this->tableName;
-	}
+    public function getTableName(): ?string
+    {
+        return $this->tableName;
+    }
 
-	public function setTableName(?string $tableName): self
-	{
-		$this->tableName = $tableName;
+    public function setTableName(?string $tableName): self
+    {
+        $this->tableName = $tableName;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getUniqueId(): ?string
-	{
-		return $this->uniqueId;
-	}
+    public function getUniqueId(): ?string
+    {
+        return $this->uniqueId;
+    }
 
-	public function setUniqueId(?string $uniqueId): self
-	{
-		$this->uniqueId = $uniqueId;
+    public function setUniqueId(?string $uniqueId): self
+    {
+        $this->uniqueId = $uniqueId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getLinks(): ?GbUniqueIdsTableNameGetResponse200Links
-	{
-		return $this->links;
-	}
+    public function getLinks(): ?GbUniqueIdsTableNameGetResponse200Links
+    {
+        return $this->links;
+    }
 
-	public function setLinks(?GbUniqueIdsTableNameGetResponse200Links $links): self
-	{
-		$this->links = $links;
+    public function setLinks(?GbUniqueIdsTableNameGetResponse200Links $links): self
+    {
+        $this->links = $links;
 
-		return $this;
-	}
+        return $this;
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,28 +19,28 @@ namespace CatchE\OpenApi2\Model;
 
 class ContractPayoutsRequested
 {
-	/**
-	 * Override warning validation. If not specified, defaults to 'no'.
-	 *
-	 * @var string|null
-	 */
-	protected $overrideWarningsFlag;
+    /**
+     * Override warning validation. If not specified, defaults to 'no'.
+     *
+     * @var null|string
+     */
+    protected $overrideWarningsFlag;
 
-	/**
-	 * Override warning validation. If not specified, defaults to 'no'.
-	 */
-	public function getOverrideWarningsFlag(): ?string
-	{
-		return $this->overrideWarningsFlag;
-	}
+    /**
+     * Override warning validation. If not specified, defaults to 'no'.
+     */
+    public function getOverrideWarningsFlag(): ?string
+    {
+        return $this->overrideWarningsFlag;
+    }
 
-	/**
-	 * Override warning validation. If not specified, defaults to 'no'.
-	 */
-	public function setOverrideWarningsFlag(?string $overrideWarningsFlag): self
-	{
-		$this->overrideWarningsFlag = $overrideWarningsFlag;
+    /**
+     * Override warning validation. If not specified, defaults to 'no'.
+     */
+    public function setOverrideWarningsFlag(?string $overrideWarningsFlag): self
+    {
+        $this->overrideWarningsFlag = $overrideWarningsFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 }

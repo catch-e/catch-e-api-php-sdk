@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,90 +19,90 @@ namespace CatchE\OpenApi2\Model;
 
 class EricInsuranceGetPricingSuccess
 {
-	/**
-	 * @var string|null
-	 */
-	protected $quoteId;
-	/**
-	 * @var string|null
-	 */
-	protected $ericQuoteId;
-	/**
-	 * @var string|null
-	 */
-	protected $ericQuotationReferenceNumber;
-	/**
-	 * @var float|null
-	 */
-	protected $inclusionPlanTotal;
-	/**
-	 * @var EricInsuranceQuotedInclusion[]|null
-	 */
-	protected $quotedInclusions;
+    /**
+     * @var null|string
+     */
+    protected $quoteId;
+    /**
+     * @var null|string
+     */
+    protected $ericQuoteId;
+    /**
+     * @var null|string
+     */
+    protected $ericQuotationReferenceNumber;
+    /**
+     * @var null|float
+     */
+    protected $inclusionPlanTotal;
+    /**
+     * @var null|EricInsuranceQuotedInclusion[]
+     */
+    protected $quotedInclusions;
 
-	public function getQuoteId(): ?string
-	{
-		return $this->quoteId;
-	}
+    public function getQuoteId(): ?string
+    {
+        return $this->quoteId;
+    }
 
-	public function setQuoteId(?string $quoteId): self
-	{
-		$this->quoteId = $quoteId;
+    public function setQuoteId(?string $quoteId): self
+    {
+        $this->quoteId = $quoteId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getEricQuoteId(): ?string
-	{
-		return $this->ericQuoteId;
-	}
+    public function getEricQuoteId(): ?string
+    {
+        return $this->ericQuoteId;
+    }
 
-	public function setEricQuoteId(?string $ericQuoteId): self
-	{
-		$this->ericQuoteId = $ericQuoteId;
+    public function setEricQuoteId(?string $ericQuoteId): self
+    {
+        $this->ericQuoteId = $ericQuoteId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getEricQuotationReferenceNumber(): ?string
-	{
-		return $this->ericQuotationReferenceNumber;
-	}
+    public function getEricQuotationReferenceNumber(): ?string
+    {
+        return $this->ericQuotationReferenceNumber;
+    }
 
-	public function setEricQuotationReferenceNumber(?string $ericQuotationReferenceNumber): self
-	{
-		$this->ericQuotationReferenceNumber = $ericQuotationReferenceNumber;
+    public function setEricQuotationReferenceNumber(?string $ericQuotationReferenceNumber): self
+    {
+        $this->ericQuotationReferenceNumber = $ericQuotationReferenceNumber;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getInclusionPlanTotal(): ?float
-	{
-		return $this->inclusionPlanTotal;
-	}
+    public function getInclusionPlanTotal(): ?float
+    {
+        return $this->inclusionPlanTotal;
+    }
 
-	public function setInclusionPlanTotal(?float $inclusionPlanTotal): self
-	{
-		$this->inclusionPlanTotal = $inclusionPlanTotal;
+    public function setInclusionPlanTotal(?float $inclusionPlanTotal): self
+    {
+        $this->inclusionPlanTotal = $inclusionPlanTotal;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * @return EricInsuranceQuotedInclusion[]|null
-	 */
-	public function getQuotedInclusions(): ?array
-	{
-		return $this->quotedInclusions;
-	}
+    /**
+     * @return null|EricInsuranceQuotedInclusion[]
+     */
+    public function getQuotedInclusions(): ?array
+    {
+        return $this->quotedInclusions;
+    }
 
-	/**
-	 * @param EricInsuranceQuotedInclusion[]|null $quotedInclusions
-	 */
-	public function setQuotedInclusions(?array $quotedInclusions): self
-	{
-		$this->quotedInclusions = $quotedInclusions;
+    /**
+     * @param null|EricInsuranceQuotedInclusion[] $quotedInclusions
+     */
+    public function setQuotedInclusions(?array $quotedInclusions): self
+    {
+        $this->quotedInclusions = $quotedInclusions;
 
-		return $this;
-	}
+        return $this;
+    }
 }

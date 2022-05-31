@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,97 +17,97 @@
 
 namespace CatchE\OpenApi2\Endpoint;
 
-class CreateSuppliers extends \Jane\OpenApiRuntime\Client\BaseEndpoint implements \Jane\OpenApiRuntime\Client\Endpoint
+class CreateSuppliers extends \CatchE\OpenApi2\Runtime\Client\BaseEndpoint implements \CatchE\OpenApi2\Runtime\Client\Endpoint
 {
-	use \Jane\OpenApiRuntime\Client\EndpointTrait;
+    use \CatchE\OpenApi2\Runtime\Client\EndpointTrait;
 
-	/**
-	 * This method requires the **Suppliers:Create** permission to be associated with your role.
-	 *
-	 * @param array $suppliers        JSON payload
-	 * @param array $headerParameters {
-	 *
-	 *     @var string $Audit-User-Id (Optional) User Id to use for audit purposes. This header requires the **Audit:UserIdOverride** permission to be associated with your role.
-	 * }
-	 */
-	public function __construct(array $suppliers, array $headerParameters = [])
-	{
-		$this->body = $suppliers;
-		$this->headerParameters = $headerParameters;
-	}
+    /**
+     * This method requires the **Suppliers:Create** permission to be associated with your role.
+     *
+     * @param array $suppliers        JSON payload
+     * @param array $headerParameters {
+     *
+     *     @var string $Audit-User-Id (Optional) User Id to use for audit purposes. This header requires the **Audit:UserIdOverride** permission to be associated with your role.
+     * }
+     */
+    public function __construct(array $suppliers, array $headerParameters = [])
+    {
+        $this->body = $suppliers;
+        $this->headerParameters = $headerParameters;
+    }
 
-	public function getMethod(): string
-	{
-		return 'POST';
-	}
+    public function getMethod(): string
+    {
+        return 'POST';
+    }
 
-	public function getUri(): string
-	{
-		return '/fm/suppliers';
-	}
+    public function getUri(): string
+    {
+        return '/fm/suppliers';
+    }
 
-	public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
-	{
-		return $this->getSerializedBody($serializer);
-	}
+    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    {
+        return $this->getSerializedBody($serializer);
+    }
 
-	public function getExtraHeaders(): array
-	{
-		return ['Accept' => ['application/json']];
-	}
+    public function getExtraHeaders(): array
+    {
+        return ['Accept' => ['application/json']];
+    }
 
-	protected function getHeadersOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
-	{
-		$optionsResolver = parent::getHeadersOptionsResolver();
-		$optionsResolver->setDefined(['Audit-User-Id']);
-		$optionsResolver->setRequired([]);
-		$optionsResolver->setDefaults([]);
-		$optionsResolver->setAllowedTypes('Audit-User-Id', ['string']);
+    public function getAuthenticationScopes(): array
+    {
+        return ['Bearer Token'];
+    }
 
-		return $optionsResolver;
-	}
+    protected function getHeadersOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    {
+        $optionsResolver = parent::getHeadersOptionsResolver();
+        $optionsResolver->setDefined(['Audit-User-Id']);
+        $optionsResolver->setRequired([]);
+        $optionsResolver->setDefaults([]);
+        $optionsResolver->setAllowedTypes('Audit-User-Id', ['string']);
 
-	/**
-	 * {@inheritdoc}
-	 *
-	 * @throws \CatchE\OpenApi2\Exception\CreateSuppliersUnauthorizedException
-	 * @throws \CatchE\OpenApi2\Exception\CreateSuppliersForbiddenException
-	 * @throws \CatchE\OpenApi2\Exception\CreateSuppliersNotAcceptableException
-	 * @throws \CatchE\OpenApi2\Exception\CreateSuppliersUnsupportedMediaTypeException
-	 * @throws \CatchE\OpenApi2\Exception\CreateSuppliersUnprocessableEntityException
-	 * @throws \CatchE\OpenApi2\Exception\CreateSuppliersInternalServerErrorException
-	 *
-	 * @return \CatchE\OpenApi2\Model\SuppliersGet|\CatchE\OpenApi2\Model\Error|null
-	 */
-	protected function transformResponseBody(string $body, int $status, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType)
-	{
-		if (201 === $status) {
-			return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\SuppliersGet', 'json');
-		}
-		if (401 === $status) {
-			throw new \CatchE\OpenApi2\Exception\CreateSuppliersUnauthorizedException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Unauthorized', 'json'));
-		}
-		if (403 === $status) {
-			throw new \CatchE\OpenApi2\Exception\CreateSuppliersForbiddenException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Forbidden', 'json'));
-		}
-		if (406 === $status) {
-			throw new \CatchE\OpenApi2\Exception\CreateSuppliersNotAcceptableException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotAcceptable', 'json'));
-		}
-		if (415 === $status) {
-			throw new \CatchE\OpenApi2\Exception\CreateSuppliersUnsupportedMediaTypeException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\UnsupportedMediaType', 'json'));
-		}
-		if (422 === $status) {
-			throw new \CatchE\OpenApi2\Exception\CreateSuppliersUnprocessableEntityException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\UnprocessableEntity', 'json'));
-		}
-		if (500 === $status) {
-			throw new \CatchE\OpenApi2\Exception\CreateSuppliersInternalServerErrorException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\InternalError', 'json'));
-		}
+        return $optionsResolver;
+    }
 
-		return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Error', 'json');
-	}
+    /**
+     * {@inheritdoc}
+     *
+     * @throws \CatchE\OpenApi2\Exception\CreateSuppliersUnauthorizedException
+     * @throws \CatchE\OpenApi2\Exception\CreateSuppliersForbiddenException
+     * @throws \CatchE\OpenApi2\Exception\CreateSuppliersNotAcceptableException
+     * @throws \CatchE\OpenApi2\Exception\CreateSuppliersUnsupportedMediaTypeException
+     * @throws \CatchE\OpenApi2\Exception\CreateSuppliersUnprocessableEntityException
+     * @throws \CatchE\OpenApi2\Exception\CreateSuppliersInternalServerErrorException
+     *
+     * @return null|\CatchE\OpenApi2\Model\Error|\CatchE\OpenApi2\Model\SuppliersGet
+     */
+    protected function transformResponseBody(string $body, int $status, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    {
+        if (201 === $status) {
+            return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\SuppliersGet', 'json');
+        }
+        if (401 === $status) {
+            throw new \CatchE\OpenApi2\Exception\CreateSuppliersUnauthorizedException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Unauthorized', 'json'));
+        }
+        if (403 === $status) {
+            throw new \CatchE\OpenApi2\Exception\CreateSuppliersForbiddenException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Forbidden', 'json'));
+        }
+        if (406 === $status) {
+            throw new \CatchE\OpenApi2\Exception\CreateSuppliersNotAcceptableException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotAcceptable', 'json'));
+        }
+        if (415 === $status) {
+            throw new \CatchE\OpenApi2\Exception\CreateSuppliersUnsupportedMediaTypeException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\UnsupportedMediaType', 'json'));
+        }
+        if (422 === $status) {
+            throw new \CatchE\OpenApi2\Exception\CreateSuppliersUnprocessableEntityException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\UnprocessableEntity', 'json'));
+        }
+        if (500 === $status) {
+            throw new \CatchE\OpenApi2\Exception\CreateSuppliersInternalServerErrorException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\InternalError', 'json'));
+        }
 
-	public function getAuthenticationScopes(): array
-	{
-		return ['Bearer Token'];
-	}
+        return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Error', 'json');
+    }
 }

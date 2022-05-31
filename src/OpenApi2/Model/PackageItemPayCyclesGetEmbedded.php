@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,26 +19,26 @@ namespace CatchE\OpenApi2\Model;
 
 class PackageItemPayCyclesGetEmbedded
 {
-	/**
-	 * @var PackageItemPayCycle[]|null
-	 */
-	protected $spPackageItems;
+    /**
+     * @var null|PackageItemPayCycle[]
+     */
+    protected $spPackageItems;
 
-	/**
-	 * @return PackageItemPayCycle[]|null
-	 */
-	public function getSpPackageItems(): ?array
-	{
-		return $this->spPackageItems;
-	}
+    /**
+     * @return null|PackageItemPayCycle[]
+     */
+    public function getSpPackageItems(): ?array
+    {
+        return $this->spPackageItems;
+    }
 
-	/**
-	 * @param PackageItemPayCycle[]|null $spPackageItems
-	 */
-	public function setSpPackageItems(?array $spPackageItems): self
-	{
-		$this->spPackageItems = $spPackageItems;
+    /**
+     * @param null|PackageItemPayCycle[] $spPackageItems
+     */
+    public function setSpPackageItems(?array $spPackageItems): self
+    {
+        $this->spPackageItems = $spPackageItems;
 
-		return $this;
-	}
+        return $this;
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,26 +19,26 @@ namespace CatchE\OpenApi2\Model;
 
 class EmployeeEndDatesGet
 {
-	/**
-	 * @var string[]|null
-	 */
-	protected $endDates;
+    /**
+     * @var null|string[]
+     */
+    protected $endDates;
 
-	/**
-	 * @return string[]|null
-	 */
-	public function getEndDates(): ?array
-	{
-		return $this->endDates;
-	}
+    /**
+     * @return null|string[]
+     */
+    public function getEndDates(): ?array
+    {
+        return $this->endDates;
+    }
 
-	/**
-	 * @param string[]|null $endDates
-	 */
-	public function setEndDates(?array $endDates): self
-	{
-		$this->endDates = $endDates;
+    /**
+     * @param null|string[] $endDates
+     */
+    public function setEndDates(?array $endDates): self
+    {
+        $this->endDates = $endDates;
 
-		return $this;
-	}
+        return $this;
+    }
 }

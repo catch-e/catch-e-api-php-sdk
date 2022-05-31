@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,36 +19,36 @@ namespace CatchE\OpenApi2\Model;
 
 class VariantBodyType
 {
-	/**
-	 * @var string|null
-	 */
-	protected $bodyTypeId;
-	/**
-	 * @var string|null
-	 */
-	protected $bodyType;
+    /**
+     * @var null|string
+     */
+    protected $bodyTypeId;
+    /**
+     * @var null|string
+     */
+    protected $bodyType;
 
-	public function getBodyTypeId(): ?string
-	{
-		return $this->bodyTypeId;
-	}
+    public function getBodyTypeId(): ?string
+    {
+        return $this->bodyTypeId;
+    }
 
-	public function setBodyTypeId(?string $bodyTypeId): self
-	{
-		$this->bodyTypeId = $bodyTypeId;
+    public function setBodyTypeId(?string $bodyTypeId): self
+    {
+        $this->bodyTypeId = $bodyTypeId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getBodyType(): ?string
-	{
-		return $this->bodyType;
-	}
+    public function getBodyType(): ?string
+    {
+        return $this->bodyType;
+    }
 
-	public function setBodyType(?string $bodyType): self
-	{
-		$this->bodyType = $bodyType;
+    public function setBodyType(?string $bodyType): self
+    {
+        $this->bodyType = $bodyType;
 
-		return $this;
-	}
+        return $this;
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,268 +19,268 @@ namespace CatchE\OpenApi2\Model;
 
 class PackageItemDefaults
 {
-	/**
-	 * Package item default Id.
-	 *
-	 * @var string|null
-	 */
-	protected $packageItemDefaultId;
-	/**
-	 * Package item id.
-	 *
-	 * @var string|null
-	 */
-	protected $packageItemId;
-	/**
-	 * Pay cycle type default.
-	 *
-	 * @var string|null
-	 */
-	protected $payCycleTypeDefault;
-	/**
-	 * Total deduction default.
-	 *
-	 * @var float|null
-	 */
-	protected $totalDeductionDefault;
-	/**
-	 * Compress flag default.
-	 *
-	 * @var string|null
-	 */
-	protected $compressFlagDefault;
-	/**
-	 * Inertia flag default.
-	 *
-	 * @var string|null
-	 */
-	protected $inertiaFlagDefault;
-	/**
-	 * Cycles default.
-	 *
-	 * @var int|null
-	 */
-	protected $cyclesDefault;
-	/**
-	 * Disbursement type default.
-	 *
-	 * @var string|null
-	 */
-	protected $disbursementTypeDefault;
-	/**
-	 * Supplier Id default.
-	 *
-	 * @var string|null
-	 */
-	protected $supplierIdDefault;
-	/**
-	 * Supplier Id edit flag.
-	 *
-	 * @var string|null
-	 */
-	protected $supplierIdEditFlag;
-	/**
-	 * Default substantiation flag.
-	 *
-	 * @var string|null
-	 */
-	protected $substantiationFlagDefault;
+    /**
+     * Package item default Id.
+     *
+     * @var null|string
+     */
+    protected $packageItemDefaultId;
+    /**
+     * Package item id.
+     *
+     * @var null|string
+     */
+    protected $packageItemId;
+    /**
+     * Pay cycle type default.
+     *
+     * @var null|string
+     */
+    protected $payCycleTypeDefault;
+    /**
+     * Total deduction default.
+     *
+     * @var null|float
+     */
+    protected $totalDeductionDefault;
+    /**
+     * Compress flag default.
+     *
+     * @var null|string
+     */
+    protected $compressFlagDefault;
+    /**
+     * Inertia flag default.
+     *
+     * @var null|string
+     */
+    protected $inertiaFlagDefault;
+    /**
+     * Cycles default.
+     *
+     * @var null|int
+     */
+    protected $cyclesDefault;
+    /**
+     * Disbursement type default.
+     *
+     * @var null|string
+     */
+    protected $disbursementTypeDefault;
+    /**
+     * Supplier Id default.
+     *
+     * @var null|string
+     */
+    protected $supplierIdDefault;
+    /**
+     * Supplier Id edit flag.
+     *
+     * @var null|string
+     */
+    protected $supplierIdEditFlag;
+    /**
+     * Default substantiation flag.
+     *
+     * @var null|string
+     */
+    protected $substantiationFlagDefault;
 
-	/**
-	 * Package item default Id.
-	 */
-	public function getPackageItemDefaultId(): ?string
-	{
-		return $this->packageItemDefaultId;
-	}
+    /**
+     * Package item default Id.
+     */
+    public function getPackageItemDefaultId(): ?string
+    {
+        return $this->packageItemDefaultId;
+    }
 
-	/**
-	 * Package item default Id.
-	 */
-	public function setPackageItemDefaultId(?string $packageItemDefaultId): self
-	{
-		$this->packageItemDefaultId = $packageItemDefaultId;
+    /**
+     * Package item default Id.
+     */
+    public function setPackageItemDefaultId(?string $packageItemDefaultId): self
+    {
+        $this->packageItemDefaultId = $packageItemDefaultId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Package item id.
-	 */
-	public function getPackageItemId(): ?string
-	{
-		return $this->packageItemId;
-	}
+    /**
+     * Package item id.
+     */
+    public function getPackageItemId(): ?string
+    {
+        return $this->packageItemId;
+    }
 
-	/**
-	 * Package item id.
-	 */
-	public function setPackageItemId(?string $packageItemId): self
-	{
-		$this->packageItemId = $packageItemId;
+    /**
+     * Package item id.
+     */
+    public function setPackageItemId(?string $packageItemId): self
+    {
+        $this->packageItemId = $packageItemId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Pay cycle type default.
-	 */
-	public function getPayCycleTypeDefault(): ?string
-	{
-		return $this->payCycleTypeDefault;
-	}
+    /**
+     * Pay cycle type default.
+     */
+    public function getPayCycleTypeDefault(): ?string
+    {
+        return $this->payCycleTypeDefault;
+    }
 
-	/**
-	 * Pay cycle type default.
-	 */
-	public function setPayCycleTypeDefault(?string $payCycleTypeDefault): self
-	{
-		$this->payCycleTypeDefault = $payCycleTypeDefault;
+    /**
+     * Pay cycle type default.
+     */
+    public function setPayCycleTypeDefault(?string $payCycleTypeDefault): self
+    {
+        $this->payCycleTypeDefault = $payCycleTypeDefault;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Total deduction default.
-	 */
-	public function getTotalDeductionDefault(): ?float
-	{
-		return $this->totalDeductionDefault;
-	}
+    /**
+     * Total deduction default.
+     */
+    public function getTotalDeductionDefault(): ?float
+    {
+        return $this->totalDeductionDefault;
+    }
 
-	/**
-	 * Total deduction default.
-	 */
-	public function setTotalDeductionDefault(?float $totalDeductionDefault): self
-	{
-		$this->totalDeductionDefault = $totalDeductionDefault;
+    /**
+     * Total deduction default.
+     */
+    public function setTotalDeductionDefault(?float $totalDeductionDefault): self
+    {
+        $this->totalDeductionDefault = $totalDeductionDefault;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Compress flag default.
-	 */
-	public function getCompressFlagDefault(): ?string
-	{
-		return $this->compressFlagDefault;
-	}
+    /**
+     * Compress flag default.
+     */
+    public function getCompressFlagDefault(): ?string
+    {
+        return $this->compressFlagDefault;
+    }
 
-	/**
-	 * Compress flag default.
-	 */
-	public function setCompressFlagDefault(?string $compressFlagDefault): self
-	{
-		$this->compressFlagDefault = $compressFlagDefault;
+    /**
+     * Compress flag default.
+     */
+    public function setCompressFlagDefault(?string $compressFlagDefault): self
+    {
+        $this->compressFlagDefault = $compressFlagDefault;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Inertia flag default.
-	 */
-	public function getInertiaFlagDefault(): ?string
-	{
-		return $this->inertiaFlagDefault;
-	}
+    /**
+     * Inertia flag default.
+     */
+    public function getInertiaFlagDefault(): ?string
+    {
+        return $this->inertiaFlagDefault;
+    }
 
-	/**
-	 * Inertia flag default.
-	 */
-	public function setInertiaFlagDefault(?string $inertiaFlagDefault): self
-	{
-		$this->inertiaFlagDefault = $inertiaFlagDefault;
+    /**
+     * Inertia flag default.
+     */
+    public function setInertiaFlagDefault(?string $inertiaFlagDefault): self
+    {
+        $this->inertiaFlagDefault = $inertiaFlagDefault;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Cycles default.
-	 */
-	public function getCyclesDefault(): ?int
-	{
-		return $this->cyclesDefault;
-	}
+    /**
+     * Cycles default.
+     */
+    public function getCyclesDefault(): ?int
+    {
+        return $this->cyclesDefault;
+    }
 
-	/**
-	 * Cycles default.
-	 */
-	public function setCyclesDefault(?int $cyclesDefault): self
-	{
-		$this->cyclesDefault = $cyclesDefault;
+    /**
+     * Cycles default.
+     */
+    public function setCyclesDefault(?int $cyclesDefault): self
+    {
+        $this->cyclesDefault = $cyclesDefault;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Disbursement type default.
-	 */
-	public function getDisbursementTypeDefault(): ?string
-	{
-		return $this->disbursementTypeDefault;
-	}
+    /**
+     * Disbursement type default.
+     */
+    public function getDisbursementTypeDefault(): ?string
+    {
+        return $this->disbursementTypeDefault;
+    }
 
-	/**
-	 * Disbursement type default.
-	 */
-	public function setDisbursementTypeDefault(?string $disbursementTypeDefault): self
-	{
-		$this->disbursementTypeDefault = $disbursementTypeDefault;
+    /**
+     * Disbursement type default.
+     */
+    public function setDisbursementTypeDefault(?string $disbursementTypeDefault): self
+    {
+        $this->disbursementTypeDefault = $disbursementTypeDefault;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Supplier Id default.
-	 */
-	public function getSupplierIdDefault(): ?string
-	{
-		return $this->supplierIdDefault;
-	}
+    /**
+     * Supplier Id default.
+     */
+    public function getSupplierIdDefault(): ?string
+    {
+        return $this->supplierIdDefault;
+    }
 
-	/**
-	 * Supplier Id default.
-	 */
-	public function setSupplierIdDefault(?string $supplierIdDefault): self
-	{
-		$this->supplierIdDefault = $supplierIdDefault;
+    /**
+     * Supplier Id default.
+     */
+    public function setSupplierIdDefault(?string $supplierIdDefault): self
+    {
+        $this->supplierIdDefault = $supplierIdDefault;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Supplier Id edit flag.
-	 */
-	public function getSupplierIdEditFlag(): ?string
-	{
-		return $this->supplierIdEditFlag;
-	}
+    /**
+     * Supplier Id edit flag.
+     */
+    public function getSupplierIdEditFlag(): ?string
+    {
+        return $this->supplierIdEditFlag;
+    }
 
-	/**
-	 * Supplier Id edit flag.
-	 */
-	public function setSupplierIdEditFlag(?string $supplierIdEditFlag): self
-	{
-		$this->supplierIdEditFlag = $supplierIdEditFlag;
+    /**
+     * Supplier Id edit flag.
+     */
+    public function setSupplierIdEditFlag(?string $supplierIdEditFlag): self
+    {
+        $this->supplierIdEditFlag = $supplierIdEditFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Default substantiation flag.
-	 */
-	public function getSubstantiationFlagDefault(): ?string
-	{
-		return $this->substantiationFlagDefault;
-	}
+    /**
+     * Default substantiation flag.
+     */
+    public function getSubstantiationFlagDefault(): ?string
+    {
+        return $this->substantiationFlagDefault;
+    }
 
-	/**
-	 * Default substantiation flag.
-	 */
-	public function setSubstantiationFlagDefault(?string $substantiationFlagDefault): self
-	{
-		$this->substantiationFlagDefault = $substantiationFlagDefault;
+    /**
+     * Default substantiation flag.
+     */
+    public function setSubstantiationFlagDefault(?string $substantiationFlagDefault): self
+    {
+        $this->substantiationFlagDefault = $substantiationFlagDefault;
 
-		return $this;
-	}
+        return $this;
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,52 +19,52 @@ namespace CatchE\OpenApi2\Model;
 
 class TableExportDownloadSuccess
 {
-	/**
-	 * @var string|null
-	 */
-	protected $tableExportId;
-	/**
-	 * @var string|null
-	 */
-	protected $uri;
-	/**
-	 * @var \DateTime|null
-	 */
-	protected $uriExpiry;
+    /**
+     * @var null|string
+     */
+    protected $tableExportId;
+    /**
+     * @var null|string
+     */
+    protected $uri;
+    /**
+     * @var null|\DateTime
+     */
+    protected $uriExpiry;
 
-	public function getTableExportId(): ?string
-	{
-		return $this->tableExportId;
-	}
+    public function getTableExportId(): ?string
+    {
+        return $this->tableExportId;
+    }
 
-	public function setTableExportId(?string $tableExportId): self
-	{
-		$this->tableExportId = $tableExportId;
+    public function setTableExportId(?string $tableExportId): self
+    {
+        $this->tableExportId = $tableExportId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getUri(): ?string
-	{
-		return $this->uri;
-	}
+    public function getUri(): ?string
+    {
+        return $this->uri;
+    }
 
-	public function setUri(?string $uri): self
-	{
-		$this->uri = $uri;
+    public function setUri(?string $uri): self
+    {
+        $this->uri = $uri;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getUriExpiry(): ?\DateTime
-	{
-		return $this->uriExpiry;
-	}
+    public function getUriExpiry(): ?\DateTime
+    {
+        return $this->uriExpiry;
+    }
 
-	public function setUriExpiry(?\DateTime $uriExpiry): self
-	{
-		$this->uriExpiry = $uriExpiry;
+    public function setUriExpiry(?\DateTime $uriExpiry): self
+    {
+        $this->uriExpiry = $uriExpiry;
 
-		return $this;
-	}
+        return $this;
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,105 +17,105 @@
 
 namespace CatchE\OpenApi2\Endpoint;
 
-class GetDriverBankAccounts extends \Jane\OpenApiRuntime\Client\BaseEndpoint implements \Jane\OpenApiRuntime\Client\Endpoint
+class GetDriverBankAccounts extends \CatchE\OpenApi2\Runtime\Client\BaseEndpoint implements \CatchE\OpenApi2\Runtime\Client\Endpoint
 {
-	use \Jane\OpenApiRuntime\Client\EndpointTrait;
+    use \CatchE\OpenApi2\Runtime\Client\EndpointTrait;
 
-	/**
-	 * This method requires the **DriverBankAccounts:Get** permission to be associated with your role.
-	 *
-	 * @param array $queryParameters {
-	 *
-	 *     @var string $driver_id Driver Id
-	 *     @var string $claims_access_flag Optional Claims Access Flag
-	 *     @var string $claims_default_flag Optional Claims Default Flag
-	 *     @var array $status_flag Optional status flag
-	 *     @var int $page Optional page number
-	 *     @var int $page_size Optional page size
-	 * }
-	 */
-	public function __construct(array $queryParameters = [])
-	{
-		$this->queryParameters = $queryParameters;
-	}
+    /**
+     * This method requires the **DriverBankAccounts:Get** permission to be associated with your role.
+     *
+     * @param array $queryParameters {
+     *
+     *     @var string $driver_id Driver Id
+     *     @var string $claims_access_flag Optional Claims Access Flag
+     *     @var string $claims_default_flag Optional Claims Default Flag
+     *     @var array $status_flag Optional status flag
+     *     @var int $page Optional page number
+     *     @var int $page_size Optional page size
+     * }
+     */
+    public function __construct(array $queryParameters = [])
+    {
+        $this->queryParameters = $queryParameters;
+    }
 
-	public function getMethod(): string
-	{
-		return 'GET';
-	}
+    public function getMethod(): string
+    {
+        return 'GET';
+    }
 
-	public function getUri(): string
-	{
-		return '/fm/driver/bank/accounts';
-	}
+    public function getUri(): string
+    {
+        return '/fm/driver/bank/accounts';
+    }
 
-	public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
-	{
-		return [[], null];
-	}
+    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    {
+        return [[], null];
+    }
 
-	public function getExtraHeaders(): array
-	{
-		return ['Accept' => ['application/json']];
-	}
+    public function getExtraHeaders(): array
+    {
+        return ['Accept' => ['application/json']];
+    }
 
-	protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
-	{
-		$optionsResolver = parent::getQueryOptionsResolver();
-		$optionsResolver->setDefined(['driver_id', 'claims_access_flag', 'claims_default_flag', 'status_flag', 'page', 'page_size']);
-		$optionsResolver->setRequired(['driver_id']);
-		$optionsResolver->setDefaults(['status_flag' => 'active', 'page' => 1, 'page_size' => 25]);
-		$optionsResolver->setAllowedTypes('driver_id', ['string']);
-		$optionsResolver->setAllowedTypes('claims_access_flag', ['string']);
-		$optionsResolver->setAllowedTypes('claims_default_flag', ['string']);
-		$optionsResolver->setAllowedTypes('status_flag', ['array']);
-		$optionsResolver->setAllowedTypes('page', ['int']);
-		$optionsResolver->setAllowedTypes('page_size', ['int']);
+    public function getAuthenticationScopes(): array
+    {
+        return ['Bearer Token'];
+    }
 
-		return $optionsResolver;
-	}
+    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    {
+        $optionsResolver = parent::getQueryOptionsResolver();
+        $optionsResolver->setDefined(['driver_id', 'claims_access_flag', 'claims_default_flag', 'status_flag', 'page', 'page_size']);
+        $optionsResolver->setRequired(['driver_id']);
+        $optionsResolver->setDefaults(['status_flag' => 'active', 'page' => 1, 'page_size' => 25]);
+        $optionsResolver->setAllowedTypes('driver_id', ['string']);
+        $optionsResolver->setAllowedTypes('claims_access_flag', ['string']);
+        $optionsResolver->setAllowedTypes('claims_default_flag', ['string']);
+        $optionsResolver->setAllowedTypes('status_flag', ['array']);
+        $optionsResolver->setAllowedTypes('page', ['int']);
+        $optionsResolver->setAllowedTypes('page_size', ['int']);
 
-	/**
-	 * {@inheritdoc}
-	 *
-	 * @throws \CatchE\OpenApi2\Exception\GetDriverBankAccountsUnauthorizedException
-	 * @throws \CatchE\OpenApi2\Exception\GetDriverBankAccountsForbiddenException
-	 * @throws \CatchE\OpenApi2\Exception\GetDriverBankAccountsNotFoundException
-	 * @throws \CatchE\OpenApi2\Exception\GetDriverBankAccountsNotAcceptableException
-	 * @throws \CatchE\OpenApi2\Exception\GetDriverBankAccountsConflictException
-	 * @throws \CatchE\OpenApi2\Exception\GetDriverBankAccountsInternalServerErrorException
-	 *
-	 * @return \CatchE\OpenApi2\Model\DriverBankAccountsGet|\CatchE\OpenApi2\Model\Error|null
-	 */
-	protected function transformResponseBody(string $body, int $status, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType)
-	{
-		if (200 === $status) {
-			return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\DriverBankAccountsGet', 'json');
-		}
-		if (401 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetDriverBankAccountsUnauthorizedException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Unauthorized', 'json'));
-		}
-		if (403 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetDriverBankAccountsForbiddenException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Forbidden', 'json'));
-		}
-		if (404 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetDriverBankAccountsNotFoundException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotFound', 'json'));
-		}
-		if (406 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetDriverBankAccountsNotAcceptableException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotAcceptable', 'json'));
-		}
-		if (409 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetDriverBankAccountsConflictException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Conflict', 'json'));
-		}
-		if (500 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetDriverBankAccountsInternalServerErrorException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\InternalError', 'json'));
-		}
+        return $optionsResolver;
+    }
 
-		return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Error', 'json');
-	}
+    /**
+     * {@inheritdoc}
+     *
+     * @throws \CatchE\OpenApi2\Exception\GetDriverBankAccountsUnauthorizedException
+     * @throws \CatchE\OpenApi2\Exception\GetDriverBankAccountsForbiddenException
+     * @throws \CatchE\OpenApi2\Exception\GetDriverBankAccountsNotFoundException
+     * @throws \CatchE\OpenApi2\Exception\GetDriverBankAccountsNotAcceptableException
+     * @throws \CatchE\OpenApi2\Exception\GetDriverBankAccountsConflictException
+     * @throws \CatchE\OpenApi2\Exception\GetDriverBankAccountsInternalServerErrorException
+     *
+     * @return null|\CatchE\OpenApi2\Model\DriverBankAccountsGet|\CatchE\OpenApi2\Model\Error
+     */
+    protected function transformResponseBody(string $body, int $status, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    {
+        if (200 === $status) {
+            return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\DriverBankAccountsGet', 'json');
+        }
+        if (401 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetDriverBankAccountsUnauthorizedException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Unauthorized', 'json'));
+        }
+        if (403 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetDriverBankAccountsForbiddenException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Forbidden', 'json'));
+        }
+        if (404 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetDriverBankAccountsNotFoundException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotFound', 'json'));
+        }
+        if (406 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetDriverBankAccountsNotAcceptableException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotAcceptable', 'json'));
+        }
+        if (409 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetDriverBankAccountsConflictException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Conflict', 'json'));
+        }
+        if (500 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetDriverBankAccountsInternalServerErrorException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\InternalError', 'json'));
+        }
 
-	public function getAuthenticationScopes(): array
-	{
-		return ['Bearer Token'];
-	}
+        return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Error', 'json');
+    }
 }

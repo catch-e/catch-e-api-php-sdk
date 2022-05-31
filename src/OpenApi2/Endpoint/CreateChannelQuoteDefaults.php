@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,82 +17,82 @@
 
 namespace CatchE\OpenApi2\Endpoint;
 
-class CreateChannelQuoteDefaults extends \Jane\OpenApiRuntime\Client\BaseEndpoint implements \Jane\OpenApiRuntime\Client\Endpoint
+class CreateChannelQuoteDefaults extends \CatchE\OpenApi2\Runtime\Client\BaseEndpoint implements \CatchE\OpenApi2\Runtime\Client\Endpoint
 {
-	use \Jane\OpenApiRuntime\Client\EndpointTrait;
+    use \CatchE\OpenApi2\Runtime\Client\EndpointTrait;
 
-	/**
-	 * Create a new channel default.
-	This method requires the **ChannelQuoteDefaults:Create** permission to be associated with your role.
-	 *
-	 * @param \CatchE\OpenApi2\Model\ChannelQuoteDefaultsCreate $body JSON payload
-	 */
-	public function __construct(\CatchE\OpenApi2\Model\ChannelQuoteDefaultsCreate $body)
-	{
-		$this->body = $body;
-	}
+    /**
+     * Create a new channel default.
+     * This method requires the **ChannelQuoteDefaults:Create** permission to be associated with your role.
+     *
+     * @param \CatchE\OpenApi2\Model\ChannelQuoteDefaultsCreate $body JSON payload
+     */
+    public function __construct(\CatchE\OpenApi2\Model\ChannelQuoteDefaultsCreate $body)
+    {
+        $this->body = $body;
+    }
 
-	public function getMethod(): string
-	{
-		return 'POST';
-	}
+    public function getMethod(): string
+    {
+        return 'POST';
+    }
 
-	public function getUri(): string
-	{
-		return '/qt/channel/defaults';
-	}
+    public function getUri(): string
+    {
+        return '/qt/channel/defaults';
+    }
 
-	public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
-	{
-		return $this->getSerializedBody($serializer);
-	}
+    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    {
+        return $this->getSerializedBody($serializer);
+    }
 
-	public function getExtraHeaders(): array
-	{
-		return ['Accept' => ['application/json']];
-	}
+    public function getExtraHeaders(): array
+    {
+        return ['Accept' => ['application/json']];
+    }
 
-	/**
-	 * {@inheritdoc}
-	 *
-	 * @throws \CatchE\OpenApi2\Exception\CreateChannelQuoteDefaultsUnauthorizedException
-	 * @throws \CatchE\OpenApi2\Exception\CreateChannelQuoteDefaultsForbiddenException
-	 * @throws \CatchE\OpenApi2\Exception\CreateChannelQuoteDefaultsNotAcceptableException
-	 * @throws \CatchE\OpenApi2\Exception\CreateChannelQuoteDefaultsUnsupportedMediaTypeException
-	 * @throws \CatchE\OpenApi2\Exception\CreateChannelQuoteDefaultsUnprocessableEntityException
-	 * @throws \CatchE\OpenApi2\Exception\CreateChannelQuoteDefaultsInternalServerErrorException
-	 *
-	 * @return \CatchE\OpenApi2\Model\ChannelQuoteDefaultsGet|\CatchE\OpenApi2\Model\Error|null
-	 */
-	protected function transformResponseBody(string $body, int $status, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType)
-	{
-		if (201 === $status) {
-			return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\ChannelQuoteDefaultsGet', 'json');
-		}
-		if (401 === $status) {
-			throw new \CatchE\OpenApi2\Exception\CreateChannelQuoteDefaultsUnauthorizedException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Unauthorized', 'json'));
-		}
-		if (403 === $status) {
-			throw new \CatchE\OpenApi2\Exception\CreateChannelQuoteDefaultsForbiddenException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Forbidden', 'json'));
-		}
-		if (406 === $status) {
-			throw new \CatchE\OpenApi2\Exception\CreateChannelQuoteDefaultsNotAcceptableException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotAcceptable', 'json'));
-		}
-		if (415 === $status) {
-			throw new \CatchE\OpenApi2\Exception\CreateChannelQuoteDefaultsUnsupportedMediaTypeException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\UnsupportedMediaType', 'json'));
-		}
-		if (422 === $status) {
-			throw new \CatchE\OpenApi2\Exception\CreateChannelQuoteDefaultsUnprocessableEntityException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\UnprocessableEntity', 'json'));
-		}
-		if (500 === $status) {
-			throw new \CatchE\OpenApi2\Exception\CreateChannelQuoteDefaultsInternalServerErrorException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\InternalError', 'json'));
-		}
+    public function getAuthenticationScopes(): array
+    {
+        return ['Bearer Token'];
+    }
 
-		return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Error', 'json');
-	}
+    /**
+     * {@inheritdoc}
+     *
+     * @throws \CatchE\OpenApi2\Exception\CreateChannelQuoteDefaultsUnauthorizedException
+     * @throws \CatchE\OpenApi2\Exception\CreateChannelQuoteDefaultsForbiddenException
+     * @throws \CatchE\OpenApi2\Exception\CreateChannelQuoteDefaultsNotAcceptableException
+     * @throws \CatchE\OpenApi2\Exception\CreateChannelQuoteDefaultsUnsupportedMediaTypeException
+     * @throws \CatchE\OpenApi2\Exception\CreateChannelQuoteDefaultsUnprocessableEntityException
+     * @throws \CatchE\OpenApi2\Exception\CreateChannelQuoteDefaultsInternalServerErrorException
+     *
+     * @return null|\CatchE\OpenApi2\Model\ChannelQuoteDefaultsGet|\CatchE\OpenApi2\Model\Error
+     */
+    protected function transformResponseBody(string $body, int $status, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    {
+        if (201 === $status) {
+            return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\ChannelQuoteDefaultsGet', 'json');
+        }
+        if (401 === $status) {
+            throw new \CatchE\OpenApi2\Exception\CreateChannelQuoteDefaultsUnauthorizedException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Unauthorized', 'json'));
+        }
+        if (403 === $status) {
+            throw new \CatchE\OpenApi2\Exception\CreateChannelQuoteDefaultsForbiddenException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Forbidden', 'json'));
+        }
+        if (406 === $status) {
+            throw new \CatchE\OpenApi2\Exception\CreateChannelQuoteDefaultsNotAcceptableException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotAcceptable', 'json'));
+        }
+        if (415 === $status) {
+            throw new \CatchE\OpenApi2\Exception\CreateChannelQuoteDefaultsUnsupportedMediaTypeException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\UnsupportedMediaType', 'json'));
+        }
+        if (422 === $status) {
+            throw new \CatchE\OpenApi2\Exception\CreateChannelQuoteDefaultsUnprocessableEntityException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\UnprocessableEntity', 'json'));
+        }
+        if (500 === $status) {
+            throw new \CatchE\OpenApi2\Exception\CreateChannelQuoteDefaultsInternalServerErrorException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\InternalError', 'json'));
+        }
 
-	public function getAuthenticationScopes(): array
-	{
-		return ['Bearer Token'];
-	}
+        return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Error', 'json');
+    }
 }

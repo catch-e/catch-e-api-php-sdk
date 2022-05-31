@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,36 +19,36 @@ namespace CatchE\OpenApi2\Model;
 
 class VariantDataSource
 {
-	/**
-	 * @var string|null
-	 */
-	protected $dataSourceId;
-	/**
-	 * @var string|null
-	 */
-	protected $dataSource;
+    /**
+     * @var null|string
+     */
+    protected $dataSourceId;
+    /**
+     * @var null|string
+     */
+    protected $dataSource;
 
-	public function getDataSourceId(): ?string
-	{
-		return $this->dataSourceId;
-	}
+    public function getDataSourceId(): ?string
+    {
+        return $this->dataSourceId;
+    }
 
-	public function setDataSourceId(?string $dataSourceId): self
-	{
-		$this->dataSourceId = $dataSourceId;
+    public function setDataSourceId(?string $dataSourceId): self
+    {
+        $this->dataSourceId = $dataSourceId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getDataSource(): ?string
-	{
-		return $this->dataSource;
-	}
+    public function getDataSource(): ?string
+    {
+        return $this->dataSource;
+    }
 
-	public function setDataSource(?string $dataSource): self
-	{
-		$this->dataSource = $dataSource;
+    public function setDataSource(?string $dataSource): self
+    {
+        $this->dataSource = $dataSource;
 
-		return $this;
-	}
+        return $this;
+    }
 }

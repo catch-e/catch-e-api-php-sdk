@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,76 +19,76 @@ namespace CatchE\OpenApi2\Model;
 
 class UpdateDriverBankAccount
 {
-	/**
-	 * (Optional) Account name.
-	 *
-	 * @var string|null
-	 */
-	protected $accountName;
-	/**
-	 * (Optional) Claims default flag. If 'yes' other bank accounts for the associated driver will be set to 'no'.
-	 *
-	 * @var string|null
-	 */
-	protected $claimsDefaultFlag;
-	/**
-	 * (Optional) Status flag.
-	 *
-	 * @var string|null
-	 */
-	protected $statusFlag;
+    /**
+     * (Optional) Account name.
+     *
+     * @var null|string
+     */
+    protected $accountName;
+    /**
+     * (Optional) Claims default flag. If 'yes' other bank accounts for the associated driver will be set to 'no'.
+     *
+     * @var null|string
+     */
+    protected $claimsDefaultFlag;
+    /**
+     * (Optional) Status flag.
+     *
+     * @var null|string
+     */
+    protected $statusFlag;
 
-	/**
-	 * (Optional) Account name.
-	 */
-	public function getAccountName(): ?string
-	{
-		return $this->accountName;
-	}
+    /**
+     * (Optional) Account name.
+     */
+    public function getAccountName(): ?string
+    {
+        return $this->accountName;
+    }
 
-	/**
-	 * (Optional) Account name.
-	 */
-	public function setAccountName(?string $accountName): self
-	{
-		$this->accountName = $accountName;
+    /**
+     * (Optional) Account name.
+     */
+    public function setAccountName(?string $accountName): self
+    {
+        $this->accountName = $accountName;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * (Optional) Claims default flag. If 'yes' other bank accounts for the associated driver will be set to 'no'.
-	 */
-	public function getClaimsDefaultFlag(): ?string
-	{
-		return $this->claimsDefaultFlag;
-	}
+    /**
+     * (Optional) Claims default flag. If 'yes' other bank accounts for the associated driver will be set to 'no'.
+     */
+    public function getClaimsDefaultFlag(): ?string
+    {
+        return $this->claimsDefaultFlag;
+    }
 
-	/**
-	 * (Optional) Claims default flag. If 'yes' other bank accounts for the associated driver will be set to 'no'.
-	 */
-	public function setClaimsDefaultFlag(?string $claimsDefaultFlag): self
-	{
-		$this->claimsDefaultFlag = $claimsDefaultFlag;
+    /**
+     * (Optional) Claims default flag. If 'yes' other bank accounts for the associated driver will be set to 'no'.
+     */
+    public function setClaimsDefaultFlag(?string $claimsDefaultFlag): self
+    {
+        $this->claimsDefaultFlag = $claimsDefaultFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * (Optional) Status flag.
-	 */
-	public function getStatusFlag(): ?string
-	{
-		return $this->statusFlag;
-	}
+    /**
+     * (Optional) Status flag.
+     */
+    public function getStatusFlag(): ?string
+    {
+        return $this->statusFlag;
+    }
 
-	/**
-	 * (Optional) Status flag.
-	 */
-	public function setStatusFlag(?string $statusFlag): self
-	{
-		$this->statusFlag = $statusFlag;
+    /**
+     * (Optional) Status flag.
+     */
+    public function setStatusFlag(?string $statusFlag): self
+    {
+        $this->statusFlag = $statusFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 }

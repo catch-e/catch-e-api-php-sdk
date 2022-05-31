@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,52 +19,52 @@ namespace CatchE\OpenApi2\Model;
 
 class ContactTypeAllocationCreate
 {
-	/**
-	 * Contact id to allocate.
-	 *
-	 * @var string|null
-	 */
-	protected $contactId;
-	/**
-	 * Contact type id for the contact.
-	 *
-	 * @var string|null
-	 */
-	protected $contactTypeId;
+    /**
+     * Contact id to allocate.
+     *
+     * @var null|string
+     */
+    protected $contactId;
+    /**
+     * Contact type id for the contact.
+     *
+     * @var null|string
+     */
+    protected $contactTypeId;
 
-	/**
-	 * Contact id to allocate.
-	 */
-	public function getContactId(): ?string
-	{
-		return $this->contactId;
-	}
+    /**
+     * Contact id to allocate.
+     */
+    public function getContactId(): ?string
+    {
+        return $this->contactId;
+    }
 
-	/**
-	 * Contact id to allocate.
-	 */
-	public function setContactId(?string $contactId): self
-	{
-		$this->contactId = $contactId;
+    /**
+     * Contact id to allocate.
+     */
+    public function setContactId(?string $contactId): self
+    {
+        $this->contactId = $contactId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Contact type id for the contact.
-	 */
-	public function getContactTypeId(): ?string
-	{
-		return $this->contactTypeId;
-	}
+    /**
+     * Contact type id for the contact.
+     */
+    public function getContactTypeId(): ?string
+    {
+        return $this->contactTypeId;
+    }
 
-	/**
-	 * Contact type id for the contact.
-	 */
-	public function setContactTypeId(?string $contactTypeId): self
-	{
-		$this->contactTypeId = $contactTypeId;
+    /**
+     * Contact type id for the contact.
+     */
+    public function setContactTypeId(?string $contactTypeId): self
+    {
+        $this->contactTypeId = $contactTypeId;
 
-		return $this;
-	}
+        return $this;
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,54 +19,55 @@ namespace CatchE\OpenApi2\Model;
 
 class FieldToValidate
 {
-	/**
-	 * Type of field to validate.
-	 *
-	 * @var string|null
-	 */
-	protected $fieldType;
-	/**
-	 * Value of the field.
-	 *
-	 * @var string|null
-	 */
-	protected $fieldValue;
+    /**
+     * Type of field to validate.
+     * Note - Phone number and mobile numbers must follow E164 pattern.
+     *
+     * @var null|string
+     */
+    protected $fieldType;
+    /**
+     * Value of the field.
+     *
+     * @var null|string
+     */
+    protected $fieldValue;
 
-	/**
-	 * Type of field to validate.
-	Note - Phone number and mobile numbers must follow E164 pattern.
-	 */
-	public function getFieldType(): ?string
-	{
-		return $this->fieldType;
-	}
+    /**
+     * Type of field to validate.
+     * Note - Phone number and mobile numbers must follow E164 pattern.
+     */
+    public function getFieldType(): ?string
+    {
+        return $this->fieldType;
+    }
 
-	/**
-	 * Type of field to validate.
-	Note - Phone number and mobile numbers must follow E164 pattern.
-	 */
-	public function setFieldType(?string $fieldType): self
-	{
-		$this->fieldType = $fieldType;
+    /**
+     * Type of field to validate.
+     * Note - Phone number and mobile numbers must follow E164 pattern.
+     */
+    public function setFieldType(?string $fieldType): self
+    {
+        $this->fieldType = $fieldType;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Value of the field.
-	 */
-	public function getFieldValue(): ?string
-	{
-		return $this->fieldValue;
-	}
+    /**
+     * Value of the field.
+     */
+    public function getFieldValue(): ?string
+    {
+        return $this->fieldValue;
+    }
 
-	/**
-	 * Value of the field.
-	 */
-	public function setFieldValue(?string $fieldValue): self
-	{
-		$this->fieldValue = $fieldValue;
+    /**
+     * Value of the field.
+     */
+    public function setFieldValue(?string $fieldValue): self
+    {
+        $this->fieldValue = $fieldValue;
 
-		return $this;
-	}
+        return $this;
+    }
 }

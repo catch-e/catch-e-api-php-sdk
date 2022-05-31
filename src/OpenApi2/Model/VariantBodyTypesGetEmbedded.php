@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,26 +19,26 @@ namespace CatchE\OpenApi2\Model;
 
 class VariantBodyTypesGetEmbedded
 {
-	/**
-	 * @var VariantBodyType[]|null
-	 */
-	protected $qtBodyTypes;
+    /**
+     * @var null|VariantBodyType[]
+     */
+    protected $qtBodyTypes;
 
-	/**
-	 * @return VariantBodyType[]|null
-	 */
-	public function getQtBodyTypes(): ?array
-	{
-		return $this->qtBodyTypes;
-	}
+    /**
+     * @return null|VariantBodyType[]
+     */
+    public function getQtBodyTypes(): ?array
+    {
+        return $this->qtBodyTypes;
+    }
 
-	/**
-	 * @param VariantBodyType[]|null $qtBodyTypes
-	 */
-	public function setQtBodyTypes(?array $qtBodyTypes): self
-	{
-		$this->qtBodyTypes = $qtBodyTypes;
+    /**
+     * @param null|VariantBodyType[] $qtBodyTypes
+     */
+    public function setQtBodyTypes(?array $qtBodyTypes): self
+    {
+        $this->qtBodyTypes = $qtBodyTypes;
 
-		return $this;
-	}
+        return $this;
+    }
 }

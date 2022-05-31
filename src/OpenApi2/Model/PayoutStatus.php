@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,60 +19,60 @@ namespace CatchE\OpenApi2\Model;
 
 class PayoutStatus
 {
-	/**
-	 * @var string|null
-	 */
-	protected $contractPayoutStatusId;
-	/**
-	 * @var string|null
-	 */
-	protected $description;
-	/**
-	 * Status of the new contract payout status.
-	 *
-	 * @var string|null
-	 */
-	protected $statusFlag;
+    /**
+     * @var null|string
+     */
+    protected $contractPayoutStatusId;
+    /**
+     * @var null|string
+     */
+    protected $description;
+    /**
+     * Status of the new contract payout status.
+     *
+     * @var null|string
+     */
+    protected $statusFlag;
 
-	public function getContractPayoutStatusId(): ?string
-	{
-		return $this->contractPayoutStatusId;
-	}
+    public function getContractPayoutStatusId(): ?string
+    {
+        return $this->contractPayoutStatusId;
+    }
 
-	public function setContractPayoutStatusId(?string $contractPayoutStatusId): self
-	{
-		$this->contractPayoutStatusId = $contractPayoutStatusId;
+    public function setContractPayoutStatusId(?string $contractPayoutStatusId): self
+    {
+        $this->contractPayoutStatusId = $contractPayoutStatusId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getDescription(): ?string
-	{
-		return $this->description;
-	}
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
 
-	public function setDescription(?string $description): self
-	{
-		$this->description = $description;
+    public function setDescription(?string $description): self
+    {
+        $this->description = $description;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * Status of the new contract payout status.
-	 */
-	public function getStatusFlag(): ?string
-	{
-		return $this->statusFlag;
-	}
+    /**
+     * Status of the new contract payout status.
+     */
+    public function getStatusFlag(): ?string
+    {
+        return $this->statusFlag;
+    }
 
-	/**
-	 * Status of the new contract payout status.
-	 */
-	public function setStatusFlag(?string $statusFlag): self
-	{
-		$this->statusFlag = $statusFlag;
+    /**
+     * Status of the new contract payout status.
+     */
+    public function setStatusFlag(?string $statusFlag): self
+    {
+        $this->statusFlag = $statusFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 }

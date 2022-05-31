@@ -4,15 +4,21 @@
     "keywords": ["catch-e", "api", "client", "openapi", "swagger", "sdk"],
     "type": "library",
     "license": "Apache-2.0",
+    "config": {
+		"platform": {
+			"php": "7.3"
+		},
+		"sort-packages": true
+	},
     "require-dev": {
-        "jane-php/open-api-2": "~6.1.0",
-        "friendsofphp/php-cs-fixer": "^2.18"
+        "jane-php/open-api-2": "~7.2.2",
+        "friendsofphp/php-cs-fixer": "^3.4.0"
     },
     "require": {
         "php": ">= 7.3",
-        "jane-php/open-api-runtime": "~6.1.0",
-        "symfony/http-client": "^4.3",
+        "jane-php/open-api-runtime": "~7.2.2",
         "nyholm/psr7": "^1.2",
+        "symfony/http-client": "^4.3",
         "symfony/property-access": "^5.3"
     },
     "autoload" : {

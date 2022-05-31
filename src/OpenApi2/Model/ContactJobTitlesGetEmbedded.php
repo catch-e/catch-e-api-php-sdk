@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,26 +19,26 @@ namespace CatchE\OpenApi2\Model;
 
 class ContactJobTitlesGetEmbedded
 {
-	/**
-	 * @var ContactJobTitleGet[]|null
-	 */
-	protected $contactJobTitles;
+    /**
+     * @var null|ContactJobTitleGet[]
+     */
+    protected $contactJobTitles;
 
-	/**
-	 * @return ContactJobTitleGet[]|null
-	 */
-	public function getContactJobTitles(): ?array
-	{
-		return $this->contactJobTitles;
-	}
+    /**
+     * @return null|ContactJobTitleGet[]
+     */
+    public function getContactJobTitles(): ?array
+    {
+        return $this->contactJobTitles;
+    }
 
-	/**
-	 * @param ContactJobTitleGet[]|null $contactJobTitles
-	 */
-	public function setContactJobTitles(?array $contactJobTitles): self
-	{
-		$this->contactJobTitles = $contactJobTitles;
+    /**
+     * @param null|ContactJobTitleGet[] $contactJobTitles
+     */
+    public function setContactJobTitles(?array $contactJobTitles): self
+    {
+        $this->contactJobTitles = $contactJobTitles;
 
-		return $this;
-	}
+        return $this;
+    }
 }

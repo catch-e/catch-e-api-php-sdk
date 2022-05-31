@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,78 +17,78 @@
 
 namespace CatchE\OpenApi2\Endpoint;
 
-class GetPaymentMethod extends \Jane\OpenApiRuntime\Client\BaseEndpoint implements \Jane\OpenApiRuntime\Client\Endpoint
+class GetPaymentMethod extends \CatchE\OpenApi2\Runtime\Client\BaseEndpoint implements \CatchE\OpenApi2\Runtime\Client\Endpoint
 {
-	use \Jane\OpenApiRuntime\Client\EndpointTrait;
-	protected $payment_method_id;
+    use \CatchE\OpenApi2\Runtime\Client\EndpointTrait;
+    protected $payment_method_id;
 
-	/**
-	 * This method requires the **PaymentMethods:Get** permission to be associated with your role.
-	 *
-	 * @param string $paymentMethodId Payment method Id
-	 */
-	public function __construct(string $paymentMethodId)
-	{
-		$this->payment_method_id = $paymentMethodId;
-	}
+    /**
+     * This method requires the **PaymentMethods:Get** permission to be associated with your role.
+     *
+     * @param string $paymentMethodId Payment method Id
+     */
+    public function __construct(string $paymentMethodId)
+    {
+        $this->payment_method_id = $paymentMethodId;
+    }
 
-	public function getMethod(): string
-	{
-		return 'GET';
-	}
+    public function getMethod(): string
+    {
+        return 'GET';
+    }
 
-	public function getUri(): string
-	{
-		return str_replace(['{payment_method_id}'], [$this->payment_method_id], '/gl/payment-methods/{payment_method_id}');
-	}
+    public function getUri(): string
+    {
+        return str_replace(['{payment_method_id}'], [$this->payment_method_id], '/gl/payment-methods/{payment_method_id}');
+    }
 
-	public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
-	{
-		return [[], null];
-	}
+    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    {
+        return [[], null];
+    }
 
-	public function getExtraHeaders(): array
-	{
-		return ['Accept' => ['application/json']];
-	}
+    public function getExtraHeaders(): array
+    {
+        return ['Accept' => ['application/json']];
+    }
 
-	/**
-	 * {@inheritdoc}
-	 *
-	 * @throws \CatchE\OpenApi2\Exception\GetPaymentMethodUnauthorizedException
-	 * @throws \CatchE\OpenApi2\Exception\GetPaymentMethodForbiddenException
-	 * @throws \CatchE\OpenApi2\Exception\GetPaymentMethodNotFoundException
-	 * @throws \CatchE\OpenApi2\Exception\GetPaymentMethodNotAcceptableException
-	 * @throws \CatchE\OpenApi2\Exception\GetPaymentMethodInternalServerErrorException
-	 *
-	 * @return \CatchE\OpenApi2\Model\PaymentMethod|\CatchE\OpenApi2\Model\Error|null
-	 */
-	protected function transformResponseBody(string $body, int $status, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType)
-	{
-		if (200 === $status) {
-			return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\PaymentMethod', 'json');
-		}
-		if (401 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetPaymentMethodUnauthorizedException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Unauthorized', 'json'));
-		}
-		if (403 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetPaymentMethodForbiddenException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Forbidden', 'json'));
-		}
-		if (404 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetPaymentMethodNotFoundException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotFound', 'json'));
-		}
-		if (406 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetPaymentMethodNotAcceptableException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotAcceptable', 'json'));
-		}
-		if (500 === $status) {
-			throw new \CatchE\OpenApi2\Exception\GetPaymentMethodInternalServerErrorException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\InternalError', 'json'));
-		}
+    public function getAuthenticationScopes(): array
+    {
+        return ['Bearer Token'];
+    }
 
-		return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Error', 'json');
-	}
+    /**
+     * {@inheritdoc}
+     *
+     * @throws \CatchE\OpenApi2\Exception\GetPaymentMethodUnauthorizedException
+     * @throws \CatchE\OpenApi2\Exception\GetPaymentMethodForbiddenException
+     * @throws \CatchE\OpenApi2\Exception\GetPaymentMethodNotFoundException
+     * @throws \CatchE\OpenApi2\Exception\GetPaymentMethodNotAcceptableException
+     * @throws \CatchE\OpenApi2\Exception\GetPaymentMethodInternalServerErrorException
+     *
+     * @return null|\CatchE\OpenApi2\Model\Error|\CatchE\OpenApi2\Model\PaymentMethod
+     */
+    protected function transformResponseBody(string $body, int $status, \Symfony\Component\Serializer\SerializerInterface $serializer, ?string $contentType = null)
+    {
+        if (200 === $status) {
+            return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\PaymentMethod', 'json');
+        }
+        if (401 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetPaymentMethodUnauthorizedException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Unauthorized', 'json'));
+        }
+        if (403 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetPaymentMethodForbiddenException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Forbidden', 'json'));
+        }
+        if (404 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetPaymentMethodNotFoundException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotFound', 'json'));
+        }
+        if (406 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetPaymentMethodNotAcceptableException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\NotAcceptable', 'json'));
+        }
+        if (500 === $status) {
+            throw new \CatchE\OpenApi2\Exception\GetPaymentMethodInternalServerErrorException($serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\InternalError', 'json'));
+        }
 
-	public function getAuthenticationScopes(): array
-	{
-		return ['Bearer Token'];
-	}
+        return $serializer->deserialize($body, 'CatchE\\OpenApi2\\Model\\Error', 'json');
+    }
 }

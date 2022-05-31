@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,42 +19,42 @@ namespace CatchE\OpenApi2\Model;
 
 class _255FinancePreparePostSuccess
 {
-	/**
-	 * @var string|null
-	 */
-	protected $interfaceExportId;
-	/**
-	 * @var string[]|null
-	 */
-	protected $processedContracts;
+    /**
+     * @var null|string
+     */
+    protected $interfaceExportId;
+    /**
+     * @var null|string[]
+     */
+    protected $processedContracts;
 
-	public function getInterfaceExportId(): ?string
-	{
-		return $this->interfaceExportId;
-	}
+    public function getInterfaceExportId(): ?string
+    {
+        return $this->interfaceExportId;
+    }
 
-	public function setInterfaceExportId(?string $interfaceExportId): self
-	{
-		$this->interfaceExportId = $interfaceExportId;
+    public function setInterfaceExportId(?string $interfaceExportId): self
+    {
+        $this->interfaceExportId = $interfaceExportId;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	/**
-	 * @return string[]|null
-	 */
-	public function getProcessedContracts(): ?array
-	{
-		return $this->processedContracts;
-	}
+    /**
+     * @return null|string[]
+     */
+    public function getProcessedContracts(): ?array
+    {
+        return $this->processedContracts;
+    }
 
-	/**
-	 * @param string[]|null $processedContracts
-	 */
-	public function setProcessedContracts(?array $processedContracts): self
-	{
-		$this->processedContracts = $processedContracts;
+    /**
+     * @param null|string[] $processedContracts
+     */
+    public function setProcessedContracts(?array $processedContracts): self
+    {
+        $this->processedContracts = $processedContracts;
 
-		return $this;
-	}
+        return $this;
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,52 +19,52 @@ namespace CatchE\OpenApi2\Model;
 
 class ChannelLinks
 {
-	/**
-	 * @var ChannelLinksSelf|null
-	 */
-	protected $self;
-	/**
-	 * @var ChannelLinksCompany|null
-	 */
-	protected $company;
-	/**
-	 * @var ChannelLinksChannelGroup|null
-	 */
-	protected $channelGroup;
+    /**
+     * @var null|ChannelLinksSelf
+     */
+    protected $self;
+    /**
+     * @var null|ChannelLinksCompany
+     */
+    protected $company;
+    /**
+     * @var null|ChannelLinksChannelGroup
+     */
+    protected $channelGroup;
 
-	public function getSelf(): ?ChannelLinksSelf
-	{
-		return $this->self;
-	}
+    public function getSelf(): ?ChannelLinksSelf
+    {
+        return $this->self;
+    }
 
-	public function setSelf(?ChannelLinksSelf $self): self
-	{
-		$this->self = $self;
+    public function setSelf(?ChannelLinksSelf $self): self
+    {
+        $this->self = $self;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getCompany(): ?ChannelLinksCompany
-	{
-		return $this->company;
-	}
+    public function getCompany(): ?ChannelLinksCompany
+    {
+        return $this->company;
+    }
 
-	public function setCompany(?ChannelLinksCompany $company): self
-	{
-		$this->company = $company;
+    public function setCompany(?ChannelLinksCompany $company): self
+    {
+        $this->company = $company;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getChannelGroup(): ?ChannelLinksChannelGroup
-	{
-		return $this->channelGroup;
-	}
+    public function getChannelGroup(): ?ChannelLinksChannelGroup
+    {
+        return $this->channelGroup;
+    }
 
-	public function setChannelGroup(?ChannelLinksChannelGroup $channelGroup): self
-	{
-		$this->channelGroup = $channelGroup;
+    public function setChannelGroup(?ChannelLinksChannelGroup $channelGroup): self
+    {
+        $this->channelGroup = $channelGroup;
 
-		return $this;
-	}
+        return $this;
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,36 +19,36 @@ namespace CatchE\OpenApi2\Model;
 
 class ContractBudgetsCreateFinalEntriesPreCheck
 {
-	/**
-	 * @var string|null
-	 */
-	protected $contractTypeFinalisableFlag;
-	/**
-	 * @var string|null
-	 */
-	protected $contractFinalisableFlag;
+    /**
+     * @var null|string
+     */
+    protected $contractTypeFinalisableFlag;
+    /**
+     * @var null|string
+     */
+    protected $contractFinalisableFlag;
 
-	public function getContractTypeFinalisableFlag(): ?string
-	{
-		return $this->contractTypeFinalisableFlag;
-	}
+    public function getContractTypeFinalisableFlag(): ?string
+    {
+        return $this->contractTypeFinalisableFlag;
+    }
 
-	public function setContractTypeFinalisableFlag(?string $contractTypeFinalisableFlag): self
-	{
-		$this->contractTypeFinalisableFlag = $contractTypeFinalisableFlag;
+    public function setContractTypeFinalisableFlag(?string $contractTypeFinalisableFlag): self
+    {
+        $this->contractTypeFinalisableFlag = $contractTypeFinalisableFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getContractFinalisableFlag(): ?string
-	{
-		return $this->contractFinalisableFlag;
-	}
+    public function getContractFinalisableFlag(): ?string
+    {
+        return $this->contractFinalisableFlag;
+    }
 
-	public function setContractFinalisableFlag(?string $contractFinalisableFlag): self
-	{
-		$this->contractFinalisableFlag = $contractFinalisableFlag;
+    public function setContractFinalisableFlag(?string $contractFinalisableFlag): self
+    {
+        $this->contractFinalisableFlag = $contractFinalisableFlag;
 
-		return $this;
-	}
+        return $this;
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2021 Catch-e Pty Ltd.
+ * Copyright 2022 Catch-e Pty Ltd.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,36 +19,36 @@ namespace CatchE\OpenApi2\Model;
 
 class SignonTokenCreateSuccess
 {
-	/**
-	 * @var string|null
-	 */
-	protected $signonToken;
-	/**
-	 * @var int|null
-	 */
-	protected $expiresIn;
+    /**
+     * @var null|string
+     */
+    protected $signonToken;
+    /**
+     * @var null|int
+     */
+    protected $expiresIn;
 
-	public function getSignonToken(): ?string
-	{
-		return $this->signonToken;
-	}
+    public function getSignonToken(): ?string
+    {
+        return $this->signonToken;
+    }
 
-	public function setSignonToken(?string $signonToken): self
-	{
-		$this->signonToken = $signonToken;
+    public function setSignonToken(?string $signonToken): self
+    {
+        $this->signonToken = $signonToken;
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function getExpiresIn(): ?int
-	{
-		return $this->expiresIn;
-	}
+    public function getExpiresIn(): ?int
+    {
+        return $this->expiresIn;
+    }
 
-	public function setExpiresIn(?int $expiresIn): self
-	{
-		$this->expiresIn = $expiresIn;
+    public function setExpiresIn(?int $expiresIn): self
+    {
+        $this->expiresIn = $expiresIn;
 
-		return $this;
-	}
+        return $this;
+    }
 }
